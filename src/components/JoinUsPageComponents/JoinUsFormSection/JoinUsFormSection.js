@@ -400,7 +400,7 @@ export const JoinUsFormSection = ({verticleImage, horizontalImage, followLinkedi
                         </div> : null
                 }
 
-                <div className="row mb-5">
+                <div className="row mb-5" style={{flexDirection: 'column'}}>
                     <div style={{display: "inline-block", margin: 'auto', position: 'relative'}}
                          className={'__actionable-image-wrapper'}>
 
@@ -413,11 +413,11 @@ export const JoinUsFormSection = ({verticleImage, horizontalImage, followLinkedi
                             className={'show-for-small-only'} width={'100%'}
                             alt=""/>
                     </div>
-                    <a href="https://www.linkedin.com/company/samagra-transforming-governance/">
+                    <a href="https://www.linkedin.com/company/samagra-transforming-governance/" style={{margin: 'auto'}}>
                         <img
                             src={(followLinkedin && followLinkedin.childImageSharp && followLinkedin.childImageSharp.fluid.src) || (followLinkedin && followLinkedin.image)}
-                            className={'hide-for-small-only'}
-                            style={{maxWidth: '700px', margin: 'auto'}} width={'100%'} alt=""/>
+                            className={'follow-linkedin'}
+                            style={{maxWidth: '250px', margin: 'auto'}} width={'100%'} alt=""/>
                     </a>
                 </div>
                 {

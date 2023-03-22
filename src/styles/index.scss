@@ -530,6 +530,9 @@ a {
   .hide-for-small-only {
     display: none !important;
   }
+  .follow-linkedin{
+    max-width: 125px;
+  }
 }
 
 @media only screen and (min-width: 980px) {
