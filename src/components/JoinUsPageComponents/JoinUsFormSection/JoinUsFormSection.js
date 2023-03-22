@@ -11,7 +11,7 @@ import Slide5 from '../../../img/slides/Slide5.jpg';
 const fileUploadURL = 'https://recruitment-uploader.samagra.io/upload';
 // const fileUploadURL = service.baseUrl + 'image-upload';
 
-export const JoinUsFormSection = ({verticleImage, horizontalImage, joinUsPageContent, infoText1, infoText2}) => {
+export const JoinUsFormSection = ({verticleImage, horizontalImage, followLinkedin, joinUsPageContent, infoText1, infoText2}) => {
     // const reachingOptions = [];
     const camelCase = (str) => {
         if (!str) {
@@ -413,6 +413,12 @@ export const JoinUsFormSection = ({verticleImage, horizontalImage, joinUsPageCon
                             className={'show-for-small-only'} width={'100%'}
                             alt=""/>
                     </div>
+                    <a href="https://www.linkedin.com/company/samagra-transforming-governance/">
+                        <img
+                            src={(followLinkedin && followLinkedin.childImageSharp && followLinkedin.childImageSharp.fluid.src) || (followLinkedin && followLinkedin.image)}
+                            className={'hide-for-small-only'}
+                            style={{maxWidth: '700px', margin: 'auto'}} width={'100%'} alt=""/>
+                    </a>
                 </div>
                 {
                     infoText2 ?

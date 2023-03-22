@@ -14,7 +14,7 @@ export const JoinUsPreviewTemplate = ({joinUsPageContent}) => {
         <React.Fragment>
             <JoinUsBannerImage/>
             <JoinUsFormSection joinUsPageContent={joinUsPageContent} infoText1={joinUsPageContent.infoText1} infoText2={joinUsPageContent.infoText2} verticleImage={joinUsPageContent.verticalImage}
-                               horizontalImage={joinUsPageContent.horizontalImage}/>
+                               horizontalImage={joinUsPageContent.horizontalImage} followLinkedin={joinUsPageContent.followLinkedin}/>
         </React.Fragment>
     )
 };
@@ -45,6 +45,13 @@ export const JoinUsPageQuery = graphql`
               }
         }
         horizontalImage {
+             childImageSharp {
+                fluid(maxWidth: 768, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+        }
+        followLinkedin {
              childImageSharp {
                 fluid(maxWidth: 768, quality: 100) {
                   ...GatsbyImageSharpFluid
