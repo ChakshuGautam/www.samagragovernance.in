@@ -5,7 +5,7 @@ infoText1: Join Us
 infoText2: ' '
 verticalImage: /img/recruitment-diagram_jan22_v1.jpg
 horizontalImage: /img/whatsapp-image-2022-01-19-at-5.53.08-pm.jpeg
-followLinkedin: /img/follow-linkedin.png
+followLinkedin: /img/follow-linkedin.jpg
 formsElements:
   - contentDescription: ' '
     label: Full Name
