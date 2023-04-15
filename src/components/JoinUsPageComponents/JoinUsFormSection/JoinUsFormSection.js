@@ -436,7 +436,7 @@ export const JoinUsFormSection = ({verticleImage, horizontalImage, followLinkedi
                         </div> : null
                 }
             </div>
-            {/* <div className={'join-us-form'}>
+            <div className={'join-us-form'}>
 
                 <div className="container">
                     {showForm ?
@@ -620,7 +620,7 @@ export const JoinUsFormSection = ({verticleImage, horizontalImage, followLinkedi
                         </div>
                     }
                 </div>
-            </div> */}
+            </div>
 
         </div>
 
