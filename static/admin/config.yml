@@ -138,6 +138,9 @@ collections:
           - { label: "Banner Image", name: bannerImage, widget: image }
           - { label: "Center Banner Image", name: centerBanner, widget: object, fields: [ { label: Image, name: image, widget: image } ] }
           - { label: "Main Text", name: mainContent, widget: list, fields: [ { label: "Text", name: text, widget: string } ] }
+          - { label: "Text Above Button", name: textAboveButton, widget: "string" }
+          - { label: "Button Link", name: link, widget: "string" }
+          - { label: "Button Text", name: buttonText, widget: "string" }
       - file: "src/pages/tgc/index.md"
         label: "TGC Page"
         name: "tgc"

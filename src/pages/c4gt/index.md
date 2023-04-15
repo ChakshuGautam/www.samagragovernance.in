@@ -11,5 +11,8 @@ mainContent:
       goods.     If you want to use Open Source GovTech to create impact, then
       this is the opportunity for you! C4GT 2022 was organised by Samagra and
       supported by Omidyar Network India.
+textAboveButton: Applications for Code for GovTech 2022 are now closed.
+link: https://www.codeforgovtech.in/
+buttonText: Learn More
 ---
 

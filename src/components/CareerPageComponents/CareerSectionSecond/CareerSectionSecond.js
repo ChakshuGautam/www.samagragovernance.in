@@ -19,11 +19,11 @@ const CareerSectionSecond = ({content, fromC4GT}) => {
                     {
                         fromC4GT ? <div className={'mt-4 py-5 text-center f-23 color-text-primary main-text'}>
                             <p>
-                                Applications for Code for GovTech 2022 are now closed.
+                                {content.textAboveButton}
                             </p>
                             <PrimaryButton classes={'py-3 text-uppercase'} click={() => {
-                                window.open('https://www.codeforgovtech.in/', '_blank');
-                            }} text={'Learn More'}/>
+                                window.open(content.link, '_blank');
+                            }} text={content.buttonText}/>
                         </div> : <div className={'text-center mt-4'}>
                             <PrimaryButton classes={'py-3 text-uppercase'} click={() => {
                                 window.location.href = '/joinus'
