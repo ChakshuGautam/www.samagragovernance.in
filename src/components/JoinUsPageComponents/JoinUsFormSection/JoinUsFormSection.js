@@ -413,8 +413,8 @@ export const JoinUsFormSection = ({verticleImage, horizontalImage, followLinkedi
                             className={'show-for-small-only'} width={'100%'}
                             alt=""/>
                     </div>
-                    <p className={'m-0 py-2 text-center f-18 color-text-primary'}>We are not accepting any new applications, please check back later</p>
-                    <p className={'m-0 py-2 text-center f-18 color-text-primary'}>Follow us for more updates on linkedin.</p>
+                    <p className={'m-0 py-2 text-center f-18 color-text-primary'}>We are not accepting any new applications, please check back later.</p>
+                    <p className={'m-0 py-2 text-center f-18 color-text-primary'}>Follow us for more updates on LinkedIn.</p>
                     <a href="https://www.linkedin.com/company/samagra-transforming-governance/" style={{margin: 'auto'}}>
                         <img
                             src={(followLinkedin && followLinkedin.childImageSharp && followLinkedin.childImageSharp.fluid.src) || (followLinkedin && followLinkedin.image)}
