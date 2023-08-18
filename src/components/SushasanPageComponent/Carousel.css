@@ -1,0 +1,55 @@
+.custom-carousel-outer {
+  display: flex;
+  align-items: center;
+}
+
+.custom-carousel-container {
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-carousel-wrapper {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+.custom-carousel-item {
+  flex: 0 0 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+.custom-carousel-item iframe{
+  width: 100%;
+}
+
+#custom-prevBtn,
+#custom-nextBtn {
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+#custom-prevBtn {
+  margin-right: 5px;
+}
+
+#custom-nextBtn {
+  margin-left: 5px;
+}
+
+/* For Desktop */
+@media (min-width: 769px) {
+  .custom-carousel-item {
+    flex: 0 0 33.333%;
+    padding: 5px;
+  }
+  #custom-prevBtn {
+    margin-right: 10px;
+  }
+  
+  #custom-nextBtn {
+    margin-left: 10px;
+  }
+}

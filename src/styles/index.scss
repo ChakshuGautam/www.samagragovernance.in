@@ -627,3 +627,51 @@ body, p {
     opacity: 1;
   }
 }
+
+.sushasan-social-icons {
+  height: 50px;
+  width: 50px;
+}
+
+.sushasan-channel-trailer-container {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+}
+
+.sushasan-channel-trailer{
+    flex: 1;
+    margin-right: 20px;
+}
+
+.sushasan-channel-trailer-text{
+  flex: 1;
+}
+
+.sushasan-logo{
+  margin: 10px;
+  width: 250px;
+  height: 150px;
+}
+
+// For mobile view
+@media only screen and (max-width: 768px) {
+  .sushasan-social-icons{
+    height: 40px;
+    width: 40px;
+  }
+  .sushasan-channel-trailer-container {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  .sushasan-channel-trailer{
+    flex: 1;
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+  .sushasan-channel-trailer-text{
+    flex: 1;
+    text-align: justify;
+  }
+}
