@@ -7,7 +7,7 @@ import instagramIconActive from '../../img/instagram.png';
 import SushasanLogo from '../../img/Sushasan.png';
 
 const SushasanPageComponent = ({ content }) => {
-    const items = [{url: 'https://www.youtube.com/embed/evr-R7iC1VM/', desc: 'Trailer'}, {url: 'https://www.youtube.com/embed/vLrZOL0X81k', desc: 'EP 01'}, {url: 'https://www.youtube.com/embed/zidabJy7ous', desc: 'EP 02'}, {url: 'https://www.youtube.com/embed/evr-R7iC1VM/', desc: 'EP 03'}];
+    const items = [{url: 'https://www.youtube.com/embed/evr-R7iC1VM', desc: 'Trailer'}, {url: 'https://www.youtube.com/embed/vLrZOL0X81k', desc: 'EP 01'}, {url: 'https://www.youtube.com/embed/zidabJy7ous', desc: 'EP 02'}, {url: 'https://www.youtube.com/embed/yuV5afr7E9E', desc: 'EP 03'}];
   return (
     <div className={'container career-section-second'}>
       <div className="row">
@@ -38,11 +38,11 @@ const SushasanPageComponent = ({ content }) => {
 
           <div className="mt-5 main-text text-center">
             <h3 style={{ fontWeight: 'bold' }}>Sushasan Episodes</h3>
-            <h5>New episodes every week!</h5>
+            <h5 className='py-2'>New episodes every week!</h5>
             <Carousel items={items} />
           </div>
 
-          <div className={'mt-4 py-5 text-center f-23 main-text'}>
+          <div className={'mt-4 py-5 text-center f-20 main-text'}>
             Follow Sushasan for the latest updates and episodes
             <ul className={'nav py-2'} style={{ justifyContent: 'center' }}>
               <li>

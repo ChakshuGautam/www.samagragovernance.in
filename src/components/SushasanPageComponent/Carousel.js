@@ -65,7 +65,7 @@ const Carousel = ({ items }) => {
       <div className="custom-carousel-container">
         <div
           className="custom-carousel-wrapper"
-          style={{ transform: `translateX(${offset}%)` }}>
+          style={{ transform: `translateX(${offset-1}%)` }}>
           {items.map((item, index) => (
             <div className="custom-carousel-item" key={index}>
               <iframe

@@ -7,6 +7,7 @@
   flex-grow: 1;
   position: relative;
   overflow: hidden;
+  min-height: 250px;
 }
 
 .custom-carousel-wrapper {
@@ -18,8 +19,12 @@
   flex: 0 0 100%;
   box-sizing: border-box;
   text-align: center;
+  background: #F8F8F8;
+  margin: 0 1px;
+  border-radius: 7px;
 }
 .custom-carousel-item iframe{
+  border-radius: 7px;
   width: 100%;
 }
 
