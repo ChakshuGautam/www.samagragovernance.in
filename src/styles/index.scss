@@ -659,18 +659,6 @@ p {
   height: 150px;
 }
 
-.sushasan-footer {
-  font-size: 20px;
-  margin-top: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 75px;
-  background: #4d56c8;
-  color: white;
-  padding: 0 10px;
-}
-
 // For mobile view
 @media only screen and (max-width: 768px) {
   .sushasan-social-icons {
@@ -690,10 +678,5 @@ p {
   .sushasan-channel-trailer-text {
     flex: 1;
     text-align: justify;
-  }
-  .sushasan-footer {
-    display: block;
-    text-align: center;
-    height: fit-content;
   }
 }

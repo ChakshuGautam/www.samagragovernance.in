@@ -61,8 +61,8 @@ class LayoutWrapper extends React.Component {
       .frontmatter.stickyBanner.stickyBannerButtonLink;
 
     let { href } = this.state;
-    let title = 'Samagra Governance';
-    let description = 'Samagra Governance';
+    let title = 'Samagra | Transforming Governance';
+    let description = 'Samagra | Transforming Governance';
     let image = `${withPrefix('/')}img/logo-colored.png`;
     if (
       this.props.children &&

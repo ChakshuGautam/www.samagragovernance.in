@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
-title: Samagra Governance
-description: Samagra Governance
+title: Samagra | Transforming Governance
+description: Samagra | Transforming Governance
 stickyBanner:
   stickyBannerActive: false
   stickyBannerTitle: This is a test banner title
