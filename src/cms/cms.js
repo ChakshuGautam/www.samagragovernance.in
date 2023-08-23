@@ -14,6 +14,7 @@ import MediaPostPreview from "./preview-templates/MediaPostPreview";
 import PartnerPagePreview from "./preview-templates/PartnerPagePreview";
 import CareerPagePreview from "./preview-templates/CareersPagePreview";
 import TGCPagePreview from "./preview-templates/TGCPagePreview";
+import SushasanPagePreview from "./preview-templates/SushasanPagePreview";
 
 CMS.registerMediaLibrary(uploadcare);
 CMS.registerMediaLibrary(cloudinary);
@@ -24,6 +25,7 @@ CMS.registerPreviewTemplate("about", AboutPagePreview);
 CMS.registerPreviewTemplate("products", ProductPagePreview);
 CMS.registerPreviewTemplate("c4gt", C4GTPagePreview);
 CMS.registerPreviewTemplate("tgc", TGCPagePreview);
+CMS.registerPreviewTemplate("sushasan", SushasanPagePreview);
 CMS.registerPreviewTemplate("blog", BlogPostPreview);
 CMS.registerPreviewTemplate("project", ProjectPagePreview);
 CMS.registerPreviewTemplate("media", MediaPagePreview);

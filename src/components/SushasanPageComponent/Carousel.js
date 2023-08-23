@@ -74,7 +74,7 @@ const Carousel = ({ items }) => {
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen></iframe>
               <h5 className="main-text">
-                {item.desc}
+                {item.title}
               </h5>
             </div>
           ))}

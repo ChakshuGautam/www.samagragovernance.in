@@ -720,6 +720,47 @@ collections:
               name: 'bottomTrademarkLink',
               widget: 'string',
             }
+      - file: 'src/pages/sushasan/index.md'
+        label: 'Sushasan Page'
+        name: 'sushasan'
+        fields:
+          - {
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'sushasan-page',
+            }
+          - {
+              label: 'Title',
+              name: 'title',
+              widget: 'string',
+            }
+          - {
+              label: 'Banner Image',
+              name: 'bannerImage',
+              widget: 'image',
+            }
+          - {
+              label: 'Logo',
+              name: 'logo',
+              widget: 'image',
+            }
+          - {
+              label: 'Text',
+              name: 'text',
+              widget: 'string',
+            }
+          - {
+              label: 'Mail',
+              name: 'mail',
+              widget: 'string',
+            }
+          - {
+              label: 'Podcasts',
+              name: 'podcasts',
+              widget: 'list',
+              fields: [{ label: 'Link', name: 'url', widget: 'string' }, {label: 'Title', name: 'title', widget: 'string'}],
+            }
       - file: 'src/pages/joinus/index.md'
         label: 'Join Us Page'
         name: 'joinus'

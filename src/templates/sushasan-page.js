@@ -1,30 +1,28 @@
-import React from 'react'
-import {graphql} from 'gatsby'
-import Layout from '../components/Layout'
-import CareerBannerImage from "../components/CareerPageComponents/CareerBannerImage/CareerBanner";
+import React from 'react';
+import { graphql } from 'gatsby';
+import Layout from '../components/Layout';
+import CareerBannerImage from '../components/CareerPageComponents/CareerBannerImage/CareerBanner';
 import SushasanPageComponent from '../components/SushasanPageComponent/SushasanPageComponent';
 
-export const SushasanTemplate = ({content}) => {
-    return (
-        <React.Fragment>
-            <CareerBannerImage bannerContent={content}/>
-            <SushasanPageComponent content={content}/>
-        </React.Fragment>
-    )
+export const SushasanTemplate = ({ content }) => {
+  return (
+    <React.Fragment>
+      <CareerBannerImage bannerContent={content} />
+      <SushasanPageComponent content={content} />
+    </React.Fragment>
+  );
 };
 
-const MediaPage = ({data}) => {
-    const {markdownRemark: careerPageContent} = data;
-    return (
-        <Layout>
-            <SushasanTemplate content={careerPageContent.frontmatter}/>
-        </Layout>
-    )
-
+const MediaPage = ({ data }) => {
+  const { markdownRemark: careerPageContent } = data;
+  return (
+    <Layout>
+      <SushasanTemplate content={careerPageContent.frontmatter} />
+    </Layout>
+  );
 };
 
-
-export default MediaPage
+export default MediaPage;
 export const mediaPageQuery = graphql`
   query SushasanPageQuery {
     markdownRemark(frontmatter: { templateKey: { eq: "sushasan-page" } }) {
@@ -32,26 +30,25 @@ export const mediaPageQuery = graphql`
       frontmatter {
         title
         bannerImage {
-           childImageSharp {
+          childImageSharp {
             fluid(maxWidth: 1440, quality: 100) {
               ...GatsbyImageSharpFluid
             }
           }
         }
-        centerBanner {
-           image {
-            childImageSharp {
-                fluid(maxWidth: 1440, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-           }
-        }        
-        mainContent {
-            text
+        logo {
+          childImageSharp {
+            fluid(maxWidth: 1440, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
         }
-        link
-        buttonText
+        text
+        mail
+        podcasts {
+          url
+          title
+        }
       }
     }
   }
