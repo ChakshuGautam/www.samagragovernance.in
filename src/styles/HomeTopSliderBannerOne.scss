@@ -24,6 +24,7 @@
     width: 100%;
     height: 100vh;
     background-size: cover;
+    background-position: center;
   }
 
   .translucent-dark-overlay {
@@ -52,7 +53,7 @@
         margin-top: calc(50vh - 220px);
         opacity: 0;
         position: absolute;
-        top: 85px;
+        top: 100px;
         right: 0;
         left: 0;
 

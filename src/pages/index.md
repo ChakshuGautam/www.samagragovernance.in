@@ -82,7 +82,7 @@ secondSection:
     title: Our Approach
   ourModel:
     image: /img/home-our-vision.jpg
-    title: Our Model
+    title: Our Model in 30 seconds
     description:
       - subTitle: Our Model
         text: >-
