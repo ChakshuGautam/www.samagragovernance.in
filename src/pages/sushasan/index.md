@@ -17,4 +17,6 @@ podcasts:
        title: 'EP 02 – Anita Karwal'
      - url: 'https://www.youtube.com/embed/yuV5afr7E9E'
        title: 'EP 03 – Awanish Awasthi'
+     - url: 'https://www.youtube.com/embed/PwFZMd6SG_E'
+       title: 'EP 04 – Dr. R.S. Sharma'
 ---
