@@ -15,6 +15,25 @@ import instaLogo from '../img/social/instagram.svg';
 import fbLogo from '../img/social/facebook.svg';
 import twitterLogo from '../img/social/twitter.svg';
 
+function FadeInSection(props) {
+  const [isVisible, setVisible] = React.useState(true);
+  const domRef = React.useRef();
+  React.useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => setVisible(entry.isIntersecting));
+    });
+    observer.observe(domRef.current);
+    return () => observer.unobserve(domRef.current);
+  }, []);
+  return (
+    <div
+      className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
+      ref={domRef}>
+      {props.children}
+    </div>
+  );
+}
+
 export const CaseStudyTemplate = ({ content, helmet }) => {
   const [grayscaleHeight, setGrayscaleHeight] = useState(4);
   const [hoveredIndex, setHoveredIndex] = useState(-1);
@@ -70,202 +89,219 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
         <img src={instaLogo} alt="" />
         <img src={fbLogo} alt="" />
       </div>
-      <div
-        id="agriImg"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, ${grayscaleHeight}), rgba(0, 0, 0, 0)), url(${agriImg})`,
-          backgroundSize: 'cover',
-          width: '100vw',
-          height: '600px',
-          filter: `grayscale(${grayscaleHeight * 25}%)`,
-          transition: 'filter 1s ease',
-        }}></div>
-      <div className="heading">{`<<One liner on the benefit >>`}</div>
-      <div className="text">
-        The life of a farmer in Odisha looks very different now to what it was
-        back in 20xx
-      </div>
-      <div style={{ textAlign: 'center', marginTop: '20px', width: '100vw' }}>
+      <FadeInSection>
         <div
-          id="img1"
+          id="agriImg"
           style={{
-            backgroundImage: `url(${img2})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'contain',
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, ${grayscaleHeight}), rgba(0, 0, 0, 0)), url(${agriImg})`,
+            backgroundSize: 'cover',
+            width: '100vw',
+            height: '600px',
+            filter: `grayscale(${grayscaleHeight * 25}%)`,
+            transition: 'filter 1s ease',
           }}></div>
-
-        <div className="text">... and of a government official as well</div>
-
-        <div
-          id="img2"
-          style={{
-            backgroundImage: `url(${img1})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'contain',
-          }}></div>
-      </div>
-      <div className="heading">
-        GO-SUGAM launched in 20xx to address these critical and urgent needs
-      </div>
-      <div className="summary">
-        <div style={{width: '50%'}}>
-        <div className="heading">GO SUGAM summary</div>
-        <div className="text" style={{textAlign: 'justify'}}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi quam
-          nobis beatae molestias nesciunt repudiandae tempora earum, fugit
-          dolores, impedit reiciendis odio non amet excepturi architecto quas,
-          blanditiis perspiciatis quibusdam! \n Dolorem ut distinctio doloribus
-          voluptatum sequi id in aliquid vel, cum pariatur ipsa! Perferendis
-          architecto quidem optio. Et nisi qui fugit eligendi nemo, neque,
-          nostrum nesciunt deserunt aliquam facilis dolore. Laborum error
-          asperiores laudantium quis vero sit incidunt aut illum odit.
+        <div className="heading">{`<<One liner on the benefit >>`}</div>
+      </FadeInSection>
+      <FadeInSection>
+        <div className="text">
+          The life of a farmer in Odisha looks very different now to what it was
+          back in 20xx
         </div>
+        <div style={{ textAlign: 'center', marginTop: '20px', width: '100vw' }}>
+          <div
+            id="img1"
+            style={{
+              backgroundImage: `url(${img2})`,
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: 'contain',
+            }}></div>
+
+          <div className="text">... and of a government official as well</div>
+
+          <div
+            id="img2"
+            style={{
+              backgroundImage: `url(${img1})`,
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: 'contain',
+            }}></div>
         </div>
-        <div
-          id="infographic"
-          style={{
-            backgroundImage: `url(${infographic})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'contain',
-          }}></div>
-      </div>
-      <div style={{ textAlign: 'center', margin: '20px 0' }}>
-        <button>Download Infographic</button>
-      </div>
-      <div className="roadmap">
+      </FadeInSection>
+      <FadeInSection>
         <div className="heading">
-          The roadmap to transformation had several steps along the way...
+          GO-SUGAM launched in 20xx to address these critical and urgent needs
+        </div>
+        <div className="summary">
+          <div style={{ width: '50%' }}>
+            <div className="heading">GO SUGAM summary</div>
+            <div className="text" style={{ textAlign: 'justify' }}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+              quam nobis beatae molestias nesciunt repudiandae tempora earum,
+              fugit dolores, impedit reiciendis odio non amet excepturi
+              architecto quas, blanditiis perspiciatis quibusdam! \n Dolorem ut
+              distinctio doloribus voluptatum sequi id in aliquid vel, cum
+              pariatur ipsa! Perferendis architecto quidem optio. Et nisi qui
+              fugit eligendi nemo, neque, nostrum nesciunt deserunt aliquam
+              facilis dolore. Laborum error asperiores laudantium quis vero sit
+              incidunt aut illum odit.
+            </div>
+          </div>
+          <div
+            id="infographic"
+            style={{
+              backgroundImage: `url(${infographic})`,
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: 'contain',
+            }}></div>
         </div>
         <div style={{ textAlign: 'center', margin: '20px 0' }}>
-          <button>Learn More</button>
+          <button className="casestudy-btn">Download Infographic</button>
         </div>
-        <div className={'cards-section'}>
-          {['', '', ''].map((news, index) => {
-            return (
-              <a href={''} target="_blank">
-                <div
-                  className={`card-wrapper ${
-                    hoveredIndex === index ? 'hovered' : ''
-                  } `}
-                  onMouseLeave={() => setHoveredIndex(-1)}
-                  onMouseEnter={() => setHoveredIndex(index)}>
+      </FadeInSection>
+      <FadeInSection>
+        <div className="roadmap">
+          <div className="heading">
+            The roadmap to transformation had several steps along the way...
+          </div>
+          <div style={{ textAlign: 'center', margin: '20px 0' }}>
+            <button className="casestudy-btn">Learn More</button>
+          </div>
+          <div className={'cards-section'}>
+            {['', '', ''].map((news, index) => {
+              return (
+                <a href={''} target="_blank">
                   <div
-                    className={`image-section`}
-                    style={{
-                      backgroundImage: `url(${content.featuredimage.childImageSharp.fluid.src})`,
-                    }}
-                  />
-                  <div className={'content-section'}>
-                    <div className={'heading'} style={{ minHeight: '40px' }}>
-                      {content.title}
+                    className={`card-wrapper ${
+                      hoveredIndex === index ? 'hovered' : ''
+                    } `}
+                    onMouseLeave={() => setHoveredIndex(-1)}
+                    onMouseEnter={() => setHoveredIndex(index)}>
+                    <div
+                      className={`image-section`}
+                      style={{
+                        backgroundImage: `url(${content.featuredimage.childImageSharp.fluid.src})`,
+                      }}
+                    />
+                    <div className={'content-section'}>
+                      <div className={'heading'} style={{ minHeight: '40px' }}>
+                        {content.title}
+                      </div>
+                      <div className={'timestamp'}>{content.date}</div>
                     </div>
-                    <div className={'timestamp'}>{content.date}</div>
                   </div>
-                </div>
-              </a>
-            );
-          })}
+                </a>
+              );
+            })}
+          </div>
         </div>
-      </div>
-      <div className="impact">
-        <div className="heading">
-          Finally, as we reached our destination this how the Last Mile Impact
-          looks like in Odisha
+      </FadeInSection>
+      <FadeInSection>
+        <div className="impact">
+          <div className="heading">
+            Finally, as we reached our destination this how the Last Mile Impact
+            looks like in Odisha
+          </div>
+          <div className="impact-video">
+            <iframe
+              style={{
+                minHeight: '150px',
+                minWidth: '300px',
+                height: '15vw',
+                width: '30vw',
+              }}
+              src="https://www.youtube.com/embed/evr-R7iC1VM?si=5WMWmFosgB07mvvT"
+              // title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
         </div>
-        <div className="impact-video">
-          <iframe
-            style={{
-              minHeight: '150px',
-              minWidth: '300px',
-              height: '15vw',
-              width: '30vw',
-            }}
-            src="https://www.youtube.com/embed/evr-R7iC1VM?si=5WMWmFosgB07mvvT"
-            // title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
+      </FadeInSection>
+      <FadeInSection>
+        <div className="testimonial-box">
+          <div className="heading">
+            The impact was a result of coming together of several stakeholders
+            and partners...
+          </div>
+          <div className="testimonials">
+            <CaseStudyCarousel
+              items={[
+                {
+                  title:
+                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget nulla vitae eros aliquam viverra in id risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae',
+                },
+                {
+                  title:
+                    'Mauris ullamcorper in ligula id ultrices. Maecenas interdum tempus tempor. Vivamus non ante eleifend, cursus turpis non, faucibus enim.',
+                },
+                {
+                  title:
+                    'Cras nulla nulla, condimentum sit amet convallis in, congue ac augue. Praesent consequat erat sit amet vulputate gravida. Integer pellentesque lectus lobortis',
+                },
+                {
+                  title:
+                    'Maecenas ullamcorper leo placerat mattis congue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus in vestibulum ligula, sed efficitur lorem.',
+                },
+              ]}
+            />
+          </div>
         </div>
-      </div>
-      <div className="testimonial-box">
-        <div className="heading">
-          The impact was a result of coming together of several stakeholders and
-          partners...
+      </FadeInSection>
+      <FadeInSection>
+        <div className="playlist-box">
+          <div className="heading">
+            with other ecosystem partners also contributing their POV{' '}
+          </div>
+          <div className="playlist-video">
+            <iframe
+              style={{
+                minHeight: '150px',
+                minWidth: '300px',
+                height: '15vw',
+                width: '30vw',
+              }}
+              src="https://www.youtube.com/embed/videoseries?si=9o9q8gRD6tTb-gKS&amp;list=PLmutx0xcPi1NsSyDkUHYCzk4HeYIoHhEa"
+              // title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
         </div>
-        <div className="testimonials">
-          <CaseStudyCarousel
-            items={[
-              {
-                title:
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget nulla vitae eros aliquam viverra in id risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae',
-              },
-              {
-                title:
-                  'Mauris ullamcorper in ligula id ultrices. Maecenas interdum tempus tempor. Vivamus non ante eleifend, cursus turpis non, faucibus enim.',
-              },
-              {
-                title:
-                  'Cras nulla nulla, condimentum sit amet convallis in, congue ac augue. Praesent consequat erat sit amet vulputate gravida. Integer pellentesque lectus lobortis',
-              },
-              {
-                title:
-                  'Maecenas ullamcorper leo placerat mattis congue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus in vestibulum ligula, sed efficitur lorem.',
-              },
-            ]}
-          />
-        </div>
-      </div>
-      <div className="playlist-box">
-        <div className="heading">
-          with other ecosystem partners also contributing their POV{' '}
-        </div>
-        <div className="playlist-video">
-          <iframe
-            style={{
-              minHeight: '150px',
-              minWidth: '300px',
-              height: '15vw',
-              width: '30vw',
-            }}
-            src="https://www.youtube.com/embed/videoseries?si=9o9q8gRD6tTb-gKS&amp;list=PLmutx0xcPi1NsSyDkUHYCzk4HeYIoHhEa"
-            // title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
-        </div>
-      </div>
-      <div className="field-story-box">
-        <div className="heading">
-          GO SUGAM continues to generate sustained impact
-        </div>
-        <div className={'cards-section'}>
-          {[''].map((news, index) => {
-            return (
-              <a href={''} target="_blank">
-                <div
-                  className={`card-wrapper ${
-                    hoveredIndex === index ? 'hovered' : ''
-                  } `}
-                  onMouseLeave={() => setHoveredIndex(-1)}
-                  onMouseEnter={() => setHoveredIndex(index)}>
+      </FadeInSection>
+      <FadeInSection>
+        <div className="field-story-box">
+          <div className="heading">
+            GO SUGAM continues to generate sustained impact
+          </div>
+          <div className={'cards-section'}>
+            {[''].map((news, index) => {
+              return (
+                <a href={''} target="_blank">
                   <div
-                    className={`image-section`}
-                    style={{
-                      backgroundImage: `url(${content.featuredimage.childImageSharp.fluid.src})`,
-                    }}
-                  />
-                  <div className={'content-section'}>
-                    <div className={'heading'} style={{ minHeight: '40px' }}>
-                      {content.title}
+                    className={`card-wrapper ${
+                      hoveredIndex === index ? 'hovered' : ''
+                    } `}
+                    onMouseLeave={() => setHoveredIndex(-1)}
+                    onMouseEnter={() => setHoveredIndex(index)}>
+                    <div
+                      className={`image-section`}
+                      style={{
+                        backgroundImage: `url(${content.featuredimage.childImageSharp.fluid.src})`,
+                      }}
+                    />
+                    <div className={'content-section'}>
+                      <div className={'heading'} style={{ minHeight: '40px' }}>
+                        {content.title}
+                      </div>
+                      <div className={'timestamp'}>{content.date}</div>
                     </div>
-                    <div className={'timestamp'}>{content.date}</div>
                   </div>
-                </div>
-              </a>
-            );
-          })}
+                </a>
+              );
+            })}
+          </div>
         </div>
-      </div>
+      </FadeInSection>
       <div className="partner-with-us">
         <p>{`<< some catchy line... then partner with us! >>`}</p>
         <p>Write to us at: {`<< xxx >>`}</p>

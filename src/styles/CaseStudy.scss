@@ -1,6 +1,19 @@
 @import './variable';
 
-.share{
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20vh);
+  visibility: hidden;
+  transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+  will-change: opacity, visibility;
+}
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
+.share {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -15,7 +28,7 @@
   z-index: 100;
 }
 
-.share img{
+.share img {
   margin: 5px;
   width: 25px;
   height: 25px;
@@ -65,7 +78,7 @@
   width: 500px;
 }
 
-button {
+.casestudy-btn {
   background: #008536;
   color: white;
   padding: 5px 10px;
@@ -75,7 +88,7 @@ button {
   transition: transform 0.2s ease;
 }
 
-button:active {
+.casestudy-btn:active {
   transform: scale(1.1);
 }
 
@@ -85,7 +98,7 @@ button:active {
   text-align: center;
 }
 
-.testimonials{
+.testimonials {
   max-width: 90vw;
   margin: auto;
 }
@@ -199,14 +212,14 @@ button:active {
     height: 300px;
     width: 300px;
   }
-  .testimonials{
+  .testimonials {
     max-width: 100vw;
     margin: auto;
   }
   .partner-with-us {
     flex-direction: column;
     justify-content: flex-start;
-    p{
+    p {
       text-align: center;
     }
   }
