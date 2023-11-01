@@ -38,7 +38,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
     }
   };
 
-  useEffect(() => { 
+  useEffect(() => {
     // Add a scroll event listener to update the grayscale state
     window.addEventListener('scroll', handleScroll);
     return () => {
@@ -64,7 +64,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           <div className="title">GO SUGAM</div>
         </div>
       </div>
-      <div className='share'>
+      <div className="share">
         <img src={twitterLogo} alt="" />
         <img src={linkedinLogo} alt="" />
         <img src={instaLogo} alt="" />
@@ -108,7 +108,19 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
         GO-SUGAM launched in 20xx to address these critical and urgent needs
       </div>
       <div className="summary">
+        <div style={{width: '50%'}}>
         <div className="heading">GO SUGAM summary</div>
+        <div className="text" style={{textAlign: 'justify'}}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi quam
+          nobis beatae molestias nesciunt repudiandae tempora earum, fugit
+          dolores, impedit reiciendis odio non amet excepturi architecto quas,
+          blanditiis perspiciatis quibusdam! \n Dolorem ut distinctio doloribus
+          voluptatum sequi id in aliquid vel, cum pariatur ipsa! Perferendis
+          architecto quidem optio. Et nisi qui fugit eligendi nemo, neque,
+          nostrum nesciunt deserunt aliquam facilis dolore. Laborum error
+          asperiores laudantium quis vero sit incidunt aut illum odit.
+        </div>
+        </div>
         <div
           id="infographic"
           style={{
@@ -215,8 +227,8 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               height: '15vw',
               width: '30vw',
             }}
-            src="https://www.youtube.com/embed/vLrZOL0X81k?si=_dKcQW_ItUNVXWsG"
-            title="YouTube video player"
+            src="https://www.youtube.com/embed/videoseries?si=9o9q8gRD6tTb-gKS&amp;list=PLmutx0xcPi1NsSyDkUHYCzk4HeYIoHhEa"
+            // title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen></iframe>
