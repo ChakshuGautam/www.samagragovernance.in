@@ -1,37 +1,323 @@
-import '../styles/BlogDetails.scss';
+import '../styles/CaseStudy.scss';
 import { graphql } from 'gatsby';
-import React from 'react';
-export const CaseStudyTemplate = () => {
-  return <div />;
+import React, { useState, useEffect } from 'react';
+import Helmet from 'react-helmet';
+import Layout from '../components/Layout';
+import PropTypes from 'prop-types';
+import Script from 'react-inline-script';
+import agriImg from '../../public/img/we-work-agriculture.jpg';
+import img1 from '../../static/img/gosugamimg1.png';
+import img2 from '../../static/img/gosugamimg2.png';
+import infographic from '../../static/img/infographic.png';
+import CaseStudyCarousel from '../components/CaseStudyComponents/CaseStudyCarousel';
+import linkedinLogo from '../img/social/LinkedIn.svg';
+import instaLogo from '../img/social/instagram.svg';
+import fbLogo from '../img/social/facebook.svg';
+import twitterLogo from '../img/social/twitter.svg';
+
+export const CaseStudyTemplate = ({ content, helmet }) => {
+  const [grayscaleHeight, setGrayscaleHeight] = useState(4);
+  const [hoveredIndex, setHoveredIndex] = useState(-1);
+
+  const handleScroll = () => {
+    const agriImgElement = document.getElementById('agriImg');
+    if (agriImgElement) {
+      const rect = agriImgElement.getBoundingClientRect();
+      const imageHeight = rect.bottom - rect.top;
+      const grayscaleThreshold = imageHeight * 0.25;
+
+      if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+        const grayscaleAmount = Math.max(
+          0,
+          (rect.bottom - window.innerHeight) / grayscaleThreshold
+        );
+        setGrayscaleHeight(grayscaleAmount);
+      } else {
+        setGrayscaleHeight(0);
+      }
+    }
+  };
+
+  useEffect(() => { 
+    // Add a scroll event listener to update the grayscale state
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  if (!content) {
+    return <div />;
+  }
+  return (
+    <section className="section">
+      {helmet || ''}
+      <div
+        className={'home-top-slider-wrapper media-page-banner'}
+        style={{
+          height: '600px',
+          backgroundImage: `url(${content.featuredimage.childImageSharp.fluid.src})`,
+          marginBottom: '50px',
+        }}>
+        <div className="translucent-dark-overlay" style={{ height: 'auto' }} />
+        <div className=" container content-section">
+          <div className="title">GO SUGAM</div>
+        </div>
+      </div>
+      <div className='share'>
+        <img src={twitterLogo} alt="" />
+        <img src={linkedinLogo} alt="" />
+        <img src={instaLogo} alt="" />
+        <img src={fbLogo} alt="" />
+      </div>
+      <div
+        id="agriImg"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, ${grayscaleHeight}), rgba(0, 0, 0, 0)), url(${agriImg})`,
+          backgroundSize: 'cover',
+          width: '100vw',
+          height: '600px',
+          filter: `grayscale(${grayscaleHeight * 25}%)`,
+          transition: 'filter 1s ease',
+        }}></div>
+      <div className="heading">{`<<One liner on the benefit >>`}</div>
+      <div className="text">
+        The life of a farmer in Odisha looks very different now to what it was
+        back in 20xx
+      </div>
+      <div style={{ textAlign: 'center', marginTop: '20px', width: '100vw' }}>
+        <div
+          id="img1"
+          style={{
+            backgroundImage: `url(${img2})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'contain',
+          }}></div>
+
+        <div className="text">... and of a government official as well</div>
+
+        <div
+          id="img2"
+          style={{
+            backgroundImage: `url(${img1})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'contain',
+          }}></div>
+      </div>
+      <div className="heading">
+        GO-SUGAM launched in 20xx to address these critical and urgent needs
+      </div>
+      <div className="summary">
+        <div className="heading">GO SUGAM summary</div>
+        <div
+          id="infographic"
+          style={{
+            backgroundImage: `url(${infographic})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'contain',
+          }}></div>
+      </div>
+      <div style={{ textAlign: 'center', margin: '20px 0' }}>
+        <button>Download Infographic</button>
+      </div>
+      <div className="roadmap">
+        <div className="heading">
+          The roadmap to transformation had several steps along the way...
+        </div>
+        <div style={{ textAlign: 'center', margin: '20px 0' }}>
+          <button>Learn More</button>
+        </div>
+        <div className={'cards-section'}>
+          {['', '', ''].map((news, index) => {
+            return (
+              <a href={''} target="_blank">
+                <div
+                  className={`card-wrapper ${
+                    hoveredIndex === index ? 'hovered' : ''
+                  } `}
+                  onMouseLeave={() => setHoveredIndex(-1)}
+                  onMouseEnter={() => setHoveredIndex(index)}>
+                  <div
+                    className={`image-section`}
+                    style={{
+                      backgroundImage: `url(${content.featuredimage.childImageSharp.fluid.src})`,
+                    }}
+                  />
+                  <div className={'content-section'}>
+                    <div className={'heading'} style={{ minHeight: '40px' }}>
+                      {content.title}
+                    </div>
+                    <div className={'timestamp'}>{content.date}</div>
+                  </div>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+      <div className="impact">
+        <div className="heading">
+          Finally, as we reached our destination this how the Last Mile Impact
+          looks like in Odisha
+        </div>
+        <div className="impact-video">
+          <iframe
+            style={{
+              minHeight: '150px',
+              minWidth: '300px',
+              height: '15vw',
+              width: '30vw',
+            }}
+            src="https://www.youtube.com/embed/evr-R7iC1VM?si=5WMWmFosgB07mvvT"
+            // title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+      <div className="testimonial-box">
+        <div className="heading">
+          The impact was a result of coming together of several stakeholders and
+          partners...
+        </div>
+        <div className="testimonials">
+          <CaseStudyCarousel
+            items={[
+              {
+                title:
+                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget nulla vitae eros aliquam viverra in id risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae',
+              },
+              {
+                title:
+                  'Mauris ullamcorper in ligula id ultrices. Maecenas interdum tempus tempor. Vivamus non ante eleifend, cursus turpis non, faucibus enim.',
+              },
+              {
+                title:
+                  'Cras nulla nulla, condimentum sit amet convallis in, congue ac augue. Praesent consequat erat sit amet vulputate gravida. Integer pellentesque lectus lobortis',
+              },
+              {
+                title:
+                  'Maecenas ullamcorper leo placerat mattis congue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus in vestibulum ligula, sed efficitur lorem.',
+              },
+            ]}
+          />
+        </div>
+      </div>
+      <div className="playlist-box">
+        <div className="heading">
+          with other ecosystem partners also contributing their POV{' '}
+        </div>
+        <div className="playlist-video">
+          <iframe
+            style={{
+              minHeight: '150px',
+              minWidth: '300px',
+              height: '15vw',
+              width: '30vw',
+            }}
+            src="https://www.youtube.com/embed/vLrZOL0X81k?si=_dKcQW_ItUNVXWsG"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+      <div className="field-story-box">
+        <div className="heading">
+          GO SUGAM continues to generate sustained impact
+        </div>
+        <div className={'cards-section'}>
+          {[''].map((news, index) => {
+            return (
+              <a href={''} target="_blank">
+                <div
+                  className={`card-wrapper ${
+                    hoveredIndex === index ? 'hovered' : ''
+                  } `}
+                  onMouseLeave={() => setHoveredIndex(-1)}
+                  onMouseEnter={() => setHoveredIndex(index)}>
+                  <div
+                    className={`image-section`}
+                    style={{
+                      backgroundImage: `url(${content.featuredimage.childImageSharp.fluid.src})`,
+                    }}
+                  />
+                  <div className={'content-section'}>
+                    <div className={'heading'} style={{ minHeight: '40px' }}>
+                      {content.title}
+                    </div>
+                    <div className={'timestamp'}>{content.date}</div>
+                  </div>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+      <div className="partner-with-us">
+        <p>{`<< some catchy line... then partner with us! >>`}</p>
+        <p>Write to us at: {`<< xxx >>`}</p>
+      </div>
+    </section>
+  );
 };
 
-const CaseStudy = () => {
-  return <CaseStudyTemplate />;
+const CaseStudy = ({ data }) => {
+  const { markdownRemark: post } = data;
+
+  return (
+    <Layout slug={data.markdownRemark.fields.slug}>
+      <CaseStudyTemplate
+        content={post.frontmatter}
+        helmet={
+          <Helmet titleTemplate="%s | CaseStudy">
+            <title>{`${post.frontmatter.title}`}</title>
+            <meta name="description" content={`${post.frontmatter.title}`} />
+          </Helmet>
+        }
+      />
+      <div id="graphcomment"></div>
+      <Script>
+        {`
+          window.gc_params = {
+              graphcomment_id: 'samagragovernance',
+              fixed_header_height: 0,
+          };
+
+          (function() {
+            var gc = document.createElement('script'); gc.type = 'text/javascript'; gc.async = true;
+            gc.src = 'https://graphcomment.com/js/integration.js?' + Math.round(Math.random() * 1e8);
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
+          })();
+        `}
+      </Script>
+    </Layout>
+  );
+};
+
+CaseStudy.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.object,
+  }),
 };
 
 export default CaseStudy;
 
 export const pageQuery = graphql`
-  query CaseStudyQuery {
-    allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "case-study" } } }
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            templateKey
-            title
-            projectId
-            featuredimage {
-              childImageSharp {
-                fluid(maxWidth: 1280, quality: 62) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
+  query CaseStudyQuery($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+      id
+      fields {
+        slug
+      }
+      frontmatter {
+        date(formatString: "MMMM DD, YYYY")
+        title
+        featuredimage {
+          childImageSharp {
+            fluid(maxWidth: 1280, quality: 62) {
+              ...GatsbyImageSharpFluid
             }
-            link
-            buttonText
           }
         }
       }

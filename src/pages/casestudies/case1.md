@@ -1,10 +1,8 @@
 ---
 templateKey: case-study
-projectId: KONNECT
-title: Imparting foundational learning to primary students in Uttar Pradesh
-date: 2023-03-31T01:11:14.826Z
-featuredimage: /img/aayush_blog.jpg
-link: 'https://www.google.com/'
+title: A Stakeholder Approach to Waste Management
+projectId: CMGGA
+date: 2019-04-17T07:30:19.759Z
+featuredimage: /img/SamagraGovernance-Deepika-WasteManagement.jpeg
 buttonText: Read More
 ---
-

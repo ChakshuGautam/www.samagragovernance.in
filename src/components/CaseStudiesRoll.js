@@ -87,7 +87,7 @@ class CaseStudiesRoll extends React.Component {
                             classes={'py-1 text-uppercase'}
                             text={post.frontmatter.buttonText}
                             click={() => {
-                              window.open(post.frontmatter.link, '_blank');
+                              window.open(post.fields.slug, '_blank');
                             }}
                           />
                         </div>
@@ -117,7 +117,7 @@ export default () => (
     query={graphql`
       query CaseStudiesRollQuery {
         allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___date] }
+          sort: { order: ASC, fields: [frontmatter___date] }
           filter: { frontmatter: { templateKey: { eq: "case-study" } } }
         ) {
           edges {
@@ -139,7 +139,6 @@ export default () => (
                     }
                   }
                 }
-                link
                 buttonText
               }
             }

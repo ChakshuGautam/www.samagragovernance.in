@@ -6,8 +6,8 @@ import { Link, graphql } from "gatsby";
 import Helmet from "react-helmet";
 import Layout from "../components/Layout";
 import PropTypes from "prop-types";
-import React,{useEffect} from "react";
 import Script from "react-inline-script"
+import React,{useEffect} from "react";
 import { kebabCase } from "lodash";
 
 export const BlogPostTemplate = ({
