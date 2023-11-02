@@ -48,6 +48,13 @@ const CaseStudyCarousel = ({ items }) => {
               <h5 className="main-text">
                 {item.title}
               </h5>
+              <div className='casestudy-carousel-author'>
+                <img src={item.image} alt="" className='casestudy-carousel-author-img' />
+                <div className='casestudy-carousel-author-details'>
+                  <p style={{fontWeight: 'bold'}}>{item.name}</p> 
+                  <p>{item.designation}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>

@@ -1,6 +1,9 @@
 .casestudy-carousel-outer {
+  padding-top: 30px;
   display: flex;
   align-items: center;
+  margin: auto;
+  max-width: 800px;
 }
 
 .casestudy-carousel-container {
@@ -24,6 +27,7 @@
   border-radius: 7px;
   height: 250px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -32,6 +36,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 30px;
+}
+
+.casestudy-carousel-author{
+  display: flex;
+}
+.casestudy-carousel-author-img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+.casestudy-carousel-author-details p{
+  margin: 0;
 }
 
 #custom-prevBtn,
@@ -52,6 +70,9 @@
 
 /* For Desktop */
 @media (min-width: 769px) {
+  .casestudy-carousel-outer{
+    padding-top: 0;
+  }
   .casestudy-carousel-item {
     padding: 5px;
   }

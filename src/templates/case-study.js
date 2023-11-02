@@ -15,8 +15,10 @@ import linkedinLogo from '../img/social/LinkedIn.svg';
 import instaLogo from '../img/social/instagram.svg';
 import fbLogo from '../img/social/facebook.svg';
 import twitterLogo from '../img/social/twitter.svg';
+import commentLogo from '../img/social/comments.svg';
 import homeVideo from '../img/home_video.mp4';
-
+import { animateScroll as scroll } from 'react-scroll';
+import upIcon from '../img/up-arrow-png-20.png';
 
 function FadeInSection(props) {
   const [isVisible, setVisible] = useState(true);
@@ -41,7 +43,19 @@ function FadeInSection(props) {
 export const CaseStudyTemplate = ({ content, helmet }) => {
   const [grayscaleHeight, setGrayscaleHeight] = useState(2.8);
   const [hoveredIndex, setHoveredIndex] = useState(-1);
-  const [sadFarmerOpacity, setSadFarmerOpacity] = useState(grayscaleHeight - 0.4);
+  const [sadFarmerOpacity, setSadFarmerOpacity] = useState(
+    grayscaleHeight - 0.4
+  );
+  const [mobile, setMobile] = useState(false);
+  const [showUpIcon, setShowUpIcon] = useState(false);
+
+  const scrollToBottom = () => {
+    scroll.scrollToBottom();
+  };
+
+  const scrollToTop = () => {
+    scroll.scrollToTop();
+  };
 
   const handleScroll = () => {
     const agriImgElement = document.getElementById('agriImg');
@@ -61,15 +75,21 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
         setGrayscaleHeight(1);
       }
     }
+    if(window && window.scrollY > window.screen.height){
+      setShowUpIcon(true);
+    }else setShowUpIcon(false);
   };
 
   useEffect(() => {
     const opacity = grayscaleHeight - 0.4;
     setSadFarmerOpacity(opacity);
-    console.log("op:", opacity, "gh:", grayscaleHeight)
+    console.log('op:', opacity, 'gh:', grayscaleHeight);
   }, [grayscaleHeight]);
 
   useEffect(() => {
+    if(window && window.innerWidth < 768){
+      setMobile(true);
+    }
     document
       .querySelector('#playlist-box-id')
       .addEventListener('click', function(event) {
@@ -93,26 +113,33 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
     <section className="section">
       {helmet || ''}
       <div className="media-page-banner">
-          <video
-            controls={false}
-            muted
-            autoplay="autoplay"
-            loop={true}
-            style={{
-              width: '100vw',
-              height: 'auto',
-              marginBottom: '50px',
-            }}
-            autoPlay={true}>
-            <source src={homeVideo} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
+        <video
+          controls={false}
+          muted
+          autoplay="autoplay"
+          loop={true}
+          style={{
+            width: '100vw',
+            height: 'auto',
+            marginBottom: '50px',
+          }}
+          autoPlay={true}>
+          <source src={homeVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      {!mobile && showUpIcon && <div className={'up-icon'}>
+        <img
+          src={upIcon}
+          onClick={scrollToTop}
+        />
+      </div>}
       <div className="share">
         <img src={twitterLogo} alt="" />
         <img src={linkedinLogo} alt="" />
         <img src={instaLogo} alt="" />
         <img src={fbLogo} alt="" />
+        <img src={commentLogo} alt="" onClick={scrollToBottom} />
       </div>
       <FadeInSection>
         <div
@@ -140,7 +167,8 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               position: 'absolute',
               top: 0,
               left: 0,
-              backgroundImage: `linear-gradient(rgba(0, 0, 0, ${grayscaleHeight/3}), rgba(0, 0, 0, 0)), url(${sadFarmerImg})`,
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, ${grayscaleHeight /
+                3}), rgba(0, 0, 0, 0)), url(${sadFarmerImg})`,
               backgroundSize: 'cover',
               width: '100%',
               height: '100%',
@@ -254,8 +282,8 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               style={{
                 minHeight: '150px',
                 minWidth: '300px',
-                height: '15vw',
-                width: '30vw',
+                height: '30vw',
+                width: '60vw',
               }}
               src="https://www.youtube.com/embed/evr-R7iC1VM?si=5WMWmFosgB07mvvT"
               // title="YouTube video player"
@@ -277,18 +305,30 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 {
                   title:
                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget nulla vitae eros aliquam viverra in id risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae',
+                  name: 'Garima Sood',
+                  image: '/img/garima_7700.jpg',
+                  designation: 'Outreach Team, Samagra',
                 },
                 {
                   title:
                     'Mauris ullamcorper in ligula id ultrices. Maecenas interdum tempus tempor. Vivamus non ante eleifend, cursus turpis non, faucibus enim.',
+                  name: 'Garima Sood',
+                  image: '/img/garima_7700.jpg',
+                  designation: 'Outreach Team, Samagra',
                 },
                 {
                   title:
                     'Cras nulla nulla, condimentum sit amet convallis in, congue ac augue. Praesent consequat erat sit amet vulputate gravida. Integer pellentesque lectus lobortis',
+                  name: 'Garima Sood',
+                  image: '/img/garima_7700.jpg',
+                  designation: 'Outreach Team, Samagra',
                 },
                 {
                   title:
                     'Maecenas ullamcorper leo placerat mattis congue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus in vestibulum ligula, sed efficitur lorem.',
+                  name: 'Garima Sood',
+                  image: '/img/garima_7700.jpg',
+                  designation: 'Outreach Team, Samagra',
                 },
               ]}
             />
@@ -352,10 +392,12 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           </div>
         </div>
       </FadeInSection>
-      <div className="partner-with-us">
-        <p>{`<< some catchy line... then partner with us! >>`}</p>
-        <p>Write to us at: {`<< xxx >>`}</p>
-      </div>
+      <FadeInSection>
+        <div className="partner-with-us">
+          <p>{`<< some catchy line... then partner with us! >>`}</p>
+          <p>Write to us at: {`<< xxx >>`}</p>
+        </div>
+      </FadeInSection>
     </section>
   );
 };
