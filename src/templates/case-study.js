@@ -1,11 +1,12 @@
 import '../styles/CaseStudy.scss';
 import { graphql } from 'gatsby';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Helmet from 'react-helmet';
 import Layout from '../components/Layout';
 import PropTypes from 'prop-types';
 import Script from 'react-inline-script';
-import agriImg from '../../public/img/we-work-agriculture.jpg';
+import happyFarmerImg from '../../public/img/we-work-agriculture.jpg';
+import sadFarmerImg from '../../public/img/adapt-1.jpg';
 import img1 from '../../static/img/gosugamimg1.png';
 import img2 from '../../static/img/gosugamimg2.png';
 import infographic from '../../static/img/infographic.png';
@@ -14,11 +15,14 @@ import linkedinLogo from '../img/social/LinkedIn.svg';
 import instaLogo from '../img/social/instagram.svg';
 import fbLogo from '../img/social/facebook.svg';
 import twitterLogo from '../img/social/twitter.svg';
+import homeVideo from '../img/home_video.mp4';
+
 
 function FadeInSection(props) {
-  const [isVisible, setVisible] = React.useState(true);
-  const domRef = React.useRef();
-  React.useEffect(() => {
+  const [isVisible, setVisible] = useState(true);
+  const domRef = useRef();
+
+  useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => setVisible(entry.isIntersecting));
     });
@@ -35,8 +39,9 @@ function FadeInSection(props) {
 }
 
 export const CaseStudyTemplate = ({ content, helmet }) => {
-  const [grayscaleHeight, setGrayscaleHeight] = useState(4);
+  const [grayscaleHeight, setGrayscaleHeight] = useState(2.8);
   const [hoveredIndex, setHoveredIndex] = useState(-1);
+  const [sadFarmerOpacity, setSadFarmerOpacity] = useState(grayscaleHeight - 0.4);
 
   const handleScroll = () => {
     const agriImgElement = document.getElementById('agriImg');
@@ -44,6 +49,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       const rect = agriImgElement.getBoundingClientRect();
       const imageHeight = rect.bottom - rect.top;
       const grayscaleThreshold = imageHeight * 0.25;
+      const newScrollingDown = window.scrollY > imageHeight * 0.55;
 
       if (rect.top <= window.innerHeight && rect.bottom >= 0) {
         const grayscaleAmount = Math.max(
@@ -52,14 +58,29 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
         );
         setGrayscaleHeight(grayscaleAmount);
       } else {
-        setGrayscaleHeight(0);
+        setGrayscaleHeight(1);
       }
     }
   };
 
   useEffect(() => {
-    // Add a scroll event listener to update the grayscale state
+    const opacity = grayscaleHeight - 0.4;
+    setSadFarmerOpacity(opacity);
+    console.log("op:", opacity, "gh:", grayscaleHeight)
+  }, [grayscaleHeight]);
+
+  useEffect(() => {
+    document
+      .querySelector('#playlist-box-id')
+      .addEventListener('click', function(event) {
+        event.preventDefault();
+        window.open(
+          'https://www.youtube.com/watch?v=vLrZOL0X81k&list=PLmutx0xcPi1NsSyDkUHYCzk4HeYIoHhEa',
+          '_blank'
+        );
+      });
     window.addEventListener('scroll', handleScroll);
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -71,18 +92,22 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
   return (
     <section className="section">
       {helmet || ''}
-      <div
-        className={'home-top-slider-wrapper media-page-banner'}
-        style={{
-          height: '600px',
-          backgroundImage: `url(${content.featuredimage.childImageSharp.fluid.src})`,
-          marginBottom: '50px',
-        }}>
-        <div className="translucent-dark-overlay" style={{ height: 'auto' }} />
-        <div className=" container content-section">
-          <div className="title">GO SUGAM</div>
+      <div className="media-page-banner">
+          <video
+            controls={false}
+            muted
+            autoplay="autoplay"
+            loop={true}
+            style={{
+              width: '100vw',
+              height: 'auto',
+              marginBottom: '50px',
+            }}
+            autoPlay={true}>
+            <source src={homeVideo} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
-      </div>
       <div className="share">
         <img src={twitterLogo} alt="" />
         <img src={linkedinLogo} alt="" />
@@ -93,13 +118,36 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
         <div
           id="agriImg"
           style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, ${grayscaleHeight}), rgba(0, 0, 0, 0)), url(${agriImg})`,
-            backgroundSize: 'cover',
+            position: 'relative',
             width: '100vw',
-            height: '600px',
+            height: '800px',
             filter: `grayscale(${grayscaleHeight * 25}%)`,
-            transition: 'filter 1s ease',
-          }}></div>
+          }}>
+          <div
+            className="happy-farmer-img"
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              backgroundImage: `url(${happyFarmerImg})`,
+              backgroundSize: 'cover',
+              width: '100%',
+              height: '100%',
+            }}></div>
+          <div
+            className="sad-farmer-img"
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, ${grayscaleHeight/3}), rgba(0, 0, 0, 0)), url(${sadFarmerImg})`,
+              backgroundSize: 'cover',
+              width: '100%',
+              height: '100%',
+              opacity: sadFarmerOpacity,
+              transition: 'opacity 0.8s ease',
+            }}></div>
+        </div>
         <div className="heading">{`<<One liner on the benefit >>`}</div>
       </FadeInSection>
       <FadeInSection>
@@ -248,7 +296,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
         </div>
       </FadeInSection>
       <FadeInSection>
-        <div className="playlist-box">
+        <div className="playlist-box" id="playlist-box-id">
           <div className="heading">
             with other ecosystem partners also contributing their POV{' '}
           </div>
@@ -259,6 +307,8 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 minWidth: '300px',
                 height: '15vw',
                 width: '30vw',
+                cursor: 'pointer',
+                pointerEvents: 'none',
               }}
               src="https://www.youtube.com/embed/videoseries?si=9o9q8gRD6tTb-gKS&amp;list=PLmutx0xcPi1NsSyDkUHYCzk4HeYIoHhEa"
               // title="YouTube video player"
