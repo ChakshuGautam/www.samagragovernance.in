@@ -10,6 +10,7 @@ import sadFarmerImg from '../../public/img/adapt-1.jpg';
 import img1 from '../../static/img/gosugamimg1.png';
 import img2 from '../../static/img/gosugamimg2.png';
 import infographic from '../../static/img/infographic.png';
+import GOSUGAM_GIF from '../../static/img/GOSUGAM.gif';
 import CaseStudyCarousel from '../components/CaseStudyComponents/CaseStudyCarousel';
 import linkedinLogo from '../img/social/LinkedIn.svg';
 import instaLogo from '../img/social/instagram.svg';
@@ -75,9 +76,9 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
         setGrayscaleHeight(1);
       }
     }
-    if(window && window.scrollY > window.screen.height){
+    if (window && window.scrollY > window.screen.height) {
       setShowUpIcon(true);
-    }else setShowUpIcon(false);
+    } else setShowUpIcon(false);
   };
 
   useEffect(() => {
@@ -87,7 +88,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
   }, [grayscaleHeight]);
 
   useEffect(() => {
-    if(window && window.innerWidth < 768){
+    if (window && window.innerWidth < 768) {
       setMobile(true);
     }
     document
@@ -99,6 +100,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           '_blank'
         );
       });
+
     window.addEventListener('scroll', handleScroll);
 
     return () => {
@@ -113,27 +115,20 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
     <section className="section">
       {helmet || ''}
       <div className="media-page-banner">
-        <video
-          controls={false}
-          muted
-          autoplay="autoplay"
-          loop={true}
+        <img
+          src={GOSUGAM_GIF}
           style={{
             width: '100vw',
             height: 'auto',
-            marginBottom: '50px',
           }}
-          autoPlay={true}>
-          <source src={homeVideo} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
-      {!mobile && showUpIcon && <div className={'up-icon'}>
-        <img
-          src={upIcon}
-          onClick={scrollToTop}
         />
-      </div>}
+        <div className="case-study-translucent-dark-overlay" />
+      </div>
+      {!mobile && showUpIcon && (
+        <div className={'up-icon'}>
+          <img src={upIcon} onClick={scrollToTop} />
+        </div>
+      )}
       <div className="share">
         <img src={twitterLogo} alt="" />
         <img src={linkedinLogo} alt="" />

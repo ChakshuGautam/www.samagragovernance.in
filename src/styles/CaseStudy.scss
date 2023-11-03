@@ -1,5 +1,32 @@
 @import './variable';
 
+.case-study-translucent-dark-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: calc(100% - 75px);
+  z-index: 1;
+}
+
+@media (max-width: 1200px) {
+  .case-study-translucent-dark-overlay {
+    bottom: calc(100% - 112px);
+  }
+}
+
+@media (max-width: 991px) {
+  .case-study-translucent-dark-overlay {
+    bottom: calc(100% - 149px);
+  }
+}
+@media (max-width: 980px) {
+  .case-study-translucent-dark-overlay {
+    display: none;
+  }
+}
+
 .fade-in-section {
   opacity: 0;
   transform: translateY(20vh);
