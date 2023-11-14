@@ -44,7 +44,8 @@
       width: 100%;
       height: 100%;
       transition: transform 0.5s ease-out;
-
+      border: 2px solid #F2A93B;
+      border-radius: 20px;
     }
     
     /* Back side */
@@ -65,13 +66,13 @@
       border-radius: 10px;
     }
     
-    .flip-card:hover .front {
-      transform: rotateY(180deg);
-    }
+    // .flip-card:hover .front {
+    //   transform: rotateY(180deg);
+    // }
 
-    .flip-card:hover .back {
-      transform: rotateY(0deg);
-    }
+    // .flip-card:hover .back {
+    //   transform: rotateY(0deg);
+    // }
     
     .front,
     .back {

@@ -35,8 +35,9 @@ export default class CaseStudiesIndexPage extends React.Component {
                 government.
               </div>
               <div
+              style={{fontWeight: 'bold'}}
                 className={
-                  'py-2 text-center f-23 color-text-primary main-text'
+                  'text-center f-28 color-text-primary main-text text-bold'
                 }>
                 Case Studies for 2023 Coming Soon!
               </div>

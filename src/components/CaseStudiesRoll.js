@@ -12,7 +12,7 @@ class CaseStudiesRoll extends React.Component {
     );
     return (
       <>
-        <div className="blogs-section">
+        <div className="blogs-section" style={{ padding: '20px' }}>
           <div className="row">
             {clean_posts.map(({ node: post }) => {
               return (
@@ -22,8 +22,8 @@ class CaseStudiesRoll extends React.Component {
                   <div
                     className="blog-wrapper"
                     style={{ position: 'relative' }}>
-                    <div className="flip-card">
-                      <div className="front">
+                    <div className="flip-card" style={{minHeight: '350px', minWidth: 'fit-content'}}>
+                      <div className="front" style={{minHeight: 'fit-content', minWidth: 'fit-content'}}>
                         {post.frontmatter.featuredimage ? (
                           <div
                             className="image-wrapper"
@@ -34,63 +34,46 @@ class CaseStudiesRoll extends React.Component {
                               transition: 'background 0.5s ease-out',
                               display: 'flex',
                               alignItems: 'center',
-                            }}>
-                            <p
-                              style={{
-                                background: '#2B2A2A',
-                                width: '100%',
-                                textAlign: 'center',
-                                color: 'white',
-                                fontSize: '18px',
-                              }}>
-                              {post.frontmatter.projectId}
-                            </p>
-                          </div>
+                              height: '150px',
+                              minWidth: '250px',
+                              borderRadius: '20px 20px 0 0',
+                            }}></div>
                         ) : null}
-                      </div>
-                      <div className="back">
-                        <div
+                        <p
+                          style={{
+                            padding: '5px 0',
+                            width: '100%',
+                            textAlign: 'center',
+                            fontSize: '14px',
+                            fontWeight: 'bolder'
+                          }}>
+                          {post?.frontmatter?.projectId}
+                        </p>
+                        <p
+                          style={{
+                            margin: '5%',
+                            fontSize: '16px',
+                            textAlign: 'center',
+                          }}>
+                          {post?.frontmatter?.title}
+                        </p>
+                        <PrimaryButton
                           style={{
                             position: 'absolute',
-                            top: 0,
-                            right: 0,
-                            width: '100%',
-                            height: '100%',
-                            display: 'flex',
-                            flexDirection: 'column',
-                          }}>
-                          <p
-                            style={{
-                              width: '100%',
-                              textAlign: 'center',
-                              margin: 'auto auto 5% auto',
-                              color: 'white',
-                              fontSize: '18px',
-                            }}>
-                            {post.frontmatter.projectId}
-                          </p>
-                          <p
-                            style={{
-                              margin: '5%',
-                              color: 'white',
-                              fontSize: '16px',
-                              textShadow: '1px 1px 2px black',
-                              textAlign: 'center',
-                            }}>
-                            {post.frontmatter.title}
-                          </p>
-                          <PrimaryButton
-                            style={{
-                              margin: 'auto auto 5% auto',
-                              pointerEvents: 'auto',
-                            }}
-                            classes={'py-1 text-uppercase'}
-                            text={post.frontmatter.buttonText}
-                            click={() => {
-                              window.open(post.fields.slug, '_blank');
-                            }}
-                          />
-                        </div>
+                            bottom: '10px',
+                            left: '0',
+                            right: '0',
+                            margin: '0 10px',
+                            pointerEvents: 'auto',
+                            background: '#f3f6f5',
+                            color: '#F2A93B'
+                          }}
+                          text={post?.frontmatter?.buttonText}
+                          click={() => {
+                            post?.frontmatter?.buttonText != 'Coming soon' &&
+                            window.open(post?.fields?.slug, '_blank');
+                          }}
+                        />
                       </div>
                     </div>
                   </div>

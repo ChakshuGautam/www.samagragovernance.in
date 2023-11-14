@@ -4,22 +4,17 @@ import React, { useState, useEffect, useRef } from 'react';
 import Helmet from 'react-helmet';
 import Layout from '../components/Layout';
 import PropTypes from 'prop-types';
-import Script from 'react-inline-script';
-import happyFarmerImg from '../../public/img/we-work-agriculture.jpg';
-import sadFarmerImg from '../../public/img/adapt-1.jpg';
-import img1 from '../../static/img/gosugamimg1.png';
 import img2 from '../../static/img/gosugamimg2.png';
 import infographic from '../../static/img/infographic.png';
-import GOSUGAM_GIF from '../../static/img/GOSUGAM.gif';
-import CaseStudyCarousel from '../components/CaseStudyComponents/CaseStudyCarousel';
 import linkedinLogo from '../img/social/LinkedIn.svg';
 import instaLogo from '../img/social/instagram.svg';
 import fbLogo from '../img/social/facebook.svg';
 import twitterLogo from '../img/social/twitter.svg';
 import commentLogo from '../img/social/comments.svg';
-import homeVideo from '../img/home_video.mp4';
 import { animateScroll as scroll } from 'react-scroll';
 import upIcon from '../img/up-arrow-png-20.png';
+import connectorRL from '../img/connectorRL.svg';
+import connectorLR from '../img/connectorLR.svg';
 
 function FadeInSection(props) {
   const [isVisible, setVisible] = useState(true);
@@ -64,7 +59,6 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       const rect = agriImgElement.getBoundingClientRect();
       const imageHeight = rect.bottom - rect.top;
       const grayscaleThreshold = imageHeight * 0.25;
-      const newScrollingDown = window.scrollY > imageHeight * 0.55;
 
       if (rect.top <= window.innerHeight && rect.bottom >= 0) {
         const grayscaleAmount = Math.max(
@@ -84,7 +78,6 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
   useEffect(() => {
     const opacity = grayscaleHeight - 0.4;
     setSadFarmerOpacity(opacity);
-    console.log('op:', opacity, 'gh:', grayscaleHeight);
   }, [grayscaleHeight]);
 
   useEffect(() => {
@@ -116,7 +109,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       {helmet || ''}
       <div className="media-page-banner">
         <img
-          src={GOSUGAM_GIF}
+          src={content.bannerImage.publicURL}
           style={{
             width: '100vw',
             height: 'auto',
@@ -138,40 +131,11 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       </div>
       <FadeInSection>
         <div
-          id="agriImg"
-          style={{
-            position: 'relative',
-            width: '100vw',
-            height: '800px',
-            filter: `grayscale(${grayscaleHeight * 25}%)`,
-          }}>
-          <div
-            className="happy-farmer-img"
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              backgroundImage: `url(${happyFarmerImg})`,
-              backgroundSize: 'cover',
-              width: '100%',
-              height: '100%',
-            }}></div>
-          <div
-            className="sad-farmer-img"
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              backgroundImage: `linear-gradient(rgba(0, 0, 0, ${grayscaleHeight /
-                3}), rgba(0, 0, 0, 0)), url(${sadFarmerImg})`,
-              backgroundSize: 'cover',
-              width: '100%',
-              height: '100%',
-              opacity: sadFarmerOpacity,
-              transition: 'opacity 0.8s ease',
-            }}></div>
+          className="heading"
+          style={{ color: '#418F37', fontSize: '32px', paddingTop: '50px' }}>
+          Government of Odisha’s single window portal for digital delivery of
+          agricultural schemes to farmers
         </div>
-        <div className="heading">{`<<One liner on the benefit >>`}</div>
       </FadeInSection>
       <FadeInSection>
         <div className="text">
@@ -186,24 +150,31 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               backgroundRepeat: 'no-repeat',
               backgroundSize: 'contain',
             }}></div>
-
-          <div className="text">... and of a government official as well</div>
-
-          <div
-            id="img2"
-            style={{
-              backgroundImage: `url(${img1})`,
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: 'contain',
-            }}></div>
         </div>
       </FadeInSection>
+      {!mobile && <FadeInSection>
+            <img src={connectorRL} alt="" className='connector' />
+      </FadeInSection>}
       <FadeInSection>
-        <div className="heading">
-          GO-SUGAM launched in 20xx to address these critical and urgent needs
-        </div>
-        <div className="summary">
-          <div style={{ width: '50%' }}>
+        <div className="case-study-summary-container">
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}>
+            <div
+              id="infographic"
+              style={{
+                backgroundImage: `url(${infographic})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'contain',
+              }}></div>
+            <div className="casestudy-btn-container">
+              <button className="casestudy-btn">Download Infographic</button>
+            </div>
+          </div>
+          <div className="case-study-summary-text">
             <div className="heading">GO SUGAM summary</div>
             <div className="text" style={{ textAlign: 'justify' }}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
@@ -217,53 +188,33 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               incidunt aut illum odit.
             </div>
           </div>
-          <div
-            id="infographic"
-            style={{
-              backgroundImage: `url(${infographic})`,
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: 'contain',
-            }}></div>
-        </div>
-        <div style={{ textAlign: 'center', margin: '20px 0' }}>
-          <button className="casestudy-btn">Download Infographic</button>
         </div>
       </FadeInSection>
+      {!mobile && <FadeInSection>
+            <img src={connectorLR} alt="" className='connector' />
+      </FadeInSection>}
       <FadeInSection>
-        <div className="roadmap">
-          <div className="heading">
-            The roadmap to transformation had several steps along the way...
+        <div
+          style={{
+            display: 'flex',
+            // marginTop: '50px',
+            alignItems: 'center',
+            justifyContent: 'space-evenly',
+          }}
+          className="case-study-links-container">
+          <div>
+            <p className="text">Link 1</p>
+            <p className="text">Link 2</p>
+            <p className="text">Link 3</p>
+            <p className="text">Link 3</p>
           </div>
-          <div style={{ textAlign: 'center', margin: '20px 0' }}>
-            <button className="casestudy-btn">Learn More</button>
-          </div>
-          <div className={'cards-section'}>
-            {['', '', ''].map((news, index) => {
-              return (
-                <a href={''} target="_blank">
-                  <div
-                    className={`card-wrapper ${
-                      hoveredIndex === index ? 'hovered' : ''
-                    } `}
-                    onMouseLeave={() => setHoveredIndex(-1)}
-                    onMouseEnter={() => setHoveredIndex(index)}>
-                    <div
-                      className={`image-section`}
-                      style={{
-                        backgroundImage: `url(${content.featuredimage.childImageSharp.fluid.src})`,
-                      }}
-                    />
-                    <div className={'content-section'}>
-                      <div className={'heading'} style={{ minHeight: '40px' }}>
-                        {content.title}
-                      </div>
-                      <div className={'timestamp'}>{content.date}</div>
-                    </div>
-                  </div>
-                </a>
-              );
-            })}
-          </div>
+          <div
+            id="case-study-links-image"
+            style={{
+              backgroundImage: `url(/img/SamagraGovernance-Deepika-WasteManagement.jpeg)`,
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: 'cover',
+            }}></div>
         </div>
       </FadeInSection>
       <FadeInSection>
@@ -289,74 +240,53 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
         </div>
       </FadeInSection>
       <FadeInSection>
-        <div className="testimonial-box">
-          <div className="heading">
-            The impact was a result of coming together of several stakeholders
-            and partners...
-          </div>
-          <div className="testimonials">
-            <CaseStudyCarousel
-              items={[
-                {
-                  title:
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget nulla vitae eros aliquam viverra in id risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae',
-                  name: 'Garima Sood',
-                  image: '/img/garima_7700.jpg',
-                  designation: 'Outreach Team, Samagra',
-                },
-                {
-                  title:
-                    'Mauris ullamcorper in ligula id ultrices. Maecenas interdum tempus tempor. Vivamus non ante eleifend, cursus turpis non, faucibus enim.',
-                  name: 'Garima Sood',
-                  image: '/img/garima_7700.jpg',
-                  designation: 'Outreach Team, Samagra',
-                },
-                {
-                  title:
-                    'Cras nulla nulla, condimentum sit amet convallis in, congue ac augue. Praesent consequat erat sit amet vulputate gravida. Integer pellentesque lectus lobortis',
-                  name: 'Garima Sood',
-                  image: '/img/garima_7700.jpg',
-                  designation: 'Outreach Team, Samagra',
-                },
-                {
-                  title:
-                    'Maecenas ullamcorper leo placerat mattis congue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus in vestibulum ligula, sed efficitur lorem.',
-                  name: 'Garima Sood',
-                  image: '/img/garima_7700.jpg',
-                  designation: 'Outreach Team, Samagra',
-                },
-              ]}
-            />
+        <div className="testimonials">
+          <i className="testimonial-text">
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Consectetur repellat cumque similique, sapiente ipsa alias nisi enim
+            nesciunt officiis, quo ex autem magni, necessitatibus in nostrum
+            cupiditate fugit quaerat! Illo. Id incidunt repellat ducimus. Harum
+            ratione quod culpa illo necessitatibus fuga omnis reiciendis natus?
+            Fuga corporis similique beatae sed aliquid, ratione aspernatur nihil
+            vitae tempore! Sequi expedita eveniet iusto quam? Magnam ut, debitis
+            maiores asperiores eius, voluptas eveniet repellendus ipsa,
+            temporibus itaque sapiente nostrum perferendis consequatur!
+            Nesciunt, suscipit ducimus! Reprehenderit veritatis distinctio porro
+            a. Nihil blanditiis voluptatum aliquam vitae iure."
+          </i>
+          <div className="testimonial-author">
+            <img src="/img/garima_7700.jpg" alt="" />
+            <div>
+              <p className="testimonial-author-name">Garima Sood</p>
+              <p className="testimonial-author-designation">
+                Outreach Team, Samagra
+              </p>
+            </div>
           </div>
         </div>
       </FadeInSection>
       <FadeInSection>
-        <div className="playlist-box" id="playlist-box-id">
-          <div className="heading">
-            with other ecosystem partners also contributing their POV{' '}
-          </div>
-          <div className="playlist-video">
-            <iframe
-              style={{
-                minHeight: '150px',
-                minWidth: '300px',
-                height: '15vw',
-                width: '30vw',
-                cursor: 'pointer',
-                pointerEvents: 'none',
-              }}
-              src="https://www.youtube.com/embed/videoseries?si=9o9q8gRD6tTb-gKS&amp;list=PLmutx0xcPi1NsSyDkUHYCzk4HeYIoHhEa"
-              // title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
-          </div>
+        <div className="heading">
+          with other ecosystem partners also contributing their POV{' '}
         </div>
-      </FadeInSection>
-      <FadeInSection>
-        <div className="field-story-box">
-          <div className="heading">
-            GO SUGAM continues to generate sustained impact
+        <div className="case-study-playlist-container">
+          <div className="playlist-box" id="playlist-box-id">
+            <div className="playlist-video">
+              <iframe
+                style={{
+                  minHeight: '150px',
+                  minWidth: '300px',
+                  height: '15vw',
+                  width: '30vw',
+                  cursor: 'pointer',
+                  pointerEvents: 'none',
+                }}
+                src="https://www.youtube.com/embed/videoseries?si=9o9q8gRD6tTb-gKS&amp;list=PLmutx0xcPi1NsSyDkUHYCzk4HeYIoHhEa"
+                // title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            </div>
           </div>
           <div className={'cards-section'}>
             {[''].map((news, index) => {
@@ -389,8 +319,8 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       </FadeInSection>
       <FadeInSection>
         <div className="partner-with-us">
-          <p>{`<< some catchy line... then partner with us! >>`}</p>
-          <p>Write to us at: {`<< xxx >>`}</p>
+          <p className="partner-with-us-main-text">Partner with us today!</p>
+          <p>Write to us at: {`<< abcd@gmail.com >>`}</p>
         </div>
       </FadeInSection>
     </section>
@@ -411,21 +341,6 @@ const CaseStudy = ({ data }) => {
           </Helmet>
         }
       />
-      <div id="graphcomment"></div>
-      <Script>
-        {`
-          window.gc_params = {
-              graphcomment_id: 'samagragovernance',
-              fixed_header_height: 0,
-          };
-
-          (function() {
-            var gc = document.createElement('script'); gc.type = 'text/javascript'; gc.async = true;
-            gc.src = 'https://graphcomment.com/js/integration.js?' + Math.round(Math.random() * 1e8);
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
-          })();
-        `}
-      </Script>
     </Layout>
   );
 };
@@ -454,6 +369,9 @@ export const pageQuery = graphql`
               ...GatsbyImageSharpFluid
             }
           }
+        }
+        bannerImage {
+          publicURL
         }
       }
     }
