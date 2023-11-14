@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql, StaticQuery } from 'gatsby';
-import { PrimaryButton } from '../components/PrimaryButton/PrimaryButton';
 
 class CaseStudiesRoll extends React.Component {
   render() {
@@ -12,7 +11,7 @@ class CaseStudiesRoll extends React.Component {
     );
     return (
       <>
-        <div className="blogs-section" style={{ padding: '20px' }}>
+        <div className="blogs-section">
           <div className="row">
             {clean_posts.map(({ node: post }) => {
               return (
@@ -24,12 +23,12 @@ class CaseStudiesRoll extends React.Component {
                     style={{ position: 'relative' }}>
                     <div className="flip-card" style={{minHeight: '350px', minWidth: 'fit-content'}}>
                       <div className="front" style={{minHeight: 'fit-content', minWidth: 'fit-content'}}>
-                        {post.frontmatter.featuredimage ? (
+                      {post.frontmatter.featuredimage ? (
                           <div
                             className="image-wrapper"
                             style={{
-                              backgroundImage: `url(${post.frontmatter
-                                .featuredimage.childImageSharp.fluid.src ||
+                              position: 'relative',
+                              backgroundImage: `url(${post.frontmatter.featuredimage.childImageSharp.fluid.src ||
                                 post.frontmatter.featuredimage})`,
                               transition: 'background 0.5s ease-out',
                               display: 'flex',
@@ -37,7 +36,43 @@ class CaseStudiesRoll extends React.Component {
                               height: '150px',
                               minWidth: '250px',
                               borderRadius: '20px 20px 0 0',
-                            }}></div>
+                              overflow: 'hidden',
+                            }}
+                          >
+                            <div
+                              className="image-overlay"
+                              style={{
+                                position: 'absolute',
+                                top: 0,
+                                left: 0,
+                                right: 0,
+                                bottom: 0,
+                                background: 'rgba(0, 0, 0, 0.5)',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                              }}
+                            >
+                              <div
+                                style={{
+                                  width: '90%',
+                                  height: 'fit-content',
+                                  background: 'rgba(0, 0, 0, 0.5)',
+                                }}
+                              >
+                                <p
+                                  style={{
+                                    color: '#fff',
+                                    textAlign: 'center',
+                                    margin: '0'
+                                  }}
+                                >
+                                  1M
+                                </p>
+                              </div>
+                            </div>
+                          </div>
                         ) : null}
                         <p
                           style={{
@@ -57,23 +92,13 @@ class CaseStudiesRoll extends React.Component {
                           }}>
                           {post?.frontmatter?.title}
                         </p>
-                        <PrimaryButton
-                          style={{
-                            position: 'absolute',
-                            bottom: '10px',
-                            left: '0',
-                            right: '0',
-                            margin: '0 10px',
-                            pointerEvents: 'auto',
-                            background: '#f3f6f5',
-                            color: '#F2A93B'
-                          }}
-                          text={post?.frontmatter?.buttonText}
-                          click={() => {
+                        <button
+                          className='case-study-roll-btn'
+                          onClick={() => {
                             post?.frontmatter?.buttonText != 'Coming soon' &&
                             window.open(post?.fields?.slug, '_blank');
                           }}
-                        />
+                        >{post?.frontmatter?.buttonText}</button>
                       </div>
                     </div>
                   </div>

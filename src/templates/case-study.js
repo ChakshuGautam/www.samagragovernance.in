@@ -15,6 +15,8 @@ import { animateScroll as scroll } from 'react-scroll';
 import upIcon from '../img/up-arrow-png-20.png';
 import connectorRL from '../img/connectorRL.svg';
 import connectorLR from '../img/connectorLR.svg';
+import spacer from '../img/spacer.png';
+import impactImg from '../img/gosugam-casestudy-img.png';
 
 function FadeInSection(props) {
   const [isVisible, setVisible] = useState(true);
@@ -37,11 +39,7 @@ function FadeInSection(props) {
 }
 
 export const CaseStudyTemplate = ({ content, helmet }) => {
-  const [grayscaleHeight, setGrayscaleHeight] = useState(2.8);
   const [hoveredIndex, setHoveredIndex] = useState(-1);
-  const [sadFarmerOpacity, setSadFarmerOpacity] = useState(
-    grayscaleHeight - 0.4
-  );
   const [mobile, setMobile] = useState(false);
   const [showUpIcon, setShowUpIcon] = useState(false);
 
@@ -54,31 +52,10 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
   };
 
   const handleScroll = () => {
-    const agriImgElement = document.getElementById('agriImg');
-    if (agriImgElement) {
-      const rect = agriImgElement.getBoundingClientRect();
-      const imageHeight = rect.bottom - rect.top;
-      const grayscaleThreshold = imageHeight * 0.25;
-
-      if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-        const grayscaleAmount = Math.max(
-          0,
-          (rect.bottom - window.innerHeight) / grayscaleThreshold
-        );
-        setGrayscaleHeight(grayscaleAmount);
-      } else {
-        setGrayscaleHeight(1);
-      }
-    }
     if (window && window.scrollY > window.screen.height) {
       setShowUpIcon(true);
     } else setShowUpIcon(false);
   };
-
-  useEffect(() => {
-    const opacity = grayscaleHeight - 0.4;
-    setSadFarmerOpacity(opacity);
-  }, [grayscaleHeight]);
 
   useEffect(() => {
     if (window && window.innerWidth < 768) {
@@ -129,32 +106,48 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
         <img src={fbLogo} alt="" />
         <img src={commentLogo} alt="" onClick={scrollToBottom} />
       </div>
+      <div className="spacer">
+        <img src={spacer} alt="" />
+      </div>
       <FadeInSection>
         <div
-          className="heading"
-          style={{ color: '#418F37', fontSize: '32px', paddingTop: '50px' }}>
+          className="case-study-main-heading heading"
+          style={{ color: '#418F37', fontSize: '32px' }}>
           Government of Odisha’s single window portal for digital delivery of
           agricultural schemes to farmers
         </div>
       </FadeInSection>
+      <div className="spacer">
+        <img src={spacer} alt="" />
+      </div>
       <FadeInSection>
         <div className="text">
           The life of a farmer in Odisha looks very different now to what it was
           back in 20xx
         </div>
-        <div style={{ textAlign: 'center', marginTop: '20px', width: '100vw' }}>
+        <div
+          style={{
+            textAlign: 'center',
+            marginTop: '50px',
+            width: '100vw',
+            marginBottom: '10px',
+          }}>
           <div
             id="img1"
             style={{
               backgroundImage: `url(${img2})`,
               backgroundRepeat: 'no-repeat',
               backgroundSize: 'contain',
+              border: '3px solid #A97F2B',
+              borderRadius: '10px',
             }}></div>
         </div>
       </FadeInSection>
-      {!mobile && <FadeInSection>
-            <img src={connectorRL} alt="" className='connector' />
-      </FadeInSection>}
+      {!mobile && (
+        <FadeInSection>
+          <img src={connectorRL} alt="" className="connector" />
+        </FadeInSection>
+      )}
       <FadeInSection>
         <div className="case-study-summary-container">
           <div
@@ -169,13 +162,21 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 backgroundImage: `url(${infographic})`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'contain',
+                border: '3px solid #A97F2B',
+                borderRadius: '10px',
               }}></div>
             <div className="casestudy-btn-container">
-              <button className="casestudy-btn">Download Infographic</button>
+              <button className="casestudy-btn" style={{ marginTop: '20px' }}>
+                Download Infographic
+              </button>
             </div>
           </div>
           <div className="case-study-summary-text">
-            <div className="heading">GO SUGAM summary</div>
+            <div
+              className="heading"
+              style={{ textAlign: 'left', color: '#418F37' }}>
+              GO SUGAM summary
+            </div>
             <div className="text" style={{ textAlign: 'justify' }}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
               quam nobis beatae molestias nesciunt repudiandae tempora earum,
@@ -190,23 +191,49 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           </div>
         </div>
       </FadeInSection>
-      {!mobile && <FadeInSection>
-            <img src={connectorLR} alt="" className='connector' />
-      </FadeInSection>}
+      {!mobile && (
+        <FadeInSection>
+          <img src={connectorLR} alt="" className="connector" />
+        </FadeInSection>
+      )}
       <FadeInSection>
         <div
           style={{
             display: 'flex',
-            // marginTop: '50px',
             alignItems: 'center',
             justifyContent: 'space-evenly',
           }}
           className="case-study-links-container">
-          <div>
-            <p className="text">Link 1</p>
-            <p className="text">Link 2</p>
-            <p className="text">Link 3</p>
-            <p className="text">Link 3</p>
+          <div style={{ width: mobile ? '80%' : '50%' }}>
+            <div
+              className="heading"
+              style={{ textAlign: 'left', color: '#418F37' }}>
+              Links heading
+            </div>
+            <p className="text" style={{ textAlign: 'left' }}>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Similique iusto aperiam dolor reprehenderit numquam dolores vero
+              quisquam sunt quidem in. Architecto quas error labore eligendi
+              maiores sapiente nemo id temporibus.
+            </p>
+            <p className="text" style={{ textAlign: 'left' }}>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Similique iusto aperiam dolor reprehenderit numquam dolores vero
+              quisquam sunt quidem in. Architecto quas error labore eligendi
+              maiores sapiente nemo id temporibus.
+            </p>
+            <p className="text" style={{ textAlign: 'left' }}>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Similique iusto aperiam dolor reprehenderit numquam dolores vero
+              quisquam sunt quidem in. Architecto quas error labore eligendi
+              maiores sapiente nemo id temporibus.
+            </p>
+            <p className="text" style={{ textAlign: 'left' }}>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Similique iusto aperiam dolor reprehenderit numquam dolores vero
+              quisquam sunt quidem in. Architecto quas error labore eligendi
+              maiores sapiente nemo id temporibus.
+            </p>
           </div>
           <div
             id="case-study-links-image"
@@ -214,15 +241,39 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               backgroundImage: `url(/img/SamagraGovernance-Deepika-WasteManagement.jpeg)`,
               backgroundRepeat: 'no-repeat',
               backgroundSize: 'cover',
+              border: '3px solid #A97F2B',
+              borderRadius: '10px',
             }}></div>
         </div>
       </FadeInSection>
+      {!mobile && (
+        <FadeInSection>
+          <img
+            src={connectorRL}
+            alt=""
+            className="connector"
+            style={{ marginLeft: '60%' }}
+          />
+        </FadeInSection>
+      )}
       <FadeInSection>
-        <div className="impact">
-          <div className="heading">
-            Finally, as we reached our destination this how the Last Mile Impact
-            looks like in Odisha
+        <div className="impact" style={{ marginTop: '50px' }}>
+          <div
+            style={{
+              backgroundImage: `url(${impactImg})`,
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: 'cover',
+              width: '100vw',
+              height: '400px',
+            }}>
+            <div
+              className="heading"
+              style={{ position: 'relative', top: '55%', color: 'white' }}>
+              Finally, as we reached our destination this how the Last Mile
+              Impact looks like in Odisha
+            </div>
           </div>
+
           <div className="impact-video">
             <iframe
               style={{
@@ -239,6 +290,9 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           </div>
         </div>
       </FadeInSection>
+      <div className="spacer">
+        <img src={spacer} alt="" />
+      </div>
       <FadeInSection>
         <div className="testimonials">
           <i className="testimonial-text">
@@ -258,15 +312,20 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             <img src="/img/garima_7700.jpg" alt="" />
             <div>
               <p className="testimonial-author-name">Garima Sood</p>
-              <p className="testimonial-author-designation">
+              <p
+                className="testimonial-author-designation"
+                style={{ color: '#a97f2b' }}>
                 Outreach Team, Samagra
               </p>
             </div>
           </div>
         </div>
       </FadeInSection>
+      <div className="spacer">
+        <img src={spacer} alt="" />
+      </div>
       <FadeInSection>
-        <div className="heading">
+        <div className="heading" style={{ color: '#418F37' }}>
           with other ecosystem partners also contributing their POV{' '}
         </div>
         <div className="case-study-playlist-container">
@@ -274,10 +333,6 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             <div className="playlist-video">
               <iframe
                 style={{
-                  minHeight: '150px',
-                  minWidth: '300px',
-                  height: '15vw',
-                  width: '30vw',
                   cursor: 'pointer',
                   pointerEvents: 'none',
                 }}

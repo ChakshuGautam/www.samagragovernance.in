@@ -37,7 +37,7 @@ export default class CaseStudiesIndexPage extends React.Component {
               <div
               style={{fontWeight: 'bold'}}
                 className={
-                  'text-center f-28 color-text-primary main-text text-bold'
+                  'py-2 text-center f-28 color-text-primary main-text text-bold'
                 }>
                 Case Studies for 2023 Coming Soon!
               </div>

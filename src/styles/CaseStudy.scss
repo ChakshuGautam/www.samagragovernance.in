@@ -27,6 +27,17 @@
   }
 }
 
+.spacer {
+  width: 100%;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.case-study-main-heading {
+  width: 80%;
+  margin: auto;
+}
+
 .fade-in-section {
   opacity: 0;
   transform: translateY(20vh);
@@ -90,14 +101,15 @@
 
 .text {
   color: #343434;
-  font-size: 18px;
+  font-size: 20px;
   text-align: center;
   padding-top: 15px;
   padding-bottom: 15px;
   line-height: 1.2;
 }
 
-.connector{
+.connector {
+  height: 200px;
   margin-left: 30%;
 }
 
@@ -153,17 +165,24 @@
   transform: scale(1.1);
 }
 
-.impact-video,
-.playlist-video {
+.impact-video {
   margin-top: 50px;
   text-align: center;
 }
 
+.playlist-video iframe {
+  height: 300px;
+  width: 600px;
+}
+
 .testimonials {
-  padding: 50px 0;
+  padding: 50px 20px;
   max-width: 70vw;
   text-align: center;
   margin: auto;
+  border-top: 5px solid #a97f2b;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 .testimonial-text {
@@ -218,17 +237,17 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  margin: 50px 0;
 }
 
 .cards-section {
   text-align: center;
 }
 .cards-section .card-wrapper {
-  width: 100%;
+  height: 300px;
+  width: 600px;
   display: inline-block;
-  max-width: 370px;
   border-radius: 7px;
-  margin: 20px;
   box-shadow: 0 6px 0 0 rgba(0, 0, 0, 0.01), 0 15px 32px 0 rgba(0, 0, 0, 0.06);
   vertical-align: top;
   cursor: pointer;
@@ -249,7 +268,7 @@
   transform: scale(1.02);
 }
 .cards-section .card-wrapper .image-section {
-  height: 250px;
+  height: 60%;
   background: #eeeeee;
   background-size: cover;
 }
@@ -330,6 +349,10 @@
   }
   .caesstudy-btn-container {
     margin: 20px 0 0 0;
+  }
+  .playlist-video iframe {
+    height: 180px;
+    width: 300px;
   }
   .testimonials {
     max-width: 100vw;

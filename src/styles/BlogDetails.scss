@@ -25,6 +25,25 @@
   }
 }
 
+.case-study-roll-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  margin: 0 10px;
+  pointer-events: auto;
+  background: #f3f6f5;
+  color: #f2a93b;
+  border: none;
+  padding: 10px 50px;
+  transition: background-color 0.3s ease-out, color 0.3s ease-out !important;
+}
+
+.case-study-roll-btn:hover {
+  background: #f2a93b !important;
+  color: #f3f6f5 !important;
+}
+
 .blogs-section {
   padding: 100px 20px 200px 20px;
 
@@ -44,10 +63,10 @@
       width: 100%;
       height: 100%;
       transition: transform 0.5s ease-out;
-      border: 2px solid #F2A93B;
-      border-radius: 20px;
+      border: 2px solid #f2a93b;
+      border-radius: 23px;
     }
-    
+
     /* Back side */
     .back {
       position: absolute;
@@ -65,7 +84,7 @@
       transform: rotateY(180deg);
       border-radius: 10px;
     }
-    
+
     // .flip-card:hover .front {
     //   transform: rotateY(180deg);
     // }
@@ -73,17 +92,17 @@
     // .flip-card:hover .back {
     //   transform: rotateY(0deg);
     // }
-    
+
     .front,
     .back {
       backface-visibility: hidden;
       transition: transform 0.5s;
     }
-    
+
     .front {
       z-index: 1;
     }
-    
+
     .image-wrapper {
       height: 300px;
       background-color: #efefef;
@@ -91,23 +110,23 @@
       background-position: center;
       border-radius: 10px;
     }
-    
+
     .content-wrapper {
       padding: 14px;
       margin-bottom: 30px;
-      
+
       .heading {
         font-size: 16px;
         color: #343434;
       }
-      
+
       .posted-on {
         font-size: 13px;
         line-height: 13px;
         color: #a1a1a1;
         font-style: italic;
       }
-      
+
       .description {
         color: #343434;
         font-size: 12px;
