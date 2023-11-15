@@ -6,11 +6,12 @@ import Layout from '../components/Layout';
 import PropTypes from 'prop-types';
 import img2 from '../../static/img/gosugamimg2.gif';
 import infographic from '../../static/img/infographic.gif';
-import linkedinLogo from '../img/social/LinkedIn.svg';
+import linkedinLogo from '../img/social/linkedin-black.svg';
 import instaLogo from '../img/social/instagram.svg';
 import fbLogo from '../img/social/facebook.svg';
 import twitterLogo from '../img/social/twitter.svg';
-import commentLogo from '../img/social/comments.svg';
+import whatsappLogo from '../img/social/whatsapp.svg';
+import mailLogo from '../img/social/mail.svg';
 import { animateScroll as scroll } from 'react-scroll';
 import upIcon from '../img/up-arrow-png-20.png';
 import apostrophe_start from '../img/apostrophe_start.svg';
@@ -109,9 +110,16 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       <div className="share">
         <img src={twitterLogo} alt="" />
         <img src={linkedinLogo} alt="" />
+        <img src={whatsappLogo} alt="" onClick={() => {
+          const link = document.createElement('a');
+          link.href = mobile ? `whatsapp://send?text=${window.location.href}` : `https://web.whatsapp.com/send?text=${window.location.href}`;
+          link.dataAction = "share/whatsapp/share";
+          link.target="_blank";
+          link.click();
+        }}/>
         <img src={instaLogo} alt="" />
         <img src={fbLogo} alt="" />
-        <img src={commentLogo} alt="" onClick={scrollToBottom} />
+        <img src={mailLogo} alt="" />
       </div>
       <div className="spacer">
         <img src={spacer} alt="" />
