@@ -110,6 +110,8 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       <div className="share">
         <img src={twitterLogo} alt="" />
         <img src={linkedinLogo} alt="" />
+        <img src={instaLogo} alt="" />
+        <img src={fbLogo} alt="" />
         <img src={whatsappLogo} alt="" onClick={() => {
           const link = document.createElement('a');
           link.href = mobile ? `whatsapp://send?text=${window.location.href}` : `https://web.whatsapp.com/send?text=${window.location.href}`;
@@ -117,8 +119,6 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           link.target="_blank";
           link.click();
         }}/>
-        <img src={instaLogo} alt="" />
-        <img src={fbLogo} alt="" />
         <img src={mailLogo} alt="" />
       </div>
       <div className="spacer">
