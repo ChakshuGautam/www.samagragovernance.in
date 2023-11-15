@@ -17,11 +17,11 @@ import apostrophe_start from '../img/apostrophe_start.svg';
 import apostrophe_end from '../img/apostrophe_end.svg';
 import spacer from '../img/spacer.png';
 import impactImg from '../img/gosugam-casestudy-img.png';
-import icon1 from '../img/icon1.svg';
-import icon2 from '../img/icon2.svg';
-import icon3 from '../img/icon3.svg';
-import icon4 from '../img/icon4.svg';
-import icon5 from '../img/icon5.svg';
+import icon1 from '../img/Icon1.svg';
+import icon2 from '../img/Icon2.svg';
+import icon3 from '../img/Icon3.svg';
+import icon4 from '../img/Icon4.svg';
+import icon5 from '../img/Icon5.svg';
 import LineDrawingOnScrollRL from '../components/CaseStudyComponents/LinkDrawingOnScrollRL';
 import LineDrawingOnScrollLR from '../components/CaseStudyComponents/LinkDrawingOnScrollLR';
 
