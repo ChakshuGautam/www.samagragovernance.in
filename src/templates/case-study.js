@@ -150,9 +150,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             }}></div>
         </div>
       </FadeInSection>
-      {!mobile && (
-          <LineDrawingOnScrollRL />
-      )}
+      {!mobile && <LineDrawingOnScrollRL />}
       <FadeInSection>
         <div className="case-study-summary-container">
           <div
@@ -171,12 +169,15 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 borderRadius: '10px',
               }}></div>
             <div className="casestudy-btn-container">
-              <button className="casestudy-btn" style={{ marginTop: '20px', cursor: 'pointer' }} onClick={() => {
-                const link = document.createElement('a');
-                link.href = infographic;
-                link.download = 'infographic.gif';
-                link.click();
-              }}>
+              <button
+                className="casestudy-btn"
+                style={{ marginTop: '20px', cursor: 'pointer' }}
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = infographic;
+                  link.download = 'infographic.gif';
+                  link.click();
+                }}>
                 Download Infographic
               </button>
             </div>
@@ -201,9 +202,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           </div>
         </div>
       </FadeInSection>
-      {!mobile && (
-        <LineDrawingOnScrollLR />
-      )}
+      {!mobile && <LineDrawingOnScrollLR />}
       <FadeInSection>
         <div
           style={{
@@ -219,15 +218,15 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               Links heading
             </div>
             <div>
-            <p
+              <p
                 className="text"
                 style={{
                   textAlign: 'left',
                   marginBottom: '0',
                   paddingBottom: '0',
-                  fontSize: '28px'
+                  fontSize: '28px',
                 }}>
-                  Sub Heading
+                Sub Heading
               </p>
               <p
                 className="text"
@@ -255,15 +254,15 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             </div>
 
             <div>
-            <p
+              <p
                 className="text"
                 style={{
                   textAlign: 'left',
                   marginBottom: '0',
                   paddingBottom: '0',
-                  fontSize: '28px'
+                  fontSize: '28px',
                 }}>
-                  Sub Heading
+                Sub Heading
               </p>
               <p
                 className="text"
@@ -290,15 +289,15 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               </p>
             </div>
             <div>
-            <p
+              <p
                 className="text"
                 style={{
                   textAlign: 'left',
                   marginBottom: '0',
                   paddingBottom: '0',
-                  fontSize: '28px'
+                  fontSize: '28px',
                 }}>
-                  Sub Heading
+                Sub Heading
               </p>
               <p
                 className="text"
@@ -325,15 +324,15 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               </p>
             </div>
             <div>
-            <p
+              <p
                 className="text"
                 style={{
                   textAlign: 'left',
                   marginBottom: '0',
                   paddingBottom: '0',
-                  fontSize: '28px'
+                  fontSize: '28px',
                 }}>
-                  Sub Heading
+                Sub Heading
               </p>
               <p
                 className="text"
@@ -371,9 +370,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             }}></div>
         </div>
       </FadeInSection>
-      {!mobile && (
-        <LineDrawingOnScrollRL/>
-      )}
+      {!mobile && <LineDrawingOnScrollRL />}
       <FadeInSection>
         <div className="impact" style={{ marginTop: '50px' }}>
           <div
@@ -400,7 +397,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 height: '30vw',
                 width: '60vw',
                 padding: '4px',
-                border: '4px solid #A97F2B'
+                border: '4px solid #A97F2B',
               }}
               src="https://www.youtube.com/embed/evr-R7iC1VM?si=5WMWmFosgB07mvvT"
               // title="YouTube video player"
@@ -408,26 +405,132 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen></iframe>
           </div>
-          <div style={{width: '80%', margin: '50px auto', display: 'flex', justifyContent: 'space-evenly', flexDirection: mobile ? 'column' : 'row'}}>
-            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-            <img src={icon1} alt="" />
-            <p className='text' style={{fontWeight: 'bold', fontSize: '24px'}}>137,015</p>
+          <div
+            style={{
+              width: '80%',
+              margin: '50px auto',
+              display: 'flex',
+              justifyContent: 'space-evenly',
+              flexDirection: mobile ? 'column' : 'row',
+            }}>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+              }}>
+              <img src={icon1} alt="" />
+              <p
+                className="text"
+                style={{
+                  fontWeight: 'bold',
+                  fontSize: '24px',
+                  marginBottom: 0,
+                  paddingTop: 0,
+                }}>
+                137,015
+              </p>
+              <p
+                className="text"
+                style={{ padding: 0, margin: 0, fontSize: '14px' }}>
+                Lorem ipsum dolor
+              </p>
             </div>
-            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-            <img src={icon2} alt="" />
-            <p className='text' style={{fontWeight: 'bold', fontSize: '24px'}}>29</p>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                marginTop: mobile ? '40px' : '',
+              }}>
+              <img src={icon2} alt="" />
+              <p
+                className="text"
+                style={{
+                  fontWeight: 'bold',
+                  fontSize: '24px',
+                  marginBottom: 0,
+                  paddingTop: 0,
+                }}>
+                29
+              </p>
+              <p
+                className="text"
+                style={{ padding: 0, margin: 0, fontSize: '14px' }}>
+                Lorem ipsum
+              </p>
             </div>
-            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-            <img src={icon3} alt="" />
-            <p className='text' style={{fontWeight: 'bold', fontSize: '24px'}}>137,015</p>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                marginTop: mobile ? '40px' : '',
+              }}>
+              <img src={icon3} alt="" />
+              <p
+                className="text"
+                style={{
+                  fontWeight: 'bold',
+                  fontSize: '24px',
+                  marginBottom: 0,
+                  paddingTop: 0,
+                }}>
+                137,015
+              </p>
+              <p
+                className="text"
+                style={{ padding: 0, margin: 0, fontSize: '14px' }}>
+                Lorem ipsum dolor
+              </p>
             </div>
-            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-            <img src={icon4} alt="" />
-            <p className='text' style={{fontWeight: 'bold', fontSize: '24px'}}>17,463,191</p>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                marginTop: mobile ? '40px' : '',
+              }}>
+              <img src={icon4} alt="" />
+              <p
+                className="text"
+                style={{
+                  fontWeight: 'bold',
+                  fontSize: '24px',
+                  marginBottom: 0,
+                  paddingTop: 0,
+                }}>
+                17,463,191
+              </p>
+              <p
+                className="text"
+                style={{ padding: 0, margin: 0, fontSize: '14px' }}>
+                Lorem ipsum dolor sit
+              </p>
             </div>
-            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-            <img src={icon5} alt="" />
-            <p className='text' style={{fontWeight: 'bold', fontSize: '24px'}}>137,015</p>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                marginTop: mobile ? '40px' : '',
+              }}>
+              <img src={icon5} alt="" />
+              <p
+                className="text"
+                style={{
+                  fontWeight: 'bold',
+                  fontSize: '24px',
+                  marginBottom: 0,
+                  paddingTop: 0,
+                }}>
+                137,015
+              </p>
+              <p
+                className="text"
+                style={{ padding: 0, margin: 0, fontSize: '14px' }}>
+                Lorem ipsum dolor
+              </p>
             </div>
           </div>
         </div>
@@ -437,7 +540,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       </div>
       <FadeInSection>
         <div className="testimonials">
-          <div style={{display: 'flex', justifyContent: 'flex-start'}}>
+          <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
             <img src={apostrophe_start} alt="" />
           </div>
           <i className="testimonial-text">
@@ -453,7 +556,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             Nesciunt, suscipit ducimus! Reprehenderit veritatis distinctio porro
             a. Nihil blanditiis voluptatum aliquam vitae iure.
           </i>
-          <div style={{display: 'flex', justifyContent: 'flex-end'}}>
+          <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
             <img src={apostrophe_end} alt="" />
           </div>
           <div className="testimonial-author">
@@ -525,7 +628,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       </div>
       <FadeInSection>
         <div className="testimonials">
-          <div style={{display: 'flex', justifyContent: 'flex-start'}}>
+          <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
             <img src={apostrophe_start} alt="" />
           </div>
           <i className="testimonial-text">
@@ -541,7 +644,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             Nesciunt, suscipit ducimus! Reprehenderit veritatis distinctio porro
             a. Nihil blanditiis voluptatum aliquam vitae iure.
           </i>
-          <div style={{display: 'flex', justifyContent: 'flex-end'}}>
+          <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
             <img src={apostrophe_end} alt="" />
           </div>
           <div className="testimonial-author">
@@ -570,34 +673,38 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
         <img src={spacer} alt="" />
       </div>
       <FadeInSection>
-        <div className='heading' style={{ color: '#418F37', margin: '50px auto'}}>View more case studies</div>
+        <div
+          className="heading"
+          style={{ color: '#418F37', margin: '50px auto' }}>
+          View more case studies
+        </div>
         <div className={'cards-section'}>
-            {['', '', ''].map((news, index) => {
-              return (
-                <a href={''} target="_blank">
+          {['', '', ''].map((news, index) => {
+            return (
+              <a href={''} target="_blank">
+                <div
+                  className={`card-wrapper ${
+                    hoveredIndex === index ? 'hovered' : ''
+                  } `}
+                  onMouseLeave={() => setHoveredIndex(-1)}
+                  onMouseEnter={() => setHoveredIndex(index)}>
                   <div
-                    className={`card-wrapper ${
-                      hoveredIndex === index ? 'hovered' : ''
-                    } `}
-                    onMouseLeave={() => setHoveredIndex(-1)}
-                    onMouseEnter={() => setHoveredIndex(index)}>
-                    <div
-                      className={`image-section`}
-                      style={{
-                        backgroundImage: `url(${content.featuredimage.childImageSharp.fluid.src})`,
-                      }}
-                    />
-                    <div className={'content-section'}>
-                      <div className={'heading'} style={{ minHeight: '40px' }}>
-                        {content.title}
-                      </div>
-                      <div className={'timestamp'}>{content.date}</div>
+                    className={`image-section`}
+                    style={{
+                      backgroundImage: `url(${content.featuredimage.childImageSharp.fluid.src})`,
+                    }}
+                  />
+                  <div className={'content-section'}>
+                    <div className={'heading'} style={{ minHeight: '40px' }}>
+                      {content.title}
                     </div>
+                    <div className={'timestamp'}>{content.date}</div>
                   </div>
-                </a>
-              );
-            })}
-          </div>
+                </div>
+              </a>
+            );
+          })}
+        </div>
       </FadeInSection>
       <div className="spacer">
         <img src={spacer} alt="" />
