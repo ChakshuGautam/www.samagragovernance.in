@@ -21,14 +21,22 @@ class CaseStudiesRoll extends React.Component {
                   <div
                     className="blog-wrapper"
                     style={{ position: 'relative' }}>
-                    <div className="flip-card" style={{minHeight: '350px', minWidth: 'fit-content'}}>
-                      <div className="front" style={{minHeight: 'fit-content', minWidth: 'fit-content'}}>
-                      {post.frontmatter.featuredimage ? (
+                    <div
+                      className="flip-card"
+                      style={{ minHeight: '350px', minWidth: 'fit-content' }}>
+                      <div
+                        className="front"
+                        style={{
+                          minHeight: 'fit-content',
+                          minWidth: 'fit-content',
+                        }}>
+                        {post.frontmatter.featuredimage ? (
                           <div
                             className="image-wrapper"
                             style={{
                               position: 'relative',
-                              backgroundImage: `url(${post.frontmatter.featuredimage.childImageSharp.fluid.src ||
+                              backgroundImage: `url(${post.frontmatter
+                                .featuredimage.childImageSharp.fluid.src ||
                                 post.frontmatter.featuredimage})`,
                               transition: 'background 0.5s ease-out',
                               display: 'flex',
@@ -37,8 +45,7 @@ class CaseStudiesRoll extends React.Component {
                               minWidth: '250px',
                               borderRadius: '20px 20px 0 0',
                               overflow: 'hidden',
-                            }}
-                          >
+                            }}>
                             <div
                               className="image-overlay"
                               style={{
@@ -52,35 +59,29 @@ class CaseStudiesRoll extends React.Component {
                                 flexDirection: 'column',
                                 justifyContent: 'center',
                                 alignItems: 'center',
-                              }}
-                            >
-                              <div
+                              }}>
+                              <p
                                 style={{
-                                  width: '90%',
-                                  height: 'fit-content',
-                                  background: 'rgba(0, 0, 0, 0.5)',
-                                }}
-                              >
-                                <p
-                                  style={{
-                                    color: '#fff',
-                                    textAlign: 'center',
-                                    margin: '0'
-                                  }}
-                                >
-                                  1M
-                                </p>
-                              </div>
+                                  color: '#fff',
+                                  textAlign: 'center',
+                                  margin: '0',
+                                  fontWeight: 'bold'
+                                }}>
+                                {post?.frontmatter?.impactNumber}
+                              </p>
                             </div>
                           </div>
                         ) : null}
                         <p
                           style={{
+                            margin: '5px auto',
                             padding: '5px 0',
-                            width: '100%',
+                            width: '95%',
                             textAlign: 'center',
-                            fontSize: '14px',
-                            fontWeight: 'bolder'
+                            fontSize: '18px',
+                            fontWeight: 'bolder',
+                            background: post?.frontmatter?.projectId_bg || 'white',
+                            color: post?.frontmatter?.projectId_fc || 'black'
                           }}>
                           {post?.frontmatter?.projectId}
                         </p>
@@ -93,12 +94,13 @@ class CaseStudiesRoll extends React.Component {
                           {post?.frontmatter?.title}
                         </p>
                         <button
-                          className='case-study-roll-btn'
+                          className="case-study-roll-btn"
                           onClick={() => {
                             post?.frontmatter?.buttonText != 'Coming soon' &&
-                            window.open(post?.fields?.slug, '_blank');
-                          }}
-                        >{post?.frontmatter?.buttonText}</button>
+                              window.open(post?.fields?.slug, '_blank');
+                          }}>
+                          {post?.frontmatter?.buttonText}
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -139,6 +141,9 @@ export default () => (
                 templateKey
                 title
                 projectId
+                projectId_bg
+                projectId_fc
+                impactNumber
                 date(formatString: "MMMM DD, YYYY")
                 featuredimage {
                   childImageSharp {

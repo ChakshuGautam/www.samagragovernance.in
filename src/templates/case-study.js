@@ -4,8 +4,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import Helmet from 'react-helmet';
 import Layout from '../components/Layout';
 import PropTypes from 'prop-types';
-import img2 from '../../static/img/gosugamimg2.png';
-import infographic from '../../static/img/infographic.png';
+import img2 from '../../static/img/gosugamimg2.gif';
+import infographic from '../../static/img/infographic.gif';
 import linkedinLogo from '../img/social/LinkedIn.svg';
 import instaLogo from '../img/social/instagram.svg';
 import fbLogo from '../img/social/facebook.svg';
@@ -13,10 +13,17 @@ import twitterLogo from '../img/social/twitter.svg';
 import commentLogo from '../img/social/comments.svg';
 import { animateScroll as scroll } from 'react-scroll';
 import upIcon from '../img/up-arrow-png-20.png';
-import connectorRL from '../img/connectorRL.svg';
-import connectorLR from '../img/connectorLR.svg';
+import apostrophe_start from '../img/apostrophe_start.svg';
+import apostrophe_end from '../img/apostrophe_end.svg';
 import spacer from '../img/spacer.png';
 import impactImg from '../img/gosugam-casestudy-img.png';
+import icon1 from '../img/icon 1.svg';
+import icon2 from '../img/icon 2.svg';
+import icon3 from '../img/icon 3.svg';
+import icon4 from '../img/icon 4.svg';
+import icon5 from '../img/icon 5.svg';
+import LineDrawingOnScrollRL from '../components/CaseStudyComponents/LinkDrawingOnScrollRL';
+import LineDrawingOnScrollLR from '../components/CaseStudyComponents/LinkDrawingOnScrollLR';
 
 function FadeInSection(props) {
   const [isVisible, setVisible] = useState(true);
@@ -61,15 +68,15 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
     if (window && window.innerWidth < 768) {
       setMobile(true);
     }
-    document
-      .querySelector('#playlist-box-id')
-      .addEventListener('click', function(event) {
-        event.preventDefault();
-        window.open(
-          'https://www.youtube.com/watch?v=vLrZOL0X81k&list=PLmutx0xcPi1NsSyDkUHYCzk4HeYIoHhEa',
-          '_blank'
-        );
-      });
+    // document
+    //   .querySelector('#playlist-box-id')
+    //   .addEventListener('click', function(event) {
+    //     event.preventDefault();
+    //     window.open(
+    //       'https://www.youtube.com/watch?v=vLrZOL0X81k&list=PLmutx0xcPi1NsSyDkUHYCzk4HeYIoHhEa',
+    //       '_blank'
+    //     );
+    //   });
 
     window.addEventListener('scroll', handleScroll);
 
@@ -144,9 +151,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
         </div>
       </FadeInSection>
       {!mobile && (
-        <FadeInSection>
-          <img src={connectorRL} alt="" className="connector" />
-        </FadeInSection>
+          <LineDrawingOnScrollRL />
       )}
       <FadeInSection>
         <div className="case-study-summary-container">
@@ -166,7 +171,12 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 borderRadius: '10px',
               }}></div>
             <div className="casestudy-btn-container">
-              <button className="casestudy-btn" style={{ marginTop: '20px' }}>
+              <button className="casestudy-btn" style={{ marginTop: '20px', cursor: 'pointer' }} onClick={() => {
+                const link = document.createElement('a');
+                link.href = infographic;
+                link.download = 'infographic.gif';
+                link.click();
+              }}>
                 Download Infographic
               </button>
             </div>
@@ -192,9 +202,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
         </div>
       </FadeInSection>
       {!mobile && (
-        <FadeInSection>
-          <img src={connectorLR} alt="" className="connector" />
-        </FadeInSection>
+        <LineDrawingOnScrollLR />
       )}
       <FadeInSection>
         <div
@@ -210,30 +218,147 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               style={{ textAlign: 'left', color: '#418F37' }}>
               Links heading
             </div>
-            <p className="text" style={{ textAlign: 'left' }}>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Similique iusto aperiam dolor reprehenderit numquam dolores vero
-              quisquam sunt quidem in. Architecto quas error labore eligendi
-              maiores sapiente nemo id temporibus.
-            </p>
-            <p className="text" style={{ textAlign: 'left' }}>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Similique iusto aperiam dolor reprehenderit numquam dolores vero
-              quisquam sunt quidem in. Architecto quas error labore eligendi
-              maiores sapiente nemo id temporibus.
-            </p>
-            <p className="text" style={{ textAlign: 'left' }}>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Similique iusto aperiam dolor reprehenderit numquam dolores vero
-              quisquam sunt quidem in. Architecto quas error labore eligendi
-              maiores sapiente nemo id temporibus.
-            </p>
-            <p className="text" style={{ textAlign: 'left' }}>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Similique iusto aperiam dolor reprehenderit numquam dolores vero
-              quisquam sunt quidem in. Architecto quas error labore eligendi
-              maiores sapiente nemo id temporibus.
-            </p>
+            <div>
+            <p
+                className="text"
+                style={{
+                  textAlign: 'left',
+                  marginBottom: '0',
+                  paddingBottom: '0',
+                  fontSize: '28px'
+                }}>
+                  Sub Heading
+              </p>
+              <p
+                className="text"
+                style={{
+                  textAlign: 'left',
+                  marginBottom: '0',
+                  paddingBottom: '0',
+                }}>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Similique iusto aperiam dolor reprehenderit numquam dolores vero
+                quisquam sunt quidem in. Architecto quas error labore eligendi
+                maiores sapiente nemo id temporibus.
+              </p>
+              <p
+                style={{
+                  textAlign: 'left',
+                  marginTop: '0',
+                  paddingTop: '0',
+                  color: '#418F37',
+                  cursor: 'pointer',
+                  fontStyle: 'italic',
+                }}>
+                Read More
+              </p>
+            </div>
+
+            <div>
+            <p
+                className="text"
+                style={{
+                  textAlign: 'left',
+                  marginBottom: '0',
+                  paddingBottom: '0',
+                  fontSize: '28px'
+                }}>
+                  Sub Heading
+              </p>
+              <p
+                className="text"
+                style={{
+                  textAlign: 'left',
+                  marginBottom: '0',
+                  paddingBottom: '0',
+                }}>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Similique iusto aperiam dolor reprehenderit numquam dolores vero
+                quisquam sunt quidem in. Architecto quas error labore eligendi
+                maiores sapiente nemo id temporibus.
+              </p>
+              <p
+                style={{
+                  textAlign: 'left',
+                  marginTop: '0',
+                  paddingTop: '0',
+                  color: '#418F37',
+                  cursor: 'pointer',
+                  fontStyle: 'italic',
+                }}>
+                Read More
+              </p>
+            </div>
+            <div>
+            <p
+                className="text"
+                style={{
+                  textAlign: 'left',
+                  marginBottom: '0',
+                  paddingBottom: '0',
+                  fontSize: '28px'
+                }}>
+                  Sub Heading
+              </p>
+              <p
+                className="text"
+                style={{
+                  textAlign: 'left',
+                  marginBottom: '0',
+                  paddingBottom: '0',
+                }}>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Similique iusto aperiam dolor reprehenderit numquam dolores vero
+                quisquam sunt quidem in. Architecto quas error labore eligendi
+                maiores sapiente nemo id temporibus.
+              </p>
+              <p
+                style={{
+                  textAlign: 'left',
+                  marginTop: '0',
+                  paddingTop: '0',
+                  color: '#418F37',
+                  cursor: 'pointer',
+                  fontStyle: 'italic',
+                }}>
+                Read More
+              </p>
+            </div>
+            <div>
+            <p
+                className="text"
+                style={{
+                  textAlign: 'left',
+                  marginBottom: '0',
+                  paddingBottom: '0',
+                  fontSize: '28px'
+                }}>
+                  Sub Heading
+              </p>
+              <p
+                className="text"
+                style={{
+                  textAlign: 'left',
+                  marginBottom: '0',
+                  paddingBottom: '0',
+                }}>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Similique iusto aperiam dolor reprehenderit numquam dolores vero
+                quisquam sunt quidem in. Architecto quas error labore eligendi
+                maiores sapiente nemo id temporibus.
+              </p>
+              <p
+                style={{
+                  textAlign: 'left',
+                  marginTop: '0',
+                  paddingTop: '0',
+                  color: '#418F37',
+                  cursor: 'pointer',
+                  fontStyle: 'italic',
+                }}>
+                Read More
+              </p>
+            </div>
           </div>
           <div
             id="case-study-links-image"
@@ -247,14 +372,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
         </div>
       </FadeInSection>
       {!mobile && (
-        <FadeInSection>
-          <img
-            src={connectorRL}
-            alt=""
-            className="connector"
-            style={{ marginLeft: '60%' }}
-          />
-        </FadeInSection>
+        <LineDrawingOnScrollRL/>
       )}
       <FadeInSection>
         <div className="impact" style={{ marginTop: '50px' }}>
@@ -281,12 +399,36 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 minWidth: '300px',
                 height: '30vw',
                 width: '60vw',
+                padding: '4px',
+                border: '4px solid #A97F2B'
               }}
               src="https://www.youtube.com/embed/evr-R7iC1VM?si=5WMWmFosgB07mvvT"
               // title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen></iframe>
+          </div>
+          <div style={{width: '80%', margin: '50px auto', display: 'flex', justifyContent: 'space-evenly', flexDirection: mobile ? 'column' : 'row'}}>
+            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+            <img src={icon1} alt="" />
+            <p className='text' style={{fontWeight: 'bold', fontSize: '24px'}}>137,015</p>
+            </div>
+            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+            <img src={icon2} alt="" />
+            <p className='text' style={{fontWeight: 'bold', fontSize: '24px'}}>29</p>
+            </div>
+            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+            <img src={icon3} alt="" />
+            <p className='text' style={{fontWeight: 'bold', fontSize: '24px'}}>137,015</p>
+            </div>
+            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+            <img src={icon4} alt="" />
+            <p className='text' style={{fontWeight: 'bold', fontSize: '24px'}}>17,463,191</p>
+            </div>
+            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+            <img src={icon5} alt="" />
+            <p className='text' style={{fontWeight: 'bold', fontSize: '24px'}}>137,015</p>
+            </div>
           </div>
         </div>
       </FadeInSection>
@@ -295,19 +437,25 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       </div>
       <FadeInSection>
         <div className="testimonials">
+          <div style={{display: 'flex', justifyContent: 'flex-start'}}>
+            <img src={apostrophe_start} alt="" />
+          </div>
           <i className="testimonial-text">
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Consectetur repellat cumque similique, sapiente ipsa alias nisi enim
-            nesciunt officiis, quo ex autem magni, necessitatibus in nostrum
-            cupiditate fugit quaerat! Illo. Id incidunt repellat ducimus. Harum
-            ratione quod culpa illo necessitatibus fuga omnis reiciendis natus?
-            Fuga corporis similique beatae sed aliquid, ratione aspernatur nihil
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+            repellat cumque similique, sapiente ipsa alias nisi enim nesciunt
+            officiis, quo ex autem magni, necessitatibus in nostrum cupiditate
+            fugit quaerat! Illo. Id incidunt repellat ducimus. Harum ratione
+            quod culpa illo necessitatibus fuga omnis reiciendis natus? Fuga
+            corporis similique beatae sed aliquid, ratione aspernatur nihil
             vitae tempore! Sequi expedita eveniet iusto quam? Magnam ut, debitis
             maiores asperiores eius, voluptas eveniet repellendus ipsa,
             temporibus itaque sapiente nostrum perferendis consequatur!
             Nesciunt, suscipit ducimus! Reprehenderit veritatis distinctio porro
-            a. Nihil blanditiis voluptatum aliquam vitae iure."
+            a. Nihil blanditiis voluptatum aliquam vitae iure.
           </i>
+          <div style={{display: 'flex', justifyContent: 'flex-end'}}>
+            <img src={apostrophe_end} alt="" />
+          </div>
           <div className="testimonial-author">
             <img src="/img/garima_7700.jpg" alt="" />
             <div>
@@ -329,7 +477,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           with other ecosystem partners also contributing their POV{' '}
         </div>
         <div className="case-study-playlist-container">
-          <div className="playlist-box" id="playlist-box-id">
+          {/* <div className="playlist-box" id="playlist-box-id">
             <div className="playlist-video">
               <iframe
                 style={{
@@ -342,9 +490,9 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen></iframe>
             </div>
-          </div>
+          </div> */}
           <div className={'cards-section'}>
-            {[''].map((news, index) => {
+            {['', ''].map((news, index) => {
               return (
                 <a href={''} target="_blank">
                   <div
@@ -372,12 +520,88 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           </div>
         </div>
       </FadeInSection>
+      <div className="spacer">
+        <img src={spacer} alt="" />
+      </div>
+      <FadeInSection>
+        <div className="testimonials">
+          <div style={{display: 'flex', justifyContent: 'flex-start'}}>
+            <img src={apostrophe_start} alt="" />
+          </div>
+          <i className="testimonial-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+            repellat cumque similique, sapiente ipsa alias nisi enim nesciunt
+            officiis, quo ex autem magni, necessitatibus in nostrum cupiditate
+            fugit quaerat! Illo. Id incidunt repellat ducimus. Harum ratione
+            quod culpa illo necessitatibus fuga omnis reiciendis natus? Fuga
+            corporis similique beatae sed aliquid, ratione aspernatur nihil
+            vitae tempore! Sequi expedita eveniet iusto quam? Magnam ut, debitis
+            maiores asperiores eius, voluptas eveniet repellendus ipsa,
+            temporibus itaque sapiente nostrum perferendis consequatur!
+            Nesciunt, suscipit ducimus! Reprehenderit veritatis distinctio porro
+            a. Nihil blanditiis voluptatum aliquam vitae iure.
+          </i>
+          <div style={{display: 'flex', justifyContent: 'flex-end'}}>
+            <img src={apostrophe_end} alt="" />
+          </div>
+          <div className="testimonial-author">
+            <img src="/img/garima_7700.jpg" alt="" />
+            <div>
+              <p className="testimonial-author-name">Garima Sood</p>
+              <p
+                className="testimonial-author-designation"
+                style={{ color: '#a97f2b' }}>
+                Outreach Team, Samagra
+              </p>
+            </div>
+          </div>
+        </div>
+      </FadeInSection>
+      <div className="spacer">
+        <img src={spacer} alt="" />
+      </div>
       <FadeInSection>
         <div className="partner-with-us">
           <p className="partner-with-us-main-text">Partner with us today!</p>
           <p>Write to us at: {`<< abcd@gmail.com >>`}</p>
         </div>
       </FadeInSection>
+      <div className="spacer">
+        <img src={spacer} alt="" />
+      </div>
+      <FadeInSection>
+        <div className='heading' style={{ color: '#418F37', margin: '50px auto'}}>View more case studies</div>
+        <div className={'cards-section'}>
+            {['', '', ''].map((news, index) => {
+              return (
+                <a href={''} target="_blank">
+                  <div
+                    className={`card-wrapper ${
+                      hoveredIndex === index ? 'hovered' : ''
+                    } `}
+                    onMouseLeave={() => setHoveredIndex(-1)}
+                    onMouseEnter={() => setHoveredIndex(index)}>
+                    <div
+                      className={`image-section`}
+                      style={{
+                        backgroundImage: `url(${content.featuredimage.childImageSharp.fluid.src})`,
+                      }}
+                    />
+                    <div className={'content-section'}>
+                      <div className={'heading'} style={{ minHeight: '40px' }}>
+                        {content.title}
+                      </div>
+                      <div className={'timestamp'}>{content.date}</div>
+                    </div>
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+      </FadeInSection>
+      <div className="spacer">
+        <img src={spacer} alt="" />
+      </div>
     </section>
   );
 };

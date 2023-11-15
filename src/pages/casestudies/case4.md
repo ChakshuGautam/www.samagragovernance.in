@@ -1,7 +1,10 @@
 ---
 templateKey: case-study
-title: Imparting foundational learning to primary students in Uttar Pradesh
-projectId: NIPUN Bharat Cell
+title: Coming soon
+projectId: Coming soon
+projectId_bg: white
+projectId_fc: black
+impactNumber:
 date: 2020-06-16T13:01:13.704Z
 featuredimage: /img/aayush_blog.jpg
 bannerImage: /img/GOSUGAM.gif
