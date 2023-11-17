@@ -53,10 +53,6 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
   const [mobile, setMobile] = useState(false);
   const [showUpIcon, setShowUpIcon] = useState(false);
 
-  const scrollToBottom = () => {
-    scroll.scrollToBottom();
-  };
-
   const scrollToTop = () => {
     scroll.scrollToTop();
   };
@@ -71,15 +67,6 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
     if (window && window.innerWidth < 768) {
       setMobile(true);
     }
-    // document
-    //   .querySelector('#playlist-box-id')
-    //   .addEventListener('click', function(event) {
-    //     event.preventDefault();
-    //     window.open(
-    //       'https://www.youtube.com/watch?v=vLrZOL0X81k&list=PLmutx0xcPi1NsSyDkUHYCzk4HeYIoHhEa',
-    //       '_blank'
-    //     );
-    //   });
 
     window.addEventListener('scroll', handleScroll);
 
@@ -207,14 +194,14 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             <div className="text" style={{ textAlign: 'left' }}>
               To transform the way government officials use data and real-time
               analytics on key agri-operations, with 4 sharp areas of focus:
-              <br></br>
-              {`->`} Scheme Delivery: Delivery of schemes & services provided by
+              <br></br><br></br>
+              {`->`} <b>Scheme Delivery:</b> Delivery of schemes & services provided by
               the department<br></br>
-              {`->`} Plant Protection: Relief against pest outbreaks and weather
+              {`->`} <b>Plant Protection:</b> Relief against pest outbreaks and weather
               disruptions<br></br>
-              {`->`} Data Backed Reviews: Review meetings at all levels coupled
+              {`->`} <b>Data Backed Reviews:</b> Review meetings at all levels coupled
               with performance based nudges and escalation protocols<br></br>
-              {`->`} Pulse-check on Ecosystem: Policy reform & enhancements
+              {`->`} <b>Pulse-check on Ecosystem:</b> Policy reform & enhancements
               basis responsiveness of stakeholders
             </div>
           </div>
@@ -266,7 +253,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   cursor: 'pointer',
                   fontStyle: 'italic',
                 }}>
-                Link to the uploaded blog on the website {`<<towards launch>>`}
+                Read More
               </p>
             </div>
 
@@ -407,10 +394,11 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 color: 'white',
                 width: '90%',
                 margin: 'auto',
+                fontSize: mobile ? '20px': '36px'
               }}>
-              Over the past year, Agricultural Governance in Odisha has seen
+              Over the past year, agricultural governance in Odisha has seen
               rapid transformation with technology-driven solutions and here’s a
-              glimpse from the lives of Agricultural officers at the last mile.
+              glimpse from the lives of agricultural officers at the last mile
             </div>
           </div>
 
@@ -444,7 +432,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 flexDirection: 'column',
                 alignItems: 'center',
                 flex: '1 1 0',
-                width: 0,
+                width: mobile ? "100%" : 0,
                 padding: '10px',
               }}>
               <img src={icon1} alt="" />
@@ -461,8 +449,9 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               <p
                 className="text"
                 style={{ padding: 0, margin: 0, fontSize: '14px' }}>
-                of officials leverage KSK weekly for deicison-making on
-                agricultural operations
+                of officials leverage **KSK weekly for decision-making on
+                agricultural operations<br></br>
+                **Krushi Samiksha Kendra
               </p>
             </div>
             <div
@@ -472,7 +461,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 alignItems: 'center',
                 marginTop: mobile ? '40px' : '',
                 flex: '1 1 0',
-                width: 0,
+                width: mobile ? "100%" : 0,
                 padding: '10px',
               }}>
               <img src={icon2} alt="" />
@@ -489,7 +478,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               <p
                 className="text"
                 style={{ padding: 0, margin: 0, fontSize: '14px' }}>
-                of official conduct monthly top-down reviews using the KPIs
+                of officials conduct monthly top-down reviews using the KPIs
               </p>
             </div>
             <div
@@ -499,7 +488,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 alignItems: 'center',
                 marginTop: mobile ? '40px' : '',
                 flex: '1 1 0',
-                width: 0,
+                width: mobile ? "100%" : 0,
                 padding: '10px',
               }}>
               <img src={icon3} alt="" />
@@ -527,7 +516,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 alignItems: 'center',
                 marginTop: mobile ? '40px' : '',
                 flex: '1 1 0',
-                width: 0,
+                width: mobile ? "100%" : 0,
                 padding: '10px',
               }}>
               <img src={icon4} alt="" />
@@ -555,7 +544,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 alignItems: 'center',
                 marginTop: mobile ? '40px' : '',
                 flex: '1 1 0',
-                width: 0,
+                width: mobile ? "100%" : 0,
                 padding: '10px',
               }}>
               <img src={icon5} alt="" />
@@ -572,7 +561,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               <p
                 className="text"
                 style={{ padding: 0, margin: 0, fontSize: '14px' }}>
-                System capacity built consistently through trainings of
+                System capacity built consistently through trainings of all
                 officials
               </p>
             </div>
@@ -625,7 +614,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           style={{ color: '#418F37', width: '90%', margin: 'auto' }}>
           But these path breaking ideas could not have been brought to life
           without great partners, meaningful collaborations and a common vision
-          for sustained impact.{' '}
+          for sustained impact
         </div>
         <div className="case-study-playlist-container">
           {/* <div className="playlist-box" id="playlist-box-id">

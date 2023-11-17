@@ -8,6 +8,6 @@ impactNumber:
 date: 2020-05-16T13:01:13.704Z
 featuredimage: /img/aayush_blog.jpg
 bannerImage: /img/GOSUGAM.gif
-buttonText: Coming soon
+buttonText: Coming Soon
 
 ---
