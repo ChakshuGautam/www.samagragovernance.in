@@ -1,7 +1,7 @@
 ---
 templateKey: case-study
-title: Coming soon
-projectId: Coming soon
+title:
+projectId: Coming Soon
 projectId_bg: white
 projectId_fc: black
 impactNumber: 

@@ -16,7 +16,7 @@ export default class CaseStudiesIndexPage extends React.Component {
             className="translucent-dark-overlay"
             style={{ height: 'auto' }}></div>
           <div className=" container content-section">
-            <div className="title">Case Studies</div>
+            <div className="title">Amrit Series</div>
           </div>
         </div>
         <div className={'container career-section-second'}>

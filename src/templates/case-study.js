@@ -25,6 +25,8 @@ import icon4 from '../img/Icon4.svg';
 import icon5 from '../img/Icon5.svg';
 import LineDrawingOnScrollRL from '../components/CaseStudyComponents/LinkDrawingOnScrollRL';
 import LineDrawingOnScrollLR from '../components/CaseStudyComponents/LinkDrawingOnScrollLR';
+import gosugamImpactImg from '../../static/img/gosugam-impact.jpeg';
+import gosugamLinksImg from '../../static/img/gosugam-links.jpeg';
 
 function FadeInSection(props) {
   const [isVisible, setVisible] = useState(true);
@@ -112,13 +114,19 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
         <img src={linkedinLogo} alt="" />
         <img src={instaLogo} alt="" />
         <img src={fbLogo} alt="" />
-        <img src={whatsappLogo} alt="" onClick={() => {
-          const link = document.createElement('a');
-          link.href = mobile ? `whatsapp://send?text=${window.location.href}` : `https://web.whatsapp.com/send?text=${window.location.href}`;
-          link.dataAction = "share/whatsapp/share";
-          link.target="_blank";
-          link.click();
-        }}/>
+        <img
+          src={whatsappLogo}
+          alt=""
+          onClick={() => {
+            const link = document.createElement('a');
+            link.href = mobile
+              ? `whatsapp://send?text=${window.location.href}`
+              : `https://web.whatsapp.com/send?text=${window.location.href}`;
+            link.dataAction = 'share/whatsapp/share';
+            link.target = '_blank';
+            link.click();
+          }}
+        />
         <img src={mailLogo} alt="" />
       </div>
       <div className="spacer">
@@ -137,8 +145,8 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       </div>
       <FadeInSection>
         <div className="text">
-          The life of a farmer in Odisha looks very different now to what it was
-          back in 20xx
+          Decision making for Agricultural Governance in Odisha lacked
+          transparency and efficiency in 2017
         </div>
         <div
           style={{
@@ -194,18 +202,21 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             <div
               className="heading"
               style={{ textAlign: 'left', color: '#418F37' }}>
-              GO SUGAM summary
+              To address this Krushi Samiksha Kendra (KSK) was introduced in
+              2022
             </div>
-            <div className="text" style={{ textAlign: 'justify' }}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-              quam nobis beatae molestias nesciunt repudiandae tempora earum,
-              fugit dolores, impedit reiciendis odio non amet excepturi
-              architecto quas, blanditiis perspiciatis quibusdam! \n Dolorem ut
-              distinctio doloribus voluptatum sequi id in aliquid vel, cum
-              pariatur ipsa! Perferendis architecto quidem optio. Et nisi qui
-              fugit eligendi nemo, neque, nostrum nesciunt deserunt aliquam
-              facilis dolore. Laborum error asperiores laudantium quis vero sit
-              incidunt aut illum odit.
+            <div className="text" style={{ textAlign: 'left' }}>
+              To transform the way government officials use data and real-time
+              analytics on key agri-operations, with 4 sharp areas of focus:
+              <br></br>
+              {`->`} Scheme Delivery: Delivery of schemes & services provided by
+              the department<br></br>
+              {`->`} Plant Protection: Relief against pest outbreaks and weather
+              disruptions<br></br>
+              {`->`} Data Backed Reviews: Review meetings at all levels coupled
+              with performance based nudges and escalation protocols<br></br>
+              {`->`} Pulse-check on Ecosystem: Policy reform & enhancements
+              basis responsiveness of stakeholders
             </div>
           </div>
         </div>
@@ -223,7 +234,8 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             <div
               className="heading"
               style={{ textAlign: 'left', color: '#418F37' }}>
-              Links heading
+              Transforming the way govt officials use data & real-time analytics
+              on key agri-operations
             </div>
             <div>
               <p
@@ -234,7 +246,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   paddingBottom: '0',
                   fontSize: '28px',
                 }}>
-                Sub Heading
+                Blog
               </p>
               <p
                 className="text"
@@ -243,10 +255,8 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   marginBottom: '0',
                   paddingBottom: '0',
                 }}>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Similique iusto aperiam dolor reprehenderit numquam dolores vero
-                quisquam sunt quidem in. Architecto quas error labore eligendi
-                maiores sapiente nemo id temporibus.
+                How Odisha has operationalised India’s First Command & Control
+                Centre in Agriculture
               </p>
               <p
                 style={{
@@ -257,7 +267,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   cursor: 'pointer',
                   fontStyle: 'italic',
                 }}>
-                Read More
+                Link to the uploaded blog on the website {`<<towards launch>>`}
               </p>
             </div>
 
@@ -370,9 +380,10 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           <div
             id="case-study-links-image"
             style={{
-              backgroundImage: `url(/img/SamagraGovernance-Deepika-WasteManagement.jpeg)`,
+              backgroundImage: `url(${gosugamLinksImg})`,
               backgroundRepeat: 'no-repeat',
               backgroundSize: 'cover',
+              backgroundPosition: 'center',
               border: '3px solid #A97F2B',
               borderRadius: '10px',
             }}></div>
@@ -391,9 +402,16 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             }}>
             <div
               className="heading"
-              style={{ position: 'relative', top: '55%', color: 'white' }}>
-              Finally, as we reached our destination this how the Last Mile
-              Impact looks like in Odisha
+              style={{
+                position: 'relative',
+                top: '55%',
+                color: 'white',
+                width: '90%',
+                margin: 'auto',
+              }}>
+              Over the past year, Agricultural Governance in Odisha has seen
+              rapid transformation with technology-driven solutions and here’s a
+              glimpse from the lives of Agricultural officers at the last mile.
             </div>
           </div>
 
@@ -426,6 +444,9 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
+                flex: '1 1 0',
+                width: 0,
+                padding: '10px',
               }}>
               <img src={icon1} alt="" />
               <p
@@ -436,12 +457,13 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   marginBottom: 0,
                   paddingTop: 0,
                 }}>
-                137,015
+                92%
               </p>
               <p
                 className="text"
                 style={{ padding: 0, margin: 0, fontSize: '14px' }}>
-                Lorem ipsum dolor
+                of officials leverage KSK weekly for deicison-making on
+                agricultural operations
               </p>
             </div>
             <div
@@ -450,6 +472,9 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 flexDirection: 'column',
                 alignItems: 'center',
                 marginTop: mobile ? '40px' : '',
+                flex: '1 1 0',
+                width: 0,
+                padding: '10px',
               }}>
               <img src={icon2} alt="" />
               <p
@@ -460,12 +485,12 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   marginBottom: 0,
                   paddingTop: 0,
                 }}>
-                29
+                90%
               </p>
               <p
                 className="text"
                 style={{ padding: 0, margin: 0, fontSize: '14px' }}>
-                Lorem ipsum
+                of official conduct monthly top-down reviews using the KPIs
               </p>
             </div>
             <div
@@ -474,6 +499,9 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 flexDirection: 'column',
                 alignItems: 'center',
                 marginTop: mobile ? '40px' : '',
+                flex: '1 1 0',
+                width: 0,
+                padding: '10px',
               }}>
               <img src={icon3} alt="" />
               <p
@@ -484,12 +512,13 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   marginBottom: 0,
                   paddingTop: 0,
                 }}>
-                137,015
+                87%
               </p>
               <p
                 className="text"
                 style={{ padding: 0, margin: 0, fontSize: '14px' }}>
-                Lorem ipsum dolor
+                of officials receive regular nudges and reminders based on KPI
+                performance
               </p>
             </div>
             <div
@@ -498,6 +527,9 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 flexDirection: 'column',
                 alignItems: 'center',
                 marginTop: mobile ? '40px' : '',
+                flex: '1 1 0',
+                width: 0,
+                padding: '10px',
               }}>
               <img src={icon4} alt="" />
               <p
@@ -508,12 +540,13 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   marginBottom: 0,
                   paddingTop: 0,
                 }}>
-                17,463,191
+                85%
               </p>
               <p
                 className="text"
                 style={{ padding: 0, margin: 0, fontSize: '14px' }}>
-                Lorem ipsum dolor sit
+                of officials consider this an impactful tool for review &
+                monitoring
               </p>
             </div>
             <div
@@ -522,6 +555,9 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 flexDirection: 'column',
                 alignItems: 'center',
                 marginTop: mobile ? '40px' : '',
+                flex: '1 1 0',
+                width: 0,
+                padding: '10px',
               }}>
               <img src={icon5} alt="" />
               <p
@@ -532,12 +568,13 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   marginBottom: 0,
                   paddingTop: 0,
                 }}>
-                137,015
+                100%
               </p>
               <p
                 className="text"
                 style={{ padding: 0, margin: 0, fontSize: '14px' }}>
-                Lorem ipsum dolor
+                System capacity built consistently through trainings of
+                officials
               </p>
             </div>
           </div>
@@ -584,8 +621,12 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
         <img src={spacer} alt="" />
       </div>
       <FadeInSection>
-        <div className="heading" style={{ color: '#418F37' }}>
-          with other ecosystem partners also contributing their POV{' '}
+        <div
+          className="heading"
+          style={{ color: '#418F37', width: '90%', margin: 'auto' }}>
+          But these path breaking ideas could not have been brought to life
+          without great partners, meaningful collaborations and a common vision
+          for sustained impact.{' '}
         </div>
         <div className="case-study-playlist-container">
           {/* <div className="playlist-box" id="playlist-box-id">

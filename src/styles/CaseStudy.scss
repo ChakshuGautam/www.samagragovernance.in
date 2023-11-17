@@ -130,13 +130,6 @@
   margin: auto;
 }
 
-#img2 {
-  height: 300px;
-  width: 600px;
-  margin-left: auto;
-  margin-right: 15%;
-}
-
 .case-study-summary-container {
   // margin-top: 50px;
   display: flex;
@@ -340,18 +333,12 @@
     max-width: 90vw;
   }
 
-  #img2 {
-    height: 150px;
-    width: 90vw;
-    margin-right: 0;
-  }
-
   .case-study-summary-container {
     flex-direction: column;
   }
 
   .case-study-summary-text {
-    width: 90%;
+    width: 90% !important;
   }
 
   .case-study-links-container {
