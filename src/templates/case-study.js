@@ -136,8 +136,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
         <div
           className="case-study-main-heading heading"
           style={{ color: '#418F37', fontSize: '32px' }}>
-          Government of Odisha’s single window portal for digital delivery of
-          agricultural schemes to farmers
+          India’s first Centralised Monitoring Center for Agricultural Governance
         </div>
       </FadeInSection>
       <div className="spacer">
