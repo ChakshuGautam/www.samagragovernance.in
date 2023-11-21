@@ -131,7 +131,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
         <img src={spacer} alt="" />
       </div>
       <FadeInSection>
-        <div className="text" style={{ width: '75%', margin: 'auto' }}>
+        <div className="text" style={{ width: '80%', margin: 'auto' }}>
           But to make the “how” clear, let’s take you on a journey of where it
           all started… Agriculture as a domain has always been complex and
           diverse. <br></br>Back in 2017, the Agricultural Government Officials
@@ -242,7 +242,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen></iframe>
           </div>
-          <div className="heading" style={{ color: '#418F37', width: '75%', margin: 'auto' }}>
+          <div className="heading" style={{ color: '#418F37', width: '80%', margin: 'auto' }}>
           The system responded positively to the approach taken and the numbers spoke for themselves…
           </div>
           <div
@@ -646,7 +646,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       <FadeInSection>
         <div
           className="heading"
-          style={{ color: '#418F37', width: '75%', margin: 'auto' }}>
+          style={{ color: '#418F37', width: '80%', margin: 'auto' }}>
           This breakthrough is a result of consistent support and meaningful collaborations that we have received from our partners in the ecosystem. Here are some insights from the ecosystem…
         </div>
         <div className="case-study-playlist-container">
