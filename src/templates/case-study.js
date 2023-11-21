@@ -122,7 +122,12 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       <FadeInSection>
         <div
           className="case-study-main-heading heading"
-          style={{ color: '#418F37', fontSize: '32px', width: '80%', margin: 'auto' }}>
+          style={{
+            color: '#418F37',
+            fontSize: '32px',
+            width: '80%',
+            margin: 'auto',
+          }}>
           This is the story of how India’s first Centralised Monitoring Centre
           for Agricultural Governance came about…
         </div>
@@ -133,10 +138,11 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       <FadeInSection>
         <div className="text" style={{ width: '80%', margin: 'auto' }}>
           But to make the “how” clear, let’s take you on a journey of where it
-          all started… <br></br>Agriculture as a domain has always been complex and
-          diverse. <br></br>Back in 2017, the Agricultural Government Officials
-          in Odisha were faced with <br></br>multiple challenges surrounding transparency
-          and efficiency.
+          all started… <br></br>
+          <br></br>Agriculture as a domain has always been complex and diverse.
+          Back in 2017, the Agricultural Government Officials in Odisha were
+          faced with multiple challenges surrounding transparency and
+          efficiency.
         </div>
         <div
           style={{
@@ -181,9 +187,12 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               style={{
                 textAlign: 'center',
                 color: '#418F37',
-                marginBottom: '25px',
+                paddingBottom: '25px',
               }}>
-              With a vision to ease the life of agricultural officials in Odisha, while sustainably building system capacity to address complex questions of governance, Krushi Samiksha Kendra was introduced in 2022.
+              With a vision to ease the life of agricultural officials in
+              Odisha, while sustainably building system capacity to address
+              complex questions of governance, Krushi Samiksha Kendra was
+              introduced in 2022.
             </div>
             {/* <div className="text" style={{ textAlign: 'left' }}>
               To transform the way government officials use data and real-time
@@ -222,7 +231,9 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 margin: 'auto',
                 fontSize: mobile ? '20px' : '36px',
               }}>
-              Over the next year, in what initially seemed like an insurmountable task, lives of officials at the last mile were rapidly transformed with innovation. Take a look…
+              Over the next year, in what initially seemed like an
+              insurmountable task, lives of officials at the last mile were
+              rapidly transformed with innovation. Take a look…
             </div>
           </div>
 
@@ -242,8 +253,11 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen></iframe>
           </div>
-          <div className="heading" style={{ color: '#418F37', width: '80%', margin: 'auto' }}>
-          The system responded positively to the approach taken and the numbers spoke for themselves…
+          <div
+            className="heading"
+            style={{ color: '#418F37', width: '80%', margin: 'auto' }}>
+            The system responded positively to the approach taken and the
+            numbers spoke for themselves…
           </div>
           <div
             style={{
@@ -425,9 +439,13 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               style={{ marginTop: '20px', cursor: 'pointer' }}
               onClick={() => {
                 const link = document.createElement('a');
-                link.href = infographic;
-                link.download = 'infographic.gif';
+                link.href =
+                  'https://drive.google.com/uc?id=1BnFOtXvE1aWkg73Pr8mka71SsJPa9Qkv&export=download';
+                link.download = 'infographic.pdf';
+                link.setAttribute('type', 'application/pdf');
+                document.body.appendChild(link);
                 link.click();
+                document.body.removeChild(link);
               }}>
               Download Infographic
             </button>
@@ -451,7 +469,8 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 color: '#418F37',
                 paddingTop: mobile ? '25px' : 0,
               }}>
-              Read the story of how Odisha transformed the way government officials use data & real-time analytics on key agri-operations
+              Read the story of how Odisha transformed the way government
+              officials use data & real-time analytics on key agri-operations
             </div>
             <div>
               <p
@@ -647,7 +666,9 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
         <div
           className="heading"
           style={{ color: '#418F37', width: '80%', margin: 'auto' }}>
-          This breakthrough is a result of consistent support and meaningful collaborations that we have received from our partners in the ecosystem. Here are some insights from the ecosystem…
+          This breakthrough is a result of consistent support and meaningful
+          collaborations that we have received from our partners in the
+          ecosystem. Here are some insights from the ecosystem…
         </div>
         <div className="case-study-playlist-container">
           {/* <div className="playlist-box" id="playlist-box-id">
@@ -746,7 +767,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
         <div
           className="heading"
           style={{ color: '#418F37', margin: '50px auto' }}>
-          View more case studies
+          View more <i>Success Stories of Impact</i>
         </div>
         <div className={'cards-section'}>
           {['', '', ''].map((news, index) => {
