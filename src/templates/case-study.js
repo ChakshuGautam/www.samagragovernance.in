@@ -122,17 +122,21 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       <FadeInSection>
         <div
           className="case-study-main-heading heading"
-          style={{ color: '#418F37', fontSize: '32px' }}>
-          India’s first Centralised Monitoring Center for Agricultural Governance
+          style={{ color: '#418F37', fontSize: '32px', width: '80%', margin: 'auto' }}>
+          This is the story of how India’s first Centralised Monitoring Centre
+          for Agricultural Governance came about…
         </div>
       </FadeInSection>
       <div className="spacer">
         <img src={spacer} alt="" />
       </div>
       <FadeInSection>
-        <div className="text">
-          Decision making for Agricultural Governance in Odisha lacked
-          transparency and efficiency in 2017
+        <div className="text" style={{ width: '75%', margin: 'auto' }}>
+          But to make the “how” clear, let’s take you on a journey of where it
+          all started… Agriculture as a domain has always been complex and
+          diverse. <br></br>Back in 2017, the Agricultural Government Officials
+          in Odisha were faced with multiple challenges surrounding transparency
+          and efficiency.
         </div>
         <div
           style={{
@@ -170,14 +174,16 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 border: '3px solid #A97F2B',
                 borderRadius: '10px',
               }}></div>
-            
           </div>
           <div className="case-study-summary-text">
             <div
               className="heading"
-              style={{ textAlign: 'center', color: '#418F37', marginBottom: '25px' }}>
-              To address this Krushi Samiksha Kendra (KSK) was introduced in
-              2022
+              style={{
+                textAlign: 'center',
+                color: '#418F37',
+                marginBottom: '25px',
+              }}>
+              With a vision to ease the life of agricultural officials in Odisha, while sustainably building system capacity to address complex questions of governance, Krushi Samiksha Kendra was introduced in 2022.
             </div>
             {/* <div className="text" style={{ textAlign: 'left' }}>
               To transform the way government officials use data and real-time
@@ -214,11 +220,9 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 color: 'white',
                 width: '90%',
                 margin: 'auto',
-                fontSize: mobile ? '20px': '36px'
+                fontSize: mobile ? '20px' : '36px',
               }}>
-              Over the past year, agricultural governance in Odisha has seen
-              rapid transformation with technology-driven solutions and here’s a
-              glimpse from the lives of agricultural officers at the last mile
+              Over the next year, in what initially seemed like an insurmountable task, lives of officials at the last mile were rapidly transformed with innovation. Take a look…
             </div>
           </div>
 
@@ -238,7 +242,9 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen></iframe>
           </div>
-          <div className='heading' style={{color: '#418F37' }}>Impact Numbers</div>
+          <div className="heading" style={{ color: '#418F37', width: '75%', margin: 'auto' }}>
+          The system responded positively to the approach taken and the numbers spoke for themselves…
+          </div>
           <div
             style={{
               width: '80%',
@@ -253,7 +259,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 flexDirection: 'column',
                 alignItems: 'center',
                 flex: '1 1 0',
-                width: mobile ? "100%" : 0,
+                width: mobile ? '100%' : 0,
                 padding: '10px',
               }}>
               <img src={icon1} alt="" />
@@ -269,8 +275,13 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               </p>
               <p
                 className="text"
-                style={{ padding: 0, margin: 0, fontSize: '14px', width: '80%' }}>
-                of officials leverage **KSK weekly for decision-making on
+                style={{
+                  padding: 0,
+                  margin: 0,
+                  fontSize: '14px',
+                  width: '80%',
+                }}>
+                officials leverage **KSK weekly for decision-making on
                 agricultural operations<br></br>
                 **Krushi Samiksha Kendra
               </p>
@@ -282,7 +293,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 alignItems: 'center',
                 marginTop: mobile ? '40px' : '',
                 flex: '1 1 0',
-                width: mobile ? "100%" : 0,
+                width: mobile ? '100%' : 0,
                 padding: '10px',
               }}>
               <img src={icon2} alt="" />
@@ -298,8 +309,13 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               </p>
               <p
                 className="text"
-                style={{ padding: 0, margin: 0, fontSize: '14px', width: '80%' }}>
-                of officials conduct monthly top-down reviews using the KPIs
+                style={{
+                  padding: 0,
+                  margin: 0,
+                  fontSize: '14px',
+                  width: '80%',
+                }}>
+                officials conduct monthly top-down reviews using the KPIs
               </p>
             </div>
             <div
@@ -309,7 +325,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 alignItems: 'center',
                 marginTop: mobile ? '40px' : '',
                 flex: '1 1 0',
-                width: mobile ? "100%" : 0,
+                width: mobile ? '100%' : 0,
                 padding: '10px',
               }}>
               <img src={icon3} alt="" />
@@ -325,8 +341,13 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               </p>
               <p
                 className="text"
-                style={{ padding: 0, margin: 0, fontSize: '14px', width: '80%' }}>
-                of officials receive regular nudges and reminders based on KPI
+                style={{
+                  padding: 0,
+                  margin: 0,
+                  fontSize: '14px',
+                  width: '80%',
+                }}>
+                officials receive regular nudges and reminders based on KPI
                 performance
               </p>
             </div>
@@ -337,7 +358,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 alignItems: 'center',
                 marginTop: mobile ? '40px' : '',
                 flex: '1 1 0',
-                width: mobile ? "100%" : 0,
+                width: mobile ? '100%' : 0,
                 padding: '10px',
               }}>
               <img src={icon4} alt="" />
@@ -353,8 +374,13 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               </p>
               <p
                 className="text"
-                style={{ padding: 0, margin: 0, fontSize: '14px', width: '80%' }}>
-                of officials consider this an impactful tool for review &
+                style={{
+                  padding: 0,
+                  margin: 0,
+                  fontSize: '14px',
+                  width: '80%',
+                }}>
+                officials consider this an impactful tool for review &
                 monitoring
               </p>
             </div>
@@ -387,19 +413,25 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               </p>
             </div> */}
           </div>
-            <div className="casestudy-btn-container" style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
-              <button
-                className="casestudy-btn"
-                style={{ marginTop: '20px', cursor: 'pointer' }}
-                onClick={() => {
-                  const link = document.createElement('a');
-                  link.href = infographic;
-                  link.download = 'infographic.gif';
-                  link.click();
-                }}>
-                Download Infographic
-              </button>
-            </div>
+          <div
+            className="casestudy-btn-container"
+            style={{
+              width: '100%',
+              display: 'flex',
+              justifyContent: 'center',
+            }}>
+            <button
+              className="casestudy-btn"
+              style={{ marginTop: '20px', cursor: 'pointer' }}
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = infographic;
+                link.download = 'infographic.gif';
+                link.click();
+              }}>
+              Download Infographic
+            </button>
+          </div>
         </div>
       </FadeInSection>
       {!mobile && <LineDrawingOnScrollLR />}
@@ -414,9 +446,12 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           <div style={{ width: mobile ? '80%' : '50%', marginBottom: 'auto' }}>
             <div
               className="heading"
-              style={{ textAlign: 'left', color: '#418F37', paddingTop: mobile ? '25px' : 0 }}>
-              Transforming the way govt officials use data & real-time analytics
-              on key agri-operations
+              style={{
+                textAlign: 'left',
+                color: '#418F37',
+                paddingTop: mobile ? '25px' : 0,
+              }}>
+              Read the story of how Odisha transformed the way government officials use data & real-time analytics on key agri-operations
             </div>
             <div>
               <p
@@ -567,7 +602,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             }}></div>
         </div>
       </FadeInSection>
-      
+
       <div className="spacer">
         <img src={spacer} alt="" />
       </div>
@@ -611,10 +646,8 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       <FadeInSection>
         <div
           className="heading"
-          style={{ color: '#418F37', width: '90%', margin: 'auto' }}>
-          But these path breaking ideas could not have been brought to life
-          without great partners, meaningful collaborations and a common vision
-          for sustained impact
+          style={{ color: '#418F37', width: '75%', margin: 'auto' }}>
+          This breakthrough is a result of consistent support and meaningful collaborations that we have received from our partners in the ecosystem. Here are some insights from the ecosystem…
         </div>
         <div className="case-study-playlist-container">
           {/* <div className="playlist-box" id="playlist-box-id">
@@ -702,7 +735,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       </div> */}
       <FadeInSection>
         <div className="partner-with-us">
-          <p className="partner-with-us-main-text">Partner with us!</p>
+          <p className="partner-with-us-main-text">Partner with us</p>
           <p>Write to us at: outreach@samagragovernance.in</p>
         </div>
       </FadeInSection>
