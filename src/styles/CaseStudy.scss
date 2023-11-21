@@ -17,8 +17,8 @@
 }
 @media only screen and (max-width: 1150px) {
   #infographic {
-    height: 300px !important;
-    width: 530px !important;
+    height: 450px;
+  width: 790px;
   }
 }
 
@@ -133,17 +133,19 @@
 .case-study-summary-container {
   // margin-top: 50px;
   display: flex;
+  flex-direction: column;
+  flex-flow: column-reverse;
   align-items: center;
   justify-content: space-evenly;
 }
 
 .case-study-summary-text {
-  width: 50%;
+  width: 70%;
 }
 
 #infographic {
-  height: 350px;
-  width: 620px;
+  height: 450px;
+  width: 790px;
 }
 
 #case-study-links-image {

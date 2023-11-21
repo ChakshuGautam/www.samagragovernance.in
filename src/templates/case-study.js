@@ -170,7 +170,224 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 border: '3px solid #A97F2B',
                 borderRadius: '10px',
               }}></div>
-            <div className="casestudy-btn-container">
+            
+          </div>
+          <div className="case-study-summary-text">
+            <div
+              className="heading"
+              style={{ textAlign: 'center', color: '#418F37', marginBottom: '25px' }}>
+              To address this Krushi Samiksha Kendra (KSK) was introduced in
+              2022
+            </div>
+            {/* <div className="text" style={{ textAlign: 'left' }}>
+              To transform the way government officials use data and real-time
+              analytics on key agri-operations, with 4 sharp areas of focus:
+              <br></br><br></br>
+              {`->`} <b>Scheme Delivery:</b> Delivery of schemes & services provided by
+              the department<br></br>
+              {`->`} <b>Plant Protection:</b> Relief against pest outbreaks and weather
+              disruptions<br></br>
+              {`->`} <b>Data Backed Reviews:</b> Review meetings at all levels coupled
+              with performance based nudges and escalation protocols<br></br>
+              {`->`} <b>Pulse-check on Ecosystem:</b> Policy reform & enhancements
+              basis responsiveness of stakeholders
+            </div> */}
+          </div>
+        </div>
+      </FadeInSection>
+      {!mobile && <LineDrawingOnScrollRL />}
+      <FadeInSection>
+        <div className="impact" style={{ marginTop: '50px' }}>
+          <div
+            style={{
+              backgroundImage: `url(${impactImg})`,
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: 'cover',
+              width: '100vw',
+              height: '400px',
+            }}>
+            <div
+              className="heading"
+              style={{
+                position: 'relative',
+                top: '55%',
+                color: 'white',
+                width: '90%',
+                margin: 'auto',
+                fontSize: mobile ? '20px': '36px'
+              }}>
+              Over the past year, agricultural governance in Odisha has seen
+              rapid transformation with technology-driven solutions and here’s a
+              glimpse from the lives of agricultural officers at the last mile
+            </div>
+          </div>
+
+          <div className="impact-video">
+            <iframe
+              style={{
+                minHeight: '150px',
+                minWidth: '300px',
+                height: '30vw',
+                width: '60vw',
+                padding: '4px',
+                border: '4px solid #A97F2B',
+              }}
+              src="https://www.youtube.com/embed/evr-R7iC1VM?si=5WMWmFosgB07mvvT"
+              // title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+          <div className='heading' style={{color: '#418F37' }}>Impact Numbers</div>
+          <div
+            style={{
+              width: '80%',
+              margin: '50px auto',
+              display: 'flex',
+              justifyContent: 'space-evenly',
+              flexDirection: mobile ? 'column' : 'row',
+            }}>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                flex: '1 1 0',
+                width: mobile ? "100%" : 0,
+                padding: '10px',
+              }}>
+              <img src={icon1} alt="" />
+              <p
+                className="text"
+                style={{
+                  fontWeight: 'bold',
+                  fontSize: '24px',
+                  marginBottom: 0,
+                  paddingTop: 0,
+                }}>
+                92%
+              </p>
+              <p
+                className="text"
+                style={{ padding: 0, margin: 0, fontSize: '14px', width: '80%' }}>
+                of officials leverage **KSK weekly for decision-making on
+                agricultural operations<br></br>
+                **Krushi Samiksha Kendra
+              </p>
+            </div>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                marginTop: mobile ? '40px' : '',
+                flex: '1 1 0',
+                width: mobile ? "100%" : 0,
+                padding: '10px',
+              }}>
+              <img src={icon2} alt="" />
+              <p
+                className="text"
+                style={{
+                  fontWeight: 'bold',
+                  fontSize: '24px',
+                  marginBottom: 0,
+                  paddingTop: 0,
+                }}>
+                90%
+              </p>
+              <p
+                className="text"
+                style={{ padding: 0, margin: 0, fontSize: '14px', width: '80%' }}>
+                of officials conduct monthly top-down reviews using the KPIs
+              </p>
+            </div>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                marginTop: mobile ? '40px' : '',
+                flex: '1 1 0',
+                width: mobile ? "100%" : 0,
+                padding: '10px',
+              }}>
+              <img src={icon3} alt="" />
+              <p
+                className="text"
+                style={{
+                  fontWeight: 'bold',
+                  fontSize: '24px',
+                  marginBottom: 0,
+                  paddingTop: 0,
+                }}>
+                87%
+              </p>
+              <p
+                className="text"
+                style={{ padding: 0, margin: 0, fontSize: '14px', width: '80%' }}>
+                of officials receive regular nudges and reminders based on KPI
+                performance
+              </p>
+            </div>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                marginTop: mobile ? '40px' : '',
+                flex: '1 1 0',
+                width: mobile ? "100%" : 0,
+                padding: '10px',
+              }}>
+              <img src={icon4} alt="" />
+              <p
+                className="text"
+                style={{
+                  fontWeight: 'bold',
+                  fontSize: '24px',
+                  marginBottom: 0,
+                  paddingTop: 0,
+                }}>
+                85%
+              </p>
+              <p
+                className="text"
+                style={{ padding: 0, margin: 0, fontSize: '14px', width: '80%' }}>
+                of officials consider this an impactful tool for review &
+                monitoring
+              </p>
+            </div>
+            {/* <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                marginTop: mobile ? '40px' : '',
+                flex: '1 1 0',
+                width: mobile ? "100%" : 0,
+                padding: '10px',
+              }}>
+              <img src={icon5} alt="" />
+              <p
+                className="text"
+                style={{
+                  fontWeight: 'bold',
+                  fontSize: '24px',
+                  marginBottom: 0,
+                  paddingTop: 0,
+                }}>
+                100%
+              </p>
+              <p
+                className="text"
+                style={{ padding: 0, margin: 0, fontSize: '14px' }}>
+                System capacity built consistently through trainings of all
+                officials
+              </p>
+            </div> */}
+          </div>
+            <div className="casestudy-btn-container" style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
               <button
                 className="casestudy-btn"
                 style={{ marginTop: '20px', cursor: 'pointer' }}
@@ -183,28 +400,6 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 Download Infographic
               </button>
             </div>
-          </div>
-          <div className="case-study-summary-text">
-            <div
-              className="heading"
-              style={{ textAlign: 'left', color: '#418F37' }}>
-              To address this Krushi Samiksha Kendra (KSK) was introduced in
-              2022
-            </div>
-            <div className="text" style={{ textAlign: 'left' }}>
-              To transform the way government officials use data and real-time
-              analytics on key agri-operations, with 4 sharp areas of focus:
-              <br></br><br></br>
-              {`->`} <b>Scheme Delivery:</b> Delivery of schemes & services provided by
-              the department<br></br>
-              {`->`} <b>Plant Protection:</b> Relief against pest outbreaks and weather
-              disruptions<br></br>
-              {`->`} <b>Data Backed Reviews:</b> Review meetings at all levels coupled
-              with performance based nudges and escalation protocols<br></br>
-              {`->`} <b>Pulse-check on Ecosystem:</b> Policy reform & enhancements
-              basis responsiveness of stakeholders
-            </div>
-          </div>
         </div>
       </FadeInSection>
       {!mobile && <LineDrawingOnScrollLR />}
@@ -219,7 +414,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           <div style={{ width: mobile ? '80%' : '50%' }}>
             <div
               className="heading"
-              style={{ textAlign: 'left', color: '#418F37' }}>
+              style={{ textAlign: 'left', color: '#418F37', marginBottom: 'auto' }}>
               Transforming the way govt officials use data & real-time analytics
               on key agri-operations
             </div>
@@ -266,7 +461,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   paddingBottom: '0',
                   fontSize: '28px',
                 }}>
-                Sub Heading
+                Op-Ed
               </p>
               <p
                 className="text"
@@ -275,10 +470,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   marginBottom: '0',
                   paddingBottom: '0',
                 }}>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Similique iusto aperiam dolor reprehenderit numquam dolores vero
-                quisquam sunt quidem in. Architecto quas error labore eligendi
-                maiores sapiente nemo id temporibus.
+                {'<<Title of Op-Ed>>'}
               </p>
               <p
                 style={{
@@ -292,7 +484,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 Read More
               </p>
             </div>
-            <div>
+            {/* <div>
               <p
                 className="text"
                 style={{
@@ -361,7 +553,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 }}>
                 Read More
               </p>
-            </div>
+            </div> */}
           </div>
           <div
             id="case-study-links-image"
@@ -375,203 +567,11 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             }}></div>
         </div>
       </FadeInSection>
-      {!mobile && <LineDrawingOnScrollRL />}
-      <FadeInSection>
-        <div className="impact" style={{ marginTop: '50px' }}>
-          <div
-            style={{
-              backgroundImage: `url(${impactImg})`,
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: 'cover',
-              width: '100vw',
-              height: '400px',
-            }}>
-            <div
-              className="heading"
-              style={{
-                position: 'relative',
-                top: '55%',
-                color: 'white',
-                width: '90%',
-                margin: 'auto',
-                fontSize: mobile ? '20px': '36px'
-              }}>
-              Over the past year, agricultural governance in Odisha has seen
-              rapid transformation with technology-driven solutions and here’s a
-              glimpse from the lives of agricultural officers at the last mile
-            </div>
-          </div>
-
-          <div className="impact-video">
-            <iframe
-              style={{
-                minHeight: '150px',
-                minWidth: '300px',
-                height: '30vw',
-                width: '60vw',
-                padding: '4px',
-                border: '4px solid #A97F2B',
-              }}
-              src="https://www.youtube.com/embed/evr-R7iC1VM?si=5WMWmFosgB07mvvT"
-              // title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
-          </div>
-          <div
-            style={{
-              width: '80%',
-              margin: '50px auto',
-              display: 'flex',
-              justifyContent: 'space-evenly',
-              flexDirection: mobile ? 'column' : 'row',
-            }}>
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                flex: '1 1 0',
-                width: mobile ? "100%" : 0,
-                padding: '10px',
-              }}>
-              <img src={icon1} alt="" />
-              <p
-                className="text"
-                style={{
-                  fontWeight: 'bold',
-                  fontSize: '24px',
-                  marginBottom: 0,
-                  paddingTop: 0,
-                }}>
-                92%
-              </p>
-              <p
-                className="text"
-                style={{ padding: 0, margin: 0, fontSize: '14px' }}>
-                of officials leverage **KSK weekly for decision-making on
-                agricultural operations<br></br>
-                **Krushi Samiksha Kendra
-              </p>
-            </div>
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                marginTop: mobile ? '40px' : '',
-                flex: '1 1 0',
-                width: mobile ? "100%" : 0,
-                padding: '10px',
-              }}>
-              <img src={icon2} alt="" />
-              <p
-                className="text"
-                style={{
-                  fontWeight: 'bold',
-                  fontSize: '24px',
-                  marginBottom: 0,
-                  paddingTop: 0,
-                }}>
-                90%
-              </p>
-              <p
-                className="text"
-                style={{ padding: 0, margin: 0, fontSize: '14px' }}>
-                of officials conduct monthly top-down reviews using the KPIs
-              </p>
-            </div>
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                marginTop: mobile ? '40px' : '',
-                flex: '1 1 0',
-                width: mobile ? "100%" : 0,
-                padding: '10px',
-              }}>
-              <img src={icon3} alt="" />
-              <p
-                className="text"
-                style={{
-                  fontWeight: 'bold',
-                  fontSize: '24px',
-                  marginBottom: 0,
-                  paddingTop: 0,
-                }}>
-                87%
-              </p>
-              <p
-                className="text"
-                style={{ padding: 0, margin: 0, fontSize: '14px' }}>
-                of officials receive regular nudges and reminders based on KPI
-                performance
-              </p>
-            </div>
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                marginTop: mobile ? '40px' : '',
-                flex: '1 1 0',
-                width: mobile ? "100%" : 0,
-                padding: '10px',
-              }}>
-              <img src={icon4} alt="" />
-              <p
-                className="text"
-                style={{
-                  fontWeight: 'bold',
-                  fontSize: '24px',
-                  marginBottom: 0,
-                  paddingTop: 0,
-                }}>
-                85%
-              </p>
-              <p
-                className="text"
-                style={{ padding: 0, margin: 0, fontSize: '14px' }}>
-                of officials consider this an impactful tool for review &
-                monitoring
-              </p>
-            </div>
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                marginTop: mobile ? '40px' : '',
-                flex: '1 1 0',
-                width: mobile ? "100%" : 0,
-                padding: '10px',
-              }}>
-              <img src={icon5} alt="" />
-              <p
-                className="text"
-                style={{
-                  fontWeight: 'bold',
-                  fontSize: '24px',
-                  marginBottom: 0,
-                  paddingTop: 0,
-                }}>
-                100%
-              </p>
-              <p
-                className="text"
-                style={{ padding: 0, margin: 0, fontSize: '14px' }}>
-                System capacity built consistently through trainings of all
-                officials
-              </p>
-            </div>
-          </div>
-        </div>
-      </FadeInSection>
+      
       <div className="spacer">
         <img src={spacer} alt="" />
       </div>
-      <FadeInSection>
+      {/* <FadeInSection>
         <div className="testimonials">
           <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
             <img src={apostrophe_start} alt="" />
@@ -607,7 +607,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       </FadeInSection>
       <div className="spacer">
         <img src={spacer} alt="" />
-      </div>
+      </div> */}
       <FadeInSection>
         <div
           className="heading"
@@ -663,7 +663,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       <div className="spacer">
         <img src={spacer} alt="" />
       </div>
-      <FadeInSection>
+      {/* <FadeInSection>
         <div className="testimonials">
           <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
             <img src={apostrophe_start} alt="" />
@@ -699,11 +699,11 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       </FadeInSection>
       <div className="spacer">
         <img src={spacer} alt="" />
-      </div>
+      </div> */}
       <FadeInSection>
         <div className="partner-with-us">
-          <p className="partner-with-us-main-text">Partner with us today!</p>
-          <p>Write to us at: {`<< abcd@gmail.com >>`}</p>
+          <p className="partner-with-us-main-text">Partner with us!</p>
+          <p>Write to us at: outreach@samagragovernance.in</p>
         </div>
       </FadeInSection>
       <div className="spacer">

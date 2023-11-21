@@ -51,7 +51,7 @@ const LinkDrawingOnScrollLR = () => {
         viewBox="0 0 763 1138"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        style={{ marginLeft: '30%' }}>
+        style={{ marginLeft: '43%' }}>
         <path
           id="second-svg-path"
           d="M92.8427 3C1678.09 539.993 -69.1783 758.863 5.33168 1137"
