@@ -411,10 +411,10 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             justifyContent: 'space-evenly',
           }}
           className="case-study-links-container">
-          <div style={{ width: mobile ? '80%' : '50%' }}>
+          <div style={{ width: mobile ? '80%' : '50%', marginBottom: 'auto' }}>
             <div
               className="heading"
-              style={{ textAlign: 'left', color: '#418F37', marginBottom: 'auto' }}>
+              style={{ textAlign: 'left', color: '#418F37', paddingTop: mobile ? '25px' : 0 }}>
               Transforming the way govt officials use data & real-time analytics
               on key agri-operations
             </div>
