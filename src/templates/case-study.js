@@ -133,9 +133,9 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       <FadeInSection>
         <div className="text" style={{ width: '80%', margin: 'auto' }}>
           But to make the “how” clear, let’s take you on a journey of where it
-          all started… Agriculture as a domain has always been complex and
+          all started… <br></br>Agriculture as a domain has always been complex and
           diverse. <br></br>Back in 2017, the Agricultural Government Officials
-          in Odisha were faced with multiple challenges surrounding transparency
+          in Odisha were faced with <br></br>multiple challenges surrounding transparency
           and efficiency.
         </div>
         <div
