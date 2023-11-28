@@ -21,7 +21,7 @@ const ScrollToDraw = () => {
     if (newScrollPercentage > -1) newScrollPercentage = -1;
 
     // Length to offset the dashes
-    const drawLength = pathLength * newScrollPercentage*1.15;
+    const drawLength = pathLength * newScrollPercentage*1.2;
 
     // Draw in reverse
     path.style.strokeDashoffset = pathLength - drawLength;
@@ -52,7 +52,7 @@ const ScrollToDraw = () => {
       <svg
         width="350"
         height="350"
-        viewBox="0 0 675 1138"
+        viewBox="0 0 800 900"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         style={{ marginLeft: '35%' }}>

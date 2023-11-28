@@ -20,7 +20,7 @@ const LinkDrawingOnScrollLR = () => {
     if (newScrollPercentage > -1) newScrollPercentage = -1;
     
     // Length to offset the dashes
-    const drawLength = pathLength * newScrollPercentage*1.15;
+    const drawLength = pathLength * newScrollPercentage*1.2;
 
     // Draw in reverse
     path.style.strokeDashoffset = pathLength - drawLength;
@@ -48,10 +48,10 @@ const LinkDrawingOnScrollLR = () => {
       <svg
         width="350"
         height="350"
-        viewBox="0 0 763 1138"
+        viewBox="0 0 800 900"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        style={{ marginLeft: '44%' }}>
+        style={{ marginLeft: '43%' }}>
         <path
           id="second-svg-path"
           d="M92.8427 3C1678.09 539.993 -69.1783 758.863 5.33168 1137"

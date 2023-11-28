@@ -128,38 +128,39 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             width: '80%',
             margin: 'auto',
           }}>
-          This is the story of how India’s first Centralised Monitoring Centre
-          for Agricultural Governance came about…
+          India’s 1<sup>st</sup> Centralised Monitoring System in agriculture, KSK was set up with a vision to aid evidence-backed decision making
         </div>
       </FadeInSection>
       <div className="spacer">
         <img src={spacer} alt="" />
       </div>
       <FadeInSection>
-        <div className="text" style={{ width: '80%', margin: 'auto' }}>
-          But to make the “how” clear, let’s take you on a journey of where it
-          all started… <br></br>
-          <br></br>Agriculture as a domain has always been complex and diverse.
-          Back in 2017, the Agricultural Government Officials in Odisha were
-          faced with multiple challenges surrounding transparency and
-          efficiency.
+        <div className="text" style={{ width: '70%', margin: 'auto' }}>
+        Despite multiple challenges surrounding transparency and efficiency Odisha swiftly aced streamlining all processes to combat complex challenges in agriculture. Take a look at what this means for the state…
         </div>
         <div
           style={{
             textAlign: 'center',
             marginTop: '50px',
             width: '100vw',
-            marginBottom: '10px',
           }}>
-          <div
-            id="img1"
-            style={{
-              backgroundImage: `url(${img2})`,
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: 'contain',
-              border: '3px solid #A97F2B',
-              borderRadius: '10px',
-            }}></div>
+             <div className="impact-video">
+            <iframe
+              style={{
+                minHeight: '150px',
+                minWidth: '300px',
+                height: '30vw',
+                width: '60vw',
+                padding: '4px',
+                border: '4px solid #A97F2B',
+              }}
+              src="https://www.youtube.com/embed/evr-R7iC1VM?si=5WMWmFosgB07mvvT"
+              // title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+          
         </div>
       </FadeInSection>
       {!mobile && <LineDrawingOnScrollRL />}
@@ -171,15 +172,15 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               flexDirection: 'column',
               alignItems: 'center',
             }}>
-            <div
-              id="infographic"
-              style={{
-                backgroundImage: `url(${infographic})`,
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'contain',
-                border: '3px solid #A97F2B',
-                borderRadius: '10px',
-              }}></div>
+              <div
+            id="img1"
+            style={{
+              backgroundImage: `url(${img2})`,
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: 'contain',
+              border: '3px solid #A97F2B',
+              borderRadius: '10px',
+            }}></div>
           </div>
           <div className="case-study-summary-text">
             <div
@@ -188,11 +189,9 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 textAlign: 'center',
                 color: '#418F37',
                 paddingBottom: '25px',
+                paddingTop: !mobile ? 0 : '25px'
               }}>
-              With a vision to ease the life of agricultural officials in
-              Odisha, while sustainably building system capacity to address
-              complex questions of governance, Krushi Samiksha Kendra was
-              introduced in 2022.
+              Challenges were multilayered, encompassing data, feedback, timely response and policy modifications
             </div>
             {/* <div className="text" style={{ textAlign: 'left' }}>
               To transform the way government officials use data and real-time
@@ -212,7 +211,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       </FadeInSection>
       {!mobile && <LineDrawingOnScrollRL />}
       <FadeInSection>
-        <div className="impact" style={{ marginTop: '50px' }}>
+        <div className="impact">
           <div
             style={{
               backgroundImage: `url(${impactImg})`,
@@ -225,39 +224,36 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               className="heading"
               style={{
                 position: 'relative',
-                top: '55%',
+                top: '38%',
                 color: 'white',
                 width: '90%',
                 margin: 'auto',
                 fontSize: mobile ? '20px' : '36px',
               }}>
-              Over the next year, in what initially seemed like an
-              insurmountable task, lives of officials at the last mile were
-              rapidly transformed with innovation. Take a look…
+              But the state sailed through, by introducing three broad categories of improvisations, which were premised upon a stable foundation laid by the Integrated Decision Support System (DSS)
             </div>
           </div>
-
-          <div className="impact-video">
-            <iframe
+          <div
+          style={{
+            textAlign: 'center',
+            margin: '50px auto 10px auto',
+            width: '100vw',
+          }}>
+          <div
+              id="infographic"
               style={{
-                minHeight: '150px',
-                minWidth: '300px',
-                height: '30vw',
-                width: '60vw',
-                padding: '4px',
-                border: '4px solid #A97F2B',
-              }}
-              src="https://www.youtube.com/embed/evr-R7iC1VM?si=5WMWmFosgB07mvvT"
-              // title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
-          </div>
+                backgroundImage: `url(${infographic})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'contain',
+                border: '3px solid #A97F2B',
+                borderRadius: '10px',
+                margin: 'auto'
+              }}></div>
+              </div>
           <div
             className="heading"
             style={{ color: '#418F37', width: '80%', margin: 'auto' }}>
-            The system responded positively to the approach taken and the
-            numbers spoke for themselves…
+            The ecosystem responded positively to the approach taken and the numbers spoke for themselves…
           </div>
           <div
             style={{
@@ -295,9 +291,8 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   fontSize: '14px',
                   width: '80%',
                 }}>
-                officials leverage **KSK weekly for decision-making on
-                agricultural operations<br></br>
-                **Krushi Samiksha Kendra
+                officials leverage KSK weekly for decision-making on
+                agricultural operations
               </p>
             </div>
             <div
@@ -329,7 +324,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   fontSize: '14px',
                   width: '80%',
                 }}>
-                officials conduct monthly top-down reviews using the KPIs
+                officials conduct monthly top-down reviews using the Key Performance Indicators
               </p>
             </div>
             <div
@@ -361,7 +356,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   fontSize: '14px',
                   width: '80%',
                 }}>
-                officials receive regular nudges and reminders based on KPI
+                officials receive regular nudges and reminders based on 
                 performance
               </p>
             </div>
@@ -469,8 +464,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 color: '#418F37',
                 paddingTop: mobile ? '25px' : 0,
               }}>
-              Read the story of how Odisha transformed the way government
-              officials use data & real-time analytics on key agri-operations
+              Read the story of how Odisha transformed the way government officials use data & real-time analytics on key agri-operations
             </div>
             <div>
               <p
