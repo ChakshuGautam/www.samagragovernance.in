@@ -436,7 +436,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             }}>
             <button
               className="casestudy-btn"
-              style={{ marginTop: '20px', cursor: 'pointer' }}
+              style={{ marginTop: '20px', cursor: 'pointer', marginBottom: '5px' }}
               onClick={() => {
                 const link = document.createElement('a');
                 link.href =
