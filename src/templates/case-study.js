@@ -124,11 +124,16 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           className="case-study-main-heading heading"
           style={{
             color: '#418F37',
-            fontSize: '32px',
+            fontSize: '30px',
             width: '80%',
             margin: 'auto',
           }}>
-          India’s 1<sup>st</sup> Centralised Monitoring System in agriculture, KSK was set up with a vision to aid evidence-backed decision making
+          India’s 1<sup>st</sup> Centralised Monitoring System in agriculture,
+          KSK was set up with a vision to aid <br></br>
+          <span style={{ fontWeight: 'bold', background: 'yellow' }}>
+            evidence-backed decision making
+          </span>{' '}
+          in the sector.
         </div>
       </FadeInSection>
       <div className="spacer">
@@ -136,43 +141,33 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       </div>
       <FadeInSection>
         <div className="text" style={{ width: '70%', margin: 'auto' }}>
-        Despite multiple challenges surrounding transparency and efficiency Odisha swiftly aced streamlining all processes to combat complex challenges in agriculture. Take a look at what this means for the state…
+          Why the{' '}
+          <span style={{ fontWeight: 'bold', background: 'yellow' }}>need</span>{' '}
+          for evidence-backed decision making in agriculture? <br></br>
+          <br></br>
+          {`The Agriculture sector in India accounts for the livelihood
+          of >70% rural households. It is an integration of multiple industries
+          such as animal husbandry, crop production, food processing, organic
+          farming. Hence, making agri-operations highly complex to manage with
+          transparency & efficiency.`}
+          <br></br>
+          <br></br>Here are the specific{' '}
+          <span style={{ fontWeight: 'bold', background: 'yellow' }}>
+            challenges
+          </span>{' '}
+          that the state of{' '}
+          <span style={{ fontWeight: 'bold', background: 'yellow' }}>
+            Odisha
+          </span>{' '}
+          was encountering in 2017
         </div>
         <div
           style={{
-            textAlign: 'center',
-            marginTop: '50px',
-            width: '100vw',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
           }}>
-             <div className="impact-video">
-            <iframe
-              style={{
-                minHeight: '150px',
-                minWidth: '300px',
-                height: '30vw',
-                width: '60vw',
-                padding: '4px',
-                border: '4px solid #A97F2B',
-              }}
-              src="https://www.youtube.com/embed/evr-R7iC1VM?si=5WMWmFosgB07mvvT"
-              // title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
-          </div>
-          
-        </div>
-      </FadeInSection>
-      {!mobile && <LineDrawingOnScrollRL />}
-      <FadeInSection>
-        <div className="case-study-summary-container">
           <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-            }}>
-              <div
             id="img1"
             style={{
               backgroundImage: `url(${img2})`,
@@ -181,7 +176,27 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               border: '3px solid #A97F2B',
               borderRadius: '10px',
             }}></div>
-          </div>
+        </div>
+      </FadeInSection>
+      {!mobile && <LineDrawingOnScrollRL />}
+      <FadeInSection>
+        <div className="case-study-summary-container">
+          {/* <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}>
+            <div
+              id="img1"
+              style={{
+                backgroundImage: `url(${img2})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'contain',
+                border: '3px solid #A97F2B',
+                borderRadius: '10px',
+              }}></div>
+          </div> */}
           <div className="case-study-summary-text">
             <div
               className="heading"
@@ -189,9 +204,40 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 textAlign: 'center',
                 color: '#418F37',
                 paddingBottom: '25px',
-                paddingTop: !mobile ? 0 : '25px'
+                paddingTop: !mobile ? 0 : '25px',
               }}>
-              Challenges were multilayered, encompassing data, feedback, timely response and policy modifications
+              Despite multilayered challenges, the{' '}
+              <span style={{ fontWeight: 'bold', background: 'yellow' }}>
+                Govt. of Odisha
+              </span>{' '}
+              harnessed the power of technology to drive{' '}
+              <span style={{ fontWeight: 'bold', background: 'yellow' }}>
+                digital transformation
+              </span>{' '}
+              in the sector. Take a look at what that meant for the state…
+            </div>
+            <div
+              style={{
+                textAlign: 'center',
+                marginTop: '50px',
+                // width: '100vw',
+              }}>
+              <div className="impact-video">
+                <iframe
+                  style={{
+                    minHeight: '150px',
+                    minWidth: '300px',
+                    height: '30vw',
+                    width: '60vw',
+                    padding: '4px',
+                    border: '4px solid #A97F2B',
+                  }}
+                  src="https://www.youtube.com/embed/evr-R7iC1VM?si=5WMWmFosgB07mvvT"
+                  // title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </div>
             </div>
             {/* <div className="text" style={{ textAlign: 'left' }}>
               To transform the way government officials use data and real-time
@@ -224,22 +270,40 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               className="heading"
               style={{
                 position: 'relative',
-                top: '38%',
+                top: '175px',
                 color: 'white',
                 width: '90%',
                 margin: 'auto',
                 fontSize: mobile ? '20px' : '36px',
               }}>
-              But the state sailed through, by introducing three broad categories of improvisations, which were premised upon a stable foundation laid by the Integrated Decision Support System (DSS)
+              The{' '}
+              <span
+                style={{
+                  fontWeight: 'bold',
+                  background: 'yellow',
+                  color: 'black',
+                }}>
+                large-scale transformation
+              </span>{' '}
+              was premised upon a stable foundation laid by the Integrated
+              Decision Support System (DSS) and implemented through the<br></br>
+              <span
+                style={{
+                  fontWeight: 'bold',
+                  background: 'yellow',
+                  color: 'black',
+                }}>
+                3 use-cases:
+              </span>
             </div>
           </div>
           <div
-          style={{
-            textAlign: 'center',
-            margin: '50px auto 10px auto',
-            width: '100vw',
-          }}>
-          <div
+            style={{
+              textAlign: 'center',
+              margin: '50px auto 10px auto',
+              width: '100vw',
+            }}>
+            <div
               id="infographic"
               style={{
                 backgroundImage: `url(${infographic})`,
@@ -247,13 +311,21 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 backgroundSize: 'contain',
                 border: '3px solid #A97F2B',
                 borderRadius: '10px',
-                margin: 'auto'
+                margin: 'auto',
               }}></div>
-              </div>
+          </div>
           <div
             className="heading"
             style={{ color: '#418F37', width: '80%', margin: 'auto' }}>
-            The ecosystem responded positively to the approach taken and the numbers spoke for themselves…
+            The{' '}
+            <span style={{ fontWeight: 'bold', background: 'yellow' }}>
+              ecosystem
+            </span>{' '}
+            responded positively to the approach taken and the{' '}
+            <span style={{ fontWeight: 'bold', background: 'yellow' }}>
+              numbers
+            </span>{' '}
+            spoke for themselves…
           </div>
           <div
             style={{
@@ -324,7 +396,8 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   fontSize: '14px',
                   width: '80%',
                 }}>
-                officials conduct monthly top-down reviews using the Key Performance Indicators
+                officials conduct monthly top-down reviews using the Key
+                Performance Indicators
               </p>
             </div>
             <div
@@ -356,7 +429,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   fontSize: '14px',
                   width: '80%',
                 }}>
-                officials receive regular nudges and reminders based on 
+                officials receive regular nudges and reminders based on
                 performance
               </p>
             </div>
@@ -431,7 +504,11 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             }}>
             <button
               className="casestudy-btn"
-              style={{ marginTop: '20px', cursor: 'pointer', marginBottom: '5px' }}
+              style={{
+                marginTop: '20px',
+                cursor: 'pointer',
+                marginBottom: '5px',
+              }}
               onClick={() => {
                 const link = document.createElement('a');
                 link.href =
@@ -464,7 +541,8 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 color: '#418F37',
                 paddingTop: mobile ? '25px' : 0,
               }}>
-              Read the story of how Odisha transformed the way government officials use data & real-time analytics on key agri-operations
+              Read the story of how Odisha transformed the way government
+              officials use data & real-time analytics on key agri-operations
             </div>
             <div>
               <p
@@ -661,8 +739,15 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           className="heading"
           style={{ color: '#418F37', width: '80%', margin: 'auto' }}>
           This breakthrough is a result of consistent support and meaningful
-          collaborations that we have received from our partners in the
-          ecosystem. Here are some insights from the ecosystem…
+          collaborations that we have received from our{' '}
+          <span style={{ fontWeight: 'bold', background: 'yellow' }}>
+            partners
+          </span>{' '}
+          in the ecosystem. Here are some{' '}
+          <span style={{ fontWeight: 'bold', background: 'yellow' }}>
+            insights
+          </span>
+          …
         </div>
         <div className="case-study-playlist-container">
           {/* <div className="playlist-box" id="playlist-box-id">
