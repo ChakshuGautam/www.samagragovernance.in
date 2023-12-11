@@ -513,8 +513,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   marginBottom: '0',
                   paddingBottom: '0',
                 }}>
-                How Odisha has operationalised India’s First Command & Control
-                Centre in Agriculture
+                How Odisha has operationalised India’s 1<sup>st</sup> Centralised Monitoring System in Agriculture
               </p>
               <p
                 style={{
