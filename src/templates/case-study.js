@@ -96,7 +96,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           <img src={upIcon} onClick={scrollToTop} />
         </div>
       )}
-      <div className="share">
+      {/* <div className="share">
         <img src={twitterLogo} alt="" />
         <img src={linkedinLogo} alt="" />
         <img src={instaLogo} alt="" />
@@ -115,7 +115,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           }}
         />
         <img src={mailLogo} alt="" />
-      </div>
+      </div> */}
       <div className="spacer">
         <img src={spacer} alt="" />
       </div>
@@ -129,11 +129,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             margin: 'auto',
           }}>
           India’s 1<sup>st</sup> Centralised Monitoring System in agriculture,
-          KSK was set up with a vision to aid <br></br>
-          <span style={{ fontWeight: 'bold', background: 'yellow' }}>
-            evidence-backed decision making
-          </span>{' '}
-          in the sector.
+          Krushi Samiksha Kendra (KSK) was set up with a vision to aid evidence-backed decision making
         </div>
       </FadeInSection>
       <div className="spacer">
@@ -141,25 +137,12 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       </div>
       <FadeInSection>
         <div className="text" style={{ width: '70%', margin: 'auto' }}>
-          Why the{' '}
-          <span style={{ fontWeight: 'bold', background: 'yellow' }}>need</span>{' '}
-          for evidence-backed decision making in agriculture? <br></br>
-          <br></br>
-          {`The Agriculture sector in India accounts for the livelihood
-          of >70% rural households. It is an integration of multiple industries
-          such as animal husbandry, crop production, food processing, organic
-          farming. Hence, making agri-operations highly complex to manage with
-          transparency & efficiency.`}
-          <br></br>
-          <br></br>Here are the specific{' '}
-          <span style={{ fontWeight: 'bold', background: 'yellow' }}>
-            challenges
-          </span>{' '}
-          that the state of{' '}
-          <span style={{ fontWeight: 'bold', background: 'yellow' }}>
-            Odisha
-          </span>{' '}
-          was encountering in 2017
+          <b>Need</b> for evidence-backed decision making <br></br>
+          <br></br> Agri-operations are highly complex to manage with challenges
+          like lack of timely inputs, increased pest incidents and worsening
+          impact of climate change, prevalent in the domain. <br></br>
+          <br></br> Here are some specific <b>challenges</b> that the state of{' '}
+          <b>Odisha</b> was encountering in 2017
         </div>
         <div
           style={{
@@ -206,15 +189,8 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 paddingBottom: '25px',
                 paddingTop: !mobile ? 0 : '25px',
               }}>
-              Despite multilayered challenges, the{' '}
-              <span style={{ fontWeight: 'bold', background: 'yellow' }}>
-                Govt. of Odisha
-              </span>{' '}
-              harnessed the power of technology to drive{' '}
-              <span style={{ fontWeight: 'bold', background: 'yellow' }}>
-                digital transformation
-              </span>{' '}
-              in the sector. Take a look at what that meant for the state…
+              Here’s how the Govt. of Odisha harnessed the power of technology
+              to drive digital transformation in the sector.
             </div>
             <div
               style={{
@@ -270,31 +246,14 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               className="heading"
               style={{
                 position: 'relative',
-                top: '175px',
+                top: '200px',
                 color: 'white',
                 width: '90%',
                 margin: 'auto',
                 fontSize: mobile ? '20px' : '36px',
               }}>
-              The{' '}
-              <span
-                style={{
-                  fontWeight: 'bold',
-                  background: 'yellow',
-                  color: 'black',
-                }}>
-                large-scale transformation
-              </span>{' '}
-              was premised upon a stable foundation laid by the Integrated
-              Decision Support System (DSS) and implemented through the<br></br>
-              <span
-                style={{
-                  fontWeight: 'bold',
-                  background: 'yellow',
-                  color: 'black',
-                }}>
-                3 use-cases:
-              </span>
+              This large scale transformation was enabled by an Integrated
+              Decision Support system (DSS) with the following key use cases:
             </div>
           </div>
           <div
@@ -317,15 +276,8 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           <div
             className="heading"
             style={{ color: '#418F37', width: '80%', margin: 'auto' }}>
-            The{' '}
-            <span style={{ fontWeight: 'bold', background: 'yellow' }}>
-              ecosystem
-            </span>{' '}
-            responded positively to the approach taken and the{' '}
-            <span style={{ fontWeight: 'bold', background: 'yellow' }}>
-              numbers
-            </span>{' '}
-            spoke for themselves…
+            The ecosystem responded positively and the numbers spoke for
+            themselves…
           </div>
           <div
             style={{
@@ -541,8 +493,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 color: '#418F37',
                 paddingTop: mobile ? '25px' : 0,
               }}>
-              Read the story of how Odisha transformed the way government
-              officials use data & real-time analytics on key agri-operations
+               Insights from the ground
             </div>
             <div>
               <p
@@ -734,7 +685,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       <div className="spacer">
         <img src={spacer} alt="" />
       </div> */}
-      <FadeInSection>
+      {/* <FadeInSection>
         <div
           className="heading"
           style={{ color: '#418F37', width: '80%', margin: 'auto' }}>
@@ -764,7 +715,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 allowfullscreen></iframe>
             </div>
           </div> */}
-          <div className={'cards-section'}>
+          {/* <div className={'cards-section'}>
             {['', ''].map((news, index) => {
               return (
                 <a href={''} target="_blank">
@@ -790,12 +741,12 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 </a>
               );
             })}
-          </div>
-        </div>
-      </FadeInSection>
-      <div className="spacer">
+          </div> */}
+        {/* </div> */}
+      {/* </FadeInSection> */}
+      {/* <div className="spacer">
         <img src={spacer} alt="" />
-      </div>
+      </div> */}
       {/* <FadeInSection>
         <div className="testimonials">
           <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
