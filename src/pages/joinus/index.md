@@ -89,12 +89,12 @@ formsElements:
     required: true
     type: text
     validation: VALID_TEXT
-  - contentDescription: Applying for which role?
-    label: Applying for which role?
+  - contentDescription: Applying for which consulting track role?
+    label: Applying for which consulting track role?
     options:
-      - text: Consulting
-      - text: Engineering
-      - text: Product
+      - text: Associate
+      - text: Senior Associate
+      - text: Consultant
     otherOptionAvailable:
       activateOn: ' '
     placeholder: Select Option
@@ -140,6 +140,18 @@ formsElements:
     required: false
     type: text
     validation: VALID_LINK
+  - contentDescription: ' '
+    label: Current CTC
+    placeholder: Enter your current ctc p.a.
+    required: true
+    type: text
+    validation: VALID_NUMBER
+  - contentDescription: ' '
+    label: Expected CTC
+    placeholder: Enter your expected ctc p.a.
+    required: true
+    type: text
+    validation: VALID_NUMBER
   - actionName: Upload
     contentDescription: ' '
     label: Upload Resume
@@ -148,6 +160,16 @@ formsElements:
     required: true
     type: file
     validation: VALID_FILE
+  - contentDescription: ' '
+    label: If shortlisted, when can you take round 2? (Concept note round)
+    options:
+      - text: 5th January
+      - text: 6th January
+      - text: 7th January
+    placeholder: Select Option
+    required: true
+    type: select
+    validation: VALID_OPTION
   - contentDescription: ' '
     label: Where did you hear about Samagra?
     options:
