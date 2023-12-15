@@ -245,6 +245,38 @@ export const JoinUsFormSection = ({
             </fieldset>
           </div>
         );
+      case 'number':
+        return (
+          <div className="col-md-4 col-sm-6 col-xs-12">
+            <fieldset className={'form-group'}>
+              <label>
+                {element.label}{' '}
+                {element.required ? (
+                  <span className={'required-mark'}>*</span>
+                ) : null}
+              </label>
+              <input
+                type="number"
+                onChange={(e) => {
+                  const formObjectTemp = {
+                    ...formObject,
+                  };
+                  formObjectTemp[element.key] = e.target.value;
+                  setFormObject(formObjectTemp);
+                }}
+                className={`form-control ${
+                  submitted && !customValidation(element) ? 'invalid' : ''
+                }`}
+                placeholder={element.placeholder}
+              />
+              {element.key === 'totalProfessionalExperienceInMonths' && (
+                <span class="hint">
+                  (excluding internships and fellowships)
+                </span>
+              )}
+            </fieldset>
+          </div>
+        );
       case 'select':
         return (
           <React.Fragment>
@@ -542,7 +574,7 @@ export const JoinUsFormSection = ({
           </div>
           {/* <p className={'m-0 py-2 text-center f-18 color-text-primary'}>We are not accepting any new applications, please check back later.</p>
                     <p className={'m-0 py-2 text-center f-18 color-text-primary'}>Follow us for more updates on LinkedIn.</p> */}
-          <a
+          {/* <a
             href="https://www.linkedin.com/company/samagra-transforming-governance/"
             style={{ margin: 'auto', padding: '15px 5px' }}>
             <img
@@ -557,7 +589,7 @@ export const JoinUsFormSection = ({
               width={'100%'}
               alt=""
             />
-          </a>
+          </a> */}
         </div>
         {infoText2 ? (
           <div className="row">
@@ -708,6 +740,29 @@ export const JoinUsFormSection = ({
                 return renderInput(fE);
               })}
 
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                }}>
+                <span
+                  style={{
+                    color: 'red',
+                    fontWeight: '600',
+                    marginRight: '1px',
+                  }}>
+                  *
+                </span>
+                <p
+                  style={{
+                    color: 'white',
+                    fontWeight: '600',
+                    margin: '16px 0',
+                  }}>
+                  Please note - The designation offered would be determined
+                  based on your profile and the nterviews going forward.
+                </p>
+              </div>
               <div
                 className="col-12 "
                 style={{ textAlign: 'center', marginTop: '30px' }}>

@@ -89,23 +89,11 @@ formsElements:
     required: true
     type: text
     validation: VALID_TEXT
-  - contentDescription: Applying for which consulting track role?
-    label: Applying for which consulting track role?
-    options:
-      - text: Associate
-      - text: Senior Associate
-      - text: Consultant
-    otherOptionAvailable:
-      activateOn: ' '
-    placeholder: Select Option
-    required: true
-    type: select
-    validation: VALID_OPTION
   - contentDescription: (excluding internships and fellowships)
     label: Total Professional Experience in months
     placeholder: Enter Number of Months
     required: true
-    type: text
+    type: number
     validation: VALID_NUMBER
   - contentDescription: ' Notice Period'
     label: Notice Period
@@ -141,14 +129,8 @@ formsElements:
     type: text
     validation: VALID_LINK
   - contentDescription: ' '
-    label: Current CTC
+    label: Current CTC (Fixed + Variable)
     placeholder: Enter your current ctc p.a.
-    required: true
-    type: text
-    validation: VALID_NUMBER
-  - contentDescription: ' '
-    label: Expected CTC
-    placeholder: Enter your expected ctc p.a.
     required: true
     type: text
     validation: VALID_NUMBER
