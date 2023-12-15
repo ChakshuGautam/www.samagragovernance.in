@@ -760,7 +760,7 @@ export const JoinUsFormSection = ({
                     margin: '16px 0',
                   }}>
                   Please note - The designation offered would be determined
-                  based on your profile and the nterviews going forward.
+                  based on your profile and the interviews going forward.
                 </p>
               </div>
               <div
