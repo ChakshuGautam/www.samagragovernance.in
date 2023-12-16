@@ -133,7 +133,7 @@ formsElements:
     placeholder: Enter your current ctc p.a.
     required: true
     type: text
-    validation: VALID_NUMBER
+    validation: VALID_TEXT
   - actionName: Upload
     contentDescription: ' '
     label: Upload Resume
