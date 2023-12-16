@@ -802,7 +802,7 @@ export const JoinUsFormSection = ({
                     setLoaderKey(JSON.parse(JSON.stringify(loaderKey)));
                     axios
                       .post(
-                        `https://recruitment-uploader.samagra.io/forms/form-submit`,  
+                        `https://recruitment-uploader.samagra.io/forms/form-submit`,
                         {
                           ...reqObject,
                           statementOfPurpose,
@@ -855,9 +855,30 @@ export const JoinUsFormSection = ({
             <div className={'thank-you-message'}>
               Thank you
               <div className="sub-title">
-                We have received your application. Our recruitment team will
-                reach out to you shortly.
+              While we evaluate your application, you should go through the following links for increasing your chances in the stages ahead:
               </div>
+                <ol style={{fontSize: '20px', fontWeight: 400, textAlign: 'left', margin:'auto'}}>
+                  <li>
+                    <a href="https://www.youtube.com/watch?v=Y-iHVVfSHRg&ab_channel=Samagra-TransformingGovernance">
+                      About Samagra video
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://drive.google.com/drive/folders/1cOYspNY75hwJu-m_lEfM9t27qXaiSlHH">
+                      How to prepare for Samagra Interviews
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://drive.google.com/file/d/1e7b_6l7H_mt1hOkWsIZPpumHk8ksRFr-/view?usp=sharing">
+                      Life at Samagra Video
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://heyzine.com/flip-book/041fd974bf.html">
+                      About Samagra Brochure
+                    </a>
+                  </li>
+                </ol>
               <div className="sub-title">
                 In case you'd like to get regular updates on our work, please
                 follow us on{' '}
