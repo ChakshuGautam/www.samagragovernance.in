@@ -612,7 +612,6 @@ export const JoinUsFormSection = ({
           {showForm ? (
             <div className="row">
               {formsElements.map((fE, index) => {
-                console.log(fE);
                 if (index === formsElements.length - 2) {
                   return (
                     <>
