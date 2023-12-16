@@ -30,5 +30,15 @@ podcasts:
     url: 'https://www.youtube.com/embed/xTiOH-ixAYs?si=NWYKLC3iCuWW2BQT'
   - title: EP 06 – Jasmine Shah
     url: 'https://www.youtube.com/embed/iZlZWSMVTXU?si=A1gVJ6a7KAnzwByo'
+  - title: EP 07 – Rajesh Bhushan
+    url: 'https://youtu.be/eLvVvaat5Aw?si=un-zcac2VYgJ8yXj'
+  - title: EP 08 – Alok Kumar
+    url: 'https://youtu.be/8QzklM9DPPg?si=bJ75aIcOGf1CXP7m'
+  - title: EP 09 – Dr. Rakesh Gupta
+    url: 'https://youtu.be/2uZtnYNCRxg?si=hpOnRUbCyVRqyyNW'
+  - title: EP 10 – Dr. S.Y. Quraishi
+    url: 'https://youtu.be/oO1S9puUE1M?si=jfTzp857ora3yx3n'
+  - title: S1 – Recap
+    url: 'https://youtu.be/VwFe_bkW-cw?si=MMAdH5DqmWTpvLg2'
 ---
 

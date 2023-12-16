@@ -12,8 +12,8 @@ mainContent:
       opportunity for you! C4GT 2023 is organised by Samagra and supported by
       the Digital Public Goods Alliance and Omidyar Network India as Knowledge
       Partners.
-textAboveButton: Applications for the C4GT Dedicated Mentoring Program are now open!
-link: 'http://bit.ly/c4gt_apply'
-buttonText: Apply Now
+textAboveButton: Applications for the C4GT 2023 Dedicated Mentoring Program are now closed
+link: 'https://www.codeforgovtech.in/'
+buttonText: Learn more about C4GT
 ---
 
