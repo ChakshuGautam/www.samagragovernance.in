@@ -803,7 +803,7 @@ export const JoinUsFormSection = ({
                     setLoaderKey(JSON.parse(JSON.stringify(loaderKey)));
                     axios
                       .post(
-                        'https://samagra.chatwithpdf.aitools.samagra.io/',
+                        `https://recruitment-uploader.samagra.io/forms/form-submit`,  
                         {
                           ...reqObject,
                           statementOfPurpose,
