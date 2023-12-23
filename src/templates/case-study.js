@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Helmet from 'react-helmet';
 import Layout from '../components/Layout';
 import PropTypes from 'prop-types';
-import img2 from '../../static/img/gosugamimg2.gif';
+import img2 from '../../static/img/kskimg2.gif';
 import infographic from '../../static/img/infographic.gif';
 import linkedinLogo from '../img/social/linkedin-black.svg';
 import instaLogo from '../img/social/instagram.svg';
@@ -17,7 +17,7 @@ import upIcon from '../img/up-arrow-png-20.png';
 import apostrophe_start from '../img/apostrophe_start.svg';
 import apostrophe_end from '../img/apostrophe_end.svg';
 import spacer from '../img/spacer.png';
-import impactImg from '../img/gosugam-casestudy-img.png';
+import impactImg from '../../static/img/gosugam-casestudy-img.jpeg';
 import icon1 from '../img/Icon1.svg';
 import icon2 from '../img/Icon2.svg';
 import icon3 from '../img/Icon3.svg';
@@ -27,6 +27,8 @@ import LineDrawingOnScrollRL from '../components/CaseStudyComponents/LinkDrawing
 import LineDrawingOnScrollLR from '../components/CaseStudyComponents/LinkDrawingOnScrollLR';
 import gosugamImpactImg from '../../static/img/gosugam-impact.jpeg';
 import gosugamLinksImg from '../../static/img/gosugam-links.jpeg';
+import { Modal } from 'react-responsive-modal';
+import 'react-responsive-modal/styles.css';
 
 function FadeInSection(props) {
   const [isVisible, setVisible] = useState(true);
@@ -52,6 +54,17 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
   const [hoveredIndex, setHoveredIndex] = useState(-1);
   const [mobile, setMobile] = useState(false);
   const [showUpIcon, setShowUpIcon] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalImage, setModalImage] = useState(null);
+
+  const openModal = (image) => {
+    setModalImage(image);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
 
   const scrollToTop = () => {
     scroll.scrollToTop();
@@ -124,7 +137,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           className="case-study-main-heading heading"
           style={{
             color: '#418F37',
-            fontSize: '30px',
+            fontSize: mobile ? '20px' : '30px',
             width: '80%',
             margin: 'auto',
           }}>
@@ -132,6 +145,15 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           Krushi Samiksha Kendra (KSK) was set up with a vision to aid evidence-backed decision making
         </div>
       </FadeInSection>
+      {mobile && <Modal open={modalOpen} onClose={closeModal} center>
+        {modalImage && (
+          <img
+            src={modalImage}
+            alt="Full Screen"
+            style={{ maxWidth: '100%', maxHeight: '100%' }}
+          />
+        )}
+      </Modal>}
       <div className="spacer">
         <img src={spacer} alt="" />
       </div>
@@ -149,6 +171,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            marginTop: '50px',
           }}>
           <div
             id="img1"
@@ -158,10 +181,12 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               backgroundSize: 'contain',
               border: '3px solid #A97F2B',
               borderRadius: '10px',
-            }}></div>
+            }}
+            onClick={() => openModal(img2)}
+            ></div>
         </div>
       </FadeInSection>
-      {!mobile && <LineDrawingOnScrollRL />}
+      {!mobile && <LineDrawingOnScrollRL id={'clip1'} />}
       <FadeInSection>
         <div className="case-study-summary-container">
           {/* <div
@@ -186,16 +211,18 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               style={{
                 textAlign: 'center',
                 color: '#418F37',
-                paddingBottom: '25px',
-                paddingTop: !mobile ? 0 : '25px',
+                // paddingBottom: '25px',
+                paddingTop: !mobile ? 0 : '50px',
+                fontSize: mobile ? '20px' : '30px',
               }}>
               Here’s how the Govt. of Odisha harnessed the power of technology
-              to drive digital transformation in the sector.
+              to drive digital transformation in the sector
             </div>
             <div
               style={{
                 textAlign: 'center',
-                marginTop: '50px',
+                marginTop: mobile ? '30px' : '50px',
+                marginBottom: mobile ? '50px' : '0px',
                 // width: '100vw',
               }}>
               <div className="impact-video">
@@ -211,7 +238,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   src="https://www.youtube.com/embed/evr-R7iC1VM?si=5WMWmFosgB07mvvT"
                   // title="YouTube video player"
                   frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen;"
                   allowfullscreen></iframe>
               </div>
             </div>
@@ -231,7 +258,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           </div>
         </div>
       </FadeInSection>
-      {!mobile && <LineDrawingOnScrollRL />}
+      {!mobile && <LineDrawingOnScrollLR id={'clip2'}/>}
       <FadeInSection>
         <div className="impact">
           <div
@@ -239,6 +266,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               backgroundImage: `url(${impactImg})`,
               backgroundRepeat: 'no-repeat',
               backgroundSize: 'cover',
+              backgroundPosition: 'center',
               width: '100vw',
               height: '400px',
             }}>
@@ -246,11 +274,13 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               className="heading"
               style={{
                 position: 'relative',
-                top: '200px',
-                color: 'white',
-                width: '90%',
+                padding: '10px',
+                top: '250px',
+                color: '#418F37',
+                backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                width: '100%',
                 margin: 'auto',
-                fontSize: mobile ? '20px' : '36px',
+                fontSize: mobile ? '20px' : '30px',
               }}>
               This large scale transformation was enabled by an Integrated
               Decision Support system (DSS) with the following key use cases:
@@ -271,11 +301,13 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 border: '3px solid #A97F2B',
                 borderRadius: '10px',
                 margin: 'auto',
-              }}></div>
+              }}
+              onClick={() => openModal(infographic)}
+              ></div>
           </div>
           <div
             className="heading"
-            style={{ color: '#418F37', width: '80%', margin: 'auto' }}>
+            style={{ color: '#418F37', width: '80%', margin: 'auto', fontSize: mobile ? '20px' : '30px' }}>
             The ecosystem responded positively and the numbers spoke for
             themselves…
           </div>
@@ -296,7 +328,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 width: mobile ? '100%' : 0,
                 padding: '10px',
               }}>
-              <img src={icon1} alt="" />
+              <img src={icon1} alt="" width={mobile ? 100 : 150} height={mobile ? 100 : 150} />
               <p
                 className="text"
                 style={{
@@ -312,8 +344,8 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 style={{
                   padding: 0,
                   margin: 0,
-                  fontSize: '14px',
-                  width: '80%',
+                  fontSize: mobile ? '12px' : '14px',
+                  width: mobile ? '90%' : '80%',
                 }}>
                 officials leverage KSK weekly for decision-making on
                 agricultural operations
@@ -329,7 +361,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 width: mobile ? '100%' : 0,
                 padding: '10px',
               }}>
-              <img src={icon2} alt="" />
+              <img src={icon2} alt="" width={mobile ? 100 : 150} height={mobile ? 100 : 150} />
               <p
                 className="text"
                 style={{
@@ -345,8 +377,8 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 style={{
                   padding: 0,
                   margin: 0,
-                  fontSize: '14px',
-                  width: '80%',
+                  fontSize: mobile ? '12px' : '14px',
+                  width: mobile ? '90%' : '80%',
                 }}>
                 officials conduct monthly top-down reviews using the Key
                 Performance Indicators
@@ -362,7 +394,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 width: mobile ? '100%' : 0,
                 padding: '10px',
               }}>
-              <img src={icon3} alt="" />
+              <img src={icon3} alt="" width={mobile ? 100 : 150} height={mobile ? 100 : 150} />
               <p
                 className="text"
                 style={{
@@ -378,8 +410,8 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 style={{
                   padding: 0,
                   margin: 0,
-                  fontSize: '14px',
-                  width: '80%',
+                  fontSize: mobile ? '12px' : '14px',
+                  width: mobile ? '90%' : '80%',
                 }}>
                 officials receive regular nudges and reminders based on
                 performance
@@ -395,7 +427,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 width: mobile ? '100%' : 0,
                 padding: '10px',
               }}>
-              <img src={icon4} alt="" />
+              <img src={icon4} alt="" width={mobile ? 100 : 150} height={mobile ? 100 : 150} />
               <p
                 className="text"
                 style={{
@@ -411,8 +443,8 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 style={{
                   padding: 0,
                   margin: 0,
-                  fontSize: '14px',
-                  width: '80%',
+                  fontSize: mobile ? '12px' : '14px',
+                  width: mobile ? '90%' : '80%',
                 }}>
                 officials consider this an impactful tool for review &
                 monitoring
@@ -428,7 +460,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 width: mobile ? "100%" : 0,
                 padding: '10px',
               }}>
-              <img src={icon5} alt="" />
+              <img src={icon5} alt="" width={mobile ? 100 : 150} height={mobile ? 100 : 150}/>
               <p
                 className="text"
                 style={{
@@ -476,7 +508,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           </div>
         </div>
       </FadeInSection>
-      {!mobile && <LineDrawingOnScrollLR />}
+      {!mobile && <LineDrawingOnScrollRL id={'clip3'}/>}
       <FadeInSection>
         <div
           style={{
@@ -485,13 +517,14 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             justifyContent: 'space-evenly',
           }}
           className="case-study-links-container">
-          <div style={{ width: mobile ? '80%' : '50%', marginBottom: 'auto' }}>
+          <div style={{ width: mobile ? '80%' : '50%', marginBottom: 'auto', marginTop: mobile ? '10px': '' }}>
             <div
               className="heading"
               style={{
                 textAlign: 'left',
                 color: '#418F37',
                 paddingTop: mobile ? '25px' : 0,
+                fontSize: mobile ? '20px' : '30px',
               }}>
                Insights from the ground
             </div>
@@ -502,7 +535,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   textAlign: 'left',
                   marginBottom: '0',
                   paddingBottom: '0',
-                  fontSize: '28px',
+                  fontSize: mobile ? '18px' : '28px',
                 }}>
                 Blog
               </p>
@@ -535,7 +568,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   textAlign: 'left',
                   marginBottom: '0',
                   paddingBottom: '0',
-                  fontSize: '28px',
+                  fontSize: mobile ? '18px' : '28px',
                 }}>
                 Op-Ed
               </p>
@@ -795,7 +828,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       <FadeInSection>
         <div
           className="heading"
-          style={{ color: '#418F37', margin: '50px auto' }}>
+          style={{ color: '#418F37', margin: '50px auto', fontSize: mobile ? '20px' : '30px' }}>
           View more <i>Success Stories of Impact</i>
         </div>
         <div className={'cards-section'}>

@@ -39,6 +39,7 @@
     "react-helmet": "^5.2.0",
     "react-id-swiper": "^2.3.2",
     "react-inline-script": "^1.2.0",
+    "react-responsive-modal": "^6.4.2",
     "react-scroll": "^1.7.14",
     "swiper": "^4.5.0",
     "uuid": "^3.2.1"

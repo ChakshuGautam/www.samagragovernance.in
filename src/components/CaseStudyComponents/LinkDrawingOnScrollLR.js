@@ -1,10 +1,12 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
-const LinkDrawingOnScrollLR = () => {
-  const svgRef = useRef(null);
+const LinkDrawingOnScrollLR = ({id}) => {
+  // console.log("log:", id)
+  // const [scrollPercentage, setScrollPercentage] = useState(0);
+  const pathRef = useRef(null);
 
   const handleScroll = () => {
-    const path = svgRef.current.querySelector('#second-svg-path');
+    const path = pathRef.current;
     const pathLength = path.getTotalLength();
 
     // Make very long dashes (the length of the path itself)
@@ -13,14 +15,19 @@ const LinkDrawingOnScrollLR = () => {
     // Offset the dashes so that it appears hidden entirely
     path.style.strokeDashoffset = pathLength;
 
-    const boundingBox = svgRef.current.getBoundingClientRect();
+    const boundingBox = path.getBoundingClientRect();
     let newScrollPercentage =
-      boundingBox.top / (boundingBox.height - window.innerHeight);
+      boundingBox.top / (boundingBox.height - window.innerHeight) + 1.15;
+      // console.log("log:", newScrollPercentage);
+    if (newScrollPercentage >= 1){
+      document.getElementById(id).style.display = 'block';
+      newScrollPercentage = 100;
+    }else{
+      document.getElementById(id).style.display = 'none';
+    }
 
-    if (newScrollPercentage > -1) newScrollPercentage = -1;
-    
     // Length to offset the dashes
-    const drawLength = pathLength * newScrollPercentage*1.2;
+    const drawLength = pathLength * newScrollPercentage;
 
     // Draw in reverse
     path.style.strokeDashoffset = pathLength - drawLength;
@@ -29,8 +36,10 @@ const LinkDrawingOnScrollLR = () => {
     if (newScrollPercentage >= 0.99) {
       path.style.strokeDasharray = 'none';
     } else {
-      path.style.strokeDasharray = pathLength + ' ' + pathLength;
+      path.style.strokeDasharray = pathLength;
     }
+
+    // setScrollPercentage(newScrollPercentage);
   };
 
   useEffect(() => {
@@ -44,20 +53,40 @@ const LinkDrawingOnScrollLR = () => {
   }, []); // Re-run effect when scrollPercentage changes
 
   return (
-    <div style={{ height: 'fit-content' }} ref={svgRef}>
+    <div style={{ height: 'fit-content' }}>
       <svg
-        width="350"
-        height="350"
-        viewBox="0 0 800 900"
+        width="250"
+        height="250"
+        viewBox="0 0 335 585"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         style={{ marginLeft: '43%' }}>
         <path
-          id="second-svg-path"
-          d="M92.8427 3C1678.09 539.993 -69.1783 758.863 5.33168 1137"
-          stroke="#F7CA86"
-          strokeWidth="5"
+          ref={pathRef}
+          d="M57.9108 3C709.181 261.552 -8.65268 366.934 21.9584 549"
+          stroke="#A97F2B"
+          stroke-width="5"
+          stroke-dasharray="17 17"
         />
+        <g clip-path="url(#clip0_1021_29996)" id={id}>
+          <path
+            d="M23.116 557.559L35.5159 548.935L29.6481 583.258L8.10331 555.903L23.116 557.559ZM23.116 557.559L25.7289 567.839"
+            stroke="#A97F2B"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0_1021_29996">
+            <rect
+              width="35"
+              height="35"
+              fill="white"
+              transform="translate(47.9731 554.889) rotate(120.739)"
+            />
+          </clipPath>
+        </defs>
       </svg>
     </div>
   );

@@ -21,7 +21,6 @@ CMS.registerMediaLibrary(cloudinary);
 CMS.registerPreviewStyle(`cms.css`);
 CMS.registerPreviewTemplate("index", IndexPagePreview);
 CMS.registerPreviewTemplate("about", AboutPagePreview);
-// CMS.registerPreviewTemplate('team', TeamPagePreview)
 CMS.registerPreviewTemplate("products", ProductPagePreview);
 CMS.registerPreviewTemplate("c4gt", C4GTPagePreview);
 CMS.registerPreviewTemplate("tgc", TGCPagePreview);
