@@ -276,6 +276,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               backgroundPosition: 'center',
               width: '100vw',
               height: '400px',
+              marginTop: !mobile ? '10px': ''
             }}>
             <div
               className="heading"
@@ -584,8 +585,8 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   marginBottom: '0',
                   paddingBottom: '0',
                 }}>
-                How Odisha has operationalised India’s 1<sup>st</sup>{' '}
-                Centralised Monitoring System in Agriculture
+                How Odisha has operationalized India’s 1<sup>st</sup>{' '}
+                Centralized Monitoring System in Agriculture
               </p>
               <p
                 style={{
