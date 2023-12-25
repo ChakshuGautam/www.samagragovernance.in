@@ -28,16 +28,20 @@ import LineDrawingOnScrollLR from '../components/CaseStudyComponents/LinkDrawing
 import gosugamImpactImg from '../../static/img/gosugam-impact.jpeg';
 import gosugamLinksImg from '../../static/img/gosugam-links.jpeg';
 import { Modal } from 'react-responsive-modal';
+import { debounce } from 'lodash';
 import 'react-responsive-modal/styles.css';
 
 function FadeInSection(props) {
-  const [isVisible, setVisible] = useState(true);
+  const [isVisible, setVisible] = useState(false);
   const domRef = useRef();
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => setVisible(entry.isIntersecting));
-    });
+    const handleIntersection = debounce((entries) => {
+      entries.forEach((entry) =>
+        entry.isIntersecting ? setVisible(entry.isIntersecting) : null
+      );
+    }, 200);
+    const observer = new IntersectionObserver(handleIntersection);
     observer.observe(domRef.current);
     return () => observer.unobserve(domRef.current);
   }, []);
@@ -141,25 +145,29 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             width: '80%',
             margin: 'auto',
           }}>
-          India’s 1<sup>st</sup> Centralised Monitoring System in agriculture,
-          Krushi Samiksha Kendra (KSK) was set up with a vision to aid evidence-backed decision making
+          India’s 1<sup>st</sup> Centralised Monitoring System in Agriculture,
+          Krushi Samiksha Kendra (KSK) was set up with a vision to aid
+          evidence-backed decision-making
         </div>
       </FadeInSection>
-      {mobile && <Modal open={modalOpen} onClose={closeModal} center>
-        {modalImage && (
-          <img
-            src={modalImage}
-            alt="Full Screen"
-            style={{ maxWidth: '100%', maxHeight: '100%' }}
-          />
-        )}
-      </Modal>}
+      {/* Show modal only in mobile */}
+      {mobile && (
+        <Modal open={modalOpen} onClose={closeModal} center>
+          {modalImage && (
+            <img
+              src={modalImage}
+              alt="Full Screen"
+              style={{ maxWidth: '100%', maxHeight: '100%' }}
+            />
+          )}
+        </Modal>
+      )}
       <div className="spacer">
         <img src={spacer} alt="" />
       </div>
       <FadeInSection>
         <div className="text" style={{ width: '70%', margin: 'auto' }}>
-          <b>Need</b> for evidence-backed decision making <br></br>
+          <b>Need</b> for evidence-backed decision-making <br></br>
           <br></br> Agri-operations are highly complex to manage with challenges
           like lack of timely inputs, increased pest incidents and worsening
           impact of climate change, prevalent in the domain. <br></br>
@@ -182,11 +190,10 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               border: '3px solid #A97F2B',
               borderRadius: '10px',
             }}
-            onClick={() => openModal(img2)}
-            ></div>
+            onClick={() => openModal(img2)}></div>
+          {!mobile && <LineDrawingOnScrollRL id={'clip1'} />}
         </div>
       </FadeInSection>
-      {!mobile && <LineDrawingOnScrollRL id={'clip1'} />}
       <FadeInSection>
         <div className="case-study-summary-container">
           {/* <div
@@ -212,7 +219,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 textAlign: 'center',
                 color: '#418F37',
                 // paddingBottom: '25px',
-                paddingTop: !mobile ? 0 : '50px',
+                paddingTop: !mobile ? '5px' : '50px',
                 fontSize: mobile ? '20px' : '30px',
               }}>
               Here’s how the Govt. of Odisha harnessed the power of technology
@@ -241,6 +248,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen;"
                   allowfullscreen></iframe>
               </div>
+            {!mobile && <LineDrawingOnScrollLR id={'clip2'} />}
             </div>
             {/* <div className="text" style={{ textAlign: 'left' }}>
               To transform the way government officials use data and real-time
@@ -258,7 +266,6 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           </div>
         </div>
       </FadeInSection>
-      {!mobile && <LineDrawingOnScrollLR id={'clip2'}/>}
       <FadeInSection>
         <div className="impact">
           <div
@@ -302,12 +309,16 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 borderRadius: '10px',
                 margin: 'auto',
               }}
-              onClick={() => openModal(infographic)}
-              ></div>
+              onClick={() => openModal(infographic)}></div>
           </div>
           <div
             className="heading"
-            style={{ color: '#418F37', width: '80%', margin: 'auto', fontSize: mobile ? '20px' : '30px' }}>
+            style={{
+              color: '#418F37',
+              width: '80%',
+              margin: 'auto',
+              fontSize: mobile ? '20px' : '30px',
+            }}>
             The ecosystem responded positively and the numbers spoke for
             themselves…
           </div>
@@ -328,7 +339,12 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 width: mobile ? '100%' : 0,
                 padding: '10px',
               }}>
-              <img src={icon1} alt="" width={mobile ? 100 : 150} height={mobile ? 100 : 150} />
+              <img
+                src={icon1}
+                alt=""
+                width={mobile ? 100 : 150}
+                height={mobile ? 100 : 150}
+              />
               <p
                 className="text"
                 style={{
@@ -361,7 +377,12 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 width: mobile ? '100%' : 0,
                 padding: '10px',
               }}>
-              <img src={icon2} alt="" width={mobile ? 100 : 150} height={mobile ? 100 : 150} />
+              <img
+                src={icon2}
+                alt=""
+                width={mobile ? 100 : 150}
+                height={mobile ? 100 : 150}
+              />
               <p
                 className="text"
                 style={{
@@ -394,7 +415,12 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 width: mobile ? '100%' : 0,
                 padding: '10px',
               }}>
-              <img src={icon3} alt="" width={mobile ? 100 : 150} height={mobile ? 100 : 150} />
+              <img
+                src={icon3}
+                alt=""
+                width={mobile ? 100 : 150}
+                height={mobile ? 100 : 150}
+              />
               <p
                 className="text"
                 style={{
@@ -427,7 +453,12 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 width: mobile ? '100%' : 0,
                 padding: '10px',
               }}>
-              <img src={icon4} alt="" width={mobile ? 100 : 150} height={mobile ? 100 : 150} />
+              <img
+                src={icon4}
+                alt=""
+                width={mobile ? 100 : 150}
+                height={mobile ? 100 : 150}
+              />
               <p
                 className="text"
                 style={{
@@ -484,7 +515,9 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             style={{
               width: '100%',
               display: 'flex',
+              flexDirection: 'column',
               justifyContent: 'center',
+              alignItems: 'center',
             }}>
             <button
               className="casestudy-btn"
@@ -492,23 +525,23 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 marginTop: '20px',
                 cursor: 'pointer',
                 marginBottom: '5px',
+                maxWidth: '200px',
               }}
               onClick={() => {
                 const link = document.createElement('a');
                 link.href =
-                  'https://drive.google.com/uc?id=1BnFOtXvE1aWkg73Pr8mka71SsJPa9Qkv&export=download';
-                link.download = 'infographic.pdf';
-                link.setAttribute('type', 'application/pdf');
+                  'https://drive.google.com/file/d/1Kgxrov0ppNBbwDe8F_CAGCmQi9KB9TTF/view?usp=drive_link';
+                link.target = '_blank';
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
               }}>
               Download Infographic
             </button>
+            {!mobile && <LineDrawingOnScrollRL id={'clip3'} />}
           </div>
         </div>
       </FadeInSection>
-      {!mobile && <LineDrawingOnScrollRL id={'clip3'}/>}
       <FadeInSection>
         <div
           style={{
@@ -517,7 +550,12 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             justifyContent: 'space-evenly',
           }}
           className="case-study-links-container">
-          <div style={{ width: mobile ? '80%' : '50%', marginBottom: 'auto', marginTop: mobile ? '10px': '' }}>
+          <div
+            style={{
+              width: mobile ? '80%' : '50%',
+              marginBottom: 'auto',
+              marginTop: mobile ? '10px' : '',
+            }}>
             <div
               className="heading"
               style={{
@@ -526,7 +564,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 paddingTop: mobile ? '25px' : 0,
                 fontSize: mobile ? '20px' : '30px',
               }}>
-               Insights from the ground
+              Insights from the ground
             </div>
             <div>
               <p
@@ -546,7 +584,8 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   marginBottom: '0',
                   paddingBottom: '0',
                 }}>
-                How Odisha has operationalised India’s 1<sup>st</sup> Centralised Monitoring System in Agriculture
+                How Odisha has operationalised India’s 1<sup>st</sup>{' '}
+                Centralised Monitoring System in Agriculture
               </p>
               <p
                 style={{
@@ -561,7 +600,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               </p>
             </div>
 
-            <div>
+            {/* <div>
               <p
                 className="text"
                 style={{
@@ -592,7 +631,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 }}>
                 Read More
               </p>
-            </div>
+            </div> */}
             {/* <div>
               <p
                 className="text"
@@ -747,7 +786,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 allowfullscreen></iframe>
             </div>
           </div> */}
-          {/* <div className={'cards-section'}>
+      {/* <div className={'cards-section'}>
             {['', ''].map((news, index) => {
               return (
                 <a href={''} target="_blank">
@@ -774,7 +813,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               );
             })}
           </div> */}
-        {/* </div> */}
+      {/* </div> */}
       {/* </FadeInSection> */}
       {/* <div className="spacer">
         <img src={spacer} alt="" />
@@ -825,7 +864,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       <div className="spacer">
         <img src={spacer} alt="" />
       </div>
-      <FadeInSection>
+      {/* <FadeInSection>
         <div
           className="heading"
           style={{ color: '#418F37', margin: '50px auto', fontSize: mobile ? '20px' : '30px' }}>
@@ -861,7 +900,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       </FadeInSection>
       <div className="spacer">
         <img src={spacer} alt="" />
-      </div>
+      </div> */}
     </section>
   );
 };

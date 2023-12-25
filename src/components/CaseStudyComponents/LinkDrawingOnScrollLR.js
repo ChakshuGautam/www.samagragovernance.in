@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 
-const LinkDrawingOnScrollLR = ({id}) => {
+const LinkDrawingOnScrollLR = ({id}) => { 
   // console.log("log:", id)
   // const [scrollPercentage, setScrollPercentage] = useState(0);
   const pathRef = useRef(null);
@@ -60,13 +60,12 @@ const LinkDrawingOnScrollLR = ({id}) => {
         viewBox="0 0 335 585"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        style={{ marginLeft: '43%' }}>
+        >
         <path
           ref={pathRef}
           d="M57.9108 3C709.181 261.552 -8.65268 366.934 21.9584 549"
           stroke="#A97F2B"
           stroke-width="5"
-          stroke-dasharray="17 17"
         />
         <g clip-path="url(#clip0_1021_29996)" id={id}>
           <path
