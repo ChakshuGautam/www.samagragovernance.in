@@ -242,7 +242,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                     padding: '4px',
                     border: '4px solid #A97F2B',
                   }}
-                  src="https://www.youtube.com/embed/evr-R7iC1VM?si=5WMWmFosgB07mvvT"
+                  src="https://www.youtube.com/embed/-GRdJ9XSAEE?si=iYN4BchI6rJRT78z"
                   // title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen;"
@@ -595,7 +595,11 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   color: '#418F37',
                   cursor: 'pointer',
                   fontStyle: 'italic',
-                }}>
+                }}
+                onClick={() => {
+                  window.location.href = '/blog/2023-12-25-amrit-series-1-krushi-samiksha-kendra/';
+                }}
+                >
                 Read More
               </p>
             </div>
