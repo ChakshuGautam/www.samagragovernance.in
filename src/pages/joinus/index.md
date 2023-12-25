@@ -89,23 +89,11 @@ formsElements:
     required: true
     type: text
     validation: VALID_TEXT
-  - contentDescription: Applying for which role?
-    label: Applying for which role?
-    options:
-      - text: Consulting
-      - text: Engineering
-      - text: Product
-    otherOptionAvailable:
-      activateOn: ' '
-    placeholder: Select Option
-    required: true
-    type: select
-    validation: VALID_OPTION
   - contentDescription: (excluding internships and fellowships)
     label: Total Professional Experience in months
     placeholder: Enter Number of Months
     required: true
-    type: text
+    type: number
     validation: VALID_NUMBER
   - contentDescription: ' Notice Period'
     label: Notice Period
@@ -140,6 +128,12 @@ formsElements:
     required: false
     type: text
     validation: VALID_LINK
+  - contentDescription: ' '
+    label: Current CTC (Fixed + Variable)
+    placeholder: Enter your current ctc p.a.
+    required: true
+    type: text
+    validation: VALID_TEXT
   - actionName: Upload
     contentDescription: ' '
     label: Upload Resume
@@ -148,6 +142,16 @@ formsElements:
     required: true
     type: file
     validation: VALID_FILE
+  - contentDescription: ' '
+    label: If shortlisted, when can you take round 2? (Concept note round)
+    options:
+      - text: 5th January
+      - text: 6th January
+      - text: 7th January
+    placeholder: Select Option
+    required: true
+    type: select
+    validation: VALID_OPTION
   - contentDescription: ' '
     label: Where did you hear about Samagra?
     options:

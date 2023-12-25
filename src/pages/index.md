@@ -5,11 +5,11 @@ description: Samagra | Transforming Governance
 stickyBanner:
   stickyBannerActive: true
   stickyBannerButtonColor: orange
-  stickyBannerButtonLink: 'https://www.youtube.com/@SushasanThePodcast'
+  stickyBannerButtonLink: 'https://www.samagragovernance.in/amritseries/ksk/'
   stickyBannerButtonTextColor: white
-  stickyBannerButtonTitle: Watch Now
+  stickyBannerButtonTitle: here
   stickyBannerColor: white
-  stickyBannerTitle: Check out our newly launched podcast - 'Sushasan'
+  stickyBannerTitle: Check out our newly launched Amrit Series
   stickyBannerTitleColor: black
 media:
   - mediaItem: >-
