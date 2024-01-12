@@ -46,6 +46,8 @@ title4: New episodes every week!
 podcastsS2:
   - title: S2 – Trailer
     url: https://www.youtube.com/embed/EunWHI9_aco
-  - title: EP 01 – P. Narahari
+  - title: EP 01 – P. Narahari Trailer
     url: https://www.youtube.com/embed/YxxNbtiHmD0
+  - title: EP 01 – P. Narahari
+    url: https://www.youtube.com/embed/V1yNZUThGoU
 ---
