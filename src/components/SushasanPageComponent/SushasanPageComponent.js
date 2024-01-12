@@ -30,14 +30,20 @@ const SushasanPageComponent = ({ content }) => {
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen></iframe>
           <p className="sushasan-channel-trailer-text">
-            <div dangerouslySetInnerHTML={{ __html: content.text }} />
+            <div dangerouslySetInnerHTML={{ __html: content?.text }} />
           </p>
         </div>
 
         <div className="mt-5 main-text text-center">
-          <h3 style={{ fontWeight: 'bold' }}>Sushasan Episodes</h3>
-          <h5 className="py-2">New episodes every week!</h5>
-          <Carousel items={content.podcasts} />
+          <h3 style={{ fontWeight: 'bold' }}>{content?.title1}</h3>
+          <h5 className="py-2">{content?.title2}</h5>
+          <Carousel items={content?.podcastsS1} />
+        </div>
+
+        <div className="mt-5 main-text text-center">
+          <h3 style={{ fontWeight: 'bold' }}>{content?.title3}</h3>
+          <h5 className="py-2">{content?.title4}</h5>
+          <Carousel items={content?.podcastsS2} />
         </div>
 
         <div className={'py-3 text-center f-20 main-text'}>
@@ -56,18 +62,20 @@ const SushasanPageComponent = ({ content }) => {
             <li>
               <a
                 style={{ paddingRight: '0.5rem' }}
-                href="https://www.linkedin.com/showcase/sushasan-the-podcast">
+                href="https://www.instagram.com/sushasanthepodcast">
                 <img
                   className={'sushasan-social-icons'}
-                  src={linkedInIconActive}
+                  src={instagramIconActive}
                 />
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/sushasanthepodcast">
+              <a
+                style={{ paddingRight: '0.5rem' }}
+                href="https://www.linkedin.com/showcase/sushasan-the-podcast">
                 <img
                   className={'sushasan-social-icons'}
-                  src={instagramIconActive}
+                  src={linkedInIconActive}
                 />
               </a>
             </li>
@@ -76,7 +84,7 @@ const SushasanPageComponent = ({ content }) => {
             <p style={{ marginBottom: 0 }}>We would love to hear from you!</p>
             <p style={{ marginBottom: 0 }}>
               Share your guest suggestions and feedback with us at:{' '}
-              {content.mail}
+              {content?.mail}
             </p>
           </div>
         </div>

@@ -31,6 +31,7 @@ const Carousel = ({ items }) => {
 
   const handlePrevClick = () => {
     if (currentIndex === 0) {
+      if(itemsToShow > items.length) return;
       setCurrentIndex(items.length - itemsToShow);
     } else {
       setCurrentIndex((prevIndex) => prevIndex - 1);
@@ -38,6 +39,7 @@ const Carousel = ({ items }) => {
   };
   
   const handleNextClick = () => {
+    if(itemsToShow > items.length) return;
     if (currentIndex === items.length - itemsToShow) {
       setCurrentIndex(0);
     } else {

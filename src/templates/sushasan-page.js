@@ -45,7 +45,15 @@ export const mediaPageQuery = graphql`
         }
         text
         mail
-        podcasts {
+        title1
+        title2
+        podcastsS1 {
+          url
+          title
+        }
+        title3
+        title4
+        podcastsS2 {
           url
           title
         }
