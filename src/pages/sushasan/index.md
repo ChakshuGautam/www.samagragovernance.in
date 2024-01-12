@@ -44,8 +44,6 @@ podcastsS1:
 title3: Sushasan Season 2
 title4: New episodes every week!
 podcastsS2:
-  - title: EP 01 – Anil Swarup
-    url: https://www.youtube.com/embed/vLrZOL0X81k
-  - title: EP 02 – Anita Karwal
-    url: https://www.youtube.com/embed/zidabJy7ous
+  - title: S2 – Trailer
+    url: https://www.youtube.com/embed/EunWHI9_aco
 ---
