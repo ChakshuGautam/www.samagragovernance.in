@@ -223,7 +223,7 @@
   color: white;
   width: 90%;
   padding: 50px;
-  margin: auto;
+  margin: 50px auto;
   background: #a97f2b;
   display: flex;
   flex-direction: column;
@@ -274,7 +274,7 @@
     margin-top: 30%;
   }
 }
-.cards-section .card-wrapper-case-study.hovered {
+.cards-section .card-wrapper-case-study.hovered, .card-wrapper-case-study.hovered {
   -webkit-animation-name: smoothScaleIn;
   /* Safari 4.0 - 8.0 */
   -webkit-animation-duration: 0.3s;

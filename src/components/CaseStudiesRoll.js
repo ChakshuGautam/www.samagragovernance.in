@@ -16,7 +16,7 @@ class CaseStudiesRoll extends React.Component {
             {clean_posts.map(({ node: post }) => {
               return (
                 <div
-                  className="col-lg-3 col-md-4 col-sm-6 col-xs-1 mb-5"
+                  className="col-lg-4 col-md-4 col-sm-6 col-xs-1 mb-5"
                   key={post.id}>
                   <div
                     className="blog-wrapper"
@@ -128,7 +128,7 @@ export default () => (
       query CaseStudiesRollQuery {
         allMarkdownRemark(
           sort: { order: ASC, fields: [frontmatter___date] }
-          filter: { frontmatter: { templateKey: { eq: "case-study" } } }
+          filter: { frontmatter: { templateKey: { in: ["case-study", "ksk"] } } }
         ) {
           edges {
             node {

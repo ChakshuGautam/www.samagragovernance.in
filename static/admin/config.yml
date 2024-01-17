@@ -29,7 +29,7 @@ collections:
     label: 'Case Study'
     folder: 'src/pages/amritseries'
     create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    slug: '{{slug}}'
     fields:
       - {
           label: 'Template Key',

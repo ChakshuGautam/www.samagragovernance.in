@@ -17,58 +17,44 @@ import upIcon from '../img/up-arrow-png-20.png';
 import apostrophe_start from '../img/apostrophe_start.svg';
 import apostrophe_end from '../img/apostrophe_end.svg';
 import spacer from '../img/spacer.png';
-import impactImg1 from '../../static/img/gosugam-img1.png';
-import impactImg2 from '../../static/img/gosugam-img2.png';
+import impactImg from '../../static/img/gosugam-casestudy-img.jpeg';
 import icon1 from '../img/Icon1.svg';
 import icon2 from '../img/Icon2.svg';
 import icon3 from '../img/Icon3.svg';
 import icon4 from '../img/Icon4.svg';
 import icon5 from '../img/Icon5.svg';
-import amritSeriesDoodle from '../../static/img/amrit-series-text-doodle.svg';
-import amritSeriesBubble from '../../static/img/amrit-series-text-bubble.svg';
+import LineDrawingOnScrollRL from '../components/CaseStudyComponents/LinkDrawingOnScrollRL';
+import LineDrawingOnScrollLR from '../components/CaseStudyComponents/LinkDrawingOnScrollLR';
 import gosugamImpactImg from '../../static/img/gosugam-impact.jpeg';
-import akailaunch from '../../static/img/ama-krushai-launch.png';
 import gosugamLinksImg from '../../static/img/gosugam-links.jpeg';
-import { Infographic1 } from '../components/CaseStudyComponents/Infographic1';
-import gosugamInfographic1Img1 from '../../static/img/gosugam-infographic1-img1.png';
-import gosugamInfographic1Img2 from '../../static/img/gosugam-infographic1-img2.png';
-import gosugamInfographic1Img3 from '../../static/img/gosugam-infographic1-img3.png';
-import gosugamInfographic1Img4 from '../../static/img/gosugam-infographic1-img4.png';
-import { Infographic2 } from '../components/CaseStudyComponents/Infographic2';
-import gosugamInfographic2Img1 from '../../static/img/gosugam-infographic2-img1.png';
-import gosugamInfographic2Img2 from '../../static/img/gosugam-infographic2-img2.png';
-import gosugamInfographic2Img3 from '../../static/img/gosugam-infographic2-img3.png';
-import gosugamInfographic2Img4 from '../../static/img/gosugam-infographic2-img4.png';
-import { RightArrow } from '../components/CaseStudyComponents/RightArrow';
 import { Modal } from 'react-responsive-modal';
 import { debounce } from 'lodash';
 import 'react-responsive-modal/styles.css';
 
 function FadeInSection(props) {
-  // const [isVisible, setVisible] = useState(false);
-  // const domRef = useRef();
+  const [isVisible, setVisible] = useState(false);
+  const domRef = useRef();
 
-  // useEffect(() => {
-  //   const handleIntersection = debounce((entries) => {
-  //     entries.forEach((entry) =>
-  //       entry.isIntersecting ? setVisible(entry.isIntersecting) : null
-  //     );
-  //   }, 200);
-  //   const observer = new IntersectionObserver(handleIntersection);
-  //   observer.observe(domRef.current);
-  //   return () => observer.unobserve(domRef.current);
-  // }, []);
+  useEffect(() => {
+    const handleIntersection = debounce((entries) => {
+      entries.forEach((entry) =>
+        entry.isIntersecting ? setVisible(entry.isIntersecting) : null
+      );
+    }, 200);
+    const observer = new IntersectionObserver(handleIntersection);
+    observer.observe(domRef.current);
+    return () => observer.unobserve(domRef.current);
+  }, []);
   return (
     <div
-    // className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
-    // ref={domRef}
-    >
+      className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
+      ref={domRef}>
       {props.children}
     </div>
   );
 }
 
-export const CaseStudyTemplate = ({ content, helmet }) => {
+export const KSKTemplate = ({ content, helmet }) => {
   const [hoveredIndex, setHoveredIndex] = useState(-1);
   const [mobile, setMobile] = useState(false);
   const [showUpIcon, setShowUpIcon] = useState(false);
@@ -95,21 +81,14 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
   };
 
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setMobile(true);
-      } else {
-        setMobile(false);
-      }
+    if (window && window.innerWidth < 768) {
+      setMobile(true);
     }
-    handleResize();
-    
+
     window.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', handleResize);
-    
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -134,7 +113,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           <img src={upIcon} onClick={scrollToTop} />
         </div>
       )}
-      <div className="share">
+      {/* <div className="share">
         <img src={twitterLogo} alt="" />
         <img src={linkedinLogo} alt="" />
         <img src={instaLogo} alt="" />
@@ -153,21 +132,22 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           }}
         />
         <img src={mailLogo} alt="" />
-      </div>
-      {/* <div className="spacer first-spacer">
-        <img src={spacer} alt="" />
       </div> */}
+      <div className="spacer first-spacer">
+        <img src={spacer} alt="" />
+      </div>
       <FadeInSection>
         <div
           className="case-study-main-heading headingCaseStudy"
           style={{
-            color: '#025300',
+            color: '#418F37',
             fontSize: mobile ? '20px' : '30px',
             width: '80%',
             margin: 'auto',
-            marginTop: '100px',
           }}>
-          {content?.title}
+          India’s 1<sup>st</sup> Centralised Monitoring System in Agriculture,
+          Krushi Samiksha Kendra (KSK) was set up with a vision to aid
+          evidence-backed decision-making
         </div>
       </FadeInSection>
       {/* Show modal only in mobile */}
@@ -182,144 +162,10 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           )}
         </Modal>
       )}
-      {/* <div className="spacer">
+      <div className="spacer">
         <img src={spacer} alt="" />
-      </div> */}
+      </div>
       <FadeInSection>
-        <div
-          className="case-study-summary-container"
-          style={{ marginTop: mobile ? '75px' : '150px' }}>
-          {/* <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-            }}>
-            <div
-              id="img1"
-              style={{
-                backgroundImage: `url(${img2})`,
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'contain',
-                border: '3px solid #A97F2B',
-                borderRadius: '10px',
-              }}></div>
-          </div> */}
-          <div className="case-study-summary-text">
-            <div
-              className="headingCaseStudy"
-              style={{
-                textAlign: 'center',
-                color: '#025300',
-                paddingBottom: '35px',
-                paddingTop: !mobile ? '5px' : '50px',
-                fontSize: mobile ? '20px' : '30px',
-              }}>
-              Impact Video
-            </div>
-            <div
-              className="textCaseStudy"
-              style={{
-                textAlign: 'center',
-                // color: '#025300',
-                // paddingBottom: '25px',
-                paddingTop: !mobile ? '5px' : '50px',
-                fontSize: mobile ? '20px' : '30px',
-              }}>
-              Go-Sugam was introduced by the Govt of Odisha in May 2022, to ease
-              the life of farmers. See how it impacted the life of an
-              aspirational agri-preneur - Sangeeta.
-            </div>
-            <div
-              style={{
-                textAlign: 'right',
-                width: '66vw',
-                minWidth: '350px',
-                margin: 'auto',
-              }}>
-              <img
-                src={amritSeriesDoodle}
-                alt=""
-                width="32px"
-                style={{
-                  marginLeft: '4px',
-                  marginTop: mobile ? '30px' : '50px',
-                }}
-              />
-            </div>
-            <div
-              style={{
-                textAlign: 'center',
-
-                // width: '100vw',
-              }}>
-              <div className="impact-video">
-                <iframe
-                  style={{
-                    minHeight: '150px',
-                    minWidth: '300px',
-                    height: '30vw',
-                    width: '60vw',
-                    padding: '4px',
-                    // border: '4px solid #A97F2B',
-                  }}
-                  src="https://www.youtube.com/embed/-GRdJ9XSAEE?si=iYN4BchI6rJRT78z"
-                  // title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen;"
-                  allowfullscreen></iframe>
-              </div>
-
-              {/* {!mobile && <LineDrawingOnScrollLR id={'clip2'} />} */}
-            </div>
-            <div
-              style={{
-                width: '66vw',
-                minWidth: '350px',
-                display: 'flex',
-                justifyContent: 'space-between',
-                margin: 'auto',
-                marginBottom: mobile ? '50px' : '30px',
-              }}>
-              <div style={{ display: 'flex', alignItems: 'flex-start' }}>
-                <img
-                  src={amritSeriesDoodle}
-                  alt=""
-                  width="32px"
-                  style={{
-                    marginLeft: '4px',
-                    transform: 'scaleX(-1) scaleY(-1)',
-                  }}
-                />
-              </div>
-              <div>
-                <img
-                  src={amritSeriesBubble}
-                  alt=""
-                  width={mobile ? '120px' : '150px'}
-                />
-              </div>
-            </div>
-            {/* <div className="textCaseStudy" style={{ textAlign: 'left' }}>
-              To transform the way government officials use data and real-time
-              analytics on key agri-operations, with 4 sharp areas of focus:
-              <br></br><br></br>
-              {`->`} <b>Scheme Delivery:</b> Delivery of schemes & services provided by
-              the department<br></br>
-              {`->`} <b>Plant Protection:</b> Relief against pest outbreaks and weather
-              disruptions<br></br>
-              {`->`} <b>Data Backed Reviews:</b> Review meetings at all levels coupled
-              with performance based nudges and escalation protocols<br></br>
-              {`->`} <b>Pulse-check on Ecosystem:</b> Policy reform & enhancements
-              basis responsiveness of stakeholders
-            </div> */}
-          </div>
-        </div>
-      </FadeInSection>
-      {/* <div className="spacer">
-        <img src={spacer} alt="" /> 
-      </div> */}
-      {/* <FadeInSection>
         <div className="textCaseStudy" style={{ width: '70%', margin: 'auto' }}>
           <b>Need</b> for evidence-backed decision-making <br></br>
           <br></br> Agri-operations are highly complex to manage with challenges
@@ -347,26 +193,98 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             onClick={() => openModal(img2)}></div>
           {!mobile && <LineDrawingOnScrollRL id={'clip1'} />}
         </div>
-      </FadeInSection> */}
-
+      </FadeInSection>
+      <FadeInSection>
+        <div className="case-study-summary-container">
+          {/* <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}>
+            <div
+              id="img1"
+              style={{
+                backgroundImage: `url(${img2})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'contain',
+                border: '3px solid #A97F2B',
+                borderRadius: '10px',
+              }}></div>
+          </div> */}
+          <div className="case-study-summary-text">
+            <div
+              className="headingCaseStudy"
+              style={{
+                textAlign: 'center',
+                color: '#418F37',
+                // paddingBottom: '25px',
+                paddingTop: !mobile ? '5px' : '50px',
+                fontSize: mobile ? '20px' : '30px',
+              }}>
+              Here’s how the Govt. of Odisha harnessed the power of technology
+              to drive digital transformation in the sector
+            </div>
+            <div
+              style={{
+                textAlign: 'center',
+                marginTop: mobile ? '30px' : '50px',
+                marginBottom: mobile ? '50px' : '0px',
+                // width: '100vw',
+              }}>
+              <div className="impact-video">
+                <iframe
+                  style={{
+                    minHeight: '150px',
+                    minWidth: '300px',
+                    height: '30vw',
+                    width: '60vw',
+                    padding: '4px',
+                    border: '4px solid #A97F2B',
+                  }}
+                  src="https://www.youtube.com/embed/-GRdJ9XSAEE?si=iYN4BchI6rJRT78z"
+                  // title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen;"
+                  allowfullscreen></iframe>
+              </div>
+            {!mobile && <LineDrawingOnScrollLR id={'clip2'} />}
+            </div>
+            {/* <div className="textCaseStudy" style={{ textAlign: 'left' }}>
+              To transform the way government officials use data and real-time
+              analytics on key agri-operations, with 4 sharp areas of focus:
+              <br></br><br></br>
+              {`->`} <b>Scheme Delivery:</b> Delivery of schemes & services provided by
+              the department<br></br>
+              {`->`} <b>Plant Protection:</b> Relief against pest outbreaks and weather
+              disruptions<br></br>
+              {`->`} <b>Data Backed Reviews:</b> Review meetings at all levels coupled
+              with performance based nudges and escalation protocols<br></br>
+              {`->`} <b>Pulse-check on Ecosystem:</b> Policy reform & enhancements
+              basis responsiveness of stakeholders
+            </div> */}
+          </div>
+        </div>
+      </FadeInSection>
       <FadeInSection>
         <div className="impact">
           <div
             style={{
-              backgroundImage: `url(${impactImg1})`,
+              backgroundImage: `url(${impactImg})`,
               backgroundRepeat: 'no-repeat',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              aspectRatio: '2',
-              marginTop: !mobile ? '10px' : '',
+              width: '100vw',
+              height: '400px',
+              marginTop: !mobile ? '10px': ''
             }}>
-            {/* <div
+            <div
               className="headingCaseStudy"
               style={{
                 position: 'relative',
                 padding: '10px',
                 top: '250px',
-                color: '#025300',
+                color: '#418F37',
                 backgroundColor: 'rgba(255, 255, 255, 0.8)',
                 width: '100%',
                 margin: 'auto',
@@ -374,90 +292,9 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               }}>
               This large scale transformation was enabled by an Integrated
               Decision Support system (DSS) with the following key use cases:
-            </div> */}
-          </div>
-          <div className="spacer">
-            <img src={spacer} alt="" />
-          </div>
-
-          <div className="textCaseStudy">
-            These are the many struggles of the farmers in Odisha.
-          </div>
-
-          <div
-            style={{
-              textAlign: 'center',
-              marginLeft: mobile ? '0px' : '200px',
-            }}>
-            <Infographic1
-              height={mobile ? '350' : '750'}
-              width={mobile ? '350' : '850'}
-              img1={gosugamInfographic1Img1}
-              img2={gosugamInfographic1Img2}
-              img3={gosugamInfographic1Img3}
-              img4={gosugamInfographic1Img4}
-            />
-          </div>
-
-          <div className="textCaseStudy">
-            The Government of Odisha has had its fair share of challenges in
-            attempting to streamline processes.
-          </div>
-
-          <div
-            style={{
-              textAlign: 'center',
-            }}>
-            <Infographic2
-              height={mobile ? '350' : '600'}
-              width={mobile ? '350' : '700'}
-              img1={gosugamInfographic2Img1}
-              img2={gosugamInfographic2Img2}
-              img3={gosugamInfographic2Img3}
-              img4={gosugamInfographic2Img4}
-            />
-          </div>
-
-          <div
-            style={{
-              backgroundImage: `url(${impactImg2})`,
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: '100%',
-              backgroundPosition: 'center',
-              aspectRatio: '2',
-              marginTop: !mobile ? '10px' : '',
-            }}>
-            {/* <div
-              className="headingCaseStudy"
-              style={{
-                position: 'relative',
-                padding: '10px',
-                top: '250px',
-                color: '#025300',
-                backgroundColor: 'rgba(255, 255, 255, 0.8)',
-                width: '100%',
-                margin: 'auto',
-                fontSize: mobile ? '20px' : '30px',
-              }}>
-              This large scale transformation was enabled by an Integrated
-              Decision Support system (DSS) with the following key use cases:
-            </div> */}
+            </div>
           </div>
           <div
-            className="headingCaseStudy"
-            style={{
-              textAlign: 'center',
-              color: '#025300',
-              // paddingBottom: '25px',
-              width: '80%',
-              margin: 'auto',
-              paddingTop: '50px',
-              fontSize: mobile ? '20px' : '30px',
-            }}>
-            Go-Sugam has quickly become the de-facto choice of DAFE and FARD for
-            easy and smooth delivery of schemes across directorates
-          </div>
-          {/* <div
             style={{
               textAlign: 'center',
               margin: '50px auto 10px auto',
@@ -474,18 +311,18 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 margin: 'auto',
               }}
               onClick={() => openModal(infographic)}></div>
-          </div> */}
-          {/* <div
+          </div>
+          <div
             className="headingCaseStudy"
             style={{
-              color: '#025300',
+              color: '#418F37',
               width: '80%',
               margin: 'auto',
               fontSize: mobile ? '20px' : '30px',
             }}>
             The ecosystem responded positively and the numbers spoke for
             themselves…
-          </div> */}
+          </div>
           <div
             style={{
               width: '80%',
@@ -517,14 +354,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   marginBottom: 0,
                   paddingTop: 0,
                 }}>
-                1.8 Lakh{' '}
-                <span
-                  style={{
-                    color: '#025300',
-                    fontWeight: 'bold',
-                  }}>
-                  +
-                </span>
+                92%
               </p>
               <p
                 className="textCaseStudy"
@@ -533,10 +363,9 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   margin: 0,
                   fontSize: mobile ? '12px' : '14px',
                   width: mobile ? '90%' : '80%',
-                  color: '#025300',
-                  fontWeight: 'bold',
                 }}>
-                Total Applications Received
+                officials leverage KSK weekly for decision-making on
+                agricultural operations
               </p>
             </div>
             <div
@@ -563,14 +392,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   marginBottom: 0,
                   paddingTop: 0,
                 }}>
-                70,000{' '}
-                <span
-                  style={{
-                    color: '#025300',
-                    fontWeight: 'bold',
-                  }}>
-                  +
-                </span>
+                90%
               </p>
               <p
                 className="textCaseStudy"
@@ -579,10 +401,9 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   margin: 0,
                   fontSize: mobile ? '12px' : '14px',
                   width: mobile ? '90%' : '80%',
-                  color: '#025300',
-                  fontWeight: 'bold',
                 }}>
-                Go Ahead generated against for applications
+                officials conduct monthly top-down reviews using the Key
+                Performance Indicators
               </p>
             </div>
             <div
@@ -609,14 +430,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   marginBottom: 0,
                   paddingTop: 0,
                 }}>
-                53,000{' '}
-                <span
-                  style={{
-                    color: '#025300',
-                    fontWeight: 'bold',
-                  }}>
-                  +
-                </span>
+                87%
               </p>
               <p
                 className="textCaseStudy"
@@ -625,10 +439,9 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   margin: 0,
                   fontSize: mobile ? '12px' : '14px',
                   width: mobile ? '90%' : '80%',
-                  color: '#025300',
-                  fontWeight: 'bold',
                 }}>
-                Subsidies released against go-ahead
+                officials receive regular nudges and reminders based on
+                performance
               </p>
             </div>
             <div
@@ -655,14 +468,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   marginBottom: 0,
                   paddingTop: 0,
                 }}>
-                44%{' '}
-                <span
-                  style={{
-                    color: '#025300',
-                    fontWeight: 'bold',
-                  }}>
-                  +
-                </span>
+                85%
               </p>
               <p
                 className="textCaseStudy"
@@ -671,28 +477,22 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   margin: 0,
                   fontSize: mobile ? '12px' : '14px',
                   width: mobile ? '90%' : '80%',
-                  color: '#025300',
-                  fontWeight: 'bold',
                 }}>
-                Farmers applied on their own
+                officials consider this an impactful tool for review &
+                monitoring
               </p>
             </div>
-            <div
+            {/* <div
               style={{
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
                 marginTop: mobile ? '40px' : '',
                 flex: '1 1 0',
-                width: mobile ? '100%' : 0,
+                width: mobile ? "100%" : 0,
                 padding: '10px',
               }}>
-              <img
-                src={icon5}
-                alt=""
-                width={mobile ? 100 : 150}
-                height={mobile ? 100 : 150}
-              />
+              <img src={icon5} alt="" width={mobile ? 100 : 150} height={mobile ? 100 : 150}/>
               <p
                 className="textCaseStudy"
                 style={{
@@ -701,27 +501,15 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   marginBottom: 0,
                   paddingTop: 0,
                 }}>
-                99%{' '}
-                <span
-                  style={{
-                    color: '#025300',
-                    fontWeight: 'bold',
-                  }}>
-                  +
-                </span>
+                100%
               </p>
               <p
                 className="textCaseStudy"
-                style={{
-                  padding: 0,
-                  margin: 0,
-                  fontSize: '14px',
-                  color: '#025300',
-                  fontWeight: 'bold',
-                }}>
-                Farmer Stated correct subsidy was received
+                style={{ padding: 0, margin: 0, fontSize: '14px' }}>
+                System capacity built consistently through trainings of all
+                officials
               </p>
-            </div>
+            </div> */}
           </div>
           <div
             className="casestudy-btn-container"
@@ -738,9 +526,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 marginTop: '20px',
                 cursor: 'pointer',
                 marginBottom: '5px',
-                maxWidth: '270px',
-                background: '#025300',
-                padding: '10px 50px',
+                maxWidth: '200px',
               }}
               onClick={() => {
                 const link = document.createElement('a');
@@ -753,13 +539,10 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               }}>
               Download Infographic
             </button>
-            {/* {!mobile && <LineDrawingOnScrollRL id={'clip3'} />} */}
+            {!mobile && <LineDrawingOnScrollRL id={'clip3'} />}
           </div>
         </div>
       </FadeInSection>
-      <div className="spacer">
-        <img src={spacer} alt="" />
-      </div>
       <FadeInSection>
         <div
           style={{
@@ -778,11 +561,11 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               className="headingCaseStudy"
               style={{
                 textAlign: 'left',
-                color: '#025300',
+                color: '#418F37',
                 paddingTop: mobile ? '25px' : 0,
                 fontSize: mobile ? '20px' : '30px',
               }}>
-              {`Go Sugam Blog < Title >`}
+              Insights from the ground
             </div>
             <div>
               <p
@@ -802,25 +585,27 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   marginBottom: '0',
                   paddingBottom: '0',
                 }}>
-                Lorem ipsum
+                How Odisha operationalized India’s 1<sup>st</sup>{' '}
+                Centralized Monitoring System in Agriculture
               </p>
               <p
                 style={{
                   textAlign: 'left',
                   marginTop: '0',
-                  paddingTop: '15px',
-                  color: '#025300',
+                  paddingTop: '0',
+                  color: '#418F37',
                   cursor: 'pointer',
                   fontStyle: 'italic',
                 }}
                 onClick={() => {
-                  // window.location.href =
-                  //   '/blog/2023-12-25-amrit-series-1-krushi-samiksha-kendra/';
-                }}>
-               Read More <RightArrow color="#025300" height="15px" width="15px" />
+                  window.location.href = '/blog/2023-12-25-amrit-series-1-krushi-samiksha-kendra/';
+                }}
+                >
+                Read More
               </p>
             </div>
-            <div>
+
+            {/* <div>
               <p
                 className="textCaseStudy"
                 style={{
@@ -838,25 +623,20 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   marginBottom: '0',
                   paddingBottom: '0',
                 }}>
-                {`<< Title of op-ed`}
+                {'<<Title of Op-Ed>>'}
               </p>
               <p
                 style={{
                   textAlign: 'left',
                   marginTop: '0',
-                  paddingTop: '15px',
-                  color: '#025300',
+                  paddingTop: '0',
+                  color: '#418F37',
                   cursor: 'pointer',
                   fontStyle: 'italic',
-                }}
-                onClick={() => {
-                  // window.location.href =
-                  //   '/blog/2023-12-25-amrit-series-1-krushi-samiksha-kendra/';
                 }}>
-               Read More <RightArrow color="#025300" height="15px" width="15px" />
+                Read More
               </p>
-            </div>
-
+            </div> */}
             {/* <div>
               <p
                 className="textCaseStudy"
@@ -885,11 +665,11 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   textAlign: 'left',
                   marginTop: '0',
                   paddingTop: '0',
-                  color: '#025300',
+                  color: '#418F37',
                   cursor: 'pointer',
                   fontStyle: 'italic',
                 }}>
-               Read More <RightArrow color="#025300" height="15px" width="15px" />
+                Read More
               </p>
             </div>
             <div>
@@ -920,67 +700,30 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   textAlign: 'left',
                   marginTop: '0',
                   paddingTop: '0',
-                  color: '#025300',
+                  color: '#418F37',
                   cursor: 'pointer',
                   fontStyle: 'italic',
                 }}>
-               Read More <RightArrow color="#025300" height="15px" width="15px" />
+                Read More
               </p>
             </div> */}
           </div>
           <div
+            id="case-study-links-image"
             style={{
-              display: 'flex',
-              alignItems: 'flex-end',
-              marginTop: mobile ? '50px' : '',
-            }}>
-            <div
-              style={{
-                position: 'relative',
-                zIndex: '0',
-                left: '30px',
-                top: '30px',
-                height: mobile ? '150px' : '250px',
-                width: mobile ? '100px' : '125px',
-                backgroundImage: `url(${gosugamLinksImg})`,
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                borderRadius: '10px',
-              }}></div>
-            <div
-              style={{
-                position: 'relative',
-                zIndex: '1',
-                height: mobile ? '275px' : '500px',
-                width: mobile ? '150px' : '250px',
-                backgroundImage: `url(${gosugamImpactImg})`,
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                borderRadius: '10px',
-              }}></div>
-            <div
-              style={{
-                position: 'relative',
-                zIndex: '2',
-                left: '-30px',
-                top: '30px',
-                height: mobile ? '150px' : '250px',
-                width: mobile ? '100px' : '125px',
-                backgroundImage: `url(${akailaunch})`,
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                borderRadius: '10px',
-              }}></div>
-          </div>
+              backgroundImage: `url(${gosugamLinksImg})`,
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              border: '3px solid #A97F2B',
+              borderRadius: '10px',
+            }}></div>
         </div>
       </FadeInSection>
 
-      {/* <div className="spacer">
+      <div className="spacer">
         <img src={spacer} alt="" />
-      </div> */}
+      </div>
       {/* <FadeInSection>
         <div className="testimonials">
           <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
@@ -1021,7 +764,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       {/* <FadeInSection>
         <div
           className="headingCaseStudy"
-          style={{ color: '#025300', width: '80%', margin: 'auto' }}>
+          style={{ color: '#418F37', width: '80%', margin: 'auto' }}>
           This breakthrough is a result of consistent support and meaningful
           collaborations that we have received from our{' '}
           <span style={{ fontWeight: 'bold', background: 'yellow' }}>
@@ -1048,80 +791,35 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 allowfullscreen></iframe>
             </div>
           </div> */}
-      <div
-        style={{
-          marginTop: mobile ? '125px' : '150px',
-          display: 'flex',
-          justifyContent: mobile ? '' : 'space-evenly',
-          flexDirection: mobile ? 'column' : 'row',
-        }}>
-        {['', '', ''].map((news, index) => {
-          return (
-            <a href={''} target="_blank">
-              <div
-                className={`card-wrapper-case-study ${
-                  hoveredIndex === index ? 'hovered' : ''
-                } `}
-                style={{
-                  margin: mobile ? '50px auto' : '',
-                  height: mobile ? '200px' : '250px',
-                  width: mobile ? '275px' : '350px',
-                }}
-                onMouseLeave={() => setHoveredIndex(-1)}
-                onMouseEnter={() => setHoveredIndex(index)}>
-                <div
-                  style={{
-                    backgroundImage: `url(${content.featuredimage.childImageSharp.fluid.src})`,
-                    height: '100%',
-                    borderRadius: '10px',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'cover',
-                  }}
-                />
-                <div
-                  style={{
-                    background: '#F5F7FA',
-                    borderRadius: '10px',
-                    height: mobile ? '150px' : '150px',
-                    width: mobile ? '230px' : '300px',
-                    position: 'relative',
-                    top: '-80px',
-                    margin: 'auto',
-                    boxShadow: 'rgba(0, 0, 0, 0.1) 0px 4px 12px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                  }}>
+      {/* <div className={'cards-section'}>
+            {['', ''].map((news, index) => {
+              return (
+                <a href={''} target="_blank">
                   <div
-                    className={'headingCaseStudy'}
-                    style={{
-                      minHeight: '40px',
-                      fontSize: '16px',
-                      color: '#717171',
-                      flex: 0.8,
-                      padding: '20px 10px',
-                    }}>
-                    {content.title}
+                    className={`card-wrapper-case-study ${
+                      hoveredIndex === index ? 'hovered' : ''
+                    } `}
+                    onMouseLeave={() => setHoveredIndex(-1)}
+                    onMouseEnter={() => setHoveredIndex(index)}>
+                    <div
+                      className={`image-section`}
+                      style={{
+                        backgroundImage: `url(${content.featuredimage.childImageSharp.fluid.src})`,
+                      }}
+                    />
+                    <div className={'content-section'}>
+                      <div className={'headingCaseStudy'} style={{ minHeight: '40px' }}>
+                        {content.title}
+                      </div>
+                      <div className={'timestamp'}>{content.date}</div>
+                    </div>
                   </div>
-                  <div
-                    style={{
-                      fontSize: '16px',
-                      color: '#025300',
-                      fontWeight: 'bold',
-                      textAlign: 'center',
-                      flex: 0.2,
-                      padding: '20px',
-                    }}>
-                   Read More <RightArrow color="#025300" height="15px" width="15px" />
-                  </div>
-                </div>
-              </div>
-            </a>
-          );
-        })}
-      </div>
-      {/* </div>
-      </FadeInSection> */}
+                </a>
+              );
+            })}
+          </div> */}
+      {/* </div> */}
+      {/* </FadeInSection> */}
       {/* <div className="spacer">
         <img src={spacer} alt="" />
       </div> */}
@@ -1163,20 +861,18 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
         <img src={spacer} alt="" />
       </div> */}
       <FadeInSection>
-        <div
-          className="partner-with-us"
-          style={{ marginTop: mobile ? '100px' : '150px' }}>
-          <p className="partner-with-us-main-text">Partner with us today!</p>
+        <div className="partner-with-us">
+          <p className="partner-with-us-main-text">Partner with us</p>
           <p>Write to us at: outreach@samagragovernance.in</p>
         </div>
       </FadeInSection>
-      {/* <div className="spacer">
+      <div className="spacer">
         <img src={spacer} alt="" />
-      </div> */}
+      </div>
       {/* <FadeInSection>
         <div
           className="headingCaseStudy"
-          style={{ color: '#025300', margin: '50px auto', fontSize: mobile ? '20px' : '30px' }}>
+          style={{ color: '#418F37', margin: '50px auto', fontSize: mobile ? '20px' : '30px' }}>
           View more <i>Success Stories of Impact</i>
         </div>
         <div className={'cards-section'}>
@@ -1214,12 +910,12 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
   );
 };
 
-const CaseStudy = ({ data }) => {
+const KSK = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
     <Layout slug={data.markdownRemark.fields.slug}>
-      <CaseStudyTemplate
+      <KSKTemplate
         content={post.frontmatter}
         helmet={
           <Helmet titleTemplate="%s | CaseStudy">
@@ -1232,16 +928,16 @@ const CaseStudy = ({ data }) => {
   );
 };
 
-CaseStudy.propTypes = {
+KSK.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
 };
 
-export default CaseStudy;
+export default KSK;
 
 export const pageQuery = graphql`
-  query CaseStudyQuery($id: String!) {
+  query KSKQuery($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
       fields {
