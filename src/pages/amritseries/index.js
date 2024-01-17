@@ -47,9 +47,9 @@ export default function CaseStudiesIndexPage() {
       <div className={'container career-section-second'}>
         <div className="row">
           <div className="col-11 mx-auto">
-            <div style={{ textAlign: 'center', marginTop: '4rem' }}>
+            {/* <div style={{ textAlign: 'center', marginTop: '4rem' }}>
               <img src={spacer} alt="" />
-            </div>
+            </div> */}
             <div className="mt-4" style={{ textAlign: 'center' }}>
               <img src={amritSeriesLogo} alt="" width={mobile ? "250px" : "400px"} />
             </div>

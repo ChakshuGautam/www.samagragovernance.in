@@ -11,12 +11,13 @@ class CaseStudiesRoll extends React.Component {
     );
     return (
       <>
-        <div className="blogs-section">
-          <div className="row">
+        <div className="blogs-section" style={{paddingBottom: '100px'}}>
+          <div className="row" >
             {clean_posts.map(({ node: post }) => {
               return (
                 <div
-                  className="col-lg-4 col-md-4 col-sm-6 col-xs-1 mb-5"
+                style={{margin: 'auto'}}
+                  className="col-lg-3 col-md-4 col-sm-6 col-xs-1 mb-5"
                   key={post.id}>
                   <div
                     className="blog-wrapper"
@@ -80,8 +81,6 @@ class CaseStudiesRoll extends React.Component {
                             textAlign: 'center',
                             fontSize: '18px',
                             fontWeight: 'bolder',
-                            background: post?.frontmatter?.projectId_bg || 'white',
-                            color: post?.frontmatter?.projectId_fc || 'black'
                           }}>
                           {post?.frontmatter?.projectId}
                         </p>
@@ -141,8 +140,6 @@ export default () => (
                 templateKey
                 title
                 projectId
-                projectId_bg
-                projectId_fc
                 impactNumber
                 date(formatString: "MMMM DD, YYYY")
                 featuredimage {

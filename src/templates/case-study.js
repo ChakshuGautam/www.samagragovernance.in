@@ -45,23 +45,23 @@ import { debounce } from 'lodash';
 import 'react-responsive-modal/styles.css';
 
 function FadeInSection(props) {
-  // const [isVisible, setVisible] = useState(false);
-  // const domRef = useRef();
+  const [isVisible, setVisible] = useState(false);
+  const domRef = useRef();
 
-  // useEffect(() => {
-  //   const handleIntersection = debounce((entries) => {
-  //     entries.forEach((entry) =>
-  //       entry.isIntersecting ? setVisible(entry.isIntersecting) : null
-  //     );
-  //   }, 200);
-  //   const observer = new IntersectionObserver(handleIntersection);
-  //   observer.observe(domRef.current);
-  //   return () => observer.unobserve(domRef.current);
-  // }, []);
+  useEffect(() => {
+    const handleIntersection = debounce((entries) => {
+      entries.forEach((entry) =>
+        entry.isIntersecting ? setVisible(entry.isIntersecting) : null
+      );
+    }, 200);
+    const observer = new IntersectionObserver(handleIntersection);
+    observer.observe(domRef.current);
+    return () => observer.unobserve(domRef.current);
+  }, []);
   return (
     <div
-    // className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
-    // ref={domRef}
+    className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
+    ref={domRef}
     >
       {props.children}
     </div>
@@ -319,35 +319,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       {/* <div className="spacer">
         <img src={spacer} alt="" /> 
       </div> */}
-      {/* <FadeInSection>
-        <div className="textCaseStudy" style={{ width: '70%', margin: 'auto' }}>
-          <b>Need</b> for evidence-backed decision-making <br></br>
-          <br></br> Agri-operations are highly complex to manage with challenges
-          like lack of timely inputs, increased pest incidents and worsening
-          impact of climate change, prevalent in the domain. <br></br>
-          <br></br> Here are some specific <b>challenges</b> that the state of{' '}
-          <b>Odisha</b> was encountering in 2017
-        </div>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            marginTop: '50px',
-          }}>
-          <div
-            id="img1"
-            style={{
-              backgroundImage: `url(${img2})`,
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: 'contain',
-              border: '3px solid #A97F2B',
-              borderRadius: '10px',
-            }}
-            onClick={() => openModal(img2)}></div>
-          {!mobile && <LineDrawingOnScrollRL id={'clip1'} />}
-        </div>
-      </FadeInSection> */}
+      
 
       <FadeInSection>
         <div className="impact">
@@ -376,9 +348,9 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               Decision Support system (DSS) with the following key use cases:
             </div> */}
           </div>
-          <div className="spacer">
+          {/* <div className="spacer">
             <img src={spacer} alt="" />
-          </div>
+          </div> */}
 
           <div className="textCaseStudy">
             These are the many struggles of the farmers in Odisha.
@@ -457,35 +429,6 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             Go-Sugam has quickly become the de-facto choice of DAFE and FARD for
             easy and smooth delivery of schemes across directorates
           </div>
-          {/* <div
-            style={{
-              textAlign: 'center',
-              margin: '50px auto 10px auto',
-              width: '100vw',
-            }}>
-            <div
-              id="infographic"
-              style={{
-                backgroundImage: `url(${infographic})`,
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'contain',
-                border: '3px solid #A97F2B',
-                borderRadius: '10px',
-                margin: 'auto',
-              }}
-              onClick={() => openModal(infographic)}></div>
-          </div> */}
-          {/* <div
-            className="headingCaseStudy"
-            style={{
-              color: '#025300',
-              width: '80%',
-              margin: 'auto',
-              fontSize: mobile ? '20px' : '30px',
-            }}>
-            The ecosystem responded positively and the numbers spoke for
-            themselves…
-          </div> */}
           <div
             style={{
               width: '80%',
@@ -737,7 +680,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               style={{
                 marginTop: '20px',
                 cursor: 'pointer',
-                marginBottom: '5px',
+                marginBottom: '50px',
                 maxWidth: '270px',
                 background: '#025300',
                 padding: '10px 50px',
@@ -753,13 +696,12 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               }}>
               Download Infographic
             </button>
-            {/* {!mobile && <LineDrawingOnScrollRL id={'clip3'} />} */}
           </div>
         </div>
       </FadeInSection>
-      <div className="spacer">
+      {/* <div className="spacer">
         <img src={spacer} alt="" />
-      </div>
+      </div> */}
       <FadeInSection>
         <div
           style={{
@@ -856,42 +798,6 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                Read More <RightArrow color="#025300" height="15px" width="15px" />
               </p>
             </div>
-
-            {/* <div>
-              <p
-                className="textCaseStudy"
-                style={{
-                  textAlign: 'left',
-                  marginBottom: '0',
-                  paddingBottom: '0',
-                  fontSize: '28px',
-                }}>
-                Sub Heading
-              </p>
-              <p
-                className="textCaseStudy"
-                style={{
-                  textAlign: 'left',
-                  marginBottom: '0',
-                  paddingBottom: '0',
-                }}>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Similique iusto aperiam dolor reprehenderit numquam dolores vero
-                quisquam sunt quidem in. Architecto quas error labore eligendi
-                maiores sapiente nemo id temporibus.
-              </p>
-              <p
-                style={{
-                  textAlign: 'left',
-                  marginTop: '0',
-                  paddingTop: '0',
-                  color: '#025300',
-                  cursor: 'pointer',
-                  fontStyle: 'italic',
-                }}>
-               Read More <RightArrow color="#025300" height="15px" width="15px" />
-              </p>
-            </div>
             <div>
               <p
                 className="textCaseStudy"
@@ -899,9 +805,9 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   textAlign: 'left',
                   marginBottom: '0',
                   paddingBottom: '0',
-                  fontSize: '28px',
+                  fontSize: mobile ? '18px' : '28px',
                 }}>
-                Sub Heading
+                Webinar
               </p>
               <p
                 className="textCaseStudy"
@@ -910,23 +816,25 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   marginBottom: '0',
                   paddingBottom: '0',
                 }}>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Similique iusto aperiam dolor reprehenderit numquam dolores vero
-                quisquam sunt quidem in. Architecto quas error labore eligendi
-                maiores sapiente nemo id temporibus.
+                {`<< Title of webinar`}
               </p>
               <p
                 style={{
                   textAlign: 'left',
                   marginTop: '0',
-                  paddingTop: '0',
+                  paddingTop: '15px',
                   color: '#025300',
                   cursor: 'pointer',
                   fontStyle: 'italic',
+                }}
+                onClick={() => {
+                  // window.location.href =
+                  //   '/blog/2023-12-25-amrit-series-1-krushi-samiksha-kendra/';
                 }}>
                Read More <RightArrow color="#025300" height="15px" width="15px" />
               </p>
-            </div> */}
+            </div>
+
           </div>
           <div
             style={{
@@ -948,6 +856,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 backgroundPosition: 'center',
                 borderRadius: '10px',
               }}></div>
+
             <div
               style={{
                 position: 'relative',
@@ -960,6 +869,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 backgroundPosition: 'center',
                 borderRadius: '10px',
               }}></div>
+
             <div
               style={{
                 position: 'relative',
@@ -981,8 +891,9 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       {/* <div className="spacer">
         <img src={spacer} alt="" />
       </div> */}
+
       {/* <FadeInSection>
-        <div className="testimonials">
+        <div className="testimonials" style={{marginTop: '100px'}}>
           <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
             <img src={apostrophe_start} alt="" />
           </div>
@@ -1014,43 +925,29 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             </div>
           </div>
         </div>
-      </FadeInSection>
-      <div className="spacer">
+      </FadeInSection> */}
+      
+      {/* <div className="spacer">
         <img src={spacer} alt="" />
       </div> */}
-      {/* <FadeInSection>
+      <FadeInSection>
+        <div
+          className="partner-with-us"
+          style={{ marginTop: mobile ? '100px' : '150px' }}>
+          <p className="partner-with-us-main-text">Partner with us today!</p>
+          <p>Write to us at: outreach@samagragovernance.in</p>
+        </div>
+      </FadeInSection>
+      <FadeInSection>
         <div
           className="headingCaseStudy"
-          style={{ color: '#025300', width: '80%', margin: 'auto' }}>
-          This breakthrough is a result of consistent support and meaningful
-          collaborations that we have received from our{' '}
-          <span style={{ fontWeight: 'bold', background: 'yellow' }}>
-            partners
-          </span>{' '}
-          in the ecosystem. Here are some{' '}
-          <span style={{ fontWeight: 'bold', background: 'yellow' }}>
-            insights
-          </span>
-          …
+          style={{ color: '#025300', margin: 'auto', fontSize: mobile ? '20px' : '30px' }}>
+          View more <i>Success Stories of Impact</i>
         </div>
-        <div className="case-study-playlist-container">
-          {/* <div className="playlist-box" id="playlist-box-id">
-            <div className="playlist-video">
-              <iframe
-                style={{
-                  cursor: 'pointer',
-                  pointerEvents: 'none',
-                }}
-                src="https://www.youtube.com/embed/videoseries?si=9o9q8gRD6tTb-gKS&amp;list=PLmutx0xcPi1NsSyDkUHYCzk4HeYIoHhEa"
-                // title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-            </div>
-          </div> */}
-      <div
+        <div
         style={{
-          marginTop: mobile ? '125px' : '150px',
+          marginTop: '125px',
+          marginBottom: '150px',
           display: 'flex',
           justifyContent: mobile ? '' : 'space-evenly',
           flexDirection: mobile ? 'column' : 'row',
@@ -1120,94 +1017,8 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           );
         })}
       </div>
-      {/* </div>
-      </FadeInSection> */}
-      {/* <div className="spacer">
-        <img src={spacer} alt="" />
-      </div> */}
-      {/* <FadeInSection>
-        <div className="testimonials">
-          <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
-            <img src={apostrophe_start} alt="" />
-          </div>
-          <i className="testimonial-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
-            repellat cumque similique, sapiente ipsa alias nisi enim nesciunt
-            officiis, quo ex autem magni, necessitatibus in nostrum cupiditate
-            fugit quaerat! Illo. Id incidunt repellat ducimus. Harum ratione
-            quod culpa illo necessitatibus fuga omnis reiciendis natus? Fuga
-            corporis similique beatae sed aliquid, ratione aspernatur nihil
-            vitae tempore! Sequi expedita eveniet iusto quam? Magnam ut, debitis
-            maiores asperiores eius, voluptas eveniet repellendus ipsa,
-            temporibus itaque sapiente nostrum perferendis consequatur!
-            Nesciunt, suscipit ducimus! Reprehenderit veritatis distinctio porro
-            a. Nihil blanditiis voluptatum aliquam vitae iure.
-          </i>
-          <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-            <img src={apostrophe_end} alt="" />
-          </div>
-          <div className="testimonial-author">
-            <img src="/img/garima_7700.jpg" alt="" />
-            <div>
-              <p className="testimonial-author-name">Garima Sood</p>
-              <p
-                className="testimonial-author-designation"
-                style={{ color: '#a97f2b' }}>
-                Outreach Team, Samagra
-              </p>
-            </div>
-          </div>
-        </div>
-      </FadeInSection>
-      <div className="spacer">
-        <img src={spacer} alt="" />
-      </div> */}
-      <FadeInSection>
-        <div
-          className="partner-with-us"
-          style={{ marginTop: mobile ? '100px' : '150px' }}>
-          <p className="partner-with-us-main-text">Partner with us today!</p>
-          <p>Write to us at: outreach@samagragovernance.in</p>
-        </div>
       </FadeInSection>
       {/* <div className="spacer">
-        <img src={spacer} alt="" />
-      </div> */}
-      {/* <FadeInSection>
-        <div
-          className="headingCaseStudy"
-          style={{ color: '#025300', margin: '50px auto', fontSize: mobile ? '20px' : '30px' }}>
-          View more <i>Success Stories of Impact</i>
-        </div>
-        <div className={'cards-section'}>
-          {['', '', ''].map((news, index) => {
-            return (
-              <a href={''} target="_blank">
-                <div
-                  className={`card-wrapper-case-study ${
-                    hoveredIndex === index ? 'hovered' : ''
-                  } `}
-                  onMouseLeave={() => setHoveredIndex(-1)}
-                  onMouseEnter={() => setHoveredIndex(index)}>
-                  <div
-                    className={`image-section`}
-                    style={{
-                      backgroundImage: `url(${content.featuredimage.childImageSharp.fluid.src})`,
-                    }}
-                  />
-                  <div className={'content-section'}>
-                    <div className={'headingCaseStudy'} style={{ minHeight: '40px' }}>
-                      {content.title}
-                    </div>
-                    <div className={'timestamp'}>{content.date}</div>
-                  </div>
-                </div>
-              </a>
-            );
-          })}
-        </div>
-      </FadeInSection>
-      <div className="spacer">
         <img src={spacer} alt="" />
       </div> */}
     </section>
