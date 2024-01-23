@@ -274,9 +274,9 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 paddingTop: !mobile ? '5px' : '50px',
                 fontSize: mobile ? '20px' : '30px',
               }}>
-              Go-Sugam was introduced by the Govt of Odisha in May 2022, to ease
+              GO-SUGAM was introduced by the Govt of Odisha in May 2022, to ease
               the life of farmers. See how it impacted the life of an
-              aspirational agri-preneur - Sangeeta.
+              aspirational small scale farmer - Sangeeta.
             </div>
             <div
               style={{
@@ -366,16 +366,16 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           </div>
         </div>
       </FadeInSection>
-            <div
-              style={{
-                height: '1px',
-                width: '75px',
-                borderWidth: '1px',
-                borderStyle: 'solid',
-                borderColor: 'transparent',
-                borderImage: 'linear-gradient(to left, #418F37, #FFE81D) 1',
-                margin: '75px auto',
-              }}></div>
+      <div
+        style={{
+          height: '1px',
+          width: '75px',
+          borderWidth: '1px',
+          borderStyle: 'solid',
+          borderColor: 'transparent',
+          borderImage: 'linear-gradient(to left, #418F37, #FFE81D) 1',
+          margin: '75px auto',
+        }}></div>
 
       <FadeInSection>
         <div className="impact">
@@ -415,16 +415,16 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             <img src={spacer} alt="" />
           </div> */}
 
-<div
-              style={{
-                height: '1px',
-                width: '75px',
-                borderWidth: '1px',
-                borderStyle: 'solid',
-                borderColor: 'transparent',
-                borderImage: 'linear-gradient(to left, #418F37, #FFE81D) 1',
-                margin: '75px auto',
-              }}></div>
+          <div
+            style={{
+              height: '1px',
+              width: '75px',
+              borderWidth: '1px',
+              borderStyle: 'solid',
+              borderColor: 'transparent',
+              borderImage: 'linear-gradient(to left, #418F37, #FFE81D) 1',
+              margin: '75px auto',
+            }}></div>
 
           <div className="textCaseStudy" id="use-cases-section">
             These are the many struggles of the farmers in Odisha.
@@ -502,36 +502,49 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             attempting to streamline processes.
           </div>
 
-         <div className='infographic2' style={{ marginTop: '75px', marginBottom: '75px' }}>
-          <div className='infographic-img' style={{ width: 'fit-content', margin: '15px auto' }}>
-            <img src={gosugamInfographic2Img1} alt="" style={{maxWidth: '200px'}}/>
-          </div>
           <div
+            className="infographic2"
+            style={{ marginTop: '75px', marginBottom: '75px' }}>
+            <div
+              className="infographic-img"
+              style={{ width: 'fit-content', margin: '15px auto' }}>
+              <img
+                src={gosugamInfographic2Img1}
+                alt=""
+                style={{ maxWidth: '200px' }}
+              />
+            </div>
+            <div
               style={{
                 display: 'flex',
                 justifyContent: 'center',
                 flexDirection: mobile ? 'column' : 'row',
                 alignItems: mobile ? 'center' : 'flex-start',
-                marginTop: '10px'
+                marginTop: '10px',
               }}>
-              <div className="infographic-img" style={{margin: mobile ? '15px 0' : '0 15px'}}>
+              <div
+                className="infographic-img"
+                style={{ margin: mobile ? '15px 0' : '0 15px' }}>
                 <img
                   src={gosugamInfographic2Img2}
                   alt=""
                   style={{ maxWidth: '250px' }}
                 />
               </div>
-              
 
-              <div className="infographic-img"style={{margin: mobile ? '15px 0' : '0 15px'}}>
+              <div
+                className="infographic-img"
+                style={{ margin: mobile ? '15px 0' : '0 15px' }}>
                 <img
                   src={gosugamInfographic2Img3}
                   alt=""
                   style={{ maxWidth: '250px' }}
                 />
               </div>
-              
-              <div className="infographic-img"style={{margin: mobile ? '15px 0' : '0 15px'}}>
+
+              <div
+                className="infographic-img"
+                style={{ margin: mobile ? '15px 0' : '0 15px' }}>
                 <img
                   src={gosugamInfographic2Img4}
                   alt=""
@@ -539,18 +552,18 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 />
               </div>
             </div>
-         </div>
+          </div>
 
-         <div
-              style={{
-                height: '1px',
-                width: '75px',
-                borderWidth: '1px',
-                borderStyle: 'solid',
-                borderColor: 'transparent',
-                borderImage: 'linear-gradient(to left, #418F37, #FFE81D) 1',
-                margin: '75px auto',
-              }}></div>
+          <div
+            style={{
+              height: '1px',
+              width: '75px',
+              borderWidth: '1px',
+              borderStyle: 'solid',
+              borderColor: 'transparent',
+              borderImage: 'linear-gradient(to left, #418F37, #FFE81D) 1',
+              margin: '75px auto',
+            }}></div>
 
           <div
             style={{
@@ -585,15 +598,15 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             </div> */}
           </div>
           <div
-              style={{
-                height: '1px',
-                width: '75px',
-                borderWidth: '1px',
-                borderStyle: 'solid',
-                borderColor: 'transparent',
-                borderImage: 'linear-gradient(to left, #418F37, #FFE81D) 1',
-                margin: '75px auto',
-              }}></div>
+            style={{
+              height: '1px',
+              width: '75px',
+              borderWidth: '1px',
+              borderStyle: 'solid',
+              borderColor: 'transparent',
+              borderImage: 'linear-gradient(to left, #418F37, #FFE81D) 1',
+              margin: '75px auto',
+            }}></div>
           <div
             className="headingCaseStudy"
             id="impact-numbers-section"
@@ -606,10 +619,10 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               paddingTop: '50px',
               fontSize: mobile ? '20px' : '30px',
             }}>
-            Go-Sugam has quickly become the de-facto choice of DAFE and FARD for
+            GO-SUGAM has quickly become the de-facto choice of DAFE and FARD for
             easy and smooth delivery of schemes across directorates
           </div>
-          
+
           <div
             style={{
               width: '80%',
@@ -641,7 +654,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   marginBottom: 0,
                   paddingTop: 0,
                 }}>
-                1.8 Lakh{' '}
+                2 Lakh{' '}
                 <span
                   style={{
                     color: '#025300',
@@ -687,7 +700,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   marginBottom: 0,
                   paddingTop: 0,
                 }}>
-                70,000{' '}
+                1 Lakh{' '}
                 <span
                   style={{
                     color: '#025300',
@@ -733,7 +746,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   marginBottom: 0,
                   paddingTop: 0,
                 }}>
-                53,000{' '}
+                70,000{' '}
                 <span
                   style={{
                     color: '#025300',
@@ -881,15 +894,15 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
         </div>
       </FadeInSection>
       <div
-              style={{
-                height: '1px',
-                width: '75px',
-                borderWidth: '1px',
-                borderStyle: 'solid',
-                borderColor: 'transparent',
-                borderImage: 'linear-gradient(to left, #418F37, #FFE81D) 1',
-                margin: '75px auto',
-              }}></div>
+        style={{
+          height: '1px',
+          width: '75px',
+          borderWidth: '1px',
+          borderStyle: 'solid',
+          borderColor: 'transparent',
+          borderImage: 'linear-gradient(to left, #418F37, #FFE81D) 1',
+          margin: '75px auto',
+        }}></div>
       <FadeInSection>
         <div
           style={{
