@@ -43,6 +43,10 @@
   }
 }
 
+.infographic-img:hover{
+  transform: scale(1.1);
+}
+
 .spacer {
   width: 100%;
   margin: 50px auto;
@@ -89,12 +93,12 @@
 .share {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  background-color: white;
+  align-items: center;
+  background-color: transparent;
   border-radius: 10px 0 0 10px;
   height: 100px;
   height: fit-content;
-  width: 40px;
+  width: 60px;
   position: fixed;
   top: 20%;
   right: 0;
@@ -104,8 +108,8 @@
 .share img {
   cursor: pointer;
   margin: 5px;
-  width: 25px;
-  height: 25px;
+  width: 40px;
+  height: 40px;
 }
 
 .headingCaseStudy {

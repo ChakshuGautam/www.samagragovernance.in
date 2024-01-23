@@ -6,19 +6,17 @@ import Layout from '../components/Layout';
 import PropTypes from 'prop-types';
 import img2 from '../../static/img/kskimg2.gif';
 import infographic from '../../static/img/infographic.gif';
-import linkedinLogo from '../img/social/linkedin-black.svg';
-import instaLogo from '../img/social/instagram.svg';
-import fbLogo from '../img/social/facebook.svg';
-import twitterLogo from '../img/social/twitter.svg';
-import whatsappLogo from '../img/social/whatsapp.svg';
-import mailLogo from '../img/social/mail.svg';
+import sideicon1 from '../../static/img/icon1-gosugam.png';
+import sideicon2 from '../../static/img/icon2-gosugam.png';
+import sideicon3 from '../../static/img/icon3-gosugam.png';
+import sideicon4 from '../../static/img/icon4-gosugam.png';
 import { animateScroll as scroll } from 'react-scroll';
 import upIcon from '../img/up-arrow-png-20.png';
 import apostrophe_start from '../img/apostrophe_start.svg';
 import apostrophe_end from '../img/apostrophe_end.svg';
 import spacer from '../img/spacer.png';
-import impactImg1 from '../../static/img/gosugam-img1.png';
-import impactImg2 from '../../static/img/gosugam-img2.png';
+import impactImg1 from '../../static/img/01_screen.mp4';
+import impactImg2 from '../../static/img/02_screen.mp4';
 import icon1 from '../img/Icon1.svg';
 import icon2 from '../img/Icon2.svg';
 import icon3 from '../img/Icon3.svg';
@@ -26,7 +24,7 @@ import icon4 from '../img/Icon4.svg';
 import icon5 from '../img/Icon5.svg';
 import amritSeriesDoodle from '../../static/img/amrit-series-text-doodle.svg';
 import amritSeriesBubble from '../../static/img/amrit-series-text-bubble.svg';
-import gosugamImpactImg from '../../static/img/gosugam-impact.jpeg';
+import gosugamImpactImg from '../../static/img/gosugam-impact.jpg';
 import akailaunch from '../../static/img/ama-krushai-launch.png';
 import gosugamLinksImg from '../../static/img/gosugam-links.jpeg';
 import { Infographic1 } from '../components/CaseStudyComponents/Infographic1';
@@ -60,9 +58,8 @@ function FadeInSection(props) {
   }, []);
   return (
     <div
-    className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
-    ref={domRef}
-    >
+      className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
+      ref={domRef}>
       {props.children}
     </div>
   );
@@ -101,12 +98,12 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       } else {
         setMobile(false);
       }
-    }
+    };
     handleResize();
-    
+
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleResize);
-    
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
@@ -134,25 +131,75 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           <img src={upIcon} onClick={scrollToTop} />
         </div>
       )}
-      <div className="share">
-        <img src={twitterLogo} alt="" />
-        <img src={linkedinLogo} alt="" />
-        <img src={instaLogo} alt="" />
-        <img src={fbLogo} alt="" />
-        <img
-          src={whatsappLogo}
-          alt=""
+      <div className="share" style={{ border: '1px solid #FFA500' }}>
+        <div
+          style={{ textAlign: 'center' }}
           onClick={() => {
-            const link = document.createElement('a');
-            link.href = mobile
-              ? `whatsapp://send?text=${window.location.href}`
-              : `https://web.whatsapp.com/send?text=${window.location.href}`;
-            link.dataAction = 'share/whatsapp/share';
-            link.target = '_blank';
-            link.click();
-          }}
-        />
-        <img src={mailLogo} alt="" />
+            const ref = document.getElementById('needs-section');
+            ref.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }}>
+          <img src={sideicon1} alt="" />
+          <p
+            style={{
+              color: '#025300',
+              fontSize: '9px',
+              fontWeight: 'bold',
+              textAlign: 'center',
+            }}>
+            Need / Challenges
+          </p>
+        </div>
+        <div
+          style={{ textAlign: 'center' }}
+          onClick={() => {
+            const ref = document.getElementById('impact-video-section');
+            ref.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }}>
+          <img src={sideicon2} alt="" />
+          <p
+            style={{
+              color: '#025300',
+              fontSize: '9px',
+              fontWeight: 'bold',
+              textAlign: 'center',
+            }}>
+            Impact Video
+          </p>
+        </div>
+        <div
+          style={{ textAlign: 'center' }}
+          onClick={() => {
+            const ref = document.getElementById('use-cases-section');
+            ref.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }}>
+          <img src={sideicon3} alt="" />
+          <p
+            style={{
+              color: '#025300',
+              fontSize: '9px',
+              fontWeight: 'bold',
+              textAlign: 'center',
+            }}>
+            Use Cases
+          </p>
+        </div>
+        <div
+          style={{ textAlign: 'center' }}
+          onClick={() => {
+            const ref = document.getElementById('impact-numbers-section');
+            ref.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }}>
+          <img src={sideicon4} alt="" />
+          <p
+            style={{
+              color: '#025300',
+              fontSize: '9px',
+              fontWeight: 'bold',
+              textAlign: 'center',
+            }}>
+            Impact Numbers
+          </p>
+        </div>
       </div>
       {/* <div className="spacer first-spacer">
         <img src={spacer} alt="" />
@@ -160,6 +207,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       <FadeInSection>
         <div
           className="case-study-main-heading headingCaseStudy"
+          id="needs-section"
           style={{
             color: '#025300',
             fontSize: mobile ? '20px' : '30px',
@@ -205,7 +253,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 borderRadius: '10px',
               }}></div>
           </div> */}
-          <div className="case-study-summary-text">
+          <div className="case-study-summary-text" id="impact-video-section">
             <div
               className="headingCaseStudy"
               style={{
@@ -250,7 +298,6 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             <div
               style={{
                 textAlign: 'center',
-
                 // width: '100vw',
               }}>
               <div className="impact-video">
@@ -260,8 +307,11 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                     minWidth: '300px',
                     height: '30vw',
                     width: '60vw',
-                    padding: '4px',
-                    // border: '4px solid #A97F2B',
+                    padding: '10px',
+                    borderWidth: '1px',
+                    borderImage:
+                      'linear-gradient(to right, #418F37, #FFE81D) 1',
+                    borderImageSlice: 1,
                   }}
                   src="https://www.youtube.com/embed/-GRdJ9XSAEE?si=iYN4BchI6rJRT78z"
                   // title="YouTube video player"
@@ -292,13 +342,13 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   }}
                 />
               </div>
-              <div>
+              {/* <div>
                 <img
-                  src={amritSeriesBubble}
-                  alt=""
-                  width={mobile ? '120px' : '150px'}
+                src={amritSeriesBubble}
+                alt=""
+                width={mobile ? '120px' : '150px'}
                 />
-              </div>
+              </div> */}
             </div>
             {/* <div className="textCaseStudy" style={{ textAlign: 'left' }}>
               To transform the way government officials use data and real-time
@@ -316,22 +366,35 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           </div>
         </div>
       </FadeInSection>
-      {/* <div className="spacer">
-        <img src={spacer} alt="" /> 
-      </div> */}
-      
+            <div
+              style={{
+                height: '1px',
+                width: '75px',
+                borderWidth: '1px',
+                borderStyle: 'solid',
+                borderColor: 'transparent',
+                borderImage: 'linear-gradient(to left, #418F37, #FFE81D) 1',
+                margin: '75px auto',
+              }}></div>
 
       <FadeInSection>
         <div className="impact">
           <div
             style={{
-              backgroundImage: `url(${impactImg1})`,
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              aspectRatio: '2',
               marginTop: !mobile ? '10px' : '',
             }}>
+            <video
+              autoPlay
+              loop
+              muted
+              style={{
+                width: '100%',
+                aspectRatio: '2',
+                objectFit: 'cover',
+              }}>
+              <source src={impactImg1} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
             {/* <div
               className="headingCaseStudy"
               style={{
@@ -352,23 +415,86 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             <img src={spacer} alt="" />
           </div> */}
 
-          <div className="textCaseStudy">
+<div
+              style={{
+                height: '1px',
+                width: '75px',
+                borderWidth: '1px',
+                borderStyle: 'solid',
+                borderColor: 'transparent',
+                borderImage: 'linear-gradient(to left, #418F37, #FFE81D) 1',
+                margin: '75px auto',
+              }}></div>
+
+          <div className="textCaseStudy" id="use-cases-section">
             These are the many struggles of the farmers in Odisha.
           </div>
 
           <div
-            style={{
-              textAlign: 'center',
-              marginLeft: mobile ? '0px' : '200px',
-            }}>
-            <Infographic1
-              height={mobile ? '350' : '750'}
-              width={mobile ? '350' : '850'}
-              img1={gosugamInfographic1Img1}
-              img2={gosugamInfographic1Img2}
-              img3={gosugamInfographic1Img3}
-              img4={gosugamInfographic1Img4}
-            />
+            className="infographic1"
+            style={{ marginTop: '75px', marginBottom: '75px' }}>
+            <div
+              className="infographic-img"
+              style={{ width: 'fit-content', margin: 'auto' }}>
+              <img
+                src={gosugamInfographic1Img1}
+                alt=""
+                style={{ maxWidth: '200px' }}
+              />
+            </div>
+
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                flexDirection: mobile ? 'column' : 'row',
+                alignItems: mobile ? 'center' : 'flex-start',
+              }}>
+              <div className="infographic-img">
+                <img
+                  src={gosugamInfographic1Img2}
+                  alt=""
+                  style={{ maxWidth: '250px' }}
+                />
+              </div>
+              <div
+                style={{
+                  height: '500px',
+                  width: '1px',
+                  borderWidth: '1px',
+                  borderStyle: 'solid',
+                  borderColor: 'transparent',
+                  borderImage: 'linear-gradient(to bottom, #418F37, #FFE81D) 1',
+                  display: mobile ? 'none' : 'block',
+                  margin: '0 10px',
+                }}></div>
+
+              <div className="infographic-img">
+                <img
+                  src={gosugamInfographic1Img3}
+                  alt=""
+                  style={{ maxWidth: '250px' }}
+                />
+              </div>
+              <div
+                style={{
+                  height: '500px',
+                  width: '1px',
+                  borderWidth: '1px',
+                  borderStyle: 'solid',
+                  borderColor: 'transparent',
+                  borderImage: 'linear-gradient(to bottom, #418F37, #FFE81D) 1',
+                  display: mobile ? 'none' : 'block',
+                  margin: '0 10px',
+                }}></div>
+              <div className="infographic-img">
+                <img
+                  src={gosugamInfographic1Img4}
+                  alt=""
+                  style={{ maxWidth: '250px' }}
+                />
+              </div>
+            </div>
           </div>
 
           <div className="textCaseStudy">
@@ -376,29 +502,72 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             attempting to streamline processes.
           </div>
 
-          <div
-            style={{
-              textAlign: 'center',
-            }}>
-            <Infographic2
-              height={mobile ? '350' : '600'}
-              width={mobile ? '350' : '700'}
-              img1={gosugamInfographic2Img1}
-              img2={gosugamInfographic2Img2}
-              img3={gosugamInfographic2Img3}
-              img4={gosugamInfographic2Img4}
-            />
+         <div className='infographic2' style={{ marginTop: '75px', marginBottom: '75px' }}>
+          <div className='infographic-img' style={{ width: 'fit-content', margin: '15px auto' }}>
+            <img src={gosugamInfographic2Img1} alt="" style={{maxWidth: '200px'}}/>
           </div>
+          <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                flexDirection: mobile ? 'column' : 'row',
+                alignItems: mobile ? 'center' : 'flex-start',
+                marginTop: '10px'
+              }}>
+              <div className="infographic-img" style={{margin: mobile ? '15px 0' : '0 15px'}}>
+                <img
+                  src={gosugamInfographic2Img2}
+                  alt=""
+                  style={{ maxWidth: '250px' }}
+                />
+              </div>
+              
+
+              <div className="infographic-img"style={{margin: mobile ? '15px 0' : '0 15px'}}>
+                <img
+                  src={gosugamInfographic2Img3}
+                  alt=""
+                  style={{ maxWidth: '250px' }}
+                />
+              </div>
+              
+              <div className="infographic-img"style={{margin: mobile ? '15px 0' : '0 15px'}}>
+                <img
+                  src={gosugamInfographic2Img4}
+                  alt=""
+                  style={{ maxWidth: '250px' }}
+                />
+              </div>
+            </div>
+         </div>
+
+         <div
+              style={{
+                height: '1px',
+                width: '75px',
+                borderWidth: '1px',
+                borderStyle: 'solid',
+                borderColor: 'transparent',
+                borderImage: 'linear-gradient(to left, #418F37, #FFE81D) 1',
+                margin: '75px auto',
+              }}></div>
 
           <div
             style={{
-              backgroundImage: `url(${impactImg2})`,
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: '100%',
-              backgroundPosition: 'center',
-              aspectRatio: '2',
               marginTop: !mobile ? '10px' : '',
             }}>
+            <video
+              autoPlay
+              loop
+              muted
+              style={{
+                width: '100%',
+                aspectRatio: '2',
+                objectFit: 'cover',
+              }}>
+              <source src={impactImg2} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
             {/* <div
               className="headingCaseStudy"
               style={{
@@ -416,7 +585,18 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             </div> */}
           </div>
           <div
+              style={{
+                height: '1px',
+                width: '75px',
+                borderWidth: '1px',
+                borderStyle: 'solid',
+                borderColor: 'transparent',
+                borderImage: 'linear-gradient(to left, #418F37, #FFE81D) 1',
+                margin: '75px auto',
+              }}></div>
+          <div
             className="headingCaseStudy"
+            id="impact-numbers-section"
             style={{
               textAlign: 'center',
               color: '#025300',
@@ -429,6 +609,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             Go-Sugam has quickly become the de-facto choice of DAFE and FARD for
             easy and smooth delivery of schemes across directorates
           </div>
+          
           <div
             style={{
               width: '80%',
@@ -699,9 +880,16 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           </div>
         </div>
       </FadeInSection>
-      {/* <div className="spacer">
-        <img src={spacer} alt="" />
-      </div> */}
+      <div
+              style={{
+                height: '1px',
+                width: '75px',
+                borderWidth: '1px',
+                borderStyle: 'solid',
+                borderColor: 'transparent',
+                borderImage: 'linear-gradient(to left, #418F37, #FFE81D) 1',
+                margin: '75px auto',
+              }}></div>
       <FadeInSection>
         <div
           style={{
@@ -759,7 +947,8 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   // window.location.href =
                   //   '/blog/2023-12-25-amrit-series-1-krushi-samiksha-kendra/';
                 }}>
-               Read More <RightArrow color="#025300" height="15px" width="15px" />
+                Read More{' '}
+                <RightArrow color="#025300" height="15px" width="15px" />
               </p>
             </div>
             <div>
@@ -795,7 +984,8 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   // window.location.href =
                   //   '/blog/2023-12-25-amrit-series-1-krushi-samiksha-kendra/';
                 }}>
-               Read More <RightArrow color="#025300" height="15px" width="15px" />
+                Read More{' '}
+                <RightArrow color="#025300" height="15px" width="15px" />
               </p>
             </div>
             <div>
@@ -831,10 +1021,10 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   // window.location.href =
                   //   '/blog/2023-12-25-amrit-series-1-krushi-samiksha-kendra/';
                 }}>
-               Read More <RightArrow color="#025300" height="15px" width="15px" />
+                Read More{' '}
+                <RightArrow color="#025300" height="15px" width="15px" />
               </p>
             </div>
-
           </div>
           <div
             style={{
@@ -842,7 +1032,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               alignItems: 'flex-end',
               marginTop: mobile ? '50px' : '',
             }}>
-            <div
+            {/* <div
               style={{
                 position: 'relative',
                 zIndex: '0',
@@ -855,14 +1045,14 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 borderRadius: '10px',
-              }}></div>
+              }}></div> */}
 
             <div
               style={{
                 position: 'relative',
                 zIndex: '1',
                 height: mobile ? '275px' : '500px',
-                width: mobile ? '150px' : '250px',
+                width: mobile ? '275px' : '500px',
                 backgroundImage: `url(${gosugamImpactImg})`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
@@ -870,7 +1060,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 borderRadius: '10px',
               }}></div>
 
-            <div
+            {/* <div
               style={{
                 position: 'relative',
                 zIndex: '2',
@@ -883,7 +1073,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 borderRadius: '10px',
-              }}></div>
+              }}></div> */}
           </div>
         </div>
       </FadeInSection>
@@ -926,7 +1116,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           </div>
         </div>
       </FadeInSection> */}
-      
+
       {/* <div className="spacer">
         <img src={spacer} alt="" />
       </div> */}
@@ -941,82 +1131,87 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       <FadeInSection>
         <div
           className="headingCaseStudy"
-          style={{ color: '#025300', margin: 'auto', fontSize: mobile ? '20px' : '30px' }}>
+          style={{
+            color: '#025300',
+            margin: 'auto',
+            fontSize: mobile ? '20px' : '30px',
+          }}>
           View more <i>Success Stories of Impact</i>
         </div>
         <div
-        style={{
-          marginTop: '125px',
-          marginBottom: '150px',
-          display: 'flex',
-          justifyContent: mobile ? '' : 'space-evenly',
-          flexDirection: mobile ? 'column' : 'row',
-        }}>
-        {['', '', ''].map((news, index) => {
-          return (
-            <a href={''} target="_blank">
-              <div
-                className={`card-wrapper-case-study ${
-                  hoveredIndex === index ? 'hovered' : ''
-                } `}
-                style={{
-                  margin: mobile ? '50px auto' : '',
-                  height: mobile ? '200px' : '250px',
-                  width: mobile ? '275px' : '350px',
-                }}
-                onMouseLeave={() => setHoveredIndex(-1)}
-                onMouseEnter={() => setHoveredIndex(index)}>
+          style={{
+            marginTop: '125px',
+            marginBottom: '150px',
+            display: 'flex',
+            justifyContent: mobile ? '' : 'space-evenly',
+            flexDirection: mobile ? 'column' : 'row',
+          }}>
+          {['', '', ''].map((news, index) => {
+            return (
+              <a href={''} target="_blank">
                 <div
+                  className={`card-wrapper-case-study ${
+                    hoveredIndex === index ? 'hovered' : ''
+                  } `}
                   style={{
-                    backgroundImage: `url(${content.featuredimage.childImageSharp.fluid.src})`,
-                    height: '100%',
-                    borderRadius: '10px',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'cover',
+                    margin: mobile ? '50px auto' : '',
+                    height: mobile ? '200px' : '250px',
+                    width: mobile ? '275px' : '350px',
                   }}
-                />
-                <div
-                  style={{
-                    background: '#F5F7FA',
-                    borderRadius: '10px',
-                    height: mobile ? '150px' : '150px',
-                    width: mobile ? '230px' : '300px',
-                    position: 'relative',
-                    top: '-80px',
-                    margin: 'auto',
-                    boxShadow: 'rgba(0, 0, 0, 0.1) 0px 4px 12px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                  }}>
-                  <div
-                    className={'headingCaseStudy'}
-                    style={{
-                      minHeight: '40px',
-                      fontSize: '16px',
-                      color: '#717171',
-                      flex: 0.8,
-                      padding: '20px 10px',
-                    }}>
-                    {content.title}
-                  </div>
+                  onMouseLeave={() => setHoveredIndex(-1)}
+                  onMouseEnter={() => setHoveredIndex(index)}>
                   <div
                     style={{
-                      fontSize: '16px',
-                      color: '#025300',
-                      fontWeight: 'bold',
-                      textAlign: 'center',
-                      flex: 0.2,
-                      padding: '20px',
+                      backgroundImage: `url(${content.featuredimage.childImageSharp.fluid.src})`,
+                      height: '100%',
+                      borderRadius: '10px',
+                      backgroundPosition: 'center',
+                      backgroundRepeat: 'no-repeat',
+                      backgroundSize: 'cover',
+                    }}
+                  />
+                  <div
+                    style={{
+                      background: '#F5F7FA',
+                      borderRadius: '10px',
+                      height: mobile ? '150px' : '150px',
+                      width: mobile ? '230px' : '300px',
+                      position: 'relative',
+                      top: '-80px',
+                      margin: 'auto',
+                      boxShadow: 'rgba(0, 0, 0, 0.1) 0px 4px 12px',
+                      display: 'flex',
+                      flexDirection: 'column',
                     }}>
-                   Read More <RightArrow color="#025300" height="15px" width="15px" />
+                    <div
+                      className={'headingCaseStudy'}
+                      style={{
+                        minHeight: '40px',
+                        fontSize: '16px',
+                        color: '#717171',
+                        flex: 0.8,
+                        padding: '20px 10px',
+                      }}>
+                      {content.title}
+                    </div>
+                    <div
+                      style={{
+                        fontSize: '16px',
+                        color: '#025300',
+                        fontWeight: 'bold',
+                        textAlign: 'center',
+                        flex: 0.2,
+                        padding: '20px',
+                      }}>
+                      Read More{' '}
+                      <RightArrow color="#025300" height="15px" width="15px" />
+                    </div>
                   </div>
                 </div>
-              </div>
-            </a>
-          );
-        })}
-      </div>
+              </a>
+            );
+          })}
+        </div>
       </FadeInSection>
       {/* <div className="spacer">
         <img src={spacer} alt="" />
