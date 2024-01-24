@@ -102,9 +102,9 @@ export class HomeTopSlider extends React.Component {
       );
     }, 60000);
 
-    setTimeout(() => {
-      this.setState({ slideTitleVisible: true });
-    }, 1000);
+    // setTimeout(() => {
+    //   this.setState({ slideTitleVisible: true });
+    // }, 1000);
   };
 
   render() {
@@ -161,7 +161,7 @@ export class HomeTopSlider extends React.Component {
         <div className={'container'}>
           <div className={'slider-content'}>
             <div className={'left-text-section'}>
-              <div className={`title ${slideTitleVisible ? 'visible' : ''}`}>
+              <div className={`title visible`}>
                 {this.props.baseBanner && this.props.baseBanner.titleLines ? (
                   this.props.baseBanner.titleLines.map((line) => {
                     return <div>{line.text}</div>;
@@ -176,7 +176,7 @@ export class HomeTopSlider extends React.Component {
             </div>
           </div>
         </div>
-        <HomeTopSliderBannerOne
+        {/* <HomeTopSliderBannerOne
           bannerActive={firstBannerActive}
           banner={this.props.subBanners[0]}
         />
@@ -187,8 +187,8 @@ export class HomeTopSlider extends React.Component {
         <HomeTopSliderBannerOne
           bannerActive={thirdBannerActive}
           banner={this.props.subBanners[2]}
-        />
-        {allBanners.length > 1 ? (
+        /> */}
+        {/* {allBanners.length > 1 ? (
           <div className="bubble-wrapper">
             {allBanners.map((b, index) => {
               return (
@@ -203,7 +203,7 @@ export class HomeTopSlider extends React.Component {
               );
             })}
           </div>
-        ) : null}
+        ) : null} */}
       </div>
     );
   }

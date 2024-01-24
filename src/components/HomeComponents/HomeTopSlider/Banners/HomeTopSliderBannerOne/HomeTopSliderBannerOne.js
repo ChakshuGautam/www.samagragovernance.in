@@ -104,7 +104,7 @@ export class HomeTopSliderBannerOne extends React.Component {
                                         }) : <span/>
                                     }
                                 </div>
-                                <div className={`slider-wrapper  ${showSlider ? 'visible' : ''}`}>
+                                {/* <div className={`slider-wrapper  ${showSlider ? 'visible' : ''}`}>
                                     <div className="slider soft-hide-form-small-only">
                                         <div className="animated-section-wrapper soft-hide-form-small-only">
                                             <div className={`animated-section ${scrollTo === 2 ? 'sliding-out' : ''}`}>
@@ -163,7 +163,7 @@ export class HomeTopSliderBannerOne extends React.Component {
                                             }}/>
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
 
 
                             </div>

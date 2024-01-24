@@ -21,7 +21,7 @@ export const IndexPageTemplate = ({
                 <HomeSecondSection homeContent={data}/>
             </React.Fragment> : <span/>
         }
-        <HomeThirdSection parentDomains={parentDomains}/>
+        {/* <HomeThirdSection parentDomains={parentDomains}/> */}
         <HomeNewsSection/>
     </React.Fragment>
 );

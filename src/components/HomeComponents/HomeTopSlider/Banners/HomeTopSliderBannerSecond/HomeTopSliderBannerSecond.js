@@ -133,7 +133,7 @@ export class HomeTopSliderBannerSecond extends React.Component {
                                                      }}/>
                                         </div>
                                     </div>
-                                    <div className="slider-overlay"/>
+                                    {/* <div className="slider-overlay"/> */}
                                     <div className={'content-section'}>
 
                                         <div
