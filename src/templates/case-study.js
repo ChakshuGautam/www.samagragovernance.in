@@ -17,22 +17,15 @@ import apostrophe_end from '../img/apostrophe_end.svg';
 import spacer from '../img/spacer.png';
 import impactImg1 from '../../static/img/01_screen.mp4';
 import impactImg2 from '../../static/img/02_screen.mp4';
-import icon1 from '../img/Icon1.svg';
-import icon2 from '../img/Icon2.svg';
-import icon3 from '../img/Icon3.svg';
-import icon4 from '../img/Icon4.svg';
-import icon5 from '../img/Icon5.svg';
 import amritSeriesDoodle from '../../static/img/amrit-series-text-doodle.svg';
 import amritSeriesBubble from '../../static/img/amrit-series-text-bubble.svg';
 import gosugamImpactImg from '../../static/img/gosugam-impact.jpg';
 import akailaunch from '../../static/img/ama-krushai-launch.png';
 import gosugamLinksImg from '../../static/img/gosugam-links.jpeg';
-import { Infographic1 } from '../components/CaseStudyComponents/Infographic1';
 import gosugamInfographic1Img1 from '../../static/img/gosugam-infographic1-img1.png';
 import gosugamInfographic1Img2 from '../../static/img/gosugam-infographic1-img2.png';
 import gosugamInfographic1Img3 from '../../static/img/gosugam-infographic1-img3.png';
 import gosugamInfographic1Img4 from '../../static/img/gosugam-infographic1-img4.png';
-import { Infographic2 } from '../components/CaseStudyComponents/Infographic2';
 import gosugamInfographic2Img1 from '../../static/img/gosugam-infographic2-img1.png';
 import gosugamInfographic2Img2 from '../../static/img/gosugam-infographic2-img2.png';
 import gosugamInfographic2Img3 from '../../static/img/gosugam-infographic2-img3.png';
@@ -41,6 +34,7 @@ import { RightArrow } from '../components/CaseStudyComponents/RightArrow';
 import { Modal } from 'react-responsive-modal';
 import { debounce } from 'lodash';
 import 'react-responsive-modal/styles.css';
+import CountUp from 'react-countup';
 
 function FadeInSection(props) {
   const [isVisible, setVisible] = useState(false);
@@ -142,7 +136,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           <p
             style={{
               color: '#025300',
-              fontSize: '9px',
+              fontSize: mobile ? '5px' : '9px',
               fontWeight: 'bold',
               textAlign: 'center',
             }}>
@@ -159,7 +153,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           <p
             style={{
               color: '#025300',
-              fontSize: '9px',
+              fontSize: mobile ? '5px' : '9px',
               fontWeight: 'bold',
               textAlign: 'center',
             }}>
@@ -176,7 +170,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           <p
             style={{
               color: '#025300',
-              fontSize: '9px',
+              fontSize: mobile ? '5px' : '9px',
               fontWeight: 'bold',
               textAlign: 'center',
             }}>
@@ -193,7 +187,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           <p
             style={{
               color: '#025300',
-              fontSize: '9px',
+              fontSize: mobile ? '5px' : '9px',
               fontWeight: 'bold',
               textAlign: 'center',
             }}>
@@ -276,7 +270,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               }}>
               GO-SUGAM was introduced by the Govt of Odisha in May 2022, to ease
               the life of farmers. See how it impacted the life of an
-              aspirational small scale farmer - Sangeeta.
+              aspirational small scale farmer - Sangita.
             </div>
             <div
               style={{
@@ -376,6 +370,30 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           borderImage: 'linear-gradient(to left, #418F37, #FFE81D) 1',
           margin: '75px auto',
         }}></div>
+      <div
+        className="textCaseStudy"
+        style={{
+          textAlign: 'center',
+          // color: '#025300',
+          // paddingBottom: '25px',
+          paddingTop: !mobile ? '5px' : '50px',
+          fontSize: mobile ? '20px' : '30px',
+          width: '80%',
+          margin: 'auto',
+        }}>
+        Like Sangita, many farmers in Odisha have such dreams. And they need
+        help from the right schemes to unlock these dreams.
+      </div>
+      <div
+        style={{
+          height: '1px',
+          width: '75px',
+          borderWidth: '1px',
+          borderStyle: 'solid',
+          borderColor: 'transparent',
+          borderImage: 'linear-gradient(to left, #418F37, #FFE81D) 1',
+          margin: '75px auto',
+        }}></div>
 
       <FadeInSection>
         <div className="impact">
@@ -426,8 +444,12 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               margin: '75px auto',
             }}></div>
 
-          <div className="textCaseStudy" id="use-cases-section">
-            These are the many struggles of the farmers in Odisha.
+          <div
+            className="textCaseStudy"
+            id="use-cases-section"
+            style={{ fontSize: mobile ? '20px' : '30px' }}>
+            Farmers in Odisha primarily face three challenges in accessing the
+            right schemes.
           </div>
 
           <div
@@ -497,9 +519,11 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             </div>
           </div>
 
-          <div className="textCaseStudy">
-            The Government of Odisha has had its fair share of challenges in
-            attempting to streamline processes.
+          <div
+            className="textCaseStudy"
+            style={{ fontSize: mobile ? '20px' : '30px' }}>
+            For the Government of Odisha, the key processes that needed
+            streamlining included the following..
           </div>
 
           <div
@@ -619,8 +643,10 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               paddingTop: '50px',
               fontSize: mobile ? '20px' : '30px',
             }}>
-            GO-SUGAM has quickly become the de-facto choice of DAFE and FARD for
-            easy and smooth delivery of schemes across directorates
+            GO-SUGAM has quickly become the de-facto choice of Department of
+            Agriculture and Farmers' Empowerment (DA&FE) and Fisheries and
+            Animal Resources Development (FARD) for easy and smooth delivery of
+            schemes across directorates
           </div>
 
           <div
@@ -641,10 +667,10 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 padding: '10px',
               }}>
               <img
-                src={icon1}
+                src={content.icon1.childImageSharp.fluid.src}
                 alt=""
-                width={mobile ? 100 : 150}
-                height={mobile ? 100 : 150}
+                width={mobile ? 35 : 75}
+                height={mobile ? 35 : 75}
               />
               <p
                 className="textCaseStudy"
@@ -654,7 +680,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   marginBottom: 0,
                   paddingTop: 0,
                 }}>
-                2 Lakh{' '}
+                <CountUp start={0} end={2} duration={3} enableScrollSpy scrollSpyOnce={true} /> Lakh{' '}
                 <span
                   style={{
                     color: '#025300',
@@ -687,10 +713,10 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 padding: '10px',
               }}>
               <img
-                src={icon2}
+                src={content.icon2.childImageSharp.fluid.src}
                 alt=""
-                width={mobile ? 100 : 150}
-                height={mobile ? 100 : 150}
+                width={mobile ? 35 : 75}
+                height={mobile ? 35 : 75}
               />
               <p
                 className="textCaseStudy"
@@ -700,7 +726,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   marginBottom: 0,
                   paddingTop: 0,
                 }}>
-                1 Lakh{' '}
+                <CountUp start={0} end={1} duration={3} enableScrollSpy scrollSpyOnce={true} /> Lakh{' '}
                 <span
                   style={{
                     color: '#025300',
@@ -733,10 +759,10 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 padding: '10px',
               }}>
               <img
-                src={icon3}
+                src={content.icon3.childImageSharp.fluid.src}
                 alt=""
-                width={mobile ? 100 : 150}
-                height={mobile ? 100 : 150}
+                width={mobile ? 35 : 75}
+                height={mobile ? 35 : 75}
               />
               <p
                 className="textCaseStudy"
@@ -746,7 +772,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   marginBottom: 0,
                   paddingTop: 0,
                 }}>
-                70,000{' '}
+                <CountUp start={0} end={70000} duration={3} enableScrollSpy scrollSpyOnce={true} />{' '}
                 <span
                   style={{
                     color: '#025300',
@@ -779,10 +805,10 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 padding: '10px',
               }}>
               <img
-                src={icon4}
+                src={content.icon4.childImageSharp.fluid.src}
                 alt=""
-                width={mobile ? 100 : 150}
-                height={mobile ? 100 : 150}
+                width={mobile ? 35 : 75}
+                height={mobile ? 35 : 75}
               />
               <p
                 className="textCaseStudy"
@@ -792,7 +818,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   marginBottom: 0,
                   paddingTop: 0,
                 }}>
-                44%{' '}
+                <CountUp start={0} end={44} duration={3} enableScrollSpy scrollSpyOnce={true} />%{' '}
                 <span
                   style={{
                     color: '#025300',
@@ -825,10 +851,10 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 padding: '10px',
               }}>
               <img
-                src={icon5}
+                src={content.icon5.childImageSharp.fluid.src}
                 alt=""
-                width={mobile ? 100 : 150}
-                height={mobile ? 100 : 150}
+                width={mobile ? 35 : 75}
+                height={mobile ? 35 : 75}
               />
               <p
                 className="textCaseStudy"
@@ -838,7 +864,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   marginBottom: 0,
                   paddingTop: 0,
                 }}>
-                99%{' '}
+                <CountUp start={0} end={99} duration={3} enableScrollSpy scrollSpyOnce={true} />%{' '}
                 <span
                   style={{
                     color: '#025300',
@@ -1270,6 +1296,41 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         featuredimage {
+          childImageSharp {
+            fluid(maxWidth: 1280, quality: 62) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        icon1 {
+          childImageSharp {
+            fluid(maxWidth: 1280, quality: 62) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        icon2 {
+          childImageSharp {
+            fluid(maxWidth: 1280, quality: 62) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        icon3 {
+          childImageSharp {
+            fluid(maxWidth: 1280, quality: 62) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        icon4 {
+          childImageSharp {
+            fluid(maxWidth: 1280, quality: 62) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        icon5 {
           childImageSharp {
             fluid(maxWidth: 1280, quality: 62) {
               ...GatsbyImageSharpFluid

@@ -47,7 +47,7 @@ class CaseStudiesRoll extends React.Component {
                               borderRadius: '20px 20px 0 0',
                               overflow: 'hidden',
                             }}>
-                            <div
+                            {/* <div
                               className="image-overlay"
                               style={{
                                 position: 'absolute',
@@ -70,7 +70,7 @@ class CaseStudiesRoll extends React.Component {
                                 }}>
                                 {post?.frontmatter?.impactNumber}
                               </p>
-                            </div>
+                            </div> */}
                           </div>
                         ) : null}
                         <p
@@ -140,7 +140,6 @@ export default () => (
                 templateKey
                 title
                 projectId
-                impactNumber
                 date(formatString: "MMMM DD, YYYY")
                 featuredimage {
                   childImageSharp {

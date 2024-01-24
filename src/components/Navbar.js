@@ -91,8 +91,11 @@ const Navbar = class extends React.Component {
                                 <Link to={'/casestudies'}><a className="nav-link" href="/casestudies">Case Studies</a></Link>
                             </li> */}
                             <li>
-                                <Link to={'/c4gt'}><a className="nav-link" href="/c4gt">C4GT</a></Link>
+                                <Link to={'/amritseries'}><a className="nav-link" href="/amritseries">Amrit Series</a></Link>
                             </li>
+                            {/* <li>
+                                <Link to={'/c4gt'}><a className="nav-link" href="/c4gt">C4GT</a></Link>
+                            </li> */}
                             <li>
                                 <Link to={'/sushasan'}><a className="nav-link" href="/sushasan">Sushasan</a></Link>
                             </li>

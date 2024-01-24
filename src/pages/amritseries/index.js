@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '../../components/Layout';
 import CaseStudiesRoll from '../../components/CaseStudiesRoll';
-import backgroundImage from '../../img/team-banner-img.jpg';
+import backgroundImage from '../../../static/img/amrit-series-top-banner.jpg';
 import amritSeriesLogo from '../../../static/img/amrit-series-logo.png';
 import amritSeriesDoodle from '../../../static/img/amrit-series-text-doodle.svg';
 import spacer from '../../../static/img/yellow-spacer.png';
@@ -44,24 +44,37 @@ export default function CaseStudiesIndexPage() {
           <div className="title">Amrit Series</div>
         </div>
       </div>
+      <div
+        style={{
+          height: '1px',
+          width: '75px',
+          borderWidth: '2px',
+          borderStyle: 'solid',
+          borderColor: 'transparent',
+          borderImage: 'linear-gradient(to left, #418F37, #FFE81D) 1',
+          margin: '75px auto',
+        }}></div>
       <div className={'container career-section-second'}>
         <div className="row">
           <div className="col-11 mx-auto">
             {/* <div style={{ textAlign: 'center', marginTop: '4rem' }}>
               <img src={spacer} alt="" />
             </div> */}
-            <div className="mt-4" style={{ textAlign: 'center' }}>
-              <img src={amritSeriesLogo} alt="" width={mobile ? "250px" : "400px"} />
+            <div style={{ textAlign: 'center' }}>
+              <img
+                src={amritSeriesLogo}
+                alt=""
+                width={mobile ? '250px' : '400px'}
+              />
             </div>
             <div
               className={'py-5 text-center f-23 color-text-primary main-text'}>
-              Since its inception in 2012, Samagra has been working with
-              governments at various levels across the country. We have
-              synthesized our learnings from these 10 years in the form of two
-              frameworks- The Governance Matrix and Panchsutras for Governance
-              Transformation. These frameworks will be useful for those working
-              in the government as well as for those working with the
-              government.
+              At Samagra, we are on a mission to improve the quality of life of
+              citizens through better governance. <br></br><br></br>The Amrit Series is a
+              collection of success stories of large scale impact through our
+              work across domains and states. Many of these are stories of
+              direct impact on citizens, while some are new ways of doing things
+              in governance that are transformative.
             </div>
             <div
               style={{
@@ -72,7 +85,7 @@ export default function CaseStudiesIndexPage() {
               className={
                 'py-2 text-center f-28 color-text-primary main-text text-bold'
               }>
-              View our collection of Success Stories
+              View our Success Stories of Impact!
               <div>
                 <img
                   src={amritSeriesDoodle}
