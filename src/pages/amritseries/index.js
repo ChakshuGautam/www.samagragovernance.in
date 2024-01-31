@@ -54,28 +54,49 @@ export default function CaseStudiesIndexPage() {
           borderImage: 'linear-gradient(to left, #418F37, #FFE81D) 1',
           margin: '75px auto',
         }}></div>
-      <div className={'container career-section-second'}>
+      <div className={'career-section-second'} style={{maxWidth: mobile ? '80%' : '75%', margin: 'auto'}}>
         <div className="row">
-          <div className="col-11 mx-auto">
+          <div className="mx-auto">
             {/* <div style={{ textAlign: 'center', marginTop: '4rem' }}>
               <img src={spacer} alt="" />
             </div> */}
-            <div style={{ textAlign: 'center' }}>
+            <div style={{ textAlign: 'center', marginBottom: '50px' }}>
               <img
                 src={amritSeriesLogo}
                 alt=""
                 width={mobile ? '250px' : '400px'}
               />
             </div>
+          <div className={'sushasan-channel-trailer-container'}>
+            <iframe
+              className={'sushasan-channel-trailer'}
+              src="https://www.youtube.com/embed/r0gQp1zQLoM"
+              frameBorder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen></iframe>
+            <p className="sushasan-channel-trailer-text">
             <div
-              className={'py-5 text-center f-23 color-text-primary main-text'}>
-              At Samagra, we are on a mission to improve the quality of life of
-              citizens through better governance. <br></br><br></br>The Amrit Series is a
-              collection of success stories of large scale impact through our
-              work across domains and states. Many of these are stories of
-              direct impact on citizens, while some are new ways of doing things
-              in governance that are transformative.
-            </div>
+                className={'py-5 text-center f-23 color-text-primary main-text'}>
+                At Samagra, we are on a mission to improve the quality of life of
+                citizens through better governance. <br></br><br></br>The Amrit Series is a
+                collection of success stories of large scale impact through our
+                work across domains and states. Many of these are stories of
+                direct impact on citizens, while some are new ways of doing things
+                in governance that are transformative.
+              </div>
+            </p>
+        </div>
+        <div
+        style={{
+          height: '1px',
+          width: '75px',
+          borderWidth: '2px',
+          borderStyle: 'solid',
+          borderColor: 'transparent',
+          borderImage: 'linear-gradient(to left, #418F37, #FFE81D) 1',
+          margin: '75px auto',
+        }}></div>
+            
             <div
               style={{
                 fontWeight: 'bold',
@@ -105,6 +126,12 @@ export default function CaseStudiesIndexPage() {
           </div>
         </div>
       </section>
+      <div
+          className="partner-with-us"
+          style={{ marginTop: mobile ? '0px' : '25px' }}>
+          <p className="partner-with-us-main-text">Partner with us today!</p>
+          <p>Write to us at: outreach@samagragovernance.in</p>
+        </div>
     </Layout>
   );
 }

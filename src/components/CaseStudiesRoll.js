@@ -3,28 +3,56 @@ import PropTypes from 'prop-types';
 import { graphql, StaticQuery } from 'gatsby';
 
 class CaseStudiesRoll extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      mobile: typeof window !== 'undefined' && window.innerWidth <= 768,
+    };
+  }
+
+  handleResize = () => {
+    this.setState({
+      mobile: typeof window !== 'undefined' && window.innerWidth <= 768,
+    });
+  };
+
+  componentDidMount() {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', this.handleResize);
+    }
+  }
+
+  componentWillUnmount() {
+    if (typeof window !== 'undefined') {
+      window.removeEventListener('resize', this.handleResize);
+    }
+  }
+
   render() {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
     const clean_posts = posts.filter(
       (obj) => obj.node.frontmatter.buttonText !== null
     );
+    const { mobile } = this.state;
     return (
       <>
         <div className="blogs-section" style={{paddingBottom: '100px'}}>
-          <div className="row" >
+          <div className="row" style={{justifyContent: 'center'}}>
             {clean_posts.map(({ node: post }) => {
               return (
                 <div
-                style={{margin: 'auto'}}
-                  className="col-lg-3 col-md-4 col-sm-6 col-xs-1 mb-5"
-                  key={post.id}>
+                style={{ minHeight: '350px', minWidth: mobile ? '200px' : '350px', margin: mobile ? '15px 0' : '0 15px' }}
+                className="col-lg-3 col-md-4 col-sm-6 col-xs-1"
+                key={post.id}>
                   <div
                     className="blog-wrapper"
                     style={{ position: 'relative' }}>
                     <div
+                      style={{ minHeight: '350px', minWidth: mobile ? '200px' : '350px' }}
                       className="flip-card"
-                      style={{ minHeight: '350px', minWidth: 'fit-content' }}>
+                      >
                       <div
                         className="front"
                         style={{

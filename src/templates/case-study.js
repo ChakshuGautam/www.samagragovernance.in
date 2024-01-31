@@ -6,17 +6,11 @@ import Layout from '../components/Layout';
 import PropTypes from 'prop-types';
 import img2 from '../../static/img/kskimg2.gif';
 import infographic from '../../static/img/infographic.gif';
-import sideicon1 from '../../static/img/icon1-gosugam.png';
-import sideicon2 from '../../static/img/icon2-gosugam.png';
-import sideicon3 from '../../static/img/icon3-gosugam.png';
-import sideicon4 from '../../static/img/icon4-gosugam.png';
 import { animateScroll as scroll } from 'react-scroll';
 import upIcon from '../img/up-arrow-png-20.png';
 import apostrophe_start from '../img/apostrophe_start.svg';
 import apostrophe_end from '../img/apostrophe_end.svg';
 import spacer from '../img/spacer.png';
-import impactImg1 from '../../static/img/01_screen.mp4';
-import impactImg2 from '../../static/img/02_screen.mp4';
 import amritSeriesDoodle from '../../static/img/amrit-series-text-doodle.svg';
 import amritSeriesBubble from '../../static/img/amrit-series-text-bubble.svg';
 import gosugamImpactImg from '../../static/img/gosugam-impact.jpg';
@@ -35,6 +29,7 @@ import { Modal } from 'react-responsive-modal';
 import { debounce } from 'lodash';
 import 'react-responsive-modal/styles.css';
 import CountUp from 'react-countup';
+import SuccessStoriesSection from '../components/CaseStudyComponents/SuccessStoriesSection';
 
 function FadeInSection(props) {
   const [isVisible, setVisible] = useState(false);
@@ -60,7 +55,6 @@ function FadeInSection(props) {
 }
 
 export const CaseStudyTemplate = ({ content, helmet }) => {
-  const [hoveredIndex, setHoveredIndex] = useState(-1);
   const [mobile, setMobile] = useState(false);
   const [showUpIcon, setShowUpIcon] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
@@ -111,13 +105,18 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
     <section className="section">
       {helmet || ''}
       <div className="media-page-banner">
-        <img
-          src={content.bannerImage.publicURL}
+        <video
+          autoPlay
+          loop
+          muted
           style={{
-            width: '100vw',
-            height: 'auto',
-          }}
-        />
+            width: '100%',
+            aspectRatio: '2',
+            objectFit: 'cover',
+          }}>
+          <source src={content.bannerImage.publicURL} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         <div className="case-study-translucent-dark-overlay" />
       </div>
       {!mobile && showUpIcon && (
@@ -126,74 +125,82 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
         </div>
       )}
       <div className="share" style={{ border: '1px solid #FFA500' }}>
-        <div
-          style={{ textAlign: 'center' }}
-          onClick={() => {
-            const ref = document.getElementById('needs-section');
-            ref.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }}>
-          <img src={sideicon1} alt="" />
-          <p
-            style={{
-              color: '#025300',
-              fontSize: mobile ? '5px' : '9px',
-              fontWeight: 'bold',
-              textAlign: 'center',
+        {content?.showsideIcon1 ? (
+          <div
+            style={{ textAlign: 'center' }}
+            onClick={() => {
+              const ref = document.getElementById('needs-section');
+              ref.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }}>
-            Need / Challenges
-          </p>
-        </div>
-        <div
-          style={{ textAlign: 'center' }}
-          onClick={() => {
-            const ref = document.getElementById('impact-video-section');
-            ref.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }}>
-          <img src={sideicon2} alt="" />
-          <p
-            style={{
-              color: '#025300',
-              fontSize: mobile ? '5px' : '9px',
-              fontWeight: 'bold',
-              textAlign: 'center',
+            <img src={content.sideIcon1.childImageSharp.fluid.src} alt="" />
+            <p
+              style={{
+                color: content?.fontColor,
+                fontSize: mobile ? '5px' : '9px',
+                fontWeight: 'bold',
+                textAlign: 'center',
+              }}>
+              {content?.sideIcon1Text}
+            </p>
+          </div>
+        ) : null}
+        {content?.showsideIcon2 ? (
+          <div
+            style={{ textAlign: 'center' }}
+            onClick={() => {
+              const ref = document.getElementById('impact-video-section');
+              ref.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }}>
-            Impact Video
-          </p>
-        </div>
-        <div
-          style={{ textAlign: 'center' }}
-          onClick={() => {
-            const ref = document.getElementById('use-cases-section');
-            ref.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }}>
-          <img src={sideicon3} alt="" />
-          <p
-            style={{
-              color: '#025300',
-              fontSize: mobile ? '5px' : '9px',
-              fontWeight: 'bold',
-              textAlign: 'center',
+            <img src={content.sideIcon2.childImageSharp.fluid.src} alt="" />
+            <p
+              style={{
+                color: '',
+                fontSize: mobile ? '5px' : '9px',
+                fontWeight: 'bold',
+                textAlign: 'center',
+              }}>
+              {content?.sideIcon2Text}
+            </p>
+          </div>
+        ) : null}
+        {content?.showsideIcon3 ? (
+          <div
+            style={{ textAlign: 'center' }}
+            onClick={() => {
+              const ref = document.getElementById('use-cases-section');
+              ref.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }}>
-            Use Cases
-          </p>
-        </div>
-        <div
-          style={{ textAlign: 'center' }}
-          onClick={() => {
-            const ref = document.getElementById('impact-numbers-section');
-            ref.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }}>
-          <img src={sideicon4} alt="" />
-          <p
-            style={{
-              color: '#025300',
-              fontSize: mobile ? '5px' : '9px',
-              fontWeight: 'bold',
-              textAlign: 'center',
+            <img src={content.sideIcon3.childImageSharp.fluid.src} alt="" />
+            <p
+              style={{
+                color: content?.fontColor,
+                fontSize: mobile ? '5px' : '9px',
+                fontWeight: 'bold',
+                textAlign: 'center',
+              }}>
+              {content?.sideIcon3Text}
+            </p>
+          </div>
+        ) : null}
+        {content?.showsideIcon4 ? (
+          <div
+            style={{ textAlign: 'center' }}
+            onClick={() => {
+              const ref = document.getElementById('impact-numbers-section');
+              ref.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }}>
-            Impact Numbers
-          </p>
-        </div>
+            <img src={content.sideIcon4.childImageSharp.fluid.src} alt="" />
+            <p
+              style={{
+                color: content?.fontColor,
+                fontSize: mobile ? '5px' : '9px',
+                fontWeight: 'bold',
+                textAlign: 'center',
+              }}>
+              {content?.sideIcon4Text}
+            </p>
+          </div>
+        ) : null}
       </div>
       {/* <div className="spacer first-spacer">
         <img src={spacer} alt="" />
@@ -203,7 +210,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           className="case-study-main-heading headingCaseStudy"
           id="needs-section"
           style={{
-            color: '#025300',
+            color: content?.fontColor,
             fontSize: mobile ? '20px' : '30px',
             width: '80%',
             margin: 'auto',
@@ -227,6 +234,16 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
       {/* <div className="spacer">
         <img src={spacer} alt="" />
       </div> */}
+      <div
+        style={{
+          height: '1px',
+          width: '75px',
+          borderWidth: '1px',
+          borderStyle: 'solid',
+          borderColor: 'transparent',
+          borderImage: 'linear-gradient(to left, #418F37, #FFE81D) 1',
+          margin: '75px auto',
+        }}></div>
       <FadeInSection>
         <div
           className="case-study-summary-container"
@@ -252,25 +269,23 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               className="headingCaseStudy"
               style={{
                 textAlign: 'center',
-                color: '#025300',
+                color: content?.fontColor,
                 paddingBottom: '35px',
                 paddingTop: !mobile ? '5px' : '50px',
                 fontSize: mobile ? '20px' : '30px',
               }}>
-              Impact Video
+              {content?.title2}
             </div>
             <div
               className="textCaseStudy"
               style={{
                 textAlign: 'center',
-                // color: '#025300',
+                // color: content?.fontColor,
                 // paddingBottom: '25px',
                 paddingTop: !mobile ? '5px' : '50px',
                 fontSize: mobile ? '20px' : '30px',
               }}>
-              GO-SUGAM was introduced by the Govt of Odisha in May 2022, to ease
-              the life of farmers. See how it impacted the life of an
-              aspirational small scale farmer - Sangita.
+              {content?.title3}
             </div>
             <div
               style={{
@@ -307,11 +322,11 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                       'linear-gradient(to right, #418F37, #FFE81D) 1',
                     borderImageSlice: 1,
                   }}
-                  src="https://www.youtube.com/embed/-GRdJ9XSAEE?si=iYN4BchI6rJRT78z"
+                  src={content?.impactVideoLink}
                   // title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen;"
-                  allowfullscreen></iframe>
+                  allowFullScreen></iframe>
               </div>
 
               {/* {!mobile && <LineDrawingOnScrollLR id={'clip2'} />} */}
@@ -374,17 +389,16 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
         className="textCaseStudy"
         style={{
           textAlign: 'center',
-          // color: '#025300',
+          // color: content?.fontColor,
           // paddingBottom: '25px',
           paddingTop: !mobile ? '5px' : '50px',
           fontSize: mobile ? '20px' : '30px',
           width: '80%',
           margin: 'auto',
         }}>
-        Like Sangita, many farmers in Odisha have such dreams. And they need
-        help from the right schemes to unlock these dreams.
+        {content?.title4}
       </div>
-      <div
+      {/* <div
         style={{
           height: '1px',
           width: '75px',
@@ -393,7 +407,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           borderColor: 'transparent',
           borderImage: 'linear-gradient(to left, #418F37, #FFE81D) 1',
           margin: '75px auto',
-        }}></div>
+        }}></div> */}
 
       <FadeInSection>
         <div className="impact">
@@ -410,7 +424,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 aspectRatio: '2',
                 objectFit: 'cover',
               }}>
-              <source src={impactImg1} type="video/mp4" />
+              <source src={content.motionGraphic1.publicURL} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             {/* <div
@@ -419,7 +433,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 position: 'relative',
                 padding: '10px',
                 top: '250px',
-                color: '#025300',
+                color: content?.fontColor,
                 backgroundColor: 'rgba(255, 255, 255, 0.8)',
                 width: '100%',
                 margin: 'auto',
@@ -448,8 +462,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             className="textCaseStudy"
             id="use-cases-section"
             style={{ fontSize: mobile ? '20px' : '30px' }}>
-            Farmers in Odisha primarily face three challenges in accessing the
-            right schemes.
+            {content?.title5}
           </div>
 
           <div
@@ -522,8 +535,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           <div
             className="textCaseStudy"
             style={{ fontSize: mobile ? '20px' : '30px' }}>
-            For the Government of Odisha, the key processes that needed
-            streamlining included the following..
+            {content?.title6}
           </div>
 
           <div
@@ -602,7 +614,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 aspectRatio: '2',
                 objectFit: 'cover',
               }}>
-              <source src={impactImg2} type="video/mp4" />
+              <source src={content.motionGraphic2.publicURL} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             {/* <div
@@ -611,7 +623,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 position: 'relative',
                 padding: '10px',
                 top: '250px',
-                color: '#025300',
+                color: content?.fontColor,
                 backgroundColor: 'rgba(255, 255, 255, 0.8)',
                 width: '100%',
                 margin: 'auto',
@@ -636,17 +648,14 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             id="impact-numbers-section"
             style={{
               textAlign: 'center',
-              color: '#025300',
+              color: content?.fontColor,
               // paddingBottom: '25px',
               width: '80%',
               margin: 'auto',
               paddingTop: '50px',
               fontSize: mobile ? '20px' : '30px',
             }}>
-            GO-SUGAM has quickly become the de-facto choice of Department of
-            Agriculture and Farmers' Empowerment (DA&FE) and Fisheries and
-            Animal Resources Development (FARD) for easy and smooth delivery of
-            schemes across directorates
+            {content?.title7}
           </div>
 
           <div
@@ -680,10 +689,17 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   marginBottom: 0,
                   paddingTop: 0,
                 }}>
-                <CountUp start={0} end={2} duration={3} enableScrollSpy scrollSpyOnce={true} /> Lakh{' '}
+                <CountUp
+                  start={0}
+                  end={content?.impactNumber1}
+                  duration={3}
+                  enableScrollSpy
+                  scrollSpyOnce={true}
+                />{' '}
+                {content?.impactNumber1Text}{' '}
                 <span
                   style={{
-                    color: '#025300',
+                    color: content?.fontColor,
                     fontWeight: 'bold',
                   }}>
                   +
@@ -696,10 +712,10 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   margin: 0,
                   fontSize: mobile ? '12px' : '14px',
                   width: mobile ? '90%' : '80%',
-                  color: '#025300',
+                  color: content?.fontColor,
                   fontWeight: 'bold',
                 }}>
-                Total Applications Received
+                {content?.impactNumber1Title}
               </p>
             </div>
             <div
@@ -726,10 +742,17 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   marginBottom: 0,
                   paddingTop: 0,
                 }}>
-                <CountUp start={0} end={1} duration={3} enableScrollSpy scrollSpyOnce={true} /> Lakh{' '}
+                <CountUp
+                  start={0}
+                  end={content?.impactNumber2}
+                  duration={3}
+                  enableScrollSpy
+                  scrollSpyOnce={true}
+                />{' '}
+                {content?.impactNumber2Text}{' '}
                 <span
                   style={{
-                    color: '#025300',
+                    color: content?.fontColor,
                     fontWeight: 'bold',
                   }}>
                   +
@@ -742,10 +765,10 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   margin: 0,
                   fontSize: mobile ? '12px' : '14px',
                   width: mobile ? '90%' : '80%',
-                  color: '#025300',
+                  color: content?.fontColor,
                   fontWeight: 'bold',
                 }}>
-                Go Ahead generated against for applications
+                {content?.impactNumber2Title}
               </p>
             </div>
             <div
@@ -772,10 +795,17 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   marginBottom: 0,
                   paddingTop: 0,
                 }}>
-                <CountUp start={0} end={70000} duration={3} enableScrollSpy scrollSpyOnce={true} />{' '}
+                <CountUp
+                  start={0}
+                  end={content?.impactNumber3}
+                  duration={3}
+                  enableScrollSpy
+                  scrollSpyOnce={true}
+                />
+                {content?.impactNumber3Text}{' '}
                 <span
                   style={{
-                    color: '#025300',
+                    color: content?.fontColor,
                     fontWeight: 'bold',
                   }}>
                   +
@@ -788,10 +818,10 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   margin: 0,
                   fontSize: mobile ? '12px' : '14px',
                   width: mobile ? '90%' : '80%',
-                  color: '#025300',
+                  color: content?.fontColor,
                   fontWeight: 'bold',
                 }}>
-                Subsidies released against go-ahead
+                {content?.impactNumber3Title}
               </p>
             </div>
             <div
@@ -818,10 +848,17 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   marginBottom: 0,
                   paddingTop: 0,
                 }}>
-                <CountUp start={0} end={44} duration={3} enableScrollSpy scrollSpyOnce={true} />%{' '}
+                <CountUp
+                  start={0}
+                  end={content?.impactNumber4}
+                  duration={3}
+                  enableScrollSpy
+                  scrollSpyOnce={true}
+                />
+                {content?.impactNumber4Text}{' '}
                 <span
                   style={{
-                    color: '#025300',
+                    color: content?.fontColor,
                     fontWeight: 'bold',
                   }}>
                   +
@@ -834,10 +871,10 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   margin: 0,
                   fontSize: mobile ? '12px' : '14px',
                   width: mobile ? '90%' : '80%',
-                  color: '#025300',
+                  color: content?.fontColor,
                   fontWeight: 'bold',
                 }}>
-                Farmers applied on their own
+                {content?.impactNumber4Title}
               </p>
             </div>
             <div
@@ -864,10 +901,17 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   marginBottom: 0,
                   paddingTop: 0,
                 }}>
-                <CountUp start={0} end={99} duration={3} enableScrollSpy scrollSpyOnce={true} />%{' '}
+                <CountUp
+                  start={0}
+                  end={content?.impactNumber5}
+                  duration={3}
+                  enableScrollSpy
+                  scrollSpyOnce={true}
+                />
+                {content?.impactNumber5Text}{' '}
                 <span
                   style={{
-                    color: '#025300',
+                    color: content?.fontColor,
                     fontWeight: 'bold',
                   }}>
                   +
@@ -879,10 +923,10 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   padding: 0,
                   margin: 0,
                   fontSize: '14px',
-                  color: '#025300',
+                  color: content?.fontColor,
                   fontWeight: 'bold',
                 }}>
-                Farmer Stated correct subsidy was received
+                {content?.impactNumber5Title}
               </p>
             </div>
           </div>
@@ -902,19 +946,18 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 cursor: 'pointer',
                 marginBottom: '50px',
                 maxWidth: '270px',
-                background: '#025300',
+                background: content?.fontColor,
                 padding: '10px 50px',
               }}
               onClick={() => {
                 const link = document.createElement('a');
-                link.href =
-                  'https://drive.google.com/file/d/1Kgxrov0ppNBbwDe8F_CAGCmQi9KB9TTF/view?usp=drive_link';
+                link.href = content?.infographicGoogleDriveLink;
                 link.target = '_blank';
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
               }}>
-              Download Infographic
+              {content?.downloadInfographicBtn}
             </button>
           </div>
         </div>
@@ -947,11 +990,11 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               className="headingCaseStudy"
               style={{
                 textAlign: 'left',
-                color: '#025300',
+                color: content?.fontColor,
                 paddingTop: mobile ? '25px' : 0,
                 fontSize: mobile ? '20px' : '30px',
               }}>
-              {`Go Sugam Blog < Title >`}
+              {content?.title8}
             </div>
             <div>
               <p
@@ -971,99 +1014,112 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   marginBottom: '0',
                   paddingBottom: '0',
                 }}>
-                Lorem ipsum
+                {content?.blogTitle}
               </p>
               <p
                 style={{
                   textAlign: 'left',
                   marginTop: '0',
                   paddingTop: '15px',
-                  color: '#025300',
+                  color: content?.fontColor,
                   cursor: 'pointer',
                   fontStyle: 'italic',
                 }}
                 onClick={() => {
-                  // window.location.href =
-                  //   '/blog/2023-12-25-amrit-series-1-krushi-samiksha-kendra/';
+                  window.location.href = content?.blogLink;
                 }}>
                 Read More{' '}
-                <RightArrow color="#025300" height="15px" width="15px" />
+                <RightArrow
+                  color={content?.fontColor}
+                  height="15px"
+                  width="15px"
+                />
               </p>
             </div>
-            <div>
-              <p
-                className="textCaseStudy"
-                style={{
-                  textAlign: 'left',
-                  marginBottom: '0',
-                  paddingBottom: '0',
-                  fontSize: mobile ? '18px' : '28px',
-                }}>
-                Op-Ed
-              </p>
-              <p
-                className="textCaseStudy"
-                style={{
-                  textAlign: 'left',
-                  marginBottom: '0',
-                  paddingBottom: '0',
-                }}>
-                {`<< Title of op-ed`}
-              </p>
-              <p
-                style={{
-                  textAlign: 'left',
-                  marginTop: '0',
-                  paddingTop: '15px',
-                  color: '#025300',
-                  cursor: 'pointer',
-                  fontStyle: 'italic',
-                }}
-                onClick={() => {
-                  // window.location.href =
-                  //   '/blog/2023-12-25-amrit-series-1-krushi-samiksha-kendra/';
-                }}>
-                Read More{' '}
-                <RightArrow color="#025300" height="15px" width="15px" />
-              </p>
-            </div>
-            <div>
-              <p
-                className="textCaseStudy"
-                style={{
-                  textAlign: 'left',
-                  marginBottom: '0',
-                  paddingBottom: '0',
-                  fontSize: mobile ? '18px' : '28px',
-                }}>
-                Webinar
-              </p>
-              <p
-                className="textCaseStudy"
-                style={{
-                  textAlign: 'left',
-                  marginBottom: '0',
-                  paddingBottom: '0',
-                }}>
-                {`<< Title of webinar`}
-              </p>
-              <p
-                style={{
-                  textAlign: 'left',
-                  marginTop: '0',
-                  paddingTop: '15px',
-                  color: '#025300',
-                  cursor: 'pointer',
-                  fontStyle: 'italic',
-                }}
-                onClick={() => {
-                  // window.location.href =
-                  //   '/blog/2023-12-25-amrit-series-1-krushi-samiksha-kendra/';
-                }}>
-                Read More{' '}
-                <RightArrow color="#025300" height="15px" width="15px" />
-              </p>
-            </div>
+            {content?.showOpEd && (
+              <div>
+                <p
+                  className="textCaseStudy"
+                  style={{
+                    textAlign: 'left',
+                    marginBottom: '0',
+                    paddingBottom: '0',
+                    fontSize: mobile ? '18px' : '28px',
+                  }}>
+                  Op-Ed
+                </p>
+                <p
+                  className="textCaseStudy"
+                  style={{
+                    textAlign: 'left',
+                    marginBottom: '0',
+                    paddingBottom: '0',
+                  }}>
+                  {content?.opEdTitle}
+                </p>
+                <p
+                  style={{
+                    textAlign: 'left',
+                    marginTop: '0',
+                    paddingTop: '15px',
+                    color: content?.fontColor,
+                    cursor: 'pointer',
+                    fontStyle: 'italic',
+                  }}
+                  onClick={() => {
+                    window.location.href = content?.opEdLink;
+                  }}>
+                  Read More{' '}
+                  <RightArrow
+                    color={content?.fontColor}
+                    height="15px"
+                    width="15px"
+                  />
+                </p>
+              </div>
+            )}
+            {content?.showWebinar && (
+              <div>
+                <p
+                  className="textCaseStudy"
+                  style={{
+                    textAlign: 'left',
+                    marginBottom: '0',
+                    paddingBottom: '0',
+                    fontSize: mobile ? '18px' : '28px',
+                  }}>
+                  Webinar
+                </p>
+                <p
+                  className="textCaseStudy"
+                  style={{
+                    textAlign: 'left',
+                    marginBottom: '0',
+                    paddingBottom: '0',
+                  }}>
+                  {content?.webinarTitle}
+                </p>
+                <p
+                  style={{
+                    textAlign: 'left',
+                    marginTop: '0',
+                    paddingTop: '15px',
+                    color: content?.fontColor,
+                    cursor: 'pointer',
+                    fontStyle: 'italic',
+                  }}
+                  onClick={() => {
+                    window.location.href = content?.webinarLink;
+                  }}>
+                  Read More{' '}
+                  <RightArrow
+                    color={content?.fontColor}
+                    height="15px"
+                    width="15px"
+                  />
+                </p>
+              </div>
+            )}
           </div>
           <div
             style={{
@@ -1092,7 +1148,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                 zIndex: '1',
                 height: mobile ? '275px' : '500px',
                 width: mobile ? '275px' : '500px',
-                backgroundImage: `url(${gosugamImpactImg})`,
+                backgroundImage: `url(${content?.blogSectionImage?.childImageSharp?.fluid?.src})`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
@@ -1163,20 +1219,29 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
         <div
           className="partner-with-us"
           style={{ marginTop: mobile ? '100px' : '150px' }}>
-          <p className="partner-with-us-main-text">Partner with us today!</p>
-          <p>Write to us at: outreach@samagragovernance.in</p>
+          <p className="partner-with-us-main-text">{content?.footerText1}</p>
+          <p>{content?.footerText2}</p>
         </div>
       </FadeInSection>
+      <div
+        style={{
+          height: '1px',
+          width: '75px',
+          borderWidth: '1px',
+          borderStyle: 'solid',
+          borderColor: 'transparent',
+          borderImage: 'linear-gradient(to left, #418F37, #FFE81D) 1',
+          margin: '75px auto',
+        }}></div>
       <FadeInSection>
         <div
           className="headingCaseStudy"
+          dangerouslySetInnerHTML={{ __html: content?.successStoriesTitle }}
           style={{
-            color: '#025300',
+            color: content?.fontColor,
             margin: 'auto',
             fontSize: mobile ? '20px' : '30px',
-          }}>
-          View more <i>Success Stories of Impact</i>
-        </div>
+          }}></div>
         <div
           style={{
             marginTop: '125px',
@@ -1185,71 +1250,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             justifyContent: mobile ? '' : 'space-evenly',
             flexDirection: mobile ? 'column' : 'row',
           }}>
-          {['', '', ''].map((news, index) => {
-            return (
-              <a href={''} target="_blank">
-                <div
-                  className={`card-wrapper-case-study ${
-                    hoveredIndex === index ? 'hovered' : ''
-                  } `}
-                  style={{
-                    margin: mobile ? '50px auto' : '',
-                    height: mobile ? '200px' : '250px',
-                    width: mobile ? '275px' : '350px',
-                  }}
-                  onMouseLeave={() => setHoveredIndex(-1)}
-                  onMouseEnter={() => setHoveredIndex(index)}>
-                  <div
-                    style={{
-                      backgroundImage: `url(${content.featuredimage.childImageSharp.fluid.src})`,
-                      height: '100%',
-                      borderRadius: '10px',
-                      backgroundPosition: 'center',
-                      backgroundRepeat: 'no-repeat',
-                      backgroundSize: 'cover',
-                    }}
-                  />
-                  <div
-                    style={{
-                      background: '#F5F7FA',
-                      borderRadius: '10px',
-                      height: mobile ? '150px' : '150px',
-                      width: mobile ? '230px' : '300px',
-                      position: 'relative',
-                      top: '-80px',
-                      margin: 'auto',
-                      boxShadow: 'rgba(0, 0, 0, 0.1) 0px 4px 12px',
-                      display: 'flex',
-                      flexDirection: 'column',
-                    }}>
-                    <div
-                      className={'headingCaseStudy'}
-                      style={{
-                        minHeight: '40px',
-                        fontSize: '16px',
-                        color: '#717171',
-                        flex: 0.8,
-                        padding: '20px 10px',
-                      }}>
-                      {content.title}
-                    </div>
-                    <div
-                      style={{
-                        fontSize: '16px',
-                        color: '#025300',
-                        fontWeight: 'bold',
-                        textAlign: 'center',
-                        flex: 0.2,
-                        padding: '20px',
-                      }}>
-                      Read More{' '}
-                      <RightArrow color="#025300" height="15px" width="15px" />
-                    </div>
-                  </div>
-                </div>
-              </a>
-            );
-          })}
+          <SuccessStoriesSection />
         </div>
       </FadeInSection>
       {/* <div className="spacer">
@@ -1295,13 +1296,7 @@ export const pageQuery = graphql`
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
-        featuredimage {
-          childImageSharp {
-            fluid(maxWidth: 1280, quality: 62) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
+        fontColor
         icon1 {
           childImageSharp {
             fluid(maxWidth: 1280, quality: 62) {
@@ -1337,9 +1332,101 @@ export const pageQuery = graphql`
             }
           }
         }
+
+        title2
+        title3
+        impactVideoLink
+        title4
+        title5
+        title6
+        title7
+
+        blogSectionImage {
+          childImageSharp {
+            fluid(maxWidth: 1280, quality: 62) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        infographicGoogleDriveLink
+        downloadInfographicBtn
+
+        showWebinar
+        webinarTitle
+        webinarLink
+
+        showOpEd
+        opEdTitle
+        opEdLink
+
+        title8
+        blogTitle
+        blogLink
+
+        impactNumber1
+        impactNumber1Text
+        impactNumber1Title
+        impactNumber2
+        impactNumber2Text
+        impactNumber2Title
+        impactNumber3
+        impactNumber3Text
+        impactNumber3Title
+        impactNumber4
+        impactNumber4Text
+        impactNumber4Title
+        impactNumber5
+        impactNumber5Text
+        impactNumber5Title
+
+        sideIcon1 {
+          childImageSharp {
+            fluid(maxWidth: 1280, quality: 62) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        sideIcon2 {
+          childImageSharp {
+            fluid(maxWidth: 1280, quality: 62) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        sideIcon3 {
+          childImageSharp {
+            fluid(maxWidth: 1280, quality: 62) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        sideIcon4 {
+          childImageSharp {
+            fluid(maxWidth: 1280, quality: 62) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        sideIcon1Text
+        sideIcon2Text
+        sideIcon3Text
+        sideIcon4Text
+        showsideIcon1
+        showsideIcon2
+        showsideIcon3
+        showsideIcon4
         bannerImage {
           publicURL
         }
+        motionGraphic1 {
+          publicURL
+        }
+        motionGraphic2 {
+          publicURL
+        }
+        footerText1
+        footerText2
+        successStoriesTitle
       }
     }
   }

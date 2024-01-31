@@ -15,6 +15,8 @@ import PartnerPagePreview from "./preview-templates/PartnerPagePreview";
 import CareerPagePreview from "./preview-templates/CareersPagePreview";
 import TGCPagePreview from "./preview-templates/TGCPagePreview";
 import SushasanPagePreview from "./preview-templates/SushasanPagePreview";
+import CaseStudyPreview from "./preview-templates/CaseStudyPreview";
+import KSKPreview from "./preview-templates/KSKCaseStudyPreview";
 
 CMS.registerMediaLibrary(uploadcare);
 CMS.registerMediaLibrary(cloudinary);
@@ -33,3 +35,5 @@ CMS.registerPreviewTemplate("joinus", JoinUsPreview);
 CMS.registerPreviewTemplate("mediacontent", MediaPostPreview);
 CMS.registerPreviewTemplate("partner", PartnerPagePreview);
 CMS.registerPreviewTemplate("careers", CareerPagePreview);
+CMS.registerPreviewTemplate("case-study", CaseStudyPreview);
+CMS.registerPreviewTemplate("ksk", KSKPreview);

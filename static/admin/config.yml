@@ -1,6 +1,11 @@
 backend:
   name: git-gateway
   branch: master
+  publish_mode: editorial_workflow
+
+editorial_workflow:
+  enable: true
+  format: git
 
 media_folder: static/img
 public_folder: /img
