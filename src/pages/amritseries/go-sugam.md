@@ -5,7 +5,7 @@ title2: Impact Video
 title3: GO-SUGAM was introduced by the Govt of Odisha in May 2022, to ease
   the life of farmers. See how it impacted the life of an
   aspirational small scale farmer - Sangita.
-impactVideoLink: https://www.youtube.com/embed/-GRdJ9XSAEE?si=iYN4BchI6rJRT78z
+impactVideoLink: https://www.youtube.com/embed/DYKEJfHbjVM?si=ggltnk6nWh966wG_
 title4: Like Sangita, many farmers in Odisha have such dreams. And they need
   help from the right schemes to unlock these dreams.
 title5: Farmers in Odisha primarily face three challenges in accessing the
@@ -35,7 +35,7 @@ impactNumber5Title: Farmer Stated correct subsidy was received
 
 title8: Insights from the ground
 blogTitle: Launching India’s 1st Single Window Platform for Farmers and Agri-prenuers
-blogLink: /blog/2023-12-25-amrit-series-1-krushi-samiksha-kendra/
+blogLink: /blog/2024-02-01-amrit-series-2-go-sugam/
 
 showOpEd: false
 opEdTitle: Title of op-ed
