@@ -124,7 +124,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
           <img src={upIcon} onClick={scrollToTop} />
         </div>
       )}
-      <div className="share" style={{ border: '1px solid #FFA500' }}>
+      {/* <div className="share" style={{ border: '1px solid #FFA500' }}>
         {content?.showsideIcon1 ? (
           <div
             style={{ textAlign: 'center' }}
@@ -201,7 +201,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
             </p>
           </div>
         ) : null}
-      </div>
+      </div> */}
       {/* <div className="spacer first-spacer">
         <img src={spacer} alt="" />
       </div> */}
@@ -707,6 +707,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               </p>
               <p
                 className="textCaseStudy"
+                dangerouslySetInnerHTML={{__html: content?.impactNumber1Title}}
                 style={{
                   padding: 0,
                   margin: 0,
@@ -715,7 +716,6 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   color: content?.fontColor,
                   fontWeight: 'bold',
                 }}>
-                {content?.impactNumber1Title}
               </p>
             </div>
             <div
@@ -760,6 +760,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               </p>
               <p
                 className="textCaseStudy"
+                dangerouslySetInnerHTML={{__html: content?.impactNumber2Title}}
                 style={{
                   padding: 0,
                   margin: 0,
@@ -768,7 +769,6 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   color: content?.fontColor,
                   fontWeight: 'bold',
                 }}>
-                {content?.impactNumber2Title}
               </p>
             </div>
             <div
@@ -813,6 +813,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               </p>
               <p
                 className="textCaseStudy"
+                dangerouslySetInnerHTML={{__html: content?.impactNumber3Title}}
                 style={{
                   padding: 0,
                   margin: 0,
@@ -821,7 +822,6 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   color: content?.fontColor,
                   fontWeight: 'bold',
                 }}>
-                {content?.impactNumber3Title}
               </p>
             </div>
             <div
@@ -866,6 +866,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               </p>
               <p
                 className="textCaseStudy"
+                dangerouslySetInnerHTML={{__html: content?.impactNumber4Title}}
                 style={{
                   padding: 0,
                   margin: 0,
@@ -874,7 +875,6 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   color: content?.fontColor,
                   fontWeight: 'bold',
                 }}>
-                {content?.impactNumber4Title}
               </p>
             </div>
             <div
@@ -919,6 +919,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
               </p>
               <p
                 className="textCaseStudy"
+                dangerouslySetInnerHTML={{__html: content?.impactNumber5Title}}
                 style={{
                   padding: 0,
                   margin: 0,
@@ -926,7 +927,7 @@ export const CaseStudyTemplate = ({ content, helmet }) => {
                   color: content?.fontColor,
                   fontWeight: 'bold',
                 }}>
-                {content?.impactNumber5Title}
+                
               </p>
             </div>
           </div>

@@ -19,22 +19,22 @@ title7: GO-SUGAM has quickly become the de-facto choice of Department of
 
 impactNumber1: 2
 impactNumber1Text: Lakh
-impactNumber1Title: Total Applications Received
+impactNumber1Title: Total applications <br>received
 impactNumber2: 1
 impactNumber2Text: Lakh
-impactNumber2Title: Go Ahead generated against for applications
+impactNumber2Title: Go-ahead generated <br>against for applications
 impactNumber3: 70000
 impactNumber3Text: ''
-impactNumber3Title: Subsidies released against go-ahead
+impactNumber3Title: Subsidies released <br>against go-ahead
 impactNumber4: 44
 impactNumber4Text: '%'
-impactNumber4Title: Farmers applied on their own
+impactNumber4Title: Farmers applied on <br>their own
 impactNumber5: 99
 impactNumber5Text: '%'
-impactNumber5Title: Farmer Stated correct subsidy was received
+impactNumber5Title: Farmer stated correct <br>subsidy was received
 
 title8: Insights from the ground
-blogTitle: Launching India’s 1st Single Window Platform for Farmers and Agri-prenuers
+blogTitle: Government of Odisha’s single window portal for digital delivery of agricultural schemes to farmers
 blogLink: /blog/2024-02-01-amrit-series-2-go-sugam/
 
 showOpEd: false
@@ -47,7 +47,7 @@ webinarLink: /blog/2023-12-25-amrit-series-1-krushi-samiksha-kendra/
 
 blogSectionImage: /img/gosugam-impact.jpg
 
-infographicGoogleDriveLink: https://drive.google.com/file/d/1HEgPH0gky60tg5cfZfjRALKrZtAWAknZ/view?usp=drive_link
+infographicGoogleDriveLink: https://drive.google.com/file/d/1BL_OLyhvmrt9BsOCiSya-6UEOhJAAyyr/view?usp=drive_link
 downloadInfographicBtn: Download Infographic
 
 projectId: GO-SUGAM
@@ -73,10 +73,10 @@ sideIcon1Text: Need / Challenges
 sideIcon2Text: Impact Video
 sideIcon3Text: Use Cases
 sideIcon4Text: Impact Numbers
-showsideIcon1: true
-showsideIcon2: true
+showsideIcon1: false
+showsideIcon2: false
 showsideIcon3: false
-showsideIcon4: true
+showsideIcon4: false
 
 footerText1: Partner with us today!
 footerText2: 'Write to us at: outreach@samagragovernance.in'
