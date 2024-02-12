@@ -132,7 +132,7 @@ export const HomeThirdSectionContent = ({
               width: '100%',
               height: '100%',
               objectFit: 'cover',
-              objectPosition: 'center',
+              objectPosition: 'center 20%',
               transition: 'transform 0.2s ease',
             }}
           />
@@ -172,6 +172,7 @@ export const HomeThirdSectionContent = ({
   return (
     <div
       className={'container-fluid philosophy-section home-third-section-new'}>
+        <div className={'title'}>We work with state governments across domains</div>
       <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
         <div className="col-md-7 px-0">
           <ImageCard
@@ -188,7 +189,7 @@ export const HomeThirdSectionContent = ({
             bgColor="#294294"
             heading={'Niramaya'}
             classes={'size-4-1'}
-            imageUrl={projectData[0].node.frontmatter.thirdSection.img4}
+            imageUrl={projectData[0].node.frontmatter.thirdSection.img3}
             subHeading={
               'Making UP the supplier of quality nursing professionals for the entire country'
             }
@@ -214,7 +215,7 @@ export const HomeThirdSectionContent = ({
           bgColor="#B99806"
           heading={'NIPUN Bharat'}
           classes={'size-2-1'}
-          imageUrl={projectData[0].node.frontmatter.thirdSection.img3}
+          imageUrl={projectData[0].node.frontmatter.thirdSection.img4}
           subHeading={
             'Enabling grade 1-3 students to attain foundational literacy & numeracy'
           }

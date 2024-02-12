@@ -105,7 +105,7 @@ export class HomeSecondSection extends React.Component {
             <div className={'title'}>
               {homeContent.secondSection.ourModel.title}
             </div>
-            <div className={'description'} style={{textAlign: 'justify'}}>
+            <div className={'description'}>
               {homeContent.secondSection.ourModel.description.map(
                 (desription) => {
                   return (

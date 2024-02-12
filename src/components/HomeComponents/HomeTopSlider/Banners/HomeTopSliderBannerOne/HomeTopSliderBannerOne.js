@@ -29,7 +29,7 @@ export class HomeTopSliderBannerOne extends React.Component {
         setTimeout(() => {
           this.setState({ showSlider: true, scrollTo: 1 });
           this.startScrollAnimation();
-        }, 2000);
+        }, 3000);
       }, 1000);
     } else if (nextProps && !nextProps['bannerActive']) {
       this.setState({
@@ -82,7 +82,7 @@ export class HomeTopSliderBannerOne extends React.Component {
     setTimeout(() => {
       this.scrollTo();
       this.startScrollAnimation();
-    }, 2000);
+    }, 4000);
   };
 
   render() {
