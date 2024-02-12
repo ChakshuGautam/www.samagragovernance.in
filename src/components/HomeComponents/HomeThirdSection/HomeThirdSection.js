@@ -3,18 +3,14 @@ import React, { useState } from 'react';
 import { PrimaryButton } from '../../PrimaryButton/PrimaryButton';
 import { graphql, StaticQuery } from 'gatsby';
 import Swiper from 'react-id-swiper';
-import img1 from '../../../../static/img/saral-kendra.jpg';
-import img2 from '../../../../static/img/Agriculture.jpg';
-import img3 from '../../../../static/img/Health.jpg';
-import img4 from '../../../../static/img/Education.jpg';
 export const HomeThirdSectionContent = ({
   parentDomains,
   data,
   previewData,
 }) => {
   const { edges: projectData } = previewData
-    ? previewData.allMarkdownRemark
-    : data.allMarkdownRemark;
+  ? previewData.allMarkdownRemark
+  : data.allMarkdownRemark;
   let items = [];
   projectData.forEach((project) => {
     let found = false;
@@ -98,7 +94,18 @@ export const HomeThirdSectionContent = ({
     initialSlide: 0,
   });
 
-  const ImageCard = ({ imageUrl, heading, subHeading, classes, styles, href, href2, readMoreText = 'Read More', readMoreText2, bgColor }) => {
+  const ImageCard = ({
+    imageUrl,
+    heading,
+    subHeading,
+    classes,
+    styles,
+    href,
+    href2,
+    readMoreText = 'Read More',
+    readMoreText2,
+    bgColor,
+  }) => {
     return (
       <div
         style={{
@@ -114,7 +121,7 @@ export const HomeThirdSectionContent = ({
             ...styles,
           }}>
           <img
-          className='homepage-imagecard'
+            className="homepage-imagecard"
             src={
               !!imageUrl.childImageSharp
                 ? imageUrl.childImageSharp.fluid.src
@@ -141,8 +148,21 @@ export const HomeThirdSectionContent = ({
             }}>
             <div className={'f-28 fw-600 mb-3'}>{heading}</div>
             <div className={'f-18'}>{subHeading}</div>
-            <a className={'f-16'} style={{color: 'white', fontStyle: 'italic'}} href={href}>{readMoreText}</a>
-            {(href2 && readMoreText2 ) ? <a className={'f-16'} style={{color: 'white', fontStyle: 'italic'}} href={href2}>{' | '}{readMoreText2}</a> : null}
+            <a
+              className={'f-16'}
+              style={{ color: 'white', fontStyle: 'italic' }}
+              href={href}>
+              {readMoreText}
+            </a>
+            {href2 && readMoreText2 ? (
+              <a
+                className={'f-16'}
+                style={{ color: 'white', fontStyle: 'italic' }}
+                href={href2}>
+                {' | '}
+                {readMoreText2}
+              </a>
+            ) : null}
           </div>
         </div>
       </div>
@@ -150,50 +170,55 @@ export const HomeThirdSectionContent = ({
   };
 
   return (
-    <div className={'container-fluid philosophy-section home-third-section-new'}>
+    <div
+      className={'container-fluid philosophy-section home-third-section-new'}>
       <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
         <div className="col-md-7 px-0">
           <ImageCard
-            bgColor='#B99806'
+            bgColor="#B99806"
             heading={'Antyodaya Saral'}
             classes={'size-2-2'}
-            imageUrl={img1}
+            imageUrl={projectData[0].node.frontmatter.thirdSection.img1}
             subHeading={'Transforming scheme and service delivery in the state'}
-            href='https://www.samagragovernance.in/project/antyodaya-saral/'
+            href="https://www.samagragovernance.in/project/antyodaya-saral/"
           />
         </div>
         <div className="col-md-5 px-0">
           <ImageCard
-            bgColor='#294294'
+            bgColor="#294294"
             heading={'Niramaya'}
             classes={'size-4-1'}
-            imageUrl={img4}
-            subHeading={'Making UP the supplier of quality nursing professionals for the entire country'}
-            href='https://www.samagragovernance.in/project/niramaya/'
+            imageUrl={projectData[0].node.frontmatter.thirdSection.img4}
+            subHeading={
+              'Making UP the supplier of quality nursing professionals for the entire country'
+            }
+            href="https://www.samagragovernance.in/project/niramaya/"
           />
           <ImageCard
-            bgColor='#FF6900'
+            bgColor="#FF6900"
             heading={'KONNECT & LEAP'}
             classes={'size-2-1'}
-            imageUrl={img2}
-            subHeading={'Increasing farmer income via phased cohort-based enhancement approach'}
-            href='https://www.samagragovernance.in/project/konnect/'
-            readMoreText='Read More (KONNECT)'
-            href2='https://www.samagragovernance.in/project/leap/'
-            readMoreText2='Read More (LEAP)'
+            imageUrl={projectData[0].node.frontmatter.thirdSection.img2}
+            subHeading={
+              'Increasing farmer income via phased cohort-based enhancement approach'
+            }
+            href="https://www.samagragovernance.in/project/konnect/"
+            readMoreText="Read More (KONNECT)"
+            href2="https://www.samagragovernance.in/project/leap/"
+            readMoreText2="Read More (LEAP)"
           />
         </div>
       </div>
       <div className="col-md-12 px-0">
         <ImageCard
-        bgColor='#B99806'
-        heading={'NIPUN Bharat'}
-        classes={'size-2-1'}
-        imageUrl={img3}
-        subHeading={'Enabling grade 1-3 students to attain foundational literacy & numeracy'}
-        href='https://www.samagragovernance.in/project/nipun-bharat-cell/'
-        
-          
+          bgColor="#B99806"
+          heading={'NIPUN Bharat'}
+          classes={'size-2-1'}
+          imageUrl={projectData[0].node.frontmatter.thirdSection.img3}
+          subHeading={
+            'Enabling grade 1-3 students to attain foundational literacy & numeracy'
+          }
+          href="https://www.samagragovernance.in/project/nipun-bharat-cell/"
         />
       </div>
     </div>
@@ -206,7 +231,7 @@ export default ({ previewData, parentDomains }) => (
       query ProjectListQuery {
         allMarkdownRemark(
           sort: { order: DESC, fields: [frontmatter___date] }
-          filter: { frontmatter: { templateKey: { eq: "project-post" } } }
+          filter: { frontmatter: { templateKey: { eq: "index-page" } } }
         ) {
           edges {
             node {
@@ -216,60 +241,34 @@ export default ({ previewData, parentDomains }) => (
                 slug
               }
               frontmatter {
-                title
-                domain
-                domainNew
-                fullName
-                subTitle
-                state
-                tagLine
-                backgroundCover {
-                  childImageSharp {
-                    fluid(maxWidth: 1024, quality: 100) {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
-                }
-                projectLogoWithState {
-                  childImageSharp {
-                    fluid(maxWidth: 240, quality: 64) {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
-                }
-                approach {
-                  text
-                }
-
-                overview {
-                  text
-                }
-                scale {
-                  count
-                  label
-                }
-                impact {
-                  count
-                  label
-                }
-                projectMiddleBannerImage {
-                  childImageSharp {
-                    fluid(maxWidth: 240, quality: 64) {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
-                }
-                keyInitiatives {
-                  image {
+                thirdSection {
+                  img1 {
                     childImageSharp {
-                      fluid(maxWidth: 240, quality: 64) {
+                      fluid(maxWidth: 1024, quality: 100) {
                         ...GatsbyImageSharpFluid
                       }
                     }
                   }
-                  title
-                  description {
-                    text
+                  img2 {
+                    childImageSharp {
+                      fluid(maxWidth: 1024, quality: 100) {
+                        ...GatsbyImageSharpFluid
+                      }
+                    }
+                  }
+                  img3 {
+                    childImageSharp {
+                      fluid(maxWidth: 1024, quality: 100) {
+                        ...GatsbyImageSharpFluid
+                      }
+                    }
+                  }
+                  img4 {
+                    childImageSharp {
+                      fluid(maxWidth: 1024, quality: 100) {
+                        ...GatsbyImageSharpFluid
+                      }
+                    }
                   }
                 }
               }

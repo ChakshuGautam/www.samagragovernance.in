@@ -78,4 +78,10 @@ secondSection:
 
   title: We are working to improve the quality of life of citizens through better
     governance
+
+thirdSection:
+  img1: /img/saral-kendra.jpg
+  img2: /img/Agriculture.jpg
+  img3: /img/Health.jpg
+  img4: /img/Education.jpg
 ---

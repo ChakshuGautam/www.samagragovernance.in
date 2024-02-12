@@ -336,12 +336,18 @@ collections:
                     widget: 'string',
                   },
                   {
+                    label: 'Project Name 2 (will appear spearated by a &)',
+                    name: 'projectName2',
+                    widget: 'string',
+                  },
+                  {
                     label: 'Slides',
                     name: 'slides',
                     widget: list,
                     fields:
                       [
                         { label: 'Image', name: image, widget: image },
+                        { label: 'Logo', name: logo, widget: image },
                         { label: 'Title', name: title, widget: string },
                       ],
                   },
@@ -405,6 +411,34 @@ collections:
                             ],
                         },
                       ],
+                  },
+                ],
+            }
+          - {
+              label: 'Third Section',
+              name: thirdSection,
+              widget: list,
+              fields:
+                [
+                  {
+                    label: 'Image 1',
+                    name: img1,
+                    widget: image,
+                  },
+                  {
+                    label: 'Image 2',
+                    name: img2,
+                    widget: image,
+                  },
+                  {
+                    label: 'Image 3',
+                    name: img3,
+                    widget: image,
+                  },
+                  {
+                    label: 'Image 4',
+                    name: img4,
+                    widget: image,
                   },
                 ],
             }
