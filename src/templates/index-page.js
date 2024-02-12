@@ -70,11 +70,19 @@ export const pageQuery = graphql`
         }
         subBanners {
             projectName
+            projectName2
             titleLines {
                 text
             }
             slides {
                 image {
+                    childImageSharp {
+                        fluid(maxWidth: 1024, quality: 60) {
+                          ...GatsbyImageSharpFluid
+                        }
+                      }
+                }
+                logo {
                     childImageSharp {
                         fluid(maxWidth: 1024, quality: 60) {
                           ...GatsbyImageSharpFluid

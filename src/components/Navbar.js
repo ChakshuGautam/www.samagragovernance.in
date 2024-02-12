@@ -113,7 +113,7 @@ const Navbar = class extends React.Component {
                             {/*    <Link to={'/blog'}><a className="nav-link" href="/blog">Blog</a></Link>*/}
                             {/*</li>*/}
                             <li>
-                                <Link to={'/careers'}><a className="nav-link" href="/career">Careers</a></Link>
+                                <Link to={'/careers'}><a className="nav-link" href="/careers">Careers</a></Link>
                             </li>
                         </ul>
                     </nav>

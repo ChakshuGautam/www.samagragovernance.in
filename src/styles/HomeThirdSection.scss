@@ -1,5 +1,9 @@
 @import "./variable";
 
+.home-third-section-new{
+  margin-top: 400px;
+}
+
 .home-third-section-wrapper {
   position: relative;
   text-align: center;
@@ -220,6 +224,7 @@
 
   }
 
+
   .content-section-small {
     margin-top: 10px;
 
@@ -303,6 +308,8 @@
     }
   }
 
+ 
+
   @media only screen and (max-width: 980px) {
     .title {
       font-size: 20px !important;
@@ -333,11 +340,29 @@
   }
 }
 
+@media only screen and (max-width: 1250px) {
+  .home-third-section-new{
+    margin-top: 300px;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .home-third-section-new{
+    margin-top: 200px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .home-third-section-new{
+    margin-top: 0px;
+  }
+}
+
 .navigation-bubble {
   width: 10px;
   height: 10px;
   border-radius: 5px;
-  background: #de6e3d;
+  background: #fff;
 
   &.white {
     background: #ffffff;
@@ -347,6 +372,7 @@
   margin: 0 3px;
 
   &.active {
+    background: #de6e3d;
     width: 20px;
     -webkit-animation-name: bubbleActiveTransition; /* Safari 4.0 - 8.0 */
     -webkit-animation-duration: 0.5s; /* Safari 4.0 - 8.0 */
@@ -355,6 +381,7 @@
   }
 
   &.in-active {
+    background: #fff;
     width: 10px;
     cursor: pointer;
     -webkit-animation-name: bubbleInActiveTransition; /* Safari 4.0 - 8.0 */

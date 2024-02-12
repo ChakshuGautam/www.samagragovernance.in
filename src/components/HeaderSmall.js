@@ -203,7 +203,7 @@ export class HeaderSmall extends React.Component {
                         <div className={"header-list-item"}>
                             <Link to={'/careers'}><a onClick={() => {
                                 this.setState({popupOpened: 'inactive'})
-                            }} className="nav-link" href="/career">Careers</a></Link>
+                            }} className="nav-link" href="/careers">Careers</a></Link>
                         </div>
                     </div>
                 </div>

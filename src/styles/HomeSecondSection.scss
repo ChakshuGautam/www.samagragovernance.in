@@ -1,5 +1,10 @@
 @import "./variable";
 
+.home-second-section-iframe{
+  height: 400px;
+  width: 620px;
+}
+
 .home-second-section-wrapper {
   padding: 50px 0;
   text-align: center;
@@ -21,15 +26,11 @@
     margin-top: 50px;
     padding-left: 30px;
 
-    &.first {
-
-    }
-
     .image-section {
       flex: 1;
       position: relative;
 
-      min-height: 40vw;
+      // min-height: 40vw;
 
       .image-background-section {
         position: absolute;
@@ -40,6 +41,8 @@
         background: #efefef;
         z-index: -1;
       }
+
+      
 
       .image-wrapper {
         background-repeat: no-repeat;
@@ -101,7 +104,7 @@
       }
 
       .description {
-        max-width: 480px;
+        max-width: 580px;
         font-size: 16px;
       }
 
@@ -169,6 +172,11 @@
   }
 
   @media only screen and (max-width: 980px) {
+    .home-second-section-iframe{
+      height: 400px;
+      width: 600px;
+    }
+
     .title {
       font-size: 28px;
       line-height: 34px;
@@ -179,6 +187,8 @@
     }
     .image-section {
       padding-top: calc((500px - 45vw) / 2);
+
+      
 
       .image-wrapper {
         position: initial !important;
@@ -285,6 +295,11 @@
     }
   }
   @media only screen and (max-width: 760px) {
+    .home-second-section-iframe{
+      height: 190px;
+      width: 300px;
+    }
+
     .content-section {
       flex-direction: column;
       margin-top: 60px;
@@ -294,6 +309,7 @@
       }
 
       .image-section {
+       
         .image-wrapper {
           width: calc(100vw - 20px);
           height: calc(100vw - 20px);

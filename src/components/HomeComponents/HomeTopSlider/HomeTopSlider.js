@@ -2,7 +2,7 @@ import React from 'react';
 import { HomeTopSliderBannerOne } from './Banners/HomeTopSliderBannerOne/HomeTopSliderBannerOne';
 import homeVideo from '../../../img/home_video.mp4';
 
-let firstBanner, secondBanner, thirdBanner, mainBanner;
+let firstBanner, secondBanner, thirdBanner, fourthBanner, mainBanner;
 
 export class HomeTopSlider extends React.Component {
   constructor(props) {
@@ -23,15 +23,32 @@ export class HomeTopSlider extends React.Component {
     if (firstBanner) clearTimeout(firstBanner);
     if (secondBanner) clearTimeout(secondBanner);
     if (thirdBanner) clearTimeout(thirdBanner);
+    if (fourthBanner) clearTimeout(fourthBanner);
+    if (skip === 5) {
+      this.setState({
+        firstBannerActive: true,
+        secondBannerActive: true,
+        thirdBannerActive: true,
+        fourthBannerActive: true,
+      });
+      mainBanner = setTimeout(() => {
+        this.resetAnimations();
+      }, 5000);
+      return;
+    }
     if (skip === 4) {
       this.setState({
         firstBannerActive: true,
         secondBannerActive: true,
         thirdBannerActive: true,
+        fourthBannerActive: false,
       });
+      fourthBanner = setTimeout(() => {
+        this.setState({ fourthBannerActive: true });
+      }, 5000);
       mainBanner = setTimeout(() => {
         this.resetAnimations();
-      }, 22000);
+      }, 10000);
       return;
     }
     if (skip === 3) {
@@ -39,29 +56,37 @@ export class HomeTopSlider extends React.Component {
         firstBannerActive: true,
         secondBannerActive: true,
         thirdBannerActive: false,
+        fourthBannerActive: false,
       });
       thirdBanner = setTimeout(() => {
         this.setState({ thirdBannerActive: true });
-      }, 16000);
+      }, 5000);
+      fourthBanner = setTimeout(() => {
+        this.setState({ fourthBannerActive: true });
+      }, 10000);
       mainBanner = setTimeout(() => {
         this.resetAnimations();
-      }, 38000);
+      }, 15000);
     }
     if (skip === 2) {
       this.setState({
         firstBannerActive: true,
         secondBannerActive: false,
         thirdBannerActive: false,
+        fourthBannerActive: false,
       });
       secondBanner = setTimeout(() => {
         this.setState({ secondBannerActive: true });
-      }, 16000);
+      }, 5000);
       thirdBanner = setTimeout(() => {
         this.setState({ thirdBannerActive: true });
-      }, 32000);
+      }, 10000);
+      fourthBanner = setTimeout(() => {
+        this.setState({ fourthBannerActive: true });
+      }, 15000);
       mainBanner = setTimeout(() => {
         this.resetAnimations();
-      }, 48000);
+      }, 20000);
     }
     if (skip === 1) {
       this.setState(
@@ -69,6 +94,7 @@ export class HomeTopSlider extends React.Component {
           firstBannerActive: false,
           secondBannerActive: false,
           thirdBannerActive: false,
+          fourthBannerActive: false,
           slideTitleVisible: false,
         },
         () => {
@@ -79,14 +105,18 @@ export class HomeTopSlider extends React.Component {
 
     firstBanner = setTimeout(() => {
       this.setState({ firstBannerActive: true });
-    }, 6000);
+    }, 5000);
     secondBanner = setTimeout(() => {
       this.setState({ secondBannerActive: true });
-    }, 22000);
+    }, 10000);
 
     thirdBanner = setTimeout(() => {
       this.setState({ thirdBannerActive: true });
-    }, 38000);
+    }, 15000);
+
+    fourthBanner = setTimeout(() => {
+      this.setState({ fourthBannerActive: true });
+    }, 20000);
 
     mainBanner = setTimeout(() => {
       this.setState(
@@ -94,13 +124,14 @@ export class HomeTopSlider extends React.Component {
           firstBannerActive: false,
           secondBannerActive: false,
           thirdBannerActive: false,
+          fourthBannerActive: false,
           slideTitleVisible: false,
         },
         () => {
           this.resetAnimations();
         }
       );
-    }, 60000);
+    }, 25000);
 
     setTimeout(() => {
       this.setState({ slideTitleVisible: true });
@@ -119,7 +150,14 @@ export class HomeTopSlider extends React.Component {
     const allBanners = [];
     let found = false;
     if (this.props.subBanners) {
-      allBanners.push({ active: !!thirdBannerActive && !found, id: 4 });
+      allBanners.push({ active: !!fourthBannerActive && !found, id: 5 });
+      if (fourthBannerActive) {
+        found = true;
+      }
+      allBanners.splice(0, 0, {
+        active: !!thirdBannerActive && !found,
+        id: 4,
+      });
       if (thirdBannerActive) {
         found = true;
       }
@@ -188,21 +226,25 @@ export class HomeTopSlider extends React.Component {
           bannerActive={thirdBannerActive}
           banner={this.props.subBanners[2]}
         />
+        <HomeTopSliderBannerOne
+          bannerActive={fourthBannerActive}
+          banner={this.props.subBanners[3]}
+        />
         {allBanners.length > 1 ? (
-          <div className="bubble-wrapper">
-            {allBanners.map((b, index) => {
-              return (
-                <div
-                  onClick={() => {
-                    this.resetAnimations(b.id);
-                  }}
-                  className={`navigation-bubble large ${
-                    b.active ? 'active' : 'in-active'
-                  }`}
-                />
-              );
-            })}
-          </div>
+            <div className="bubble-wrapper">
+              {allBanners.map((b, index) => {
+                return (
+                  <div
+                    onClick={() => {
+                      this.resetAnimations(b.id);
+                    }}
+                    className={`navigation-bubble large ${
+                      b.active ? 'active' : 'in-active'
+                    }`}
+                  />
+                );
+              })}
+            </div>
         ) : null}
       </div>
     );
