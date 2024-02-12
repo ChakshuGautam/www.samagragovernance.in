@@ -146,17 +146,17 @@ export const HomeThirdSectionContent = ({
               width: '100%',
               padding: '10px 20px',
             }}>
-            <div className={'f-28 fw-600 mb-3'}>{heading}</div>
-            <div className={'f-18'}>{subHeading}</div>
+            <div className={'fw-600 mb-3 homepage-imagecard-heading'}>{heading}</div>
+            <div className={'homepage-imagecard-subheading'}>{subHeading}</div>
             <a
-              className={'f-16'}
+              className={'homepage-imagecard-readmore'}
               style={{ color: 'white', fontStyle: 'italic' }}
               href={href}>
               {readMoreText}
             </a>
             {href2 && readMoreText2 ? (
               <a
-                className={'f-16'}
+                className={'homepage-imagecard-readmore'}
                 style={{ color: 'white', fontStyle: 'italic' }}
                 href={href2}>
                 {' | '}

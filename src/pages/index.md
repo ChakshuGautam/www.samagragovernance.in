@@ -23,7 +23,7 @@ subBanners:
     slides:
       - image: /img/antyodaya-Saral-slide-1.png
         logo: /img/Digital-Haryana-Logo.png
-        title: '550+ Services | 2.7 Cr+ Citizens'
+        title: '550 Services | 2.7 Cr Citizens'
     titleLines:
       - text: Transforming
       - text: Service Delivery
