@@ -169,8 +169,8 @@ export class HomeTopSliderBannerOne extends React.Component {
                 </div>
                     <div style={{textAlign: 'right', position: 'absolute', right: '10px', bottom: '60px'}}>
                       {banner.slides.map((slide) => {
-                        return <div style={{background: 'white', height: '80px', width: '110px', borderRadius: '15px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                            <img src={slide.logo.childImageSharp.fluid.src ? slide.logo.childImageSharp.fluid.src : slide.logo} alt="" style={{height: '70px', width: '100px'}}/>
+                        return <div className={'top-slider-bottom-logo'} style={{background: 'white', borderRadius: '15px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                            <img src={slide.logo.childImageSharp.fluid.src ? slide.logo.childImageSharp.fluid.src : slide.logo} alt=""/>
                           </div>
                       })}
                     </div>

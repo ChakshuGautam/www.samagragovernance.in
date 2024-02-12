@@ -1,5 +1,25 @@
 @import "./variable";
 
+.top-slider-bottom-logo{
+  width: 110px;
+  height: 80px;
+}
+.top-slider-bottom-logo img{
+  width: 100px;
+  height: 70px;
+}
+
+@media only screen and (max-width: 600px){
+  .top-slider-bottom-logo{
+    width: 80px;
+    height: 60px;
+  }
+  .top-slider-bottom-logo img{
+    width: 70px;
+    height: 50px;
+  }
+}
+
 #home-top-slider-banner-one {
   position: absolute;
   top: 0;
@@ -235,6 +255,8 @@
       }
     }
   }
+
+
 
   @media only screen and (max-width: 980px) {
     .title {
