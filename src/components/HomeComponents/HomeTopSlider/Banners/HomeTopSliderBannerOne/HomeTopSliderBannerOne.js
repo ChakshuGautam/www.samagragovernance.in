@@ -134,14 +134,9 @@ export class HomeTopSliderBannerOne extends React.Component {
                     <div style={{fontSize: '18px', lineHeight: 'normal', marginRight: '10px'}}>
                       {banner.slides.map((slide, index) => {
                         return (
-                          // <div style={{display: 'flex'}}>
-                          // <div style={{background: 'white', height: '50px', width: '80px', borderRadius: '15px', marginRight: '10px'}}>
-                          //   <img src={slide.logo.childImageSharp.fluid.src ? slide.logo.childImageSharp.fluid.src : slide.logo} alt="" style={{height: '50px', width: '70px'}}/>
-                          // </div>
                           <div key={index} className={`inner-content-text`} style={{fontSize: '18px', color: '#FFA500', backgroundColor: 'rgba(255, 255, 255, 0.15)', padding: '5px 10px', borderRadius: '15px', border: '1px solid #FFA500', display: 'flex', alignItems: 'center'}}>
                             {slide.title}
                           </div>
-                          // </div>
                         );
                       })}
                     </div>
