@@ -77,7 +77,7 @@ export class HomeSecondSection extends React.Component {
     const { homeContent } = this.props;
     return (
       <div className={'home-second-section-wrapper'} style={{padding: 0}}>
-        <div className={'title'} style={{ padding: '0 20px' }}>
+        <div className={'title'} style={{ padding: '50px 20px 0px 20px' }}>
           {homeContent.secondSection.title}
         </div>
         {/*<div className={'sub-title'}>*/}

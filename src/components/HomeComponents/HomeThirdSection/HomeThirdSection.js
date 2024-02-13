@@ -148,7 +148,7 @@ export const HomeThirdSectionContent = ({
           <div
             className="align-self-end"
             style={{
-              background: `rgba(${hexToRgb(bgColor).r}, ${hexToRgb(bgColor).g}, ${hexToRgb(bgColor).b}, 0.55)`,
+              background: `rgba(${hexToRgb(bgColor).r}, ${hexToRgb(bgColor).g}, ${hexToRgb(bgColor).b}, 0.7)`,
               position: 'absolute',
               zIndex: 2,
               width: '100%',
