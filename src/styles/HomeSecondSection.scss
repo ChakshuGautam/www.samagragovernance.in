@@ -30,7 +30,7 @@
       flex: 1;
       position: relative;
 
-      // min-height: 40vw;
+      min-height: 30vw;
 
       .image-background-section {
         position: absolute;
@@ -59,8 +59,8 @@
 
         &#our-image-approach-wrapper {
 
-          width: calc(40vw);
-          height: calc(40vw);
+          width: calc(30vw);
+          height: calc(30vw);
           top: 0;
           left: -10px;
         }
@@ -91,7 +91,7 @@
       padding: 20px;
 
       .title {
-        font-size: 40px;
+        font-size: 30px;
         line-height: 65px;
         font-weight: 600;
         margin-bottom: 20px;
@@ -105,7 +105,7 @@
 
       .description {
         max-width: 580px;
-        font-size: 16px;
+        font-size: 14px;
       }
 
       &#our-vision-text-section {
@@ -126,7 +126,7 @@
 
     &.reverse {
       flex-direction: row-reverse;
-      margin-right: 30px;
+      align-items: center;
 
       .image-background-section {
         left: auto;
@@ -134,7 +134,7 @@
       }
 
       .image-section {
-        margin-top: 100px;
+        // margin-top: 100px;
 
         .image-wrapper {
           background-size: contain;
@@ -158,15 +158,15 @@
 
           &#our-image-approach-wrapper {
 
-            width: calc(40vw);
-            height: calc(40vw);
+            width: calc(30vw);
+            height: calc(30vw);
           }
         }
       }
 
       .text-section {
-        padding-left: 2vw;
-        padding-right: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
       }
     }
   }
@@ -211,7 +211,7 @@
         }
 
         .title {
-          font-size: 60px;
+          font-size: 50px;
           line-height: 85px;
         }
 
@@ -220,8 +220,8 @@
         }
 
         .description {
-          font-size: 20px;
-          line-height: 29px;
+          font-size: 18px;
+          line-height: 24px;
         }
       }
     }
@@ -243,7 +243,7 @@
         }
 
         .title {
-          font-size: 60px;
+          font-size: 50px;
           line-height: 85px;
         }
 
@@ -252,8 +252,8 @@
         }
 
         .description {
-          font-size: 20px;
-          line-height: 29px;
+          font-size: 18px;
+          line-height: 24px;
         }
       }
     }
@@ -275,7 +275,7 @@
         }
 
         .title {
-          font-size: 100px;
+          font-size: 90px;
           line-height: 120px;
         }
 
@@ -284,12 +284,12 @@
         }
 
         .description {
-          font-size: 20px;
-          line-height: 29px;
+          font-size: 18px;
+          line-height: 24px;
         }
 
         .sub-title {
-          font-size: 30px;
+          font-size: 24px;
         }
       }
     }

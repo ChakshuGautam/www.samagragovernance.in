@@ -70,9 +70,7 @@ secondSection:
     title: Our Model
     description:
       - subTitle: Who we are 
-        text: We are a mission-driven governance consulting firm
-      - subTitle: What we believe in
-        text: We firmly believe in governance being the primary lever of change to create large scale impact in the country. 
+        text: We are a mission-driven governance consulting firm. We firmly believe in governance being the primary lever of change to create large scale impact in the country. 
       - subTitle: What we do
         text: We work with the senior political and bureaucratic leadership of states to solve governance problems at scale. We co-work with the government to diagnose the problem, design a transformation roadmap and implement the same. Our solutions are rooted in the realities of governance in India. We leverage tech & data to enable systemic transformations. 
 

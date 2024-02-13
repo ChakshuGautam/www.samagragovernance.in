@@ -1,7 +1,7 @@
 @import "./variable";
 
 .home-third-section-new{
-  margin-top: 400px;
+  padding-top: 200px;
 
   .title{
     font-size: 38px;
@@ -349,7 +349,7 @@
 
 @media only screen and (max-width: 1250px) {
   .home-third-section-new{
-    margin-top: 300px;
+    padding-top: 150px;
 
     .title{
       font-size: 28px;
@@ -362,7 +362,7 @@
 
 @media only screen and (max-width: 980px) {
   .home-third-section-new{
-    margin-top: 200px;
+    padding-top: 150px;
 
     .title{
       font-size: 24px;
@@ -375,7 +375,7 @@
 
 @media only screen and (max-width: 600px) {
   .home-third-section-new{
-    margin-top: 0px;
+    padding-top: 0px;
 
     .title{
       font-size: 24px;

@@ -76,15 +76,15 @@ export class HomeSecondSection extends React.Component {
     const { firstSectionAnimation, secondSectionAnimation } = this.state;
     const { homeContent } = this.props;
     return (
-      <div className={'home-second-section-wrapper'}>
+      <div className={'home-second-section-wrapper'} style={{padding: 0}}>
         <div className={'title'} style={{ padding: '0 20px' }}>
           {homeContent.secondSection.title}
         </div>
         {/*<div className={'sub-title'}>*/}
         {/*    We work with the system to make it better.*/}
         {/*</div>*/}
-        <div className={'content-section'} style={{display: 'flex', justifyContent: 'center', marginTop: '30px', alignItems: 'center'}}>
-          <div className={'image-section'}>
+        <div className={'content-section'} style={{display: 'flex', justifyContent: 'center', marginTop: '80px'}}>
+          <div className={'image-section'} style={{paddingTop: '25px'}}>
             {/* <div className="image-background-section"/> */}
             <iframe
               className={'home-second-section-iframe'}
@@ -101,7 +101,7 @@ export class HomeSecondSection extends React.Component {
 
                         </div> */}
           </div>
-          <div className={'text-section'} id={'our-vision-text-section'} style={{paddingTop: 0}}>
+          <div className={'text-section'} style={{paddingTop: 0}}>
             <div className={'title'}>
               {homeContent.secondSection.ourModel.title}
             </div>
@@ -165,7 +165,7 @@ export class HomeSecondSection extends React.Component {
               )}
             </div>
           </div>
-          <div className={'text-section'} id={'our-approach-text-section'}>
+          <div className={'text-section'}>
             <div className={'title'}>
               {homeContent.secondSection.ourApproach.title}
             </div>

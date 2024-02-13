@@ -123,18 +123,18 @@ export class HomeTopSliderBannerOne extends React.Component {
                     <span />
                   )}
                   {banner && banner.projectName ? (
-                    <div>{`(${banner.projectName}`}
-                    {banner.projectName2 ? ` & ${banner.projectName2})` : ')'}
+                    <div>{`${banner.projectName}`}
+                    {banner.projectName2 ? ` & ${banner.projectName2}` : ''}
                     </div>
                   ) : (
                     <span />
                   )}
 
                   <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', minHeight: 'auto', marginTop: '30px'}}>
-                    <div style={{fontSize: '18px', lineHeight: 'normal', marginRight: '10px'}}>
+                    <div style={{lineHeight: 'normal', marginRight: '10px'}}>
                       {banner.slides.map((slide, index) => {
                         return (
-                          <div key={index} className={`inner-content-text`} style={{fontSize: '18px', color: '#FFA500', backgroundColor: 'rgba(255, 255, 255, 0.15)', padding: '5px 10px', borderRadius: '15px', border: '1px solid #FFA500', display: 'flex', alignItems: 'center'}}>
+                          <div key={index} className={`inner-content-text`} style={{fontSize: '20px', color: '#FFA500', backgroundColor: 'rgba(255, 255, 255, 0.15)', padding: '5px 10px', borderRadius: '15px', border: '1px solid #FFA500', display: 'flex', alignItems: 'center'}}>
                             {slide.title}
                           </div>
                         );
@@ -150,7 +150,7 @@ export class HomeTopSliderBannerOne extends React.Component {
                           );
                         }}
                       />
-                      {this.props.banner.projectName2 ? <PrimaryButton
+                      {/* {this.props.banner.projectName2 ? <PrimaryButton
                       style={{marginTop: '10px'}}
                         text={'EXPLORE MORE ➤'}
                         click={() => {
@@ -158,7 +158,7 @@ export class HomeTopSliderBannerOne extends React.Component {
                             this.props.banner.projectName2
                           );
                         }}
-                      />: null}
+                      />: null} */}
                     </div>
                   </div>
                 </div>

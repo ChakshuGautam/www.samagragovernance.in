@@ -106,6 +106,15 @@ export const HomeThirdSectionContent = ({
     readMoreText2,
     bgColor,
   }) => {
+    function hexToRgb(hex) {
+      // Remove the '#' if it exists
+      hex = hex.replace('#', '');
+      // Convert to RGB
+      const r = parseInt(hex.substring(0, 2), 16);
+      const g = parseInt(hex.substring(2, 4), 16);
+      const b = parseInt(hex.substring(4, 6), 16);
+      return { r, g, b };
+    }
     return (
       <div
         style={{
@@ -139,14 +148,13 @@ export const HomeThirdSectionContent = ({
           <div
             className="align-self-end"
             style={{
-              background: bgColor,
-              opacity: '0.8',
+              background: `rgba(${hexToRgb(bgColor).r}, ${hexToRgb(bgColor).g}, ${hexToRgb(bgColor).b}, 0.55)`,
               position: 'absolute',
               zIndex: 2,
               width: '100%',
-              padding: '10px 20px',
+              padding: '5px 10px',
             }}>
-            <div className={'fw-600 mb-3 homepage-imagecard-heading'}>{heading}</div>
+            <div className={'fw-600 homepage-imagecard-heading'}>{heading}</div>
             <div className={'homepage-imagecard-subheading'}>{subHeading}</div>
             <a
               className={'homepage-imagecard-readmore'}
@@ -191,7 +199,7 @@ export const HomeThirdSectionContent = ({
             classes={'size-4-1'}
             imageUrl={projectData[0].node.frontmatter.thirdSection.img3}
             subHeading={
-              'Making UP the supplier of quality nursing professionals for the entire country'
+              'Making UP the supplier of quality nursing professionals for the country'
             }
             href="https://www.samagragovernance.in/project/niramaya/"
           />
