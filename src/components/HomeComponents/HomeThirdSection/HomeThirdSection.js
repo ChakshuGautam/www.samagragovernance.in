@@ -182,24 +182,24 @@ export const HomeThirdSectionContent = ({
       className={'container-fluid philosophy-section home-third-section-new'}>
         <div className={'title'}>We work with state governments across domains</div>
       <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-        <div className="col-md-7 px-0">
+        <div className="col-md-6 px-0">
           <ImageCard
             bgColor="#B99806"
             heading={'Antyodaya Saral'}
             classes={'size-2-2'}
             imageUrl={projectData[0].node.frontmatter.thirdSection.img1}
-            subHeading={'Transforming scheme and service delivery in the state'}
+            subHeading={'Transforming scheme and service delivery in Haryana'}
             href="https://www.samagragovernance.in/project/antyodaya-saral/"
           />
         </div>
-        <div className="col-md-5 px-0">
+        <div className="col-md-6 px-0">
           <ImageCard
             bgColor="#294294"
             heading={'Niramaya'}
             classes={'size-4-1'}
             imageUrl={projectData[0].node.frontmatter.thirdSection.img3}
             subHeading={
-              'Making UP the supplier of quality nursing professionals for the country'
+              'Making UP the supplier of quality nursing professionals for the entire country'
             }
             href="https://www.samagragovernance.in/project/niramaya/"
           />
@@ -209,7 +209,7 @@ export const HomeThirdSectionContent = ({
             classes={'size-2-1'}
             imageUrl={projectData[0].node.frontmatter.thirdSection.img2}
             subHeading={
-              'Increasing farmer income via phased cohort-based enhancement approach'
+              'Increasing farmer income via phased cohort-based enhancement approach in Odisha'
             }
             href="https://www.samagragovernance.in/project/konnect/"
             readMoreText="Read More (KONNECT)"
@@ -225,7 +225,7 @@ export const HomeThirdSectionContent = ({
           classes={'size-2-1'}
           imageUrl={projectData[0].node.frontmatter.thirdSection.img4}
           subHeading={
-            'Enabling grade 1-3 students to attain foundational literacy & numeracy'
+            'Enabling grade 1-3 students to attain foundational literacy & numeracy in UP'
           }
           href="https://www.samagragovernance.in/project/nipun-bharat-cell/"
         />

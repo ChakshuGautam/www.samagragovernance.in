@@ -134,7 +134,7 @@ export class HomeTopSliderBannerOne extends React.Component {
                     <div style={{lineHeight: 'normal', marginRight: '10px'}}>
                       {banner.slides.map((slide, index) => {
                         return (
-                          <div key={index} className={`inner-content-text`} style={{fontSize: '20px', color: '#FFA500', backgroundColor: 'rgba(255, 255, 255, 0.15)', padding: '5px 10px', borderRadius: '15px', border: '1px solid #FFA500', display: 'flex', alignItems: 'center'}}>
+                          <div key={index} className={`inner-content-text`} style={{fontSize: '24px', color: '#ffa500', backgroundColor: 'rgba(255, 255, 255, 1)', padding: '5px 10px', borderRadius: '15px', border: '1px solid #FFA500', display: 'flex', alignItems: 'center'}}>
                             {slide.title}
                           </div>
                         );
