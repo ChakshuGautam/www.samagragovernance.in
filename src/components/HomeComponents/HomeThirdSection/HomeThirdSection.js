@@ -141,7 +141,7 @@ export const HomeThirdSectionContent = ({
               width: '100%',
               height: '100%',
               objectFit: 'cover',
-              objectPosition: 'center 20%',
+              objectPosition: 'center 30%',
               transition: 'transform 0.2s ease',
             }}
           />
@@ -226,9 +226,9 @@ export const HomeThirdSectionContent = ({
             classes={'size-2-1'}
             imageUrl={projectData[0].node.frontmatter.thirdSection.img3}
             subHeading={
-              'Establishing systemic enablers for improvement in health & nutrition outcomes of 1Cr+ tribals in Odisha'
+              'Establishing systemic enablers for improvement in health & nutrition outcomes of 1 Cr+ tribals in Odisha'
             }
-            href="https://www.samagragovernance.in/project/stride/"
+            href="https://www.samagragovernance.in/project/anamaya/"
           />
       </div>
     </div>

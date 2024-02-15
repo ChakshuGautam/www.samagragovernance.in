@@ -19,6 +19,15 @@ baseBanner:
     - text: Transforming
     - text: Governance
 subBanners:
+  - projectName: NIPUN Bharat
+    color: '#BA9807'
+    slides:
+      - image: /img/NIPUN-Bharat-slide-1.png
+        logo: /img/nipun-logo.png
+        title: '1,10,000 Primary Schools | 60,00,000 Students'
+    titleLines:
+      - text: Transforming
+      - text: Education
   - projectName: Antyodaya Saral
     color: '#76323F'
     slides:
@@ -38,25 +47,15 @@ subBanners:
     titleLines:
       - text: Transforming
       - text: Agriculture
-  - projectName: NIPUN Bharat
-    color: '#BA9807'
-    slides:
-      - image: /img/NIPUN-Bharat-slide-1.png
-        logo: /img/nipun-logo.png
-        title: '1,10,000 Primary Schools | 60,00,000 Students'
-    titleLines:
-      - text: Transforming
-      - text: Education
-  - projectName: Niramaya
+  - projectName: Anamaya
     color: '#027F50'
     slides:
-      - image: /img/Niramaya-slide-1.jpg
+      - image: /img/STRIDE-slide-1.jpg
         logo: /img/Niramaya-logo.png
         title: '650 Institutes | 50,000 Students'
     titleLines:
       - text: Transforming
       - text: Health
-  
 secondSection:
   ourApproach:
     description:
@@ -82,8 +81,8 @@ secondSection:
     governance
 
 thirdSection:
-  img1: /img/saral-kendra.jpg
+  img1: /img/saral-header-bg.jpg
   img2: /img/Agriculture.jpg
-  img3: /img/Health.jpg
+  img3: /img/STRIDE-slide-1.jpg
   img4: /img/Education.jpg
 ---
