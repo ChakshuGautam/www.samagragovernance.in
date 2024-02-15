@@ -183,33 +183,34 @@ export const HomeThirdSectionContent = ({
         <div className={'title'}>We work with state governments across domains</div>
       <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
         <div className="col-md-6 px-0">
-          <ImageCard
-            bgColor="#B99806"
-            heading={'Antyodaya Saral'}
-            classes={'size-2-2'}
-            imageUrl={projectData[0].node.frontmatter.thirdSection.img1}
-            subHeading={'Transforming scheme and service delivery in Haryana'}
-            href="https://www.samagragovernance.in/project/antyodaya-saral/"
-          />
+        <ImageCard
+          bgColor="#BA9807"
+          heading={'NIPUN Bharat'}
+          classes={'size-2-2'}
+          imageUrl={projectData[0].node.frontmatter.thirdSection.img4}
+          subHeading={
+            'Enabling 60 lakh students in grades 1-3 to attain foundational literacy & numeracy in UP'
+          }
+          href="https://www.samagragovernance.in/project/nipun-bharat-cell/"
+        />
         </div>
         <div className="col-md-6 px-0">
+          
           <ImageCard
-            bgColor="#294294"
-            heading={'Niramaya'}
+            bgColor="#76323F"
+            heading={'Antyodaya Saral'}
             classes={'size-4-1'}
-            imageUrl={projectData[0].node.frontmatter.thirdSection.img3}
-            subHeading={
-              'Making UP the supplier of quality nursing professionals for the entire country'
-            }
-            href="https://www.samagragovernance.in/project/niramaya/"
+            imageUrl={projectData[0].node.frontmatter.thirdSection.img1}
+            subHeading={'Transforming scheme and service delivery for 2.7 Cr citizens in Haryana'}
+            href="https://www.samagragovernance.in/project/antyodaya-saral/"
           />
           <ImageCard
-            bgColor="#FF6900"
+            bgColor="#428F37"
             heading={'KONNECT & LEAP'}
             classes={'size-2-1'}
             imageUrl={projectData[0].node.frontmatter.thirdSection.img2}
             subHeading={
-              'Increasing farmer income via phased cohort-based enhancement approach in Odisha'
+              ' Increasing farmer income via phased cohort-based enhancement approach for 75 lakh farmers in Odisha'
             }
             href="https://www.samagragovernance.in/project/konnect/"
             readMoreText="Read More (KONNECT)"
@@ -219,16 +220,16 @@ export const HomeThirdSectionContent = ({
         </div>
       </div>
       <div className="col-md-12 px-0">
-        <ImageCard
-          bgColor="#B99806"
-          heading={'NIPUN Bharat'}
-          classes={'size-2-1'}
-          imageUrl={projectData[0].node.frontmatter.thirdSection.img4}
-          subHeading={
-            'Enabling grade 1-3 students to attain foundational literacy & numeracy in UP'
-          }
-          href="https://www.samagragovernance.in/project/nipun-bharat-cell/"
-        />
+      <ImageCard
+            bgColor="#027F50"
+            heading={'STRIDE'}
+            classes={'size-2-1'}
+            imageUrl={projectData[0].node.frontmatter.thirdSection.img3}
+            subHeading={
+              'Establishing systemic enablers for improvement in health & nutrition outcomes of 1Cr+ tribals in Odisha'
+            }
+            href="https://www.samagragovernance.in/project/stride/"
+          />
       </div>
     </div>
   );

@@ -122,16 +122,16 @@ export class HomeTopSliderBannerOne extends React.Component {
                   ) : (
                     <span />
                   )}
-                  {banner && banner.projectName ? (
+                  {/* {banner && banner.projectName ? (
                     <div>{`${banner.projectName}`}
                     {banner.projectName2 ? ` & ${banner.projectName2}` : ''}
                     </div>
                   ) : (
                     <span />
-                  )}
+                  )} */}
 
                   <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', minHeight: 'auto', marginTop: '30px'}}>
-                    <div style={{lineHeight: 'normal', marginRight: '10px'}}>
+                    {/* <div style={{lineHeight: 'normal', marginRight: '10px'}}>
                       {banner.slides.map((slide, index) => {
                         return (
                           <div key={index} className={`inner-content-text`} style={{fontSize: '24px', color: '#ffa500', backgroundColor: 'rgba(255, 255, 255, 1)', padding: '5px 10px', borderRadius: '15px', border: '1px solid #FFA500', display: 'flex', alignItems: 'center'}}>
@@ -139,10 +139,11 @@ export class HomeTopSliderBannerOne extends React.Component {
                           </div>
                         );
                       })}
-                    </div>
+                    </div> */}
 
                     <div style={{fontSize: '18px', lineHeight: 'normal', display: 'flex', flexDirection: 'column', marginTop: '20px'}}>
                       <PrimaryButton
+                        style={{backgroundColor: this.props.banner.color}}
                         text={'EXPLORE MORE ➤'}
                         click={() => {
                           window.location.href = this.getProjectUrl(
@@ -162,13 +163,13 @@ export class HomeTopSliderBannerOne extends React.Component {
                     </div>
                   </div>
                 </div>
-                    <div style={{textAlign: 'right', position: 'absolute', right: '10px', bottom: '60px'}}>
+                    {/* <div style={{textAlign: 'right', position: 'absolute', right: '10px', bottom: '60px'}}>
                       {banner.slides.map((slide) => {
                         return <div className={'top-slider-bottom-logo'} style={{background: 'white', borderRadius: '15px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                             <img src={slide.logo.childImageSharp.fluid.src ? slide.logo.childImageSharp.fluid.src : slide.logo} alt=""/>
                           </div>
                       })}
-                    </div>
+                    </div> */}
                 {/* <div className={`slider-wrapper  ${showSlider ? 'visible' : ''}`}>
                                     <div className="slider soft-hide-form-small-only">
                                         <div className="animated-section-wrapper soft-hide-form-small-only">

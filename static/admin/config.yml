@@ -341,6 +341,11 @@ collections:
                     widget: 'string',
                   },
                   {
+                    label: 'Button Color',
+                    name: 'color',
+                    widget: 'string',
+                  },
+                  {
                     label: 'Slides',
                     name: 'slides',
                     widget: list,

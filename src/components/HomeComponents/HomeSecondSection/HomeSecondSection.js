@@ -76,15 +76,21 @@ export class HomeSecondSection extends React.Component {
     const { firstSectionAnimation, secondSectionAnimation } = this.state;
     const { homeContent } = this.props;
     return (
-      <div className={'home-second-section-wrapper'} style={{padding: 0}}>
+      <div className={'home-second-section-wrapper'} style={{ padding: 0 }}>
         <div className={'title'} style={{ padding: '50px 20px 0px 20px' }}>
           {homeContent.secondSection.title}
         </div>
         {/*<div className={'sub-title'}>*/}
         {/*    We work with the system to make it better.*/}
         {/*</div>*/}
-        <div className={'content-section'} style={{display: 'flex', justifyContent: 'center', marginTop: '80px'}}>
-          <div className={'image-section'} style={{paddingTop: '25px'}}>
+        <div
+          className={'content-section'}
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            marginTop: '80px',
+          }}>
+          <div className={'image-section'} style={{ paddingTop: '10px' }}>
             {/* <div className="image-background-section"/> */}
             <iframe
               className={'home-second-section-iframe'}
@@ -92,7 +98,7 @@ export class HomeSecondSection extends React.Component {
               frameBorder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen></iframe>
-                        {/* <div className={`image-wrapper ${(firstSectionAnimation ? 'enable-animation' : '')}`}
+            {/* <div className={`image-wrapper ${(firstSectionAnimation ? 'enable-animation' : '')}`}
                              style={{
                                  backgroundImage: `url(${
                                      !!(homeContent.secondSection.ourModel.image && homeContent.secondSection.ourModel.image.childImageSharp) ? homeContent.secondSection.ourModel.image.childImageSharp.fluid.src : homeContent.secondSection.ourModel.image
@@ -101,7 +107,7 @@ export class HomeSecondSection extends React.Component {
 
                         </div> */}
           </div>
-          <div className={'text-section'} style={{paddingTop: 0}}>
+          <div className={'text-section'} style={{ paddingTop: 0 }}>
             <div className={'title'}>
               {homeContent.secondSection.ourModel.title}
             </div>
@@ -127,7 +133,7 @@ export class HomeSecondSection extends React.Component {
                   );
                 }
               )}
-              <a href="https://www.samagragovernance.in/amritseries">Learn More</a>
+              {/* <a href="https://www.samagragovernance.in/amritseries">Learn More</a> */}
             </div>
           </div>
         </div>
@@ -149,6 +155,11 @@ export class HomeSecondSection extends React.Component {
               }}>
               {this.state.enableVideo ? (
                 <video
+                  ref={(video) => {
+                    if (video) {
+                      video.playbackRate = 2;
+                    }
+                  }}
                   controls={false}
                   loop={false}
                   style={{

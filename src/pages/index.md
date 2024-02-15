@@ -20,6 +20,7 @@ baseBanner:
     - text: Governance
 subBanners:
   - projectName: Antyodaya Saral
+    color: '#76323F'
     slides:
       - image: /img/antyodaya-Saral-slide-1.png
         logo: /img/Digital-Haryana-Logo.png
@@ -29,6 +30,7 @@ subBanners:
       - text: Service Delivery
   - projectName: KONNECT
     projectName2: LEAP
+    color: '#428F37'
     slides:
       - image: /img/KONNECT-LEAP-slide-1.jpeg
         logo: /img/KO-LEAP-logo.png
@@ -37,6 +39,7 @@ subBanners:
       - text: Transforming
       - text: Agriculture
   - projectName: NIPUN Bharat
+    color: '#BA9807'
     slides:
       - image: /img/NIPUN-Bharat-slide-1.png
         logo: /img/nipun-logo.png
@@ -45,6 +48,7 @@ subBanners:
       - text: Transforming
       - text: Education
   - projectName: Niramaya
+    color: '#027F50'
     slides:
       - image: /img/Niramaya-slide-1.jpg
         logo: /img/Niramaya-logo.png

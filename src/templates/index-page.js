@@ -71,6 +71,7 @@ export const pageQuery = graphql`
         subBanners {
             projectName
             projectName2
+            color
             titleLines {
                 text
             }
