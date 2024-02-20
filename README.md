@@ -6,7 +6,7 @@
 
 ## Prerequisites
 
-- Node (I recommend using v8.2.0 or higher)
+- Node (I recommend using v14.15.0)
 - [Gatsby CLI](https://www.gatsbyjs.org/docs/)
 - [Netlify CLI](https://github.com/netlify/cli)
 

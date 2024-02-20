@@ -1397,34 +1397,34 @@ export const pageQuery = graphql`
         impactNumber5Title
         showPlus5
 
-        sideIcon1 {
-          childImageSharp {
-            fluid(maxWidth: 1280, quality: 62) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        sideIcon2 {
-          childImageSharp {
-            fluid(maxWidth: 1280, quality: 62) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        sideIcon3 {
-          childImageSharp {
-            fluid(maxWidth: 1280, quality: 62) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        sideIcon4 {
-          childImageSharp {
-            fluid(maxWidth: 1280, quality: 62) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
+        # sideIcon1 {
+        #   childImageSharp {
+        #     fluid(maxWidth: 1280, quality: 62) {
+        #       ...GatsbyImageSharpFluid
+        #     }
+        #   }
+        # }
+        # sideIcon2 {
+        #   childImageSharp {
+        #     fluid(maxWidth: 1280, quality: 62) {
+        #       ...GatsbyImageSharpFluid
+        #     }
+        #   }
+        # }
+        # sideIcon3 {
+        #   childImageSharp {
+        #     fluid(maxWidth: 1280, quality: 62) {
+        #       ...GatsbyImageSharpFluid
+        #     }
+        #   }
+        # }
+        # sideIcon4 {
+        #   childImageSharp {
+        #     fluid(maxWidth: 1280, quality: 62) {
+        #       ...GatsbyImageSharpFluid
+        #     }
+        #   }
+        # }
         infographic1 {
           img {
             childImageSharp {
@@ -1443,14 +1443,14 @@ export const pageQuery = graphql`
             }
           }
         }
-        sideIcon1Text
-        sideIcon2Text
-        sideIcon3Text
-        sideIcon4Text
-        showsideIcon1
-        showsideIcon2
-        showsideIcon3
-        showsideIcon4
+        # sideIcon1Text
+        # sideIcon2Text
+        # sideIcon3Text
+        # sideIcon4Text
+        # showsideIcon1
+        # showsideIcon2
+        # showsideIcon3
+        # showsideIcon4
         bannerImage {
           publicURL
         }
