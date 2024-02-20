@@ -35,5 +35,5 @@ CMS.registerPreviewTemplate("joinus", JoinUsPreview);
 CMS.registerPreviewTemplate("mediacontent", MediaPostPreview);
 CMS.registerPreviewTemplate("partner", PartnerPagePreview);
 CMS.registerPreviewTemplate("careers", CareerPagePreview);
-CMS.registerPreviewTemplate("case-study", CaseStudyPreview);
+CMS.registerPreviewTemplate("amritseries", CaseStudyPreview);
 CMS.registerPreviewTemplate("ksk", KSKPreview);

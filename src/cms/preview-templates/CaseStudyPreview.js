@@ -4,7 +4,6 @@ import React from 'react';
 
 const CaseStudyPreview = ({ entry, widgetFor }) => {
   const data = entry.getIn(['data']).toJS();
-  console.log("hello",data);
   if (data) {
     return (
       <CaseStudyTemplate
