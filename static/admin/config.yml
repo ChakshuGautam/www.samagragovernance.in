@@ -44,7 +44,7 @@ collections:
         }
       - { label: 'Show', name: 'show', widget: 'boolean', default: false }
       - { label: 'Project ID', name: 'projectId', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'date' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Featured Image', name: 'featuredimage', widget: image }
       - { label: 'Button Text', name: 'buttonText', widget: 'string' }
       - { label: 'URL', name: 'title', widget: 'string' }
