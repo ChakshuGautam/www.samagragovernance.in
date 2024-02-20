@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 const CaseStudyPreview = ({ entry, widgetFor }) => {
+  console.log("hello", entry)
   const data = entry.getIn(['data']).toJS();
+  const { markdownRemark: post } = data;
   if (data) {
     return (
       <CaseStudyTemplate
-        content={data?.markdownRemark?.frontmatter || data?.markdown || data}
+        content={post.frontmatter}
         helmet={
           <Helmet titleTemplate="%s | CaseStudy">
             <title>{`preview`}</title>
