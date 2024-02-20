@@ -4,10 +4,11 @@ import React from 'react';
 
 const CaseStudyPreview = ({ entry, widgetFor }) => {
   const data = entry.getIn(['data']).toJS();
+  console.log("hello",data);
   if (data) {
     return (
       <CaseStudyTemplate
-        content={data?.markdownRemark?.frontmatter}
+        content={data?.markdownRemark?.frontmatter || data?.markdown || data}
         helmet={
           <Helmet titleTemplate="%s | CaseStudy">
             <title>{`preview`}</title>

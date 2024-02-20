@@ -53,7 +53,7 @@ export const SuccessStoriesSection = ({ data }) => {
             onMouseEnter={() => setHoveredIndex(index)}>
             <div
               style={{
-                backgroundImage: `url(${post.node.frontmatter.featuredimage.childImageSharp.fluid.src})`,
+                backgroundImage: `url(${post?.node?.frontmatter?.featuredimage?.childImageSharp?.fluid?.src})`,
                 height: '100%',
                 borderRadius: '10px',
                 backgroundPosition: 'center',
