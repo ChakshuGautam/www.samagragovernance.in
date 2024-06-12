@@ -1,7 +1,8 @@
 backend:
   name: git-gateway
   branch: master
-  publish_mode: editorial_workflow
+
+publish_mode: editorial_workflow
 
 editorial_workflow:
   enable: true
