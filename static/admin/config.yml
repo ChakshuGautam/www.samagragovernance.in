@@ -30,6 +30,7 @@ collections:
       - { label: 'Description', name: 'description', widget: 'text' }
       - { label: 'Featured Image', name: 'featuredimage', widget: image }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Tags', name: 'tags', widget: 'string' }
   - name: 'casestudy'
     label: 'Case Study'
     folder: 'src/pages/amritseries'

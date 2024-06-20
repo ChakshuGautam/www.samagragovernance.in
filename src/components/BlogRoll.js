@@ -4,13 +4,68 @@ import { Link, graphql, StaticQuery } from 'gatsby';
 import PreviewCompatibleImage from './PreviewCompatibleImage';
 
 class BlogRoll extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.myRef = React.createRef();  
+    this.state={
+      posts: [],
+      filteredPosts: []
+    }
+  }
+  
+  componentDidMount(){
+    
+    this.setState({
+      posts:this.props.data.allMarkdownRemark.edges,
+    })
+  }
+  
+  fetchData(value){
+   
+    this.setState({
+      posts: this.props.data.allMarkdownRemark.edges.filter((edge) => {
+        if (edge.node && edge.node.frontmatter && edge.node.frontmatter.tags && edge.node.frontmatter.tags.toLowerCase().includes(value.toLowerCase())) return edge;
+    })
+    })
+  }
+
+
   render() {
-    const { data } = this.props;
-    const { edges: posts } = data.allMarkdownRemark;
+    
     return (
       <div className="blogs-section">
+        <div className="filter-row">
+          <div className="blog-filter col-lg-3 col-md-4 col-sm-6 col-xs-6">
+            <input type="text" className='filter-input w-93' placeholder="Search.."
+              ref={this.myRef}
+            />
+          </div>
+          <div className="filter-button-div">
+            <button className="filter-button f-15"
+            onClick={ () => {
+              this.fetchData(this.myRef.current.value)
+            }
+            }>Search 
+            <span>&gt;</span></button>
+
+            <button className="filter-button f-15 mx-2"
+            onClick={ () => {
+                this.setState({
+                  posts:this.props.data.allMarkdownRemark.edges
+                })
+              this.myRef.current.value="";
+
+            }
+            }>Clear 
+            <span>&gt;</span></button>
+          </div>
+        </div>
         <div className="row">
-          {posts.map(({ node: post }) => {
+          { 
+          
+          
+          this.state.posts.length ? this.state.posts.map(({ node: post }) => {
             return (
               <a
                 className="col-lg-3 col-md-4 col-sm-6 col-xs-1"
@@ -38,7 +93,17 @@ class BlogRoll extends React.Component {
                 </div>
               </a>
             );
-          })}
+          }):<>
+          <div className='no-data-found'>
+            <div className='no-data'>
+            <div className="no-data-icon"> <i className='fa fa-exclamation-circle'></i></div>
+            <div className="no-data-title">
+              No Data Found
+            </div>
+          </div>
+          </div>
+          
+            </>}
         </div>
       </div>
     );
@@ -72,6 +137,7 @@ export default () => (
                 title
                 templateKey
                 author
+                tags
                 date(formatString: "MMMM DD, YYYY")
                 featuredimage {
                   childImageSharp {

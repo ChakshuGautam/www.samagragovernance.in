@@ -5,6 +5,7 @@ author: Vibhuti Gour
 projectId: '0'
 authorImage: /img/male_avatar.png
 date: 2019-09-19
+tags: "Hello"
 description: >-
   Is it possible for the members of a growing organisation operating from
   isolated locations to feel like a single, cohesive unit working towards a

@@ -46,6 +46,38 @@
 
 .blogs-section {
   padding: 100px 20px 200px 20px;
+  .filter-row{
+    display: flex;
+    align-content: flex-start;
+    .blog-filter{
+      position: relative;
+      padding: 0;
+      width: 100%;
+      .filter-input{
+        margin-bottom: 1rem ;
+        padding: 10px;
+        border: 1px solid #868686;
+        border-radius: 7px;
+      }
+    }
+    .filter-button-div{
+      display: flex;
+      flex-direction: row;
+      margin-left: 10px;
+      width: 20rem; 
+      .filter-button{
+        background-color: #212529;
+        border: black 1px solid;
+        color: white;
+        width: 100%;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 1rem;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+  
 
   .blog-wrapper {
     position: relative;
@@ -190,6 +222,24 @@
       img {
         max-width: 90%;
         margin: auto;
+      }
+    }
+  }
+}
+.row{
+  .no-data-found{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .no-data {
+      text-align: center;
+      &-icon {
+        color: gray;
+        font-size: 4rem;
+      }
+      &-title {
+        font-size: 1.6rem;
       }
     }
   }
